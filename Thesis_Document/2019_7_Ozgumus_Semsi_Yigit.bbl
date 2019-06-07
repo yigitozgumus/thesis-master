@@ -1,0 +1,2036 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.9 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{nty/global//global/global}
+  \entry{AHMED201619}{article}{}
+    \name{author}{3}{}{%
+      {{hash=AM}{%
+         family={Ahmed},
+         familyi={A\bibinitperiod},
+         given={Mohiuddin},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=MAN}{%
+         family={Mahmood},
+         familyi={M\bibinitperiod},
+         given={Abdun\bibnamedelima Naser},
+         giveni={A\bibinitperiod\bibinitdelim N\bibinitperiod},
+      }}%
+      {{hash=HJ}{%
+         family={Hu},
+         familyi={H\bibinitperiod},
+         given={Jiankun},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \keyw{Intrusion detection, Computer security, Anomaly detection,
+  Classification, Clustering, Information theory}
+    \strng{namehash}{AMMANHJ1}
+    \strng{fullhash}{AMMANHJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \verb{doi}
+    \verb https://doi.org/10.1016/j.jnca.2015.11.016
+    \endverb
+    \field{issn}{1084-8045}
+    \field{pages}{19 \bibrangedash  31}
+    \field{title}{A survey of network anomaly detection techniques}
+    \verb{url}
+    \verb http://www.sciencedirect.com/science/article/pii/S1084804515002891
+    \endverb
+    \field{volume}{60}
+    \field{journaltitle}{Journal of Network and Computer Applications}
+    \field{year}{2016}
+  \endentry
+
+  \entry{Akay2018GANomalySA}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=AS}{%
+         family={Akçay},
+         familyi={A\bibinitperiod},
+         given={Samet},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=AAA}{%
+         family={Abarghouei},
+         familyi={A\bibinitperiod},
+         given={Amir\bibnamedelima Atapour},
+         giveni={A\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=BTP}{%
+         family={Breckon},
+         familyi={B\bibinitperiod},
+         given={Toby\bibnamedelima P.},
+         giveni={T\bibinitperiod\bibinitdelim P\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{ASAAABTP1}
+    \strng{fullhash}{ASAAABTP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{booktitle}{ACCV}
+    \field{title}{GANomaly: Semi-supervised Anomaly Detection via Adversarial
+  Training}
+    \field{year}{2018}
+  \endentry
+
+  \entry{Akay2019SkipGANomalySC}{article}{}
+    \name{author}{3}{}{%
+      {{hash=AS}{%
+         family={Akçay},
+         familyi={A\bibinitperiod},
+         given={Samet},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=AAA}{%
+         family={Abarghouei},
+         familyi={A\bibinitperiod},
+         given={Amir\bibnamedelima Atapour},
+         giveni={A\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=BTP}{%
+         family={Breckon},
+         familyi={B\bibinitperiod},
+         given={Toby\bibnamedelima P.},
+         giveni={T\bibinitperiod\bibinitdelim P\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{ASAAABTP1}
+    \strng{fullhash}{ASAAABTP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{title}{Skip-GANomaly: Skip Connected and Adversarially Trained
+  Encoder-Decoder Anomaly Detection}
+    \field{volume}{abs/1901.08954}
+    \field{journaltitle}{CoRR}
+    \field{year}{2019}
+  \endentry
+
+  \entry{image_anomaly}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=AP}{%
+         family={Angelov},
+         familyi={A\bibinitperiod},
+         given={Plamen},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=RR}{%
+         family={Ramezani},
+         familyi={R\bibinitperiod},
+         given={Ramin},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=ZX}{%
+         family={Zhou},
+         familyi={Z\bibinitperiod},
+         given={Xiaowei},
+         giveni={X\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{APRRZX1}
+    \strng{fullhash}{APRRZX1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \verb{doi}
+    \verb 10.1109/IJCNN.2008.4633989
+    \endverb
+    \field{pages}{1456\bibrangedash 1463}
+    \field{title}{Autonomous Novelty Detection and Object Tracking in Video
+  Streams using Evolving Clustering and Takagi-Sugeno type Neuro-Fuzzy System}
+    \field{journaltitle}{Proceedings of the International Joint Conference on
+  Neural Networks}
+    \field{month}{06}
+    \field{year}{2008}
+  \endentry
+
+  \entry{methods}{article}{}
+    \name{author}{2}{}{%
+      {{hash=AM}{%
+         family={Arjovsky},
+         familyi={A\bibinitperiod},
+         given={Martin},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=BL}{%
+         family={Bottou},
+         familyi={B\bibinitperiod},
+         given={Léon},
+         giveni={L\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{AMBL1}
+    \strng{fullhash}{AMBL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{title}{Towards Principled Methods for Training Generative
+  Adversarial Networks}
+    \field{volume}{1050}
+    \field{journaltitle}{stat}
+    \field{month}{01}
+    \field{year}{2017}
+  \endentry
+
+  \entry{Arjovsky2017WassersteinG}{article}{}
+    \name{author}{3}{}{%
+      {{hash=AM}{%
+         family={Arjovsky},
+         familyi={A\bibinitperiod},
+         given={Mart{\'i}n},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=CS}{%
+         family={Chintala},
+         familyi={C\bibinitperiod},
+         given={Soumith},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=BL}{%
+         family={Bottou},
+         familyi={B\bibinitperiod},
+         given={L{\'e}on},
+         giveni={L\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{AMCSBL1}
+    \strng{fullhash}{AMCSBL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{title}{Wasserstein GAN}
+    \field{volume}{abs/1701.07875}
+    \field{journaltitle}{CoRR}
+    \field{year}{2017}
+  \endentry
+
+  \entry{iot_anomaly}{article}{}
+    \name{author}{3}{}{%
+      {{hash=BM}{%
+         family={Behniafar},
+         familyi={B\bibinitperiod},
+         given={M.},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=NA}{%
+         family={Nowroozi},
+         familyi={N\bibinitperiod},
+         given={A.R.},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=SH}{%
+         family={Shahriari},
+         familyi={S\bibinitperiod},
+         given={H.R.},
+         giveni={H\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Iranian Society of Cryptology}%
+    }
+    \keyw{Anomaly,Intrusion Detection,Internet of Things,IT Security}
+    \strng{namehash}{BMNASH1}
+    \strng{fullhash}{BMNASH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \verb{doi}
+    \verb 10.22042/isecure.2018.116976.408
+    \endverb
+    \verb{eprint}
+    \verb http://www.isecure-journal.com/article__835f5ca77e495cec328b957653e1f
+    \verb 4d566995.pdf
+    \endverb
+    \field{issn}{2008-2045}
+    \field{number}{2}
+    \field{pages}{79\bibrangedash 92}
+    \field{title}{A Survey of Anomaly Detection Approaches in Internet of
+  Things}
+    \verb{url}
+    \verb http://www.isecure-journal.com/article_66995.html
+    \endverb
+    \field{volume}{10}
+    \field{journaltitle}{The ISC International Journal of Information Security}
+    \field{year}{2018}
+  \endentry
+
+  \entry{Bengio:2009:LDA:1658423.1658424}{article}{}
+    \name{author}{1}{}{%
+      {{hash=BY}{%
+         family={Bengio},
+         familyi={B\bibinitperiod},
+         given={Yoshua},
+         giveni={Y\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Now Publishers Inc.}%
+    }
+    \strng{namehash}{BY1}
+    \strng{fullhash}{BY1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \verb{doi}
+    \verb 10.1561/2200000006
+    \endverb
+    \field{issn}{1935-8237}
+    \field{number}{1}
+    \field{pages}{1\bibrangedash 127}
+    \field{title}{Learning Deep Architectures for AI}
+    \verb{url}
+    \verb http://dx.doi.org/10.1561/2200000006
+    \endverb
+    \field{volume}{2}
+    \list{location}{1}{%
+      {Hanover, MA, USA}%
+    }
+    \field{journaltitle}{Found. Trends Mach. Learn.}
+    \field{month}{01}
+    \field{year}{2009}
+  \endentry
+
+  \entry{Bill86}{book}{}
+    \name{author}{1}{}{%
+      {{hash=BP}{%
+         family={Billingsley},
+         familyi={B\bibinitperiod},
+         given={Patrick},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{2}{%
+      {John Wiley}%
+      {Sons}%
+    }
+    \strng{namehash}{BP1}
+    \strng{fullhash}{BP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{edition}{Second}
+    \field{title}{Probability and Measure}
+    \field{year}{1986}
+  \endentry
+
+  \entry{Chandola:2009:ADS:1541880.1541882}{article}{}
+    \name{author}{3}{}{%
+      {{hash=CV}{%
+         family={Chandola},
+         familyi={C\bibinitperiod},
+         given={Varun},
+         giveni={V\bibinitperiod},
+      }}%
+      {{hash=BA}{%
+         family={Banerjee},
+         familyi={B\bibinitperiod},
+         given={Arindam},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=KV}{%
+         family={Kumar},
+         familyi={K\bibinitperiod},
+         given={Vipin},
+         giveni={V\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {ACM}%
+    }
+    \keyw{Anomaly detection, outlier detection}
+    \strng{namehash}{CVBAKV1}
+    \strng{fullhash}{CVBAKV1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \verb{doi}
+    \verb 10.1145/1541880.1541882
+    \endverb
+    \field{issn}{0360-0300}
+    \field{number}{3}
+    \field{pages}{15:1\bibrangedash 15:58}
+    \field{title}{Anomaly Detection: A Survey}
+    \verb{url}
+    \verb http://doi.acm.org/10.1145/1541880.1541882
+    \endverb
+    \field{volume}{41}
+    \list{location}{1}{%
+      {New York, NY, USA}%
+    }
+    \field{journaltitle}{ACM Comput. Surv.}
+    \field{month}{07}
+    \field{year}{2009}
+  \endentry
+
+  \entry{inproceedings_medical}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=CL}{%
+         family={Clifton},
+         familyi={C\bibinitperiod},
+         given={Lei},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=CD}{%
+         family={Clifton},
+         familyi={C\bibinitperiod},
+         given={David},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=WP}{%
+         family={Watkinson},
+         familyi={W\bibinitperiod},
+         given={Peter},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=TL}{%
+         family={Tarassenko},
+         familyi={T\bibinitperiod},
+         given={L},
+         giveni={L},
+      }}%
+    }
+    \strng{namehash}{CL+1}
+    \strng{fullhash}{CLCDWPTL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{pages}{125\bibrangedash 131}
+    \field{title}{Identification of Patient Deterioration in Vital-Sign Data
+  using One-Class Support Vector Machines.}
+    \field{journaltitle}{Proc. Comput. Sci. Inf. Syst}
+    \field{month}{01}
+    \field{year}{2011}
+  \endentry
+
+  \entry{Cover:2006:EIT:1146355}{book}{}
+    \name{author}{2}{}{%
+      {{hash=CTM}{%
+         family={Cover},
+         familyi={C\bibinitperiod},
+         given={Thomas\bibnamedelima M.},
+         giveni={T\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+      {{hash=TJA}{%
+         family={Thomas},
+         familyi={T\bibinitperiod},
+         given={Joy\bibnamedelima A.},
+         giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Wiley-Interscience}%
+    }
+    \strng{namehash}{CTMTJA1}
+    \strng{fullhash}{CTMTJA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{isbn}{0471241954}
+    \field{title}{Elements of Information Theory (Wiley Series in
+  Telecommunications and Signal Processing)}
+    \list{location}{1}{%
+      {New York, NY, USA}%
+    }
+    \field{year}{2006}
+  \endentry
+
+  \entry{Donahue2017AdversarialFL}{article}{}
+    \name{author}{3}{}{%
+      {{hash=DJ}{%
+         family={Donahue},
+         familyi={D\bibinitperiod},
+         given={Jeff},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=KP}{%
+         family={Kr{\"a}henb{\"u}hl},
+         familyi={K\bibinitperiod},
+         given={Philipp},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=DT}{%
+         family={Darrell},
+         familyi={D\bibinitperiod},
+         given={Trevor},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{DJKPDT1}
+    \strng{fullhash}{DJKPDT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{title}{Adversarial Feature Learning}
+    \field{volume}{abs/1605.09782}
+    \field{journaltitle}{CoRR}
+    \field{year}{2017}
+  \endentry
+
+  \entry{Dumoulin2017AdversariallyLI}{article}{}
+    \name{author}{7}{}{%
+      {{hash=DV}{%
+         family={Dumoulin},
+         familyi={D\bibinitperiod},
+         given={Vincent},
+         giveni={V\bibinitperiod},
+      }}%
+      {{hash=BI}{%
+         family={Belghazi},
+         familyi={B\bibinitperiod},
+         given={Ishmael},
+         giveni={I\bibinitperiod},
+      }}%
+      {{hash=PB}{%
+         family={Poole},
+         familyi={P\bibinitperiod},
+         given={Ben},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=LA}{%
+         family={Lamb},
+         familyi={L\bibinitperiod},
+         given={Alex},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=AM}{%
+         family={Arjovsky},
+         familyi={A\bibinitperiod},
+         given={Mart{\'i}n},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=MO}{%
+         family={Mastropietro},
+         familyi={M\bibinitperiod},
+         given={Olivier},
+         giveni={O\bibinitperiod},
+      }}%
+      {{hash=CAC}{%
+         family={Courville},
+         familyi={C\bibinitperiod},
+         given={Aaron\bibnamedelima C.},
+         giveni={A\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{DV+1}
+    \strng{fullhash}{DVBIPBLAAMMOCAC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{title}{Adversarially Learned Inference}
+    \field{volume}{abs/1606.00704}
+    \field{journaltitle}{CoRR}
+    \field{year}{2017}
+  \endentry
+
+  \entry{FERNANDES20161}{article}{}
+    \name{author}{4}{}{%
+      {{hash=FG}{%
+         family={Fernandes},
+         familyi={F\bibinitperiod},
+         given={Gilberto},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=CLF}{%
+         family={Carvalho},
+         familyi={C\bibinitperiod},
+         given={Luiz\bibnamedelima F.},
+         giveni={L\bibinitperiod\bibinitdelim F\bibinitperiod},
+      }}%
+      {{hash=RJJ}{%
+         family={Rodrigues},
+         familyi={R\bibinitperiod},
+         given={Joel\bibnamedelima J.P.C.},
+         giveni={J\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=PML}{%
+         family={Proença},
+         familyi={P\bibinitperiod},
+         given={Mario\bibnamedelima Lemes},
+         giveni={M\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+    }
+    \keyw{Traffic characterization, Anomaly detection, Network management,
+  Principal Component Analysis (PCA), Ant Colony Optimization (ACO), Dynamic
+  Time Warping (DTW)}
+    \strng{namehash}{FG+1}
+    \strng{fullhash}{FGCLFRJJPML1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \verb{doi}
+    \verb https://doi.org/10.1016/j.jnca.2015.11.024
+    \endverb
+    \field{issn}{1084-8045}
+    \field{pages}{1 \bibrangedash  11}
+    \field{title}{Network anomaly detection using IP flows with Principal
+  Component Analysis and Ant Colony Optimization}
+    \verb{url}
+    \verb http://www.sciencedirect.com/science/article/pii/S1084804516000618
+    \endverb
+    \field{volume}{64}
+    \field{journaltitle}{Journal of Network and Computer Applications}
+    \field{year}{2016}
+  \endentry
+
+  \entry{finance_anomaly}{article}{}
+    \name{author}{5}{}{%
+      {{hash=FU}{%
+         family={Fiore},
+         familyi={F\bibinitperiod},
+         given={Ugo},
+         giveni={U\bibinitperiod},
+      }}%
+      {{hash=DSA}{%
+         family={De\bibnamedelima Santis},
+         familyi={D\bibinitperiod\bibinitdelim S\bibinitperiod},
+         given={Alfredo},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=PF}{%
+         family={Perla},
+         familyi={P\bibinitperiod},
+         given={Francesca},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=ZP}{%
+         family={Zanetti},
+         familyi={Z\bibinitperiod},
+         given={Paolo},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=PF}{%
+         family={Palmieri},
+         familyi={P\bibinitperiod},
+         given={Francesco},
+         giveni={F\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{FU+1}
+    \strng{fullhash}{FUDSAPFZPPF1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \verb{doi}
+    \verb 10.1016/j.ins.2017.12.030
+    \endverb
+    \field{title}{Using Generative Adversarial Networks for Improving
+  Classification Effectiveness in Credit Card Fraud Detection}
+    \field{journaltitle}{Information Sciences}
+    \field{month}{12}
+    \field{year}{2017}
+  \endentry
+
+  \entry{Glorot2011DeepSR}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=GX}{%
+         family={Glorot},
+         familyi={G\bibinitperiod},
+         given={Xavier},
+         giveni={X\bibinitperiod},
+      }}%
+      {{hash=BA}{%
+         family={Bordes},
+         familyi={B\bibinitperiod},
+         given={Antoine},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=BY}{%
+         family={Bengio},
+         familyi={B\bibinitperiod},
+         given={Yoshua},
+         giveni={Y\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{GXBABY1}
+    \strng{fullhash}{GXBABY1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{booktitle}{AISTATS}
+    \field{title}{Deep Sparse Rectifier Neural Networks}
+    \field{year}{2011}
+  \endentry
+
+  \entry{Goodfellow-et-al-2016}{book}{}
+    \name{author}{3}{}{%
+      {{hash=GI}{%
+         family={Goodfellow},
+         familyi={G\bibinitperiod},
+         given={Ian},
+         giveni={I\bibinitperiod},
+      }}%
+      {{hash=BY}{%
+         family={Bengio},
+         familyi={B\bibinitperiod},
+         given={Yoshua},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=CA}{%
+         family={Courville},
+         familyi={C\bibinitperiod},
+         given={Aaron},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {MIT Press}%
+    }
+    \strng{namehash}{GIBYCA1}
+    \strng{fullhash}{GIBYCA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{note}{\url{http://www.deeplearningbook.org}}
+    \field{title}{Deep Learning}
+    \field{year}{2016}
+  \endentry
+
+  \entry{Goodfellow:2014:GAN:2969033.2969125}{inproceedings}{}
+    \name{author}{8}{}{%
+      {{hash=GIJ}{%
+         family={Goodfellow},
+         familyi={G\bibinitperiod},
+         given={Ian\bibnamedelima J.},
+         giveni={I\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=PAJ}{%
+         family={Pouget-Abadie},
+         familyi={P\bibinitperiod-A\bibinitperiod},
+         given={Jean},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=MM}{%
+         family={Mirza},
+         familyi={M\bibinitperiod},
+         given={Mehdi},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=XB}{%
+         family={Xu},
+         familyi={X\bibinitperiod},
+         given={Bing},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=WFD}{%
+         family={Warde-Farley},
+         familyi={W\bibinitperiod-F\bibinitperiod},
+         given={David},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=OS}{%
+         family={Ozair},
+         familyi={O\bibinitperiod},
+         given={Sherjil},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=CA}{%
+         family={Courville},
+         familyi={C\bibinitperiod},
+         given={Aaron},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=BY}{%
+         family={Bengio},
+         familyi={B\bibinitperiod},
+         given={Yoshua},
+         giveni={Y\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {MIT Press}%
+    }
+    \strng{namehash}{GIJ+1}
+    \strng{fullhash}{GIJPAJMMXBWFDOSCABY1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{booktitle}{Proceedings of the 27th International Conference on
+  Neural Information Processing Systems - Volume 2}
+    \field{pages}{2672\bibrangedash 2680}
+    \field{series}{NIPS'14}
+    \field{title}{Generative Adversarial Nets}
+    \verb{url}
+    \verb http://dl.acm.org/citation.cfm?id=2969033.2969125
+    \endverb
+    \list{location}{1}{%
+      {Montreal, Canada}%
+    }
+    \field{year}{2014}
+    \warn{\item Can't use 'location' + 'address'}
+  \endentry
+
+  \entry{Isola2017ImagetoImageTW}{article}{}
+    \name{author}{4}{}{%
+      {{hash=IP}{%
+         family={Isola},
+         familyi={I\bibinitperiod},
+         given={Phillip},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=ZJY}{%
+         family={Zhu},
+         familyi={Z\bibinitperiod},
+         given={Jun-Yan},
+         giveni={J\bibinitperiod-Y\bibinitperiod},
+      }}%
+      {{hash=ZT}{%
+         family={Zhou},
+         familyi={Z\bibinitperiod},
+         given={Tinghui},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=EAA}{%
+         family={Efros},
+         familyi={E\bibinitperiod},
+         given={Alexei\bibnamedelima A.},
+         giveni={A\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{IP+1}
+    \strng{fullhash}{IPZJYZTEAA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{I}
+    \field{sortinithash}{I}
+    \field{pages}{5967\bibrangedash 5976}
+    \field{title}{Image-to-Image Translation with Conditional Adversarial
+  Networks}
+    \field{journaltitle}{2017 IEEE Conference on Computer Vision and Pattern
+  Recognition (CVPR)}
+    \field{year}{2017}
+  \endentry
+
+  \entry{JABEZ2015338}{article}{}
+    \name{author}{2}{}{%
+      {{hash=JJ}{%
+         family={Jabez},
+         familyi={J\bibinitperiod},
+         given={J.},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=MB}{%
+         family={Muthukumar},
+         familyi={M\bibinitperiod},
+         given={B.},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \keyw{IDS, Oulier, Anomaly}
+    \strng{namehash}{JJMB1}
+    \strng{fullhash}{JJMB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{J}
+    \field{sortinithash}{J}
+    \verb{doi}
+    \verb https://doi.org/10.1016/j.procs.2015.04.191
+    \endverb
+    \field{issn}{1877-0509}
+    \field{note}{International Conference on Computer, Communication and
+  Convergence (ICCC 2015)}
+    \field{pages}{338 \bibrangedash  346}
+    \field{title}{Intrusion Detection System (IDS): Anomaly Detection Using
+  Outlier Detection Approach}
+    \verb{url}
+    \verb http://www.sciencedirect.com/science/article/pii/S1877050915007000
+    \endverb
+    \field{volume}{48}
+    \field{journaltitle}{Procedia Computer Science}
+    \field{year}{2015}
+  \endentry
+
+  \entry{Kim:2012:MLN:2076800.2076903}{article}{}
+    \name{author}{5}{}{%
+      {{hash=KD}{%
+         family={Kim},
+         familyi={K\bibinitperiod},
+         given={Dongil},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=KP}{%
+         family={Kang},
+         familyi={K\bibinitperiod},
+         given={Pilsung},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=CS}{%
+         family={Cho},
+         familyi={C\bibinitperiod},
+         given={Sungzoon},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=LHj}{%
+         family={Lee},
+         familyi={L\bibinitperiod},
+         given={Hyoung-joo},
+         giveni={H\bibinitperiod-j\bibinitperiod},
+      }}%
+      {{hash=DS}{%
+         family={Doh},
+         familyi={D\bibinitperiod},
+         given={Seungyong},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Pergamon Press, Inc.}%
+    }
+    \keyw{Dimensionality reduction, Faulty wafer detection, Novelty detection,
+  Semiconductor manufacturing, Virtual metrology}
+    \strng{namehash}{KD+1}
+    \strng{fullhash}{KDKPCSLHjDS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \verb{doi}
+    \verb 10.1016/j.eswa.2011.09.088
+    \endverb
+    \field{issn}{0957-4174}
+    \field{number}{4}
+    \field{pages}{4075\bibrangedash 4083}
+    \field{title}{Machine Learning-based Novelty Detection for Faulty Wafer
+  Detection in Semiconductor Manufacturing}
+    \verb{url}
+    \verb http://dx.doi.org/10.1016/j.eswa.2011.09.088
+    \endverb
+    \field{volume}{39}
+    \list{location}{1}{%
+      {Tarrytown, NY, USA}%
+    }
+    \field{journaltitle}{Expert Syst. Appl.}
+    \field{month}{03}
+    \field{year}{2012}
+  \endentry
+
+  \entry{Kim2017LearningTD}{inproceedings}{}
+    \name{author}{5}{}{%
+      {{hash=KT}{%
+         family={Kim},
+         familyi={K\bibinitperiod},
+         given={Taeksoo},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=CM}{%
+         family={Cha},
+         familyi={C\bibinitperiod},
+         given={Moonsu},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=KH}{%
+         family={Kim},
+         familyi={K\bibinitperiod},
+         given={Hyunsoo},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=LJK}{%
+         family={Lee},
+         familyi={L\bibinitperiod},
+         given={Jung\bibnamedelima Kwon},
+         giveni={J\bibinitperiod\bibinitdelim K\bibinitperiod},
+      }}%
+      {{hash=KJ}{%
+         family={Kim},
+         familyi={K\bibinitperiod},
+         given={Jiwon},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{KT+1}
+    \strng{fullhash}{KTCMKHLJKKJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{booktitle}{ICML}
+    \field{title}{Learning to Discover Cross-Domain Relations with Generative
+  Adversarial Networks}
+    \field{year}{2017}
+  \endentry
+
+  \entry{RePEc:eee:csdana:v:20:y:1995:i:6:p:703-702}{article}{}
+    \name{author}{1}{}{%
+      {{hash=KW}{%
+         family={Kramer},
+         familyi={K\bibinitperiod},
+         given={Walter},
+         giveni={W\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{KW1}
+    \strng{fullhash}{KW1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{abstract}{%
+    No abstract is available for this item.%
+    }
+    \field{number}{6}
+    \field{pages}{702\bibrangedash 703}
+    \field{title}{{Probability \& Measure : Patrick Billingsley (1995): (3rd
+  ed.). New York : Wiley, ISBN 0-471-0071-02, pp 593, [pound sign] 49.95}}
+    \verb{url}
+    \verb https://ideas.repec.org/a/eee/csdana/v20y1995i6p703-702.html
+    \endverb
+    \field{volume}{20}
+    \field{journaltitle}{Computational Statistics \& Data Analysis}
+    \field{year}{1995}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{cifar10}{article}{}
+    \name{author}{3}{}{%
+      {{hash=KA}{%
+         family={Krizhevsky},
+         familyi={K\bibinitperiod},
+         given={Alex},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=NV}{%
+         family={Nair},
+         familyi={N\bibinitperiod},
+         given={Vinod},
+         giveni={V\bibinitperiod},
+      }}%
+      {{hash=HG}{%
+         family={Hinton},
+         familyi={H\bibinitperiod},
+         given={Geoffrey},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \keyw{Dataset}
+    \strng{namehash}{KANVHG1}
+    \strng{fullhash}{KANVHG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{title}{CIFAR-10 (Canadian Institute for Advanced Research)}
+    \verb{url}
+    \verb http://www.cs.toronto.edu/~kriz/cifar.html
+    \endverb
+  \endentry
+
+  \entry{Larsen2016AutoencodingBP}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=LABL}{%
+         family={Larsen},
+         familyi={L\bibinitperiod},
+         given={Anders Boesen\bibnamedelima Lindbo},
+         giveni={A\bibinitperiod\bibinitdelim B\bibinitperiod\bibinitdelim
+  L\bibinitperiod},
+      }}%
+      {{hash=SSK}{%
+         family={S{\o}nderby},
+         familyi={S\bibinitperiod},
+         given={S{\o}ren\bibnamedelima Kaae},
+         giveni={S\bibinitperiod\bibinitdelim K\bibinitperiod},
+      }}%
+      {{hash=LH}{%
+         family={Larochelle},
+         familyi={L\bibinitperiod},
+         given={Hugo},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=WO}{%
+         family={Winther},
+         familyi={W\bibinitperiod},
+         given={Ole},
+         giveni={O\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{LABL+1}
+    \strng{fullhash}{LABLSSKLHWO1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \field{booktitle}{ICML}
+    \field{title}{Autoencoding beyond pixels using a learned similarity metric}
+    \field{year}{2016}
+  \endentry
+
+  \entry{Li2017TowardsUA}{inproceedings}{}
+    \name{author}{7}{}{%
+      {{hash=LC}{%
+         family={Li},
+         familyi={L\bibinitperiod},
+         given={Chunyuan},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=LH}{%
+         family={Liu},
+         familyi={L\bibinitperiod},
+         given={Hao},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=CC}{%
+         family={Chen},
+         familyi={C\bibinitperiod},
+         given={Changyou},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=PY}{%
+         family={Pu},
+         familyi={P\bibinitperiod},
+         given={Yunchen},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=CL}{%
+         family={Chen},
+         familyi={C\bibinitperiod},
+         given={Liqun},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=HR}{%
+         family={Henao},
+         familyi={H\bibinitperiod},
+         given={Ricardo},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=CL}{%
+         family={Carin},
+         familyi={C\bibinitperiod},
+         given={Lawrence},
+         giveni={L\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{LC+1}
+    \strng{fullhash}{LCLHCCPYCLHRCL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \field{booktitle}{NIPS}
+    \field{title}{Towards Understanding Adversarial Learning for Joint
+  Distribution Matching}
+    \field{year}{2017}
+  \endentry
+
+  \entry{Markou:2003:NDR:959414.959416}{article}{}
+    \name{author}{2}{}{%
+      {{hash=MM}{%
+         family={Markou},
+         familyi={M\bibinitperiod},
+         given={Markos},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=SS}{%
+         family={Singh},
+         familyi={S\bibinitperiod},
+         given={Sameer},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier North-Holland, Inc.}%
+    }
+    \keyw{ART, MLP, Novelty detection, RBF, network-based approaches, neural
+  networks}
+    \strng{namehash}{MMSS1}
+    \strng{fullhash}{MMSS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \verb{doi}
+    \verb 10.1016/j.sigpro.2003.07.019
+    \endverb
+    \field{issn}{0165-1684}
+    \field{number}{12}
+    \field{pages}{2499\bibrangedash 2521}
+    \field{title}{Novelty Detection: A Review\&Mdash;Part 2: Neural Network
+  Based Approaches}
+    \verb{url}
+    \verb http://dx.doi.org/10.1016/j.sigpro.2003.07.019
+    \endverb
+    \field{volume}{83}
+    \list{location}{1}{%
+      {Amsterdam, The Netherlands, The Netherlands}%
+    }
+    \field{journaltitle}{Signal Process.}
+    \field{month}{12}
+    \field{year}{2003}
+  \endentry
+
+  \entry{s150202774}{article}{}
+    \name{author}{4}{}{%
+      {{hash=ML}{%
+         family={Martí},
+         familyi={M\bibinitperiod},
+         given={Luis},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=SPN}{%
+         family={Sanchez-Pi},
+         familyi={S\bibinitperiod-P\bibinitperiod},
+         given={Nayat},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=MJM}{%
+         family={Molina},
+         familyi={M\bibinitperiod},
+         given={José\bibnamedelima Manuel},
+         giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+      {{hash=GACB}{%
+         family={Garcia},
+         familyi={G\bibinitperiod},
+         given={Ana Cristina\bibnamedelima Bicharra},
+         giveni={A\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim
+  B\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{ML+1}
+    \strng{fullhash}{MLSPNMJMGACB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \verb{doi}
+    \verb 10.3390/s150202774
+    \endverb
+    \field{issn}{1424-8220}
+    \field{number}{2}
+    \field{pages}{2774\bibrangedash 2797}
+    \field{title}{Anomaly Detection Based on Sensor Data in Petroleum Industry
+  Applications}
+    \verb{url}
+    \verb http://www.mdpi.com/1424-8220/15/2/2774
+    \endverb
+    \field{volume}{15}
+    \field{journaltitle}{Sensors}
+    \field{year}{2015}
+  \endentry
+
+  \entry{inproceedings_sn}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=MT}{%
+         family={Miyato},
+         familyi={M\bibinitperiod},
+         given={Takeru},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=KT}{%
+         family={Kataoka},
+         familyi={K\bibinitperiod},
+         given={Toshiki},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=KM}{%
+         family={Koyama},
+         familyi={K\bibinitperiod},
+         given={Masanori},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=YY}{%
+         family={Yoshida},
+         familyi={Y\bibinitperiod},
+         given={Yuichi},
+         giveni={Y\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{MT+1}
+    \strng{fullhash}{MTKTKMYY1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{title}{Spectral Normalization for Generative Adversarial Networks}
+    \field{month}{02}
+    \field{year}{2018}
+  \endentry
+
+  \entry{Napoletano_2018}{article}{}
+    \name{author}{3}{}{%
+      {{hash=NP}{%
+         family={Napoletano},
+         familyi={N\bibinitperiod},
+         given={Paolo},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=PF}{%
+         family={Piccoli},
+         familyi={P\bibinitperiod},
+         given={Flavio},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=SR}{%
+         family={Schettini},
+         familyi={S\bibinitperiod},
+         given={Raimondo},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {MDPI AG}%
+    }
+    \strng{namehash}{NPPFSR1}
+    \strng{fullhash}{NPPFSR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{N}
+    \field{sortinithash}{N}
+    \verb{doi}
+    \verb 10.3390/s18010209
+    \endverb
+    \field{issn}{1424-8220}
+    \field{number}{2}
+    \field{pages}{209}
+    \field{title}{Anomaly Detection in Nanofibrous Materials by CNN-Based
+  Self-Similarity}
+    \verb{url}
+    \verb http://dx.doi.org/10.3390/s18010209
+    \endverb
+    \field{volume}{18}
+    \field{journaltitle}{Sensors}
+    \field{year}{2018}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{Netzer2011ReadingDI}{inproceedings}{}
+    \name{author}{6}{}{%
+      {{hash=NY}{%
+         family={Netzer},
+         familyi={N\bibinitperiod},
+         given={Yuval},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=WT}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={Tao},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=CA}{%
+         family={Coates},
+         familyi={C\bibinitperiod},
+         given={Adam},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=BA}{%
+         family={Bissacco},
+         familyi={B\bibinitperiod},
+         given={Alessandro},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=WB}{%
+         family={Wu},
+         familyi={W\bibinitperiod},
+         given={Bo},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=NAY}{%
+         family={Ng},
+         familyi={N\bibinitperiod},
+         given={Andrew\bibnamedelima Y.},
+         giveni={A\bibinitperiod\bibinitdelim Y\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{NY+1}
+    \strng{fullhash}{NYWTCABAWBNAY1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{N}
+    \field{sortinithash}{N}
+    \field{title}{Reading Digits in Natural Images with Unsupervised Feature
+  Learning}
+    \field{year}{2011}
+  \endentry
+
+  \entry{Pimentel:2014:RRN:2588908.2589196}{article}{}
+    \name{author}{4}{}{%
+      {{hash=PMAF}{%
+         family={Pimentel},
+         familyi={P\bibinitperiod},
+         given={Marco A.\bibnamedelima F.},
+         giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim
+  F\bibinitperiod},
+      }}%
+      {{hash=CDA}{%
+         family={Clifton},
+         familyi={C\bibinitperiod},
+         given={David\bibnamedelima A.},
+         giveni={D\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=CL}{%
+         family={Clifton},
+         familyi={C\bibinitperiod},
+         given={Lei},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=TL}{%
+         family={Tarassenko},
+         familyi={T\bibinitperiod},
+         given={Lionel},
+         giveni={L\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier North-Holland, Inc.}%
+    }
+    \keyw{Machine learning, Novelty detection, One-class classification}
+    \strng{namehash}{PMAF+1}
+    \strng{fullhash}{PMAFCDACLTL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \verb{doi}
+    \verb 10.1016/j.sigpro.2013.12.026
+    \endverb
+    \field{issn}{0165-1684}
+    \field{pages}{215\bibrangedash 249}
+    \field{title}{Review: A Review of Novelty Detection}
+    \verb{url}
+    \verb http://dx.doi.org/10.1016/j.sigpro.2013.12.026
+    \endverb
+    \field{volume}{99}
+    \list{location}{1}{%
+      {Amsterdam, The Netherlands, The Netherlands}%
+    }
+    \field{journaltitle}{Signal Process.}
+    \field{month}{06}
+    \field{year}{2014}
+  \endentry
+
+  \entry{Radford2016UnsupervisedRL}{article}{}
+    \name{author}{3}{}{%
+      {{hash=RA}{%
+         family={Radford},
+         familyi={R\bibinitperiod},
+         given={Alec},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=ML}{%
+         family={Metz},
+         familyi={M\bibinitperiod},
+         given={Luke},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=CS}{%
+         family={Chintala},
+         familyi={C\bibinitperiod},
+         given={Soumith},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{RAMLCS1}
+    \strng{fullhash}{RAMLCS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{title}{Unsupervised Representation Learning with Deep Convolutional
+  Generative Adversarial Networks}
+    \field{volume}{abs/1511.06434}
+    \field{journaltitle}{CoRR}
+    \field{year}{2016}
+  \endentry
+
+  \entry{ringner2009law}{article}{}
+    \name{author}{1}{}{%
+      {{hash=RB}{%
+         family={Ringn{\'e}r},
+         familyi={R\bibinitperiod},
+         given={Bengt},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{RB1}
+    \strng{fullhash}{RB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{title}{Law of the unconscious statistician}
+    \field{year}{2009}
+  \endentry
+
+  \entry{Roussas:1614120}{book}{}
+    \name{author}{1}{}{%
+      {{hash=RGG}{%
+         family={Roussas},
+         familyi={R\bibinitperiod},
+         given={George\bibnamedelima G},
+         giveni={G\bibinitperiod\bibinitdelim G\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \strng{namehash}{RGG1}
+    \strng{fullhash}{RGG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{title}{{An introduction to measure-theoretic probability}}
+    \verb{url}
+    \verb http://cds.cern.ch/record/1614120
+    \endverb
+    \list{location}{1}{%
+      {Burlington, MA}%
+    }
+    \field{year}{2004}
+  \endentry
+
+  \entry{pmlr-v5-salakhutdinov09a}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=SR}{%
+         family={Salakhutdinov},
+         familyi={S\bibinitperiod},
+         given={Ruslan},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=HG}{%
+         family={Hinton},
+         familyi={H\bibinitperiod},
+         given={Geoffrey},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \name{editor}{2}{}{%
+      {{hash=vDD}{%
+         prefix={van},
+         prefixi={v\bibinitperiod},
+         family={Dyk},
+         familyi={D\bibinitperiod},
+         given={David},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=WM}{%
+         family={Welling},
+         familyi={W\bibinitperiod},
+         given={Max},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {PMLR}%
+    }
+    \strng{namehash}{SRHG1}
+    \strng{fullhash}{SRHG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{booktitle}{Proceedings of the Twelth International Conference on
+  Artificial Intelligence and Statistics}
+    \field{pages}{448\bibrangedash 455}
+    \field{series}{Proceedings of Machine Learning Research}
+    \field{title}{Deep Boltzmann Machines}
+    \verb{url}
+    \verb http://proceedings.mlr.press/v5/salakhutdinov09a.html
+    \endverb
+    \field{volume}{5}
+    \list{location}{1}{%
+      {Hilton Clearwater Beach Resort, Clearwater Beach, Florida USA}%
+    }
+    \verb{file}
+    \verb http://proceedings.mlr.press/v5/salakhutdinov09a/salakhutdinov09a.pdf
+    \endverb
+    \field{year}{2009}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{fm}{article}{}
+    \name{author}{6}{}{%
+      {{hash=ST}{%
+         family={Salimans},
+         familyi={S\bibinitperiod},
+         given={Tim},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=GI}{%
+         family={Goodfellow},
+         familyi={G\bibinitperiod},
+         given={Ian},
+         giveni={I\bibinitperiod},
+      }}%
+      {{hash=ZW}{%
+         family={Zaremba},
+         familyi={Z\bibinitperiod},
+         given={Wojciech},
+         giveni={W\bibinitperiod},
+      }}%
+      {{hash=CV}{%
+         family={Cheung},
+         familyi={C\bibinitperiod},
+         given={Vicki},
+         giveni={V\bibinitperiod},
+      }}%
+      {{hash=RA}{%
+         family={Radford},
+         familyi={R\bibinitperiod},
+         given={Alec},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=CX}{%
+         family={Chen},
+         familyi={C\bibinitperiod},
+         given={Xi},
+         giveni={X\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{ST+1}
+    \strng{fullhash}{STGIZWCVRACX1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{title}{Improved Techniques for Training GANs}
+    \field{month}{06}
+    \field{year}{2016}
+  \endentry
+
+  \entry{pub.1111824956}{article}{}
+    \name{author}{5}{}{%
+      {{hash=ST}{%
+         family={Schlegl},
+         familyi={S\bibinitperiod},
+         given={Thomas},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=SP}{%
+         family={Seeböck},
+         familyi={S\bibinitperiod},
+         given={Philipp},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=WSM}{%
+         family={Waldstein},
+         familyi={W\bibinitperiod},
+         given={Sebastian\bibnamedelima M.},
+         giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+      {{hash=LG}{%
+         family={Langs},
+         familyi={L\bibinitperiod},
+         given={Georg},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=SEU}{%
+         family={Schmidt-Erfurth},
+         familyi={S\bibinitperiod-E\bibinitperiod},
+         given={Ursula},
+         giveni={U\bibinitperiod},
+      }}%
+    }
+    \keyw{Artificial Intelligence and Image Processing}
+    \strng{namehash}{ST+2}
+    \strng{fullhash}{STSPWSMLGSEU1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \verb{doi}
+    \verb 10.1016/j.media.2019.01.010
+    \endverb
+    \field{number}{Data Mining and Knowledge Discovery 29 3 2015}
+    \field{pages}{30\bibrangedash 44}
+    \field{title}{f-AnoGAN: Fast Unsupervised Anomaly Detection with Generative
+  Adversarial Networks}
+    \verb{url}
+    \verb https://app.dimensions.ai/details/publication/pub.1111824956
+    \endverb
+    \field{volume}{54}
+    \field{journaltitle}{Medical Image Analysis}
+    \field{year}{2019}
+  \endentry
+
+  \entry{Schlegl2017UnsupervisedAD}{inproceedings}{}
+    \name{author}{5}{}{%
+      {{hash=ST}{%
+         family={Schlegl},
+         familyi={S\bibinitperiod},
+         given={Thomas},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=SP}{%
+         family={Seeb{\"o}ck},
+         familyi={S\bibinitperiod},
+         given={Philipp},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=WSM}{%
+         family={Waldstein},
+         familyi={W\bibinitperiod},
+         given={Sebastian\bibnamedelima M.},
+         giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+      {{hash=SEU}{%
+         family={Schmidt-Erfurth},
+         familyi={S\bibinitperiod-E\bibinitperiod},
+         given={Ursula},
+         giveni={U\bibinitperiod},
+      }}%
+      {{hash=LG}{%
+         family={Langs},
+         familyi={L\bibinitperiod},
+         given={Georg},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{ST+2}
+    \strng{fullhash}{STSPWSMSEULG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{booktitle}{IPMI}
+    \field{title}{Unsupervised Anomaly Detection with Generative Adversarial
+  Networks to Guide Marker Discovery}
+    \field{year}{2017}
+  \endentry
+
+  \entry{sohrab2011basic}{book}{}
+    \name{author}{1}{}{%
+      {{hash=SH}{%
+         family={Sohrab},
+         familyi={S\bibinitperiod},
+         given={H.H.},
+         giveni={H\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Birkh{\"a}user Boston}%
+    }
+    \strng{namehash}{SH1}
+    \strng{fullhash}{SH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{isbn}{9780817682323}
+    \field{title}{Basic Real Analysis}
+    \verb{url}
+    \verb https://books.google.it/books?id=zjfaBwAAQBAJ
+    \endverb
+    \field{year}{2011}
+  \endentry
+
+  \entry{Srivastava2014DropoutAS}{article}{}
+    \name{author}{5}{}{%
+      {{hash=SN}{%
+         family={Srivastava},
+         familyi={S\bibinitperiod},
+         given={Nitish},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=HGE}{%
+         family={Hinton},
+         familyi={H\bibinitperiod},
+         given={Geoffrey\bibnamedelima E.},
+         giveni={G\bibinitperiod\bibinitdelim E\bibinitperiod},
+      }}%
+      {{hash=KA}{%
+         family={Krizhevsky},
+         familyi={K\bibinitperiod},
+         given={Alex},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=SI}{%
+         family={Sutskever},
+         familyi={S\bibinitperiod},
+         given={Ilya},
+         giveni={I\bibinitperiod},
+      }}%
+      {{hash=SRR}{%
+         family={Salakhutdinov},
+         familyi={S\bibinitperiod},
+         given={Ruslan\bibnamedelima R.},
+         giveni={R\bibinitperiod\bibinitdelim R\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SN+1}
+    \strng{fullhash}{SNHGEKASISRR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{pages}{1929\bibrangedash 1958}
+    \field{title}{Dropout: a simple way to prevent neural networks from
+  overfitting}
+    \field{volume}{15}
+    \field{journaltitle}{Journal of Machine Learning Research}
+    \field{year}{2014}
+  \endentry
+
+  \entry{UlIslam2018}{article}{}
+    \name{author}{3}{}{%
+      {{hash=UIR}{%
+         family={Ul\bibnamedelima Islam},
+         familyi={U\bibinitperiod\bibinitdelim I\bibinitperiod},
+         given={Raihan},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=HMS}{%
+         family={Hossain},
+         familyi={H\bibinitperiod},
+         given={Mohammad\bibnamedelima Shahadat},
+         giveni={M\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+      {{hash=AK}{%
+         family={Andersson},
+         familyi={A\bibinitperiod},
+         given={Karl},
+         giveni={K\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{UIRHMSAK1}
+    \strng{fullhash}{UIRHMSAK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{U}
+    \field{sortinithash}{U}
+    \verb{doi}
+    \verb 10.1007/s00500-016-2425-2
+    \endverb
+    \field{issn}{1433-7479}
+    \field{number}{5}
+    \field{pages}{1623\bibrangedash 1639}
+    \field{title}{A novel anomaly detection algorithm for sensor data under
+  uncertainty}
+    \verb{url}
+    \verb https://doi.org/10.1007/s00500-016-2425-2
+    \endverb
+    \field{volume}{22}
+    \field{journaltitle}{Soft Computing}
+    \field{year}{2018}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{Widrow2008AppendixGT}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=WB}{%
+         family={Widrow},
+         familyi={W\bibinitperiod},
+         given={Bernard},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=WE}{%
+         family={Walach},
+         familyi={W\bibinitperiod},
+         given={Eugene},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{WBWE1}
+    \strng{fullhash}{WBWE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \field{title}{Appendix G: Thirty Years of Adaptive Neural Networks:
+  Perceptron, Madaline, and Backpropagation}
+    \field{year}{2008}
+  \endentry
+
+  \entry{Yi2017DualGANUD}{article}{}
+    \name{author}{4}{}{%
+      {{hash=YZ}{%
+         family={Yi},
+         familyi={Y\bibinitperiod},
+         given={Zili},
+         giveni={Z\bibinitperiod},
+      }}%
+      {{hash=ZH}{%
+         family={Zhang},
+         familyi={Z\bibinitperiod},
+         given={Hao},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=TP}{%
+         family={Tan},
+         familyi={T\bibinitperiod},
+         given={Ping},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=GM}{%
+         family={Gong},
+         familyi={G\bibinitperiod},
+         given={Minglun},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{YZ+1}
+    \strng{fullhash}{YZZHTPGM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{Y}
+    \field{sortinithash}{Y}
+    \field{pages}{2868\bibrangedash 2876}
+    \field{title}{DualGAN: Unsupervised Dual Learning for Image-to-Image
+  Translation}
+    \field{journaltitle}{2017 IEEE International Conference on Computer Vision
+  (ICCV)}
+    \field{year}{2017}
+  \endentry
+
+  \entry{DBLP:journals/corr/abs-1812-02288}{article}{}
+    \name{author}{5}{}{%
+      {{hash=ZH}{%
+         family={Zenati},
+         familyi={Z\bibinitperiod},
+         given={Houssam},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=RM}{%
+         family={Romain},
+         familyi={R\bibinitperiod},
+         given={Manon},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=FCS}{%
+         family={Foo},
+         familyi={F\bibinitperiod},
+         given={Chuan\bibnamedelima Sheng},
+         giveni={C\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+      {{hash=LB}{%
+         family={Lecouat},
+         familyi={L\bibinitperiod},
+         given={Bruno},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=CVR}{%
+         family={Chandrasekhar},
+         familyi={C\bibinitperiod},
+         given={Vijay\bibnamedelima Ramaseshan},
+         giveni={V\bibinitperiod\bibinitdelim R\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{ZH+1}
+    \strng{fullhash}{ZHRMFCSLBCVR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{Z}
+    \field{sortinithash}{Z}
+    \verb{eprint}
+    \verb 1812.02288
+    \endverb
+    \field{title}{Adversarially Learned Anomaly Detection}
+    \verb{url}
+    \verb http://arxiv.org/abs/1812.02288
+    \endverb
+    \field{volume}{abs/1812.02288}
+    \field{journaltitle}{CoRR}
+    \field{eprinttype}{arXiv}
+    \field{year}{2018}
+  \endentry
+
+  \entry{Zhao2016EnergybasedGA}{article}{}
+    \name{author}{3}{}{%
+      {{hash=ZJJ}{%
+         family={Zhao},
+         familyi={Z\bibinitperiod},
+         given={Junbo\bibnamedelima Jake},
+         giveni={J\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=MM}{%
+         family={Mathieu},
+         familyi={M\bibinitperiod},
+         given={Micha{\"e}l},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=LY}{%
+         family={LeCun},
+         familyi={L\bibinitperiod},
+         given={Yann},
+         giveni={Y\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{ZJJMMLY1}
+    \strng{fullhash}{ZJJMMLY1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{Z}
+    \field{sortinithash}{Z}
+    \field{title}{Energy-based Generative Adversarial Network}
+    \field{volume}{abs/1609.03126}
+    \field{journaltitle}{CoRR}
+    \field{year}{2016}
+  \endentry
+
+  \entry{Zhu2017UnpairedIT}{article}{}
+    \name{author}{4}{}{%
+      {{hash=ZJY}{%
+         family={Zhu},
+         familyi={Z\bibinitperiod},
+         given={Jun-Yan},
+         giveni={J\bibinitperiod-Y\bibinitperiod},
+      }}%
+      {{hash=PT}{%
+         family={Park},
+         familyi={P\bibinitperiod},
+         given={Taesung},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=IP}{%
+         family={Isola},
+         familyi={I\bibinitperiod},
+         given={Phillip},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=EAA}{%
+         family={Efros},
+         familyi={E\bibinitperiod},
+         given={Alexei\bibnamedelima A.},
+         giveni={A\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{ZJY+1}
+    \strng{fullhash}{ZJYPTIPEAA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{Z}
+    \field{sortinithash}{Z}
+    \field{pages}{2242\bibrangedash 2251}
+    \field{title}{Unpaired Image-to-Image Translation Using Cycle-Consistent
+  Adversarial Networks}
+    \field{journaltitle}{2017 IEEE International Conference on Computer Vision
+  (ICCV)}
+    \field{year}{2017}
+  \endentry
+\enddatalist
+\endinput

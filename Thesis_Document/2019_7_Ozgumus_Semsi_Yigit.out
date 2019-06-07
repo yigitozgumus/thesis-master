@@ -1,0 +1,42 @@
+\BOOKMARK [0][-]{section*.4}{Contents}{}% 1
+\BOOKMARK [0][-]{section*.5}{List of Figures}{}% 2
+\BOOKMARK [0][-]{section*.6}{List of Tables}{}% 3
+\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 4
+\BOOKMARK [0][-]{chapter.2}{State of the Art}{}% 5
+\BOOKMARK [1][-]{section.2.1}{Anomaly Detection}{chapter.2}% 6
+\BOOKMARK [1][-]{section.2.2}{Architectural Components}{chapter.2}% 7
+\BOOKMARK [2][-]{subsection.2.2.1}{Generative Adversarial Networks}{section.2.2}% 8
+\BOOKMARK [2][-]{subsection.2.2.2}{Autoencoder Networks}{section.2.2}% 9
+\BOOKMARK [1][-]{section.2.3}{GAN Based Anomaly Detection Methods}{chapter.2}% 10
+\BOOKMARK [2][-]{subsection.2.3.1}{AnoGAN}{section.2.3}% 11
+\BOOKMARK [2][-]{subsection.2.3.2}{BiGAN and ALI}{section.2.3}% 12
+\BOOKMARK [2][-]{subsection.2.3.3}{ALAD}{section.2.3}% 13
+\BOOKMARK [3][-]{subsubsection.2.3.3.1}{Spectral Normalization}{subsection.2.3.3}% 14
+\BOOKMARK [3][-]{subsubsection.2.3.3.2}{Conditional Entropy \(ALICE Framework\)}{subsection.2.3.3}% 15
+\BOOKMARK [3][-]{subsubsection.2.3.3.3}{ALAD Architecture}{subsection.2.3.3}% 16
+\BOOKMARK [2][-]{subsection.2.3.4}{GANomaly \046 Skip-GANomaly}{section.2.3}% 17
+\BOOKMARK [0][-]{chapter.3}{Latest Developments}{}% 18
+\BOOKMARK [1][-]{section.3.1}{F-AnoGAN Framework}{chapter.3}% 19
+\BOOKMARK [1][-]{section.3.2}{Energy Based Generative Adversarial Networks}{chapter.3}% 20
+\BOOKMARK [0][-]{chapter.4}{Architectural Improvements}{}% 21
+\BOOKMARK [1][-]{section.4.1}{SEM Images Dataset}{chapter.4}% 22
+\BOOKMARK [1][-]{section.4.2}{Analysis of Aforementioned Approaches}{chapter.4}% 23
+\BOOKMARK [1][-]{section.4.3}{Encoded Energy Based Generative Adversarial Network}{chapter.4}% 24
+\BOOKMARK [1][-]{section.4.4}{Sequentially Encoded Energy Based Generative Adversarial Network}{chapter.4}% 25
+\BOOKMARK [0][-]{chapter.5}{Experimental Results }{}% 26
+\BOOKMARK [1][-]{section.5.1}{Experiment Settings}{chapter.5}% 27
+\BOOKMARK [2][-]{subsection.5.1.1}{Figure of Merit}{section.5.1}% 28
+\BOOKMARK [1][-]{section.5.2}{GAN Based Model Analysis}{chapter.5}% 29
+\BOOKMARK [1][-]{section.5.3}{AR Based Model Analysis}{chapter.5}% 30
+\BOOKMARK [1][-]{section.5.4}{Improved Model Analysis}{chapter.5}% 31
+\BOOKMARK [1][-]{section.5.5}{Discussion of Experiment Results}{chapter.5}% 32
+\BOOKMARK [0][-]{chapter.6}{Conclusion and Future Work}{}% 33
+\BOOKMARK [0][-]{appendix.A}{Model Implementation Details}{}% 34
+\BOOKMARK [1][-]{section.A.1}{AnoGAN Implementation}{appendix.A}% 35
+\BOOKMARK [1][-]{section.A.2}{BiGAN Implementation}{appendix.A}% 36
+\BOOKMARK [1][-]{section.A.3}{ALAD Implementation}{appendix.A}% 37
+\BOOKMARK [1][-]{section.A.4}{GANomaly Implementation}{appendix.A}% 38
+\BOOKMARK [1][-]{section.A.5}{Skip-GANomaly Implementation}{appendix.A}% 39
+\BOOKMARK [1][-]{section.A.6}{EBGAN Implementation}{appendix.A}% 40
+\BOOKMARK [1][-]{section.A.7}{SENCEBGAN Implementation}{appendix.A}% 41
+\BOOKMARK [0][-]{section*.34}{Bibliography}{}% 42

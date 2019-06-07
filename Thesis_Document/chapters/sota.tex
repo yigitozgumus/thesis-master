@@ -1,0 +1,1226 @@
+%!TEX root = ../2019_8_Ozgumus.tex
+\begingroup
+
+This chapter is dedicated to the exploration of state of the art approaches in the fields relevant
+to the thesis. The organization of the chapter is the following: Section 2.1 will define what
+anomaly detection is and explain different approaches towards its solution. Section 2.2 will explain
+what SEM image is, how it's acquired, define the anomaly detection problem in that context and
+explain state of the art methods that are used specific to this problem. Section 2.3 will give
+necessary background information about Generative Adversarial Networks (GAN) and Autoencoder
+Networks. First the principles behind how GANs work will be presented then the autoencoder network
+architecture will be explained. This section is particularly significant to relate how different
+architectures that uses these networks function. In section 2.4, variety of architectures that is
+developed for anomaly detection will be studied as state of the art. How they are implemented and
+how they work in practise will be described.
+
+\section{Anomaly Detection}
+
+Using the terminology of machine learning, anomaly detection can be defined as the task of
+classifying test data that differs in some respect from the data for the model that is availabla
+during training. \cite{Pimentel:2014:RRN:2588908.2589196} This definition correctly describes the
+task on the abstract level but does not clarify what anomaly actually is. Depending on the the
+application domain, anomalies can be referred to as outliers, novelties, discordant observations,
+exceptions, aberrations, surprises, peculiarities and
+contaminents.\cite{Chandola:2009:ADS:1541880.1541882} Sometimes these can be used interchangebly in
+the context. These distinctions in the definition are primarily relies not only on the features of
+the data such as its dimentional complexity, its continuity and its format, but also on what is
+considered an anomaly for that specific domain.This makes it harder to conceptualize the problem of
+anomaly detection with a general definition and a solution approach that can encompass all different
+domains.
+
+%In the rest of this section, I will explain different use cases for anomaly detection to show its
+%impact on a broad spectrum of problems then I will describe the main challenges for anomaly
+%detection referring to the previous paragraph. Lastly primary types of approaches will be discussed.
+In the rest of this section, I will explain different use cases for anomaly detection to show its
+impact on a broad spectrum of problems then the primary approach types to solve anomaly detection
+problem will be introduced.
+
+The categorization threshold to define different application domains is endless but the use of
+anomaly detection can be categorized down to these six general fields.
+\cite{Pimentel:2014:RRN:2588908.2589196}
+These are:
+\begin{itemize}
+    \item IT Sector 
+    \item Healthcare informatics, medical diagnostics and monitoring
+    \item Industrial Monitoring/ maintanence and damage detection
+    \item Image processing/ Video Survailance
+    \item Sensor Networks
+\end{itemize}
+
+\textbf{ IT Sector}
+
+Anomaly detection methods have a huge impact on the IT security systems, in which the objectives
+include network intrusion detection and fraud detection. \cite{Pimentel:2014:RRN:2588908.2589196}
+With the increased usage of computerized systems and the inclusion of the internet based services to
+our daily lives, maintainability and the availability of these systems became much more important.
+For systems like these, anomaly is considered as a priority because it indicates significant but
+rare events and can prompt to critical actions to be taken in a wide range of application domain.
+\cite{AHMED201619}. For example a malicious process in a server may show increased use of resource
+from time to time that may be spotted as a type of anomaly in the system resource use patterns or
+the unusual amount of traffic on the network may indicate an intruder attack. \cite{FERNANDES20161}
+\cite{JABEZ2015338} Another aspect of the increased use of internet is its impact on the e-commerce
+field and dramatically growing online payment systems. This also includes a migration to internet
+banking in favor of the convenience of technology. As a result, insurance and credit card frauds,
+scams towards phone and mobile data usage, and phishing attacks targeting financial transactions
+become more and more severe. \cite{finance_anomaly} In this context, behaviour of the consumer
+becomes the data. Transaction history, time spent between consecutive transactions and the
+geographic data can be used to construct a model to detect anomalies in the purchase patterns.
+
+\textbf{ Healthcare}
+
+Healthcare and medical diagnostics is another domain for anomaly detection. Detecting anomalies in
+the progression of the disease symptoms is a crucial factor for treatment monitoring.
+\cite{Schlegl2017UnsupervisedAD} To aid diagnostics, interpretation of the patient data is also an
+important task for anomaly detection. Ability to differentiate between the instrumentation or
+recording errors and the actual clinically relevant change that may indicate a symptom should also
+be present in these anomaly detection systems. \cite{Pimentel:2014:RRN:2588908.2589196}. Patient
+data may include tabular information like the age, weight, blood test results, heart rate or
+respiratory rate \cite{inproceedings_medical}\cite{Markou:2003:NDR:959414.959416} or medical image data
+\cite{Schlegl2017UnsupervisedAD}. 
+
+\textbf{ Industrial Monitoring}
+
+Novelty detection became a huge part of the industrial automation systems from the quality control
+of the manufacturing progress to the performance maintanence of the equipments. Materials that have
+a complicated and delicate manufacturing process like cpu wafers \cite{Kim:2012:MLN:2076800.2076903} and nanofibrous
+materials \cite{Napoletano_2018} may easily develop defects in the manufacturing pipeline.Therefore using
+anomaly detection is a viable option to reduce the wasted material and optimize the cost of
+producing the target product. Same principle also applies to the equipment used in these pipelines.
+Equipments and assets have the risk of deteorating over time due to the usage
+and wear \cite{Pimentel:2014:RRN:2588908.2589196}. For example heavy extraction machines that is used in the
+petroleum industry like turbomachines \cite{s150202774} needs constant supervision for damage
+prevention. 
+
+\textbf{ Image Processing}
+
+Image processsing methods has been used with anomaly detection methods extensively to detect novelty
+subjects or anomalies in the image or in a video stream. Detection in video data stream data is an
+important task for the surveilance systems that is used with the purpose of traffic control,
+security systems and search and rescue. \cite{image_anomaly} 
+
+\textbf{ Sensor Networks}
+
+With the improvements of the smart devices' involvement in our daily lives and the recent but promising developments
+in the field of internet of things, the definition of acquiring and processing data is evolved.
+Various types of sensors, especially wireless, are heavily used to collect huge amount of data to
+feed various systems such as surveillance, environmental monitoring, and disaster management.
+\cite{UlIslam2018} These sensors usually used to create a network distributed over a large area with
+one or depending on the scale multiple sink nodes responsible for gathering information from the
+other sensors. In these distributed systems, sensors are used to compute or predict information
+depending on the problem. However the accuracy of these computations or predictions depends
+primarily on the quality of the sensor measurements and with this scale the instrumentation error
+is unavoidable. That's why anomaly detection tasks usually deployed on these systems to observe
+sensory faults and prevent malicious attacks. \cite{Pimentel:2014:RRN:2588908.2589196} \cite{iot_anomaly}
+
+
+Variety of approaches that belong to different sub domains of the machine learning, statistics ,
+bayesian and information theory are used to solve anomaly detection problem for these aforementioned
+fields. All these different approaches in general tries to build a model or a representation of the
+training data which contains no anomalous samples (or very few) and assigns them an anomaly score or
+a label depending on the problem. At the inference stage, deviations from the constructed normality
+definition are detected using a predetermined anomaly threshold. These different approaches can be
+categorized into 5 main titles. These are:
+
+\begin{itemize}
+  \item Probabilistic Anomaly Detection Methods
+  \item Distance Based Anomaly Detection Methods
+  \item Domain Based Anomaly Detection Methods
+  \item Information Theoretic Anomaly Detection Methods
+  \item Reconstruction Based Anomaly Detection Methods  
+\end{itemize}
+
+Probabilistic approaches aim to estimate the generative probability density function of the data
+with the assumption that the input data is generated from an unknown probability distribution $D$,
+and learning this distribution gives us an idea about the representation of normality for the input
+data, training set. Anomaly (or novelty in some approaches) threshold then can be determined which has
+certain probabilistic interpretation and can be used to detect the anomaly on the inference stage.
+\cite{Pimentel:2014:RRN:2588908.2589196} Distance based methods are another type of modelling
+technique used to model the training data with a probability density function equivalent process.
+Including the K-Nearest neighbour based and clustering based methods, distance based methods rely on
+distance metrics between the data points to create a representation for normality. For example
+considering the K-NN aproach, data points in the training dataset are identified to have close
+neighbour points using the distance metrics while if a sample has a greater distance to the
+nearest normal point with a value above the determined anomaly threshold, that sample is identified
+as an anomaly. Domain based methods works by creating a boundry based on the structure of the
+training dataset. \cite{Pimentel:2014:RRN:2588908.2589196} These methods are usually insensitive to
+different sampling or the density properties because instead of learning the density of
+the data, the learn the boundary information to seperate the target class (anomalies) from the
+normal data. Support Vector Machines (SVM) are the popular example for this approach. Information
+theoretic anomaly detection methods computes the total information content that resides in the
+training dataset. The main assumption is that anomalous samples present in the data significantly
+modifies the information content of the assumed normal dataset. Metrics for this approach are
+calculated using the entirety of the dataset and the subset that triggers the biggest discrapancy is
+identified as the anomaly. 
+
+Finally reconstruction based approaches which also is the focus of this thesis, model the underlying
+representation of the data and reconstructs it. Using the original input and the reconstructed
+output, these models define a reconstruction error tailored to the nature of the problem and the
+type of data and measures this error with respect to certain anomaly threshold. Since the modelled
+underlying data has the features specific to the training dataset, when the anomalous sample is
+feeded through this pipeline, its representation and consequently its reconstruction will be made
+poorly hence giving a greater reconstruction error. In the later sections, state of the art
+generative adversarial network based frameworks that uses this approach will be introduced. How the
+reconstruction loss is computed and anomaly score is formed will be explained in each framework.
+
+% TODO Paragraph with other works that uses reconstruction to detect anomalies ?
+
+\section{Architectural Components}
+
+This section will explain the two main network types used in the state of the art anomaly detection
+frameworks in the following sections. Generative adversarial networks section will describe how the
+framework is formed, the intuition behind its adversarial training scheme. Autoencoder networks
+section will give an introductionary information to the subject and introduce different kinds of
+approaches that can be integrated into both the construction of the network and its training
+methodology. 
+
+\subsection{Generative Adversarial Networks}
+\label{sec:gan}
+
+One of the main objectives of the deep learning is to be able to create complex and high dimensional
+models that can capture the relations amongst the fundamental types of data that we perceive and be
+exposed to in our daily lives. This data can vary, it can be a visual information like an image,
+symbols in natural language or audio waveforms containing speech. Then we use these models to make
+machines make sense of the world we live in and exhibit what we call an intelligence.
+\cite{Bengio:2009:LDA:1658423.1658424}
+
+
+In the terms of statistical classification, also in machine learning ( that consequentially includes
+deep learning) the main two approaches are called discriminative and generative modelling.
+Discriminative models maps the rich, complex sensory data to a class label, target so to speak to
+perform the desired task. They try to learn the conditional probability distribution of the input
+data using the features of the data. The success behind this approach is the result of the
+improvements in the training, learning and generalization of these models. Backpropagation
+\cite{Widrow2008AppendixGT}, dropout \cite{Srivastava2014DropoutAS}, and rectified linear
+units\cite{Glorot2011DeepSR} are some of the examples of concepts that contribute to this success.
+
+Generative models in that regard did not show a considerable promise as opposed to discriminative
+models mainly because of the type of problem they try to solve and computational difficulties
+regards to that solution. The generative models try to estimate the joint probability distribution
+of the high dimensional sensory input data to be able to generate data similar to input and its
+label with some variations which can be thought as imaginative. The main difficulty resides in
+the probabilistic computations that are hard to control in the maximum likelihood estimation.
+\cite{Goodfellow:2014:GAN:2969033.2969125} \cite{pmlr-v5-salakhutdinov09a}
+
+Generative Adversarial Networks (GAN) are considered as one of the most significant breakthroughs in
+deep learning and generative modelling in the recent years. It is a framework that consists of two
+seperate modules. One of them is labelled as generator and the other is the discriminator. You can
+observe the example architecture in the figure \ref{fig:gan_network}. 
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=.9\textwidth]{gan}
+    \caption{GAN architecture overview}
+    \label{fig:gan_network}
+\end{figure}
+
+From this point on, I will use "image" to specify the type of the input and the target data because
+GAN frameworks are mainly designed to work with high dimensional spatial data like images so it will
+be consistent when explaining the theorem and also the central focus of the thesis is on the spatial
+data. 
+
+The power of this framework comes from the adversarial nature of the training process. Simply put,
+the goal of the generator network is to create images similar to the input data by capturing the
+data distribution using a probabilistic model. On the other hand discriminator tries to detect fake
+(generated) images that is generated by generator from the real input images. We can represent this
+intuition with the following two player minimax game with the value function $V(G,D)$ in equation \ref{eqn:gan_vgd}.
+\cite{Goodfellow:2014:GAN:2969033.2969125}
+\begin{align}
+    p_{\text{data}} (x) & : x \in \Omega_{X} \quad (\text{Distribution of the data})\\[5pt]
+    p_z (z) & : z \in \Omega_{Z} \quad (\text{Distribution of the noise}) \\[5pt]
+    \label{eqn:gan_vgd}
+    V(G, D) &= \mathbb{E}_{\boldsymbol{x} \sim p_{\text { data }}(\boldsymbol{x})}[\log D(\boldsymbol{x})]+\mathbb{E}_{\boldsymbol{z} \sim p_{\boldsymbol{z}}(\boldsymbol{z})}[\log (1-D(G(\boldsymbol{z})))]
+\end{align}
+
+The training objective criterion for the discriminator is to maximize the expected log-likelihood of
+classifying the input data as real. $p_{\text{data}}$ represents the distribution of the input.
+Since the generated data should be classified as fake by the discriminator, the output of the second
+term is flipped. The Generator's purpose is to "fool the discriminator". Hence its objective criterion
+is to minimize the expected log likelihood of discriminator classifying generated image sample as
+fake. We can interpret this equation as two seperate objective functions with different training
+criterions :
+\begin{align}
+    \min _{G} V(G, D)=& \mathbb{E}_{\boldsymbol{z} \sim p_{\boldsymbol{z}}(\boldsymbol{z})}[\log (1-D(G(\boldsymbol{z})))] \\[5pt]
+    \max _{D} V(G, D)=& \mathbb{E}_{\boldsymbol{x} \sim p_{\text { data }}(\boldsymbol{x})}[\log D(\boldsymbol{x})]+\mathbb{E}_{\boldsymbol{z} \sim p_{\boldsymbol{z}}(\boldsymbol{z})}[\log (1-D(G(\boldsymbol{z})))]
+\end{align}
+
+
+While this equation describes the relation between the two adversaries, it does not provide a
+definite explanation how this training objective finds equilibrium and whether that equilibrium also
+provides us with the optimal generator or not. For this analysis we will use bottom up approach and
+prove the theorem mentioned in the original GAN paper. \cite{Goodfellow:2014:GAN:2969033.2969125}
+
+\begin{theorem}
+\label{thr:gan}
+The global minimum of the virtual training criterion $C(G)$ is achieved iff $p_g = p_{\text{data}}$.
+At that point, $C(G)$ achieves the value $-log(4)$.
+\end{theorem} 
+
+We start by defining the term expected value of a function. 
+
+\begin{definition}
+    $E(f(x))$ of some function $f(x)$ with respect to  certain probability distribution
+$p(x)$ is called the expected value of a function and it is expressed like 
+\end{definition}
+ 
+\begin{equation}
+    \label{eqn:ev}
+    E_{x \sim p_x} = \int p(x) f(x) dx
+\end{equation}
+
+
+So the minimax game equation can be expressed like this: 
+\begin{equation}
+    \label{eqn:minmax_gan}
+    V( G, D) = \int_x p_{\text{data}}(\boldsymbol{x}) log(D(\boldsymbol{x})) dx + \int_z p_z(\boldsymbol{z}) log(1 - D(G(\boldsymbol{z}))) dz
+\end{equation}
+    
+
+For generator to sample an image good enough to fool the discriminator, framework needs to learn the
+implicitly created sample distribution $p_g$ by the generator $G$. Framework defines a prior noise
+distribution $z \sim p_z$, isotropic gaussian distribution with zero mean and unit variance to learn
+the distribution $p_g$ (Different distributions are also considered). Next we use the LOTUS theorem.
+
+\begin{theorem}
+Law of the unconscious statistician (LOTUS) theorem is used to compute the expected value of a 
+function $g(x)$ of a random variable $X$  when one knows the probability distribution of $X$ but 
+does not know the probability distribution of $g(x)$. \cite{ringner2009law}
+\end{theorem}
+
+The expected value of a function $g(x)$ then can be expressed like:
+\begin{equation}
+    \mathrm{E}[g(X)]=\sum_{x} g(x) f_{X}(x)  
+\end{equation}
+
+$f_{X}(x)$ being the proability distribution of the random variable $X$. 
+
+Using this law we can write the equation $V(G, D)$. 
+\begin{align}
+    z \sim p_z , \quad G(z) &= x, \quad x \sim p_g\\ 
+    V( G, D) &= \int_x p_{\text{data}}(\boldsymbol{x}) log(D(\boldsymbol{x})) + p_g(\boldsymbol{x}) log(1 - D(\boldsymbol{x})) dx
+\end{align}
+
+For the Discriminator D, the value of the training criterion should be maximized. That basically means the
+derivative of the function of this expected value expression should be equal to zero. We write the
+function by reversing the process of the equation \ref{eqn:ev}.
+\begin{align}
+    f( p_{\text{data}}, p_g) &= p_{\text{data}}(\boldsymbol{x}) \log(D(\boldsymbol{x})) + p_g(\boldsymbol{x}) \log(1 - D(\boldsymbol{x})) \\[5pt]
+    f^{\prime} &= p_{\text{data}}(\boldsymbol{x}) \frac{1}{D(\boldsymbol{x}) \ln(C)} - p_g(\boldsymbol{x}) \frac{1}{(1- D(\boldsymbol{x})) \ln(C)} \\[5pt]
+    f^{\prime} &= 0
+\end{align}
+\begin{align}
+    p_{\text{data}}(\boldsymbol{x}) (1- D(\boldsymbol{x})) \ln(C) &= p_g(\boldsymbol{x}) D(\boldsymbol{x}) \ln(C)\\[5pt]
+    (p_{\text{data}}(\boldsymbol{x}) +  p_g(\boldsymbol{x})) D(\boldsymbol{x}) &= p_{\text{data}}(\boldsymbol{x})\\[5pt]
+    D^{*}_G(\boldsymbol{x}) &= \frac{p_{\text{data}}(\boldsymbol{x})}{(p_{\text{data}}(\boldsymbol{x}) +  p_g(\boldsymbol{x}))}\label{eqn:opt_d}
+\end{align}
+
+This is the optimal discriminator $D$ with the fixed $G$. By deriving this value, we show that the
+maximum value the Discriminator can reach is the result of the equation \ref{eqn:opt_d}. Next, we reformulate our
+$V(G, D)$ to analyze for the training criterion of the generator $G$. 
+
+\begin{align}
+    C(G) &= \max _{D} V(G, D) \\[5pt]
+    & =\mathbb{E}_{\boldsymbol{x} \sim p_{\mathrm{data}}}\left[\log D_{G}^{*}(\boldsymbol{x})\right]+\mathbb{E}_{\boldsymbol{z} \sim p_{\boldsymbol{z}}}\left[\log \left(1-D_{G}^{*}(G(\boldsymbol{z}))\right)\right] \\[5pt]
+    & =\mathbb{E}_{\boldsymbol{x} \sim p_{\mathrm{data}}}\left[\log D_{G}^{*}(\boldsymbol{x})\right]+\mathbb{E}_{\boldsymbol{x} \sim p_{g}}\left[\log \left(1-D_{G}^{*}(\boldsymbol{x})\right)\right] \\[5pt]
+    & =\mathbb{E}_{\boldsymbol{x} \sim p_{\mathrm{data}}}\left[\log \frac{p_{\mathrm{data}}(\boldsymbol{x})}{P_{\mathrm{data}}(\boldsymbol{x})+p_{g}(\boldsymbol{x})}\right]+\mathbb{E}_{\boldsymbol{x} \sim p_{g}}\left[\log \frac{p_{g}(\boldsymbol{x})}{p_{\mathrm{data}}(\boldsymbol{x})+p_{g}(\boldsymbol{x})}\right] 
+\end{align}
+
+In the theorem the equality $ p_{\text{data}} = p_g$ is given. By applying this equality we get
+$D^{*}_G(\boldsymbol{x}) = \frac{1}{2}$. By putting this to our equation we get $$C(G) =
+\log(\frac{1}{2}) + \log(\frac{1}{2}) = - \log(4)$$. To verify that this value is indeed the global
+point for the equation we apply the following substraction: 
+\begin{multline}
+    \label{eqn:gan_optim_proof}
+    \begin{split}
+        C(G)-(-\log (4))  =\int p_{\text {data}}\left[\log \frac{p_{\text {data}}}{p_{\text {data}}+p_{g}}+\log 2\right]+\\ \int p_{g}\left[\log \frac{p_{g}}{p_{\text {data}}+p_{g}}+\log 2\right]
+    \end{split}\\[5pt]
+    C(G)-(-\log (4)) =\int p_{\text {data}}\left[\log \frac{2 p_{\text {data}}}{p_{\text {data}}+p_{g}}\right]+\int p_{g}\left[\log \frac{2 p_{g}}{p_{\text {data}}+p_{g}}\right]\\[5pt]
+    C(G)-(-\log (4)) =\int p_{\text {data}}\left[\log \frac{p_{\text {data}}}{\left(p_{\text {data}}+p_{g}\right) / 2}\right]+\int p_{g}\left[\log \frac{p_{g}}{\left(p_{\text {data}}+p_{g}\right) / 2}\right]
+\end{multline}
+
+To interpret this result we introduce 2 divergence definitions.
+\begin{definition}
+    The Kullback-Leibler divergence is the measure of how one probability distribution is different from
+    the other one. Its general definition is  
+\end{definition}
+.
+\begin{equation}
+    D_{K L}(P \| Q)=\int p(x) \log \frac{p(x)}{q(x)}
+\end{equation}
+
+More generally if $P$ and $Q$ are probability measures\footnotemark  over a dataset $X$, and measure
+$P$ is absolutely continous with respect the $Q$, then the Kullback-Leibler divergence can also be
+defined as in equation \ref{eqn:kl}
+
+\footnotetext{a probability measure is a real-valued function defined on a set of events in a probability space that satisfies measure properties such as \textit{countable additivity}\cite{Roussas:1614120}}
+
+\begin{equation}
+    \label{eqn:kl}
+    D_{\mathrm{KL}}(P \| Q)=\int_{\mathcal{X}} \log \left(\frac{d P}{d Q}\right) d P
+\end{equation}
+
+where $\frac{d P}{dQ} (f_{PQ})$ is the Radon-Nikodym derivative \cite{Bill86}. The defining property of
+radon-nikodym property that ties to the probability measure is that 
+\begin{equation}
+    \label{eqn:radon}
+    P(R) = \int_{R} f_{PQ} d Q
+\end{equation}
+
+The RN derivative $f_{PQ} : \Omega \mapsto \mathcal{R}_{\geq 0}$ is defined for any measures $P$ and
+$Q$ on a space $\Omega$ such that $P$ is absolutely continous with respect to $Q$. In other words,
+for any $ R \subseteq  \Omega : P(R) > 0 \implies Q(R) > 0$ . \cite{Bill86}
+
+% TODO more explanation and tidying up.
+\begin{definition}
+    
+Jensen-Shannon divergence is a measure of similarity between different probability
+distributions. Its major difference from the KL divergence is that it is always symmetric and it
+always has a non-negative value. The General definition is provided in equation \ref{eqn:jsd}.
+\end{definition}
+
+\begin{equation}
+    \label{eqn:jsd}
+    J S D(P \| Q)=\frac{1}{2} D_{K L}(P \| M)+\frac{1}{2} D_{K L}(Q \| M)
+\end{equation}
+
+Using this divergence measures we can rewrite our equation as this:
+\begin{align}
+    \label{eqn:gan_eqaul}
+    C(G)&=-\log (4)+K L\left(p_{\text { data }} \| \frac{p_{\text { data }}+p_{g}}{2}\right)+K L\left(p_{g} \| \frac{p_{\text { data }}+p_{g}}{2}\right) \\
+    C(G)&=-\log (4)+2 \cdot J S D\left(p_{\text { data }} \| p_{g}\right)
+\end{align}
+
+Considering Jensen-Shannon divergence is always non-negative and zero only when the distributions
+are identical, we can conclude the proof by stating that the global minimum point of $C^*(G) = -
+\log(4)$ is only achieved when $p_{\text{data}} = p_g$ .
+
+Intuition behind the adversarial training of this framework is important because all the subsequent
+approaches that will be discussed in the thesis that use GAN's fundamentally benefit from this
+framework to train their networks. As we will see in the BiGAN\ref{sec:bigan} and similar models, addition of
+Encoder Network changes the overall minimax game played by the adversary networks but underlying
+logic still depends on the value function of the GANs.
+
+\subsection{Autoencoder Networks}
+\label{sec:ae}
+ 
+Autoencoder network is a type of neural network that is trained to copy its input data to output.
+\cite{Goodfellow-et-al-2016} In its simplest form, it can be defined as a feedforward, non-
+recurrent network similar to multilayer perceptrons like in figure \ref{fig:ae_simple}.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=.75\textwidth]{ae_simple}
+    \caption{Simple Autoencoder architecture}
+    \label{fig:ae_simple}
+\end{figure}
+
+Internally, it consists of a hidden layer that describes the representation (code) learned from the
+input data. The connections from the hidden layer to the output layer transforms the hidden
+representation into the output data with the same dimensionality as the input. Rather that trying to
+reconstruct the given data, autoencoders are mainly used to learn the representation about the data
+to extract meaningful features and to reduce the dimensionality of the data while keeping the
+relevant information as an alternative to principal component analysis. 
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=.9\textwidth]{autoencoder}
+    \caption{Stacked Autoencoder with multiple layers}
+    \label{fig:ae_deep}
+\end{figure}
+
+With the increased complexity of the data present, this architecture can be extended to capture more
+complex feature representations by stacking similar but varying encoder and decoder layers on top of
+each other. Generally first layers learn the more basic features of the data and as the layers are
+stacked, more concentrated and complex features can be learnt in the code section of the
+autoencoder, the end of the encoder module. These architectures are mainly referred to as deep
+autoencoders because of the increased level of hidden layers present in the model depicted in figure
+\ref{fig:ae_deep}, just like in deep learning.
+
+Learning rationale of the autoencoders can be visualized with a pair of weighted layer computation
+functions like in the multilayer perceptrons. Assume that we have two transition functions that
+defines the relationship between the real data and the intermediate representation as the result of
+the encoder network:
+\begin{align*}
+    \phi : X \mapsto F \\
+    \psi : F \mapsto X     
+\end{align*}
+
+We can define the intermediate representation computation and the reconstruction of the input data
+with the following equations:
+\begin{align}  
+    z  &= \sigma( W x + b) ,\quad x \sim X \in \mathbb{R}^d ,\quad z \sim F \in \mathbb{R}^p \\
+    x'  &= \sigma' (W' z + b') 
+\end{align}
+
+The primal training objective for the autoencoders is the reconstruction loss. Depending on the
+architecture of the decoder or the desired task, the source of the parameters for the objective
+function can change. Autoencoder learns the representation of the data by minimizing the
+reconstruction loss. 
+\begin{align}
+    \label{eqn:ae_rec}
+  \phi, \psi & = \underset{\phi, \psi}{\text{argmin}} \norm{X - (\psi \circ \phi) X} \\  
+  L(x, x') & = \norm{x - x'}^2 = \norm{x - \sigma' (W' \sigma (W x + b) + b')}^2
+\end{align}
+
+With enough model capacity and training time, autoencoder might learn to copy the input perfectly.
+This reduces the functionality of the encoder-decoder modules to a identity function:
+$$
+ x \sim X \in \mathbb{R}^d, \quad \psi(\phi(x)) = x
+$$
+
+This is generally an unwanted outcome. To overcome this problem, autoencoders are designed to learn the
+representation of the data imperfectly. \cite{Goodfellow-et-al-2016} This is achieved by how the
+encoder module learns to compress the data to a meaningful representation. These 3 types of
+autoencoder models can give an idea about how the architecture can be changed to alter the amount of
+information that can be extracted from the data. These are:
+
+\begin{itemize}
+    \item Undercomplete Autoencoders
+    \item Regularized Autoencoders
+    \item Denoising Autoencoders
+    %\item Variational Autoencoders
+\end{itemize}
+
+The undercomplete autoencoders reduce the dimension size of the latent representation. Learning
+purposefully insufficient representation forces autoencoder to keep the most salient features about
+the data. The training objective function is the reconstruction loss which presented in equation
+\ref{eqn:ae_rec}. If the computation of this function is linear, then the autoencoder mimics the
+behaviour of a principal component analysis method. When the encoder transition $\phi$ and the
+decoder transition $\psi$ is designed to have a nonlinear nature, then the autoencoder has the
+ability to capture more complex reprensetation of the data, more powerful approach than the PCA. But
+this has the risk of again, causing autoencoder to replicate the input data perfectly and becoming
+an identity function $x' = \psi(\phi(x))$. Regularized autoencoders' design difference is that their
+latent representation layer usually has same or higher dimensional power (more neurons from the
+perspective of multilayer perceptrons). To acquire a similar performance like undercomplete
+variants, they regularize the loss function  with the potential properties of the data distribution
+such as robustness to the noise or the sparsity of the representation. Prioritizing which aspects of
+the data will be used as a regularizer term for the objective function is a task dependent problem.
+\cite{Goodfellow-et-al-2016}. Denoising autoencoders tries to solve a different problem to achieve a
+good representation. 
+$$
+\hat{x} = x + \epsilon : x \sim X \in \mathbb{R}^d ,\quad \epsilon \sim \mathcal{N}(\mu, \sigma^2)
+$$
+
+The input data is corrupted with some kind of noise, gaussian etc. Denoising autoencoders tries to
+reconstruct the data and undo this corruption by minimizing this updated loss with the difference of
+the $\hat{x}$
+$$
+L(x, \psi(\phi(\hat{x})))
+$$
+
+% konuyu bagla ve sonuc paragrafi
+\section{GAN Based Anomaly Detection Methods}
+
+% TODO This part should be a long paragraph with citations%
+Anomaly detection on spatial data using reconstruction based methods primarily converges around
+variational autoencoders and other stuff. The GAN based approaches in this field are relatively new.
+In the following subsections, I will explain the approaches that can be considered as the state of
+the art for this problem in the order of their complexity and incremental improvements. Each
+approach will be evaluated by their problem description, the type of data they use, model
+architecture and anomaly score computation. 
+
+\subsection{AnoGAN}
+
+AnoGAN model is the first approach that utilizes GANs for the anomaly detection task.
+\cite{Schlegl2017UnsupervisedAD} It focuses on the problem of detecting anomalous regions in optical
+coherence tomography images. Images containing retinal fluid or hyperreflective foci (indicator of
+disease progression in various retinal diseases) are identified as anomalous examples. The main
+motivation to use GANs to obtain a model which represents normal anatomical variability of the data
+is that previous supervised approaches involves training a model with a large dataset using
+annotated examples of known markers. Relying on vocabulary of markers may limit the predictive power
+of the model as the image contains much more relevant information than the marker and extensive
+supervised training is a problem because it means that every stage of the disease requires an
+extensive training with annotated examples such as labeled lesions which may decrease limit of
+exploiting imaging data for treatment decisions. \cite{Schlegl2017UnsupervisedAD}.
+
+%TODO Architecture Diagram
+The framework consists of 2 parts. First part is the GAN module, generator and discriminator
+networks. Their architecture is inspired by the original DCGAN
+architecture\cite{Radford2016UnsupervisedRL}. The objective function of the GAN is the same of the
+equation \ref{eqn:gan_vgd}. During the training the generator enhances its ability to generate more realistic
+retinal images while the discriminator learns the diagnose the real and the generated sample more
+efficiently. 
+
+The second part of the framework is about the inverse mapping of the noise to the image. We know
+from the GANs training procedure that when the adversarial training is completed, the generator
+network has learnt the distribution $p_g$ that is theoretically very similar to the input data
+distribution $p_{\text{data}}$. ( I state "theoretically" explicitly because depending on the
+configuration of the GAN and the data that is used, this may differ significantly in practise. This
+aspect of the learning will be mentioned in the latter approaches.) Even though with the trained
+generator, 
+$$
+G(z) = z \mapsto x,x \sim p_{\text{data}}
+$$
+
+the GAN framework does not learn the inverse mapping from the image to the noise. AnoGAN framework
+aims to find the noise sample $z\prime$ from the query image (normal or anomalous) such that the
+generated image $G(z\prime)$ is visually the most similar one to the query image. This is essential
+for the anomaly detection task. $z\prime$ is sampled randomly as initialization. Then the
+$G(z\prime)$ is computed and based on the defined loss function gradients the coefficients of
+$z\prime$ is updated using backpropagation. This procedure is repeated for a number of epochs to
+obtain the final value of the $z\prime$. 
+
+The loss function for the inverse mapping is defined as the combination of two seperate losses.
+Residual loss is responsible for enforcing visual similarity between the generated image
+$G(z\prime)$ and the query image $x$.
+\begin{equation}
+    \label{eqn:anogan_rl}
+    L_R (z_{\gamma}) = \sum \norm{ x - G(z_{\gamma})}
+\end{equation} 
+Discrimination loss on the other hand enforces the
+generated image $G(z\prime)$ to lie on the manifold $X$ of image $x$.
+\begin{equation}
+    \label{eqn:anogan_dl}
+    L_D (z_{\gamma}) = \sum  \norm{f(x) - f(G(z_{\gamma})}
+\end{equation}
+
+There are two different implementation for the discriminaton loss. One with sigmoid cross entropy
+which is from the original GAN implementation \cite{Goodfellow:2014:GAN:2969033.2969125} and one
+with feature matching \cite{fm} which uses the last layer of the discriminator rather than the
+output to compute the loss. Using this loss allows them to use discriminator not as a classifier but
+as a feature extractor. Using both residual and discriminaton loss, the total loss function is
+defined as :
+$$L(z_{\gamma}) = (1 - \lambda ) \times L_{R}(\boldsymbol{z_{\theta}}) + \lambda \times
+L_{D}(\boldsymbol{z_{\gamma}})$$
+
+Only the coefficients of $z$ is adapted via backpropagation. The trained weights of the generator
+and discriminator are fixed in this stage. \cite{Schlegl2017UnsupervisedAD}
+
+The Anomaly detection task uses same loss functions to compute the anomaly score. 
+$$A(x) = (1 - \lambda ) \times R(\boldsymbol{x}) + \lambda \times D(\boldsymbol{x}) $$
+
+The $R(x)$ is the residual score value and the $D(x)$ is the discriminaton score value at the last
+update iteration of the inverse mapping procedure, respectively. The model outputs a larger anomaly
+score $A(x)$ for anomalous samples though smaller score means that very similar image is seen during
+the training of the GAN. 
+
+This model is the first model that integrates generative adversarial networks to an anomaly
+detection framework. The mapping from latent representation to image data is completely dependent on
+the architecture of the GAN and its training parameters. The disadvantageous aspect of this approach
+is the inference. For each query image framework approximates the latent representation vector using
+backpropagation steps which makes the whole process significantly slow compared to the other
+approaches. Improvements to this framework is discussed in the Latest Developements chapter
+(\ref{sec:fanogan}). The experiment results and the implementation details will be covered in
+chapter \ref{chap:expres}.
+
+\subsection{BiGAN and ALI}
+\label{sec:bigan}
+
+ BiGAN ( Bidirectional Generative adversarial Networks) \cite{Donahue2017AdversarialFL} and ALI
+ (Adversarially Learned Inference) \cite{Dumoulin2017AdversariallyLI} are two models that
+ independent from each other but focuses on the same problem. They investigate to acquire efficient
+ inference method from data to latent space by using encoders in the adversarial training framework
+ of GANs. They emphasize learning the inverse mapping for the auxilary supervised tasks such as
+ classification, segmentation and discrimination. The only difference between the models is that the
+ BiGAN uses a deterministic network for the encoder while ALI uses a stochastic network. I will
+ first briefly explain the original architecture of the ALI and continue to present the framework in
+ detail using BiGAN instead since their explanation for the model is more consistent with the GAN
+ framework. Furthermore I will discuss how this architecture can be used for anomaly detection. In
+ the original papers, anomaly detection has not been explored as an auxilary supervised task but the
+ later models like in section \ref{sec:alad} or in section \ref{sec:ganomaly}, used these
+ architectures as a state of the art comparison in terms of both foundation and performance measure
+ hence their use of anomaly detection will also be discussed.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=.9\textwidth]{aligan}
+    \caption{ALI architecture overview}
+    \label{fig:aligan_model}
+\end{figure}
+
+Aligan architecture is depicted as a generator and a discriminator in figure \ref{fig:aligan_model}.
+The significant change in ALI is that the generator is the combination of decoder network and an
+encoder network. Encoder represents the joint distribution $p_{E}(x, z)$ which has the marginal
+$p_{\text{data}(x)}$ and decoder represents the joint distribution $p_{D}(x, z)$ with the marginal
+$p_z(z)$ which represents the factorized noise distribution (generally $\mathcal{N}(0, 1)$). The
+objective function of the ALI is to match these two joint distributions. Successing in this goal
+also ensures the match of the marginals and the conditional distributions $p(z | x)$ and $p(x | z)$
+. Discriminator is also modified to support this new objective function. It is trained to
+distinguish between the joint pairs  $(x, \hat{z} = G_{E}(x))$ and $(\hat{x} = G_{D}(z), z)$ as data
+and noise.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=.9\textwidth]{bigan}
+    \caption{BiGAN architecture overview}
+    \label{fig:bigan_model}
+\end{figure}
+
+% TODO stochastic deterministic farkini bir cumle ile acikla.
+BiGAN architecture model is presented in figure \ref{fig:bigan_model}. The architectures are
+theoretically identical with the exception of the encoder network choice in practise. BiGAN
+experiments are conducted with a deterministic network whilst ALI framework used a stochastic
+network. Apart from the generator, BiGAN also trains the encoder network in an adversarial manner.
+Same objective function used in GAN provides the relationship between the generator and encoder that
+$G = E^{-1}$ and vice versa. This invertibility is the key aspect of the model and the other
+frameworks to provide an efficient inference with reliable sampling. We Know from the section
+\ref{sec:gan} that: 
+$$
+G : \Omega_{z} \mapsto \Omega_{x}
+$$
+
+We define the Encoder with the reverse of that transition:
+$$
+E : \Omega_{x} \mapsto \Omega_{z}
+$$
+
+Since this framework accepts the networks as deterministic we also redefine the distributions for
+generator and encoder networks:
+\begin{align*}
+    p_G(x | z) & = \delta (x - G(z)) \\
+    p_E(z | x) & = \delta (z - E(x))
+\end{align*}
+
+The objective function of the framework can be characterized as:
+\begin{equation}
+    \min _{G, E} \max _{D} V(D, E, G)
+\end{equation}
+ 
+where
+\begin{multline}
+    \label{eqn:bigan_v}
+V(D, E, G) :=\mathbb{E}_{\mathbf{x} \sim p_{\mathbf{X}}}  \underbrace{\left[ \mathbb{E}_{\mathbf{z} \sim p_{E}(\cdot | \mathbf{x})}[\log D(\mathbf{x}, \mathbf{z})] \right]}_{\log D(\mathbf{x}, E(\mathbf{x}))} + \\ \mathbb{E}_{\mathbf{z} \sim p_{\mathbf{Z}}} \underbrace{  \left[ \mathbb{E}_{\mathbf{x} \sim p_{G}(\cdot | \mathbf{z})}[\log (1-D(\mathbf{x}, \mathbf{z}))] \right]}_{\log (1-D(G(\mathbf{z}), \mathbf{z}))}
+\end{multline}
+
+To prove that the encoder is the inverse of the generator, optimal discriminator needs to be
+determined.\cite{Donahue2017AdversarialFL} The joint distributions of the generator and encoder can
+be illustrated s the marginals of the data and the noise and related conditional probability
+distributions:
+\begin{align}
+    \label{eqn:bigan_gz}
+    p_{GZ} (x, z ) &:= p_G(x | z) p_{Z} (z) \\[5pt] 
+    \label{eqn:bigan_ex}
+    p_{EX} (x, z ) &:= p_E(z | x) p_{X} (x) 
+\end{align}
+
+The joint latent space and the data for the problem can also be illustrated as a joint
+representation.
+$$
+\Omega := \Omega_{X} \times \Omega_{Z}
+$$
+
+ For the region $R \subseteq \Omega$ probability
+ measures\cite{RePEc:eee:csdana:v:20:y:1995:i:6:p:703-702} of encoder and generator is defined in
+ equation \ref{eqn:prob_measure1} and \ref{eqn:prob_measure2} respectively.\cite{Donahue2017AdversarialFL}
+
+ \begin{align}
+    \begin{split}\label{eqn:prob_measure1}
+    P_{E \mathbf{X}}(R)  :={}&\int_{\Omega} p_{E \mathbf{X}}(\mathbf{x}, \mathbf{z})
+    \mathbf{1\footnotemark}_{[(\mathbf{x}, \mathbf{z}) \in R]} \mathrm{d}(\mathbf{x}, \mathbf{z})= \\ 
+    & \quad \int_{\Omega \mathbf{x}} p_{\mathbf{X}}(\mathbf{x}) \int_{\Omega \mathbf{z}} p_{E}(\mathbf{z} | \mathbf{x})
+    \mathbf{1}_{[(\mathbf{x}, \mathbf{z}) \in R]} \mathrm{d} \mathbf{z} \mathrm{d} \mathbf{x}       
+    \end{split}\\
+    {}&=\int_{\Omega_{\mathbf{X}}} p_{\mathbf{X}}(\mathbf{x})\left(\int_{\Omega_{\mathbf{Z}}} \delta(\mathbf{z}-E(\mathbf{x})) \mathbf{1}_{[(\mathbf{x}, \mathbf{z}) \in R]} \mathrm{d} \mathbf{z}\right) \mathrm{d} \mathbf{x} \\[5pt]
+    {}& =\int_{\Omega_{\mathbf{X}}} p_{\mathbf{X}}(\mathbf{x}) \mathbf{1}_{[(\mathbf{x}, E(\mathbf{x})) \in R]} \mathrm{d} \mathbf{x} \\[5pt]
+    \begin{split}\label{eqn:prob_measure2}
+    P_{G \mathbf{Z}}(R) :={}&\int_{\Omega} p_{G \mathbf{Z}}(\mathbf{x}, \mathbf{z}) 
+    \mathbf{1}_{[(\mathbf{x},\mathbf{z}) \in R]} \mathrm{d}(\mathbf{x}, \mathbf{z})= \\ 
+    & \quad \int_{\Omega_{\mathbf{Z}}} p_{\mathbf{Z}}(\mathbf{z}) \int_{\Omega_{\mathbf{X}}} p_{G}(\mathbf{x} | \mathbf{z})
+    \mathbf{1}_{[(\mathbf{x}, \mathbf{z}) \in R]} \mathrm{d} \mathbf{x} \mathrm{d} \mathbf{z} 
+    \end{split}\\
+    {}&=\int_{\Omega_{\mathbf{Z}}} p_{\mathbf{Z}}(\mathbf{z})\left(\int_{\Omega_{\mathbf{X}}} \delta(\mathbf{x}-G(\mathbf{z})) \mathbf{1}_{[(\mathbf{x}, \mathbf{z}) \in R]} \mathrm{d} \mathbf{x}\right) \mathrm{d} \mathbf{z} \\[5pt]
+    {}& =\int_{\Omega_{\mathbf{Z}}} p_{\mathbf{Z}}(\mathbf{z}) \mathbf{1}_{[(G(\mathbf{z}), \mathbf{z}) \in R]} \mathrm{d} \mathbf{z}
+\end{align}        
+\footnotetext{ Indicator function is a type of characteristic function that is used to indicate a
+membership on a subset $X$. It is denoted with bold \textbf{1} symbol.}  
+
+Probability measures over regions on the image data $R_X \subseteq \Omega_{X}$ and the latent noise
+$R_Z \subseteq \Omega_{Z}$ can be similarly defined.
+
+\begin{align}
+    P_{\mathbf{X}}\left(R_{\mathbf{X}}\right) :=&\int_{\Omega_{\mathbf{X}}} p_{\mathbf{X}}(\mathbf{x}) \mathbf{1}_{\left[\mathbf{x} \in R_{\mathbf{X}}\right]} \mathrm{d} \mathbf{x} \\[5pt]
+    P_{\mathbf{X}}\left(R_{\mathbf{X}}\right) :=&\int_{\Omega_{\mathbf{X}}} p_{\mathbf{X}}(\mathbf{x}) \mathbf{1}_{\left[\mathbf{x} \in R_{\mathbf{X}}\right]} \mathrm{d} \mathbf{x}
+\end{align}
+
+The optimal discriminator follows the same derivation from the GAN framework
+\cite{Goodfellow:2014:GAN:2969033.2969125}. The Objective equation \ref{eqn:bigan_v} can be reduced
+to the Jensen-Shannon divergence between joint distributions $P_{E\mathbf{X}}$ and $P_{G\mathbf{Z}}$
+with the proof of the following propositions from the BiGAN \cite{Donahue2017AdversarialFL}.
+
+\begin{prop}
+    \label{prop:bigan_1}
+    For any $E$ and $G$, the optimal discriminator $D^*_{EG} := \\ \underset{D}{\text{argmax}}  V(D, E,
+    G)$ is the Radon-Nikodym derivative $f_{EG} := \frac{dP_{E\mathbf{X}}}{dP_{E\mathbf{X}} +
+    dP_{G\mathbf{Z}}}  : \Omega  \mapsto [0, 1]$ of measure $P_{E\mathbf{X}}$ with respect to measure
+    $ dP_{E\mathbf{X}} + dP_{G\mathbf{Z}}$.
+\end{prop}
+
+\begin{prop}
+    \label{prop:bigan_2}
+  The encoder and generator's objective for an optimal discriminator $C(E, G):= \underset{D}{max}
+  V(D, E, G) = V(D^*_{EG}, E, G)$ can be rewritten in terms of the Jensen-Shannon divergence between
+  the measures $P_{EX}$ and $P_{GZ}$ as $C(E, G) = 2 D_{JS} (P_{E\mathbf{X}} \parallel P_{G\mathbf{Z}}) -
+  \log 4$    
+\end{prop}
+
+% Proposition proving
+Discriminator is trained with both the encoder and generator network output. Therefore it is
+rational to assume that if we were to define a probability measure for discriminator . So we let $P_{EG}$
+be the average of the $P_{E\mathbf{X}}$ and $P_{G\mathbf{Z}}$. 
+\begin{equation}
+  P_{EG} = \frac{P_{E\mathbf{X}} + P_{G\mathbf{Z}}}{2}  
+\end{equation}
+
+Since both $P_{E\mathbf{X}}$ and $P_{G\mathbf{Z}}$ are continous with respect to the $P_{EG}$, the
+relationship of RN derivaties of $f_{EG}$ and $f_{GE}$ is defined accordingly:
+\begin{align}
+  f_{EG} :=& \frac{ d P_{E\mathbf{X}} }{ d P_{E\mathbf{X}} + d P_{G\mathbf{Z}}} \\[5pt]
+  f_{GE} :=& \frac{ d P_{G\mathbf{Z}} }{ d P_{E\mathbf{X}} + d P_{G\mathbf{Z}}} \\[5pt]
+  f_{EG} + f_{GE} :=   \frac{ d P_{G\mathbf{Z}} }{ d P_{E\mathbf{X}} + d P_{G\mathbf{Z}}} &+ \frac{ d P_{E\mathbf{X}} }{ d P_{E\mathbf{X}} + d P_{G\mathbf{Z}}} = \frac{ d( P_{G\mathbf{Z}} + P_{E\mathbf{X}}) }{ d( P_{G\mathbf{Z}} + P_{E\mathbf{X}} ) } = 1 
+\end{align}
+
+Using the property of RN derivative (equation \ref{eqn:radon}) we can transform the expected value
+function and rewrite the objective function of the BiGAN with a single probability
+measure.\cite{Donahue2017AdversarialFL} \cite{Goodfellow:2014:GAN:2969033.2969125}
+\begin{equation}
+    \label{eqn:transform}
+    \mathbb{E}_{\mathbf{x} \sim P}[g(\mathbf{x})]=\int_{\Omega} g \mathrm{d} P=\int_{\Omega} g \frac{\mathrm{d} P}{\mathrm{d} Q} \mathrm{d} Q=\int_{\Omega} g f_{P Q} \mathrm{d} Q=\mathbb{E}_{\mathbf{x} \sim Q}\left[f_{P Q}(\mathbf{x}) g(\mathbf{x})\right]
+    %\caption{expression change of expected value computation with a different distribution}
+\end{equation}
+We start by rewriting the original objective function with the joint probability distributions.
+\begin{equation}
+    V(D, E, G) = \mathbb{E}_{(\mathbf{x}, \mathbf{z}) \sim P_{E \mathbf{X}}}[\log D(\mathbf{x}, \mathbf{z})]+\mathbb{E}_{(\mathbf{x}, \mathbf{z}) \sim P_{G \mathbf{Z}}}[\log (1-D(\mathbf{x}, \mathbf{z}))] 
+\end{equation}
+
+Then the transformation described in equation \ref{eqn:transform} is applied.
+\begin{equation}
+    =\mathbb{E}_{(\mathbf{x}, \mathbf{z}) \sim P_{E G}}  [ \underbrace{2 f_{E G}}_{\frac{\mathrm{d} P_{E X}}{\mathrm{d} P_{E G}}}(\mathbf{x}, \mathbf{z}) \log D(\mathbf{x}, \mathbf{z})] +\mathbb{E}_{(\mathbf{x}, \mathbf{z}) \sim P_{E G}}[\underbrace{2 f_{G E}}_{\frac{\mathrm{d} P_{G Z}}{\mathrm{d} P_{E G}}}(\mathbf{x}, \mathbf{z}) \log (1-D(\mathbf{x}, \mathbf{z}))]
+\end{equation}
+
+The final stage of the equation falls into a type of function $ f(a,y) = a\log y + (1 -a) \log(1-y)$
+\cite{Donahue2017AdversarialFL} which provides $\underset{y}{argmax} f(a,y) = a\ \text{ for any }\ a
+\in [0,1]$. Thus the optimal Discriminator $D^*_{EG} = f_{EG}$. That proves the first proposition. 
+\begin{align}
+    &=2 \mathbb{E}_{(\mathbf{x}, \mathbf{z}) \sim P_{E G}}\left[f_{E G}(\mathbf{x}, \mathbf{z}) \log D(\mathbf{x}, \mathbf{z})+f_{G E}(\mathbf{x}, \mathbf{z}) \log (1-D(\mathbf{x}, \mathbf{z}))\right] \\[5pt]
+    &=2 \mathbb{E}_{(\mathbf{x}, \mathbf{z}) \sim P_{E G}}\left[f_{E G}(\mathbf{x}, \mathbf{z}) \log D(\mathbf{x}, \mathbf{z})+\left(1-f_{E G}(\mathbf{x}, \mathbf{z})\right) \log (1-D(\mathbf{x}, \mathbf{z}))\right]
+\end{align}
+
+Second proposition can be proved with the same approach from
+GAN\cite{Goodfellow:2014:GAN:2969033.2969125} using the connection acquired from the first
+proposition. \cite{Donahue2017AdversarialFL}
+
+First the objective equation is rewritten with the optimal discriminator and its equivalent RN
+derivative. \cite{Donahue2017AdversarialFL}
+\begin{align}
+    C(E, G)=&\max _{D} V(D, E, G)=V\left(D_{E G}^{*}, E, G\right) \\[5pt]
+    & =\mathbb{E}_{(\mathbf{x}, \mathbf{z}) \sim P_{E \mathbf{X}}}\left[\log D_{E G}^{*}(\mathbf{x}, \mathbf{z})\right]+\mathbb{E}_{(\mathbf{x}, \mathbf{z}) \sim P_{G \mathbf{Z}}}\left[\log \left(1-D_{E G}^{*}(\mathbf{x}, \mathbf{z})\right)\right] \\[5pt]
+    & =\mathbb{E}_{(\mathbf{x}, \mathbf{z}) \sim P_{E \mathbf{X}}}\left[\log f_{E G}(\mathbf{x}, \mathbf{z})\right]+\mathbb{E}_{(\mathbf{x}, \mathbf{z}) \sim P_{G \mathbf{Z}}}\left[\log f_{G E}(\mathbf{x}, \mathbf{z})\right]
+\end{align}
+
+Then addition - subtraction of $\log4$ is applied following the equation \ref{eqn:gan_optim_proof}
+to interpret the result as Jensen-Shannon divergence, hence proving the second proposition.
+\begin{align}
+    &=\mathbb{E}_{(\mathbf{x}, \mathbf{z}) \sim P_{E \mathbf{X}}}\left[\log \left(2 f_{E G}(\mathbf{x}, \mathbf{z})\right)\right]+\mathbb{E}_{(\mathbf{x}, \mathbf{z}) \sim P_{G} \mathbf{z}}\left[\log \left(2 f_{G E}(\mathbf{x}, \mathbf{z})\right)\right]-\log 4 \\[5pt]
+    & =\mathrm{D}_{\mathrm{KL}}\left(P_{E \mathbf{X}} \| P_{E G}\right)+\mathrm{D}_{\mathrm{KL}}\left(P_{G \mathbf{Z}} \| P_{E G}\right)-\log 4 \\[5pt]
+    &=\mathrm{D}_{\mathrm{KL}}\left(P_{E \mathbf{X}}| | \frac{P_{E \mathbf{X}}+P_{G \mathbf{Z}}}{2}\right)+\mathrm{D}_{\mathrm{KL}}\left(P_{G \mathbf{Z}}| | \frac{P_{E \mathbf{X}}+P_{G \mathbf{Z}}}{2}\right)-\log 4 \\[5pt]
+    & =2 \mathrm{D}_{\mathrm{JS}}\left(P_{E \mathbf{X}} \| P_{G \mathbf{Z}}\right)-\log 4 . \square
+\end{align}
+
+The proposition \ref{prop:bigan_2} allows us to characterize the objective function of the BiGAN in
+terms of the Jensen-Shannon divergence but implicitly it also proves just like in equation
+\ref{eqn:gan_eqaul} that the global minimum of the training criterion is only achieved with the
+equality of the probability measures $P_{E\mathbf{X}}$ and $P_{G\mathbf{Z}}$. Consequentailly this
+gives the optimality condition for both encoder and generator. 
+
+\begin{theorem}
+    \label{th:bigan_inv}
+    if $E$ and $G$ are an optimal encoder and generator, then $E = G^{-1}$ almost everywhere; that is,
+    $G(E(x)) = x$ for $P_X$ almost every $x \in \Omega_x$, and $E(G(z)) = z$ for $P_z$, almost every
+    $z \in \Omega_z$. \cite{Donahue2017AdversarialFL}
+\end{theorem}
+
+The inversion property of the BiGAN framework is dependent on the factor of $P_{E\mathbf{X}}$ being
+equal to $P_{G\mathbf{Z}}$ in the optimal state. Let $R_{X}^{0}$ be the region that the
+reconstructed image from the encoded noise is not equal to the input image and let $R^{0}$ be the
+region for the data, noise pairs which the data is also a member of the $R^{0}_{X}$. Using the
+optimal encoder and decoder, it can be proven that the probability measure for the region
+$R^{0}_{X}$ is zero, meaning that for almost every $x$ in the region $\Omega_x$, $G(E(x)) = x$ and
+vice versa.
+
+
+\begin{align}
+    R^{0}_{X} :=& \{x \in \Omega_x : x \neq G(E(x))\} \\[5pt]
+    R^{0} :=& \{(x,z) \in \Omega : \mathbf{z} = E(x) \land x \in R^{0}_{X}\}\\[5pt]
+    P_{\mathbf{X}}\left(R_{\mathbf{X}}^{0}\right) &=\int_{\Omega_{\mathbf{X}}} p_{\mathbf{X}}(\mathbf{x}) \mathbf{1}_{\left[\mathbf{x} \in R_{\mathbf{x}}^{0}\right.} ] \mathrm{d} \mathbf{x} \\[5pt]
+    &=\int_{\Omega_{\mathbf{X}}} p_{\mathbf{X}}(\mathbf{x}) \mathbf{1}_{\left[(\mathbf{x}, E(\mathbf{x})) \in R^{0}\right]} \mathrm{d} \mathbf{x} \\[5pt]
+    & =P_{E \mathbf{X}}\left(R^{0}\right)\\[5pt]
+    & =P_{G \mathbf{Z}}\left(R^{0}\right)\\[5pt]
+    & =\int_{\Omega_{\mathbf{Z}}} p_{\mathbf{Z}}(\mathbf{z}) \mathbf{1}_{\left[(G(\mathbf{z}), \mathbf{z}) \in R^{0}\right]} \mathrm{d} \mathbf{z}\\[5pt]
+    & =\int_{\Omega_{\mathbf{Z}}} p_{\mathbf{Z}}(\mathbf{z}) \mathbf{1}\left[\mathbf{z}=E(G(\mathbf{z})) \wedge G(\mathbf{z}) \in R_{\mathbf{X}}^{0}\right] \mathrm{d} \mathbf{z}\\[5pt]
+    & =\int_{\Omega_{\mathbf{Z}}} \underbrace{p_{\mathbf{Z}}(\mathbf{z}) \quad \mathbf{1}_{[\mathbf{z}=E(G(\mathbf{z})) \wedge G(\mathbf{z}) \neq G(E(G(\mathbf{z})))]}}_{=0 \text { for any } \mathbf{z}, \text { as } \mathbf{z}=E(G(\mathbf{z})) \Longrightarrow G(\mathbf{z})=G(E(G(\mathbf{z})))} \mathrm{d} \mathbf{z}\\[5pt]
+    &= 0. \square  \\[5pt]
+\end{align}
+
+Training of BiGAN framework is implemented using the same adversarial process of GANs. Encoder and
+generator network are trained together since they both try to minimize the objective. Each iteration
+is divied into two parts. First the discriminator is trained using the outputs from the encoder and
+generator with fixed weights, pushing the gradient of the function towards a positive step. Also the
+parameters of discriminator $\theta_D$ is updated. Then $\theta_E$ and $\theta_G$ the parameters of
+encoder and generator are updated concurrently with a negative direction in the gradient of the
+objective function. \cite{Donahue2017AdversarialFL}
+
+Loss functions for the training optimization and Anomaly score computation differs in terms of the
+type of approach, different from AnoGAN\cite{Schlegl2017UnsupervisedAD}. AnoGAN framework used the
+combination of the reconstruction loss (equation \ref{eqn:anogan_rl}) and the discrimination loss
+(equation \ref{eqn:anogan_dl}) both to infer $z$ from the query image and to compute the anomaly
+score. BiGAN framework's encoder is trained with the kind of function that is used to train the
+generator, sigmoid cross entropy. The advantage of the BiGAN is the reduced inference time to
+compute the anomaly score because the inferred noise from the query image $\hat{x}$ is the output
+from the generator $\hat{z} = E(\hat{x})$. 
+
+Anomaly score computation of BiGAN however, is the same approach used in AnoGAN. It uses a
+combination of the discriminaton loss and a reconstruction loss. The degree of norms used in the
+computation differs in the experiment stage to observe the behavior of the anomaly score. The
+Anomalous samples of the test dataset is determined by accepting the anomaly score that is greater
+then a predetermined threshold. This varies depending on the type of dataset and the dimensional
+complexity of the dataset the framework trained on.
+% model implementation -> Later
+
+
+\subsection{ALAD}
+\label{sec:alad}
+
+Adversarially Learned Anomaly Detection, or ALAD \cite{DBLP:journals/corr/abs-1812-02288} is a
+framework designed for the anomaly detection task. It builds upon the idea of AnoGAN, using the base
+architecture from the AliGAN and BiGAN with additional improvements incorporated to increase the
+stabilization of the adversarial training in both  discriminator module and encoder, generator pair.
+I will first describe the improvements introduced to the adversarial training framework and discuss
+their potential advantages over the previous approach. Then I will explain the ALAD architecture in
+detail. Lastly, learning of the model and the anomaly score computation choices will be discussed. 
+
+\subsubsection{Spectral Normalization}
+\label{sec:alad_sn}
+
+Even tough the training of GAN works in practise, it may easily become unstable in certain
+conditions. For example, in high dimensional space, density ratio estimation of the discriminator
+network is often inaccurate and this results in generator networks fail to learn the dimensional
+structre of the target data distribution. \cite{methods} Consequently, when the support of the model
+distribution and the target distribution is disjoint, then the discriminator may become decently
+efficient classifying real data from the generated data sample. In this scenerio, the generator
+fails to learn to improve sample fake image data. Spectral Normalization is one of the recent
+proposed improvement methods to stabilize the weights of the discriminator network by bounding its
+gradients using Lipschitz continuity. \cite{inproceedings_sn} 
+
+Consider the optimal discriminator of $D(\boldsymbol{x}, \theta)=\mathcal{A}(f(\boldsymbol{x}, \theta))$ in equation \ref{eqn:opt_d}. It takes the form :
+\begin{multline}
+    D_{G}^{*}(\boldsymbol{x})=\frac{q_{\text { data }}(\boldsymbol{x})}{q_{\text { data }}(\boldsymbol{x})+p_{G}(\boldsymbol{x})}=\operatorname{sigmoid}\left(f^{*}(\boldsymbol{x})\right), \\ \text { where } f^{*}(\boldsymbol{x})=\log q_{\text { data }}(\boldsymbol{x})-\log p_{G}(\boldsymbol{x}) 
+\end{multline}
+
+Where $\mathcal{A}$ is an activation function corresponding to the divergence of distance measure of the
+user’s choice (usually a sigmoid). With the derivative of: 
+
+\begin{equation}
+    \nabla_{\boldsymbol{x}} f^{*}(x)=\frac{1}{q_{\mathrm{data}}(\boldsymbol{x})} \nabla_{\boldsymbol{x}} q_{\mathrm{data}}(\boldsymbol{x})-\frac{1}{p_{G}(\boldsymbol{x})} \nabla_{\boldsymbol{x}} p_{G}(\boldsymbol{x})  
+\end{equation}
+
+This gradient function can be unbounded or even incomputable depending on the distribution. Spectral
+normalization is applied to introduce regularity condition to derivative $f(\boldsymbol{x})$.
+\cite{inproceedings_sn} 
+
+Discriminator function can be modified to apply this regularization to the objective function: 
+    
+\begin{equation}
+\begin{array}{l}{\text { arg max } V(G, D)} \\ {\|f\|_{\mathrm{Lip}} \leq K}\end{array} 
+\end{equation}
+
+Where $\|f\|_{\mathrm{Lip}}$ is depicted as the smallest value $M$ such that: 
+
+\begin{equation}
+    \left\|f(\boldsymbol{x})-f\left(\boldsymbol{x}^{\prime}\right)\right\| /\left\|\boldsymbol{x}-\boldsymbol{x}^{\prime}\right\| \leq M 
+\end{equation}
+for any $x$, $x'$ with the norm being the $l_2$ norm. $x_2$ in $X$,\cite{sohrab2011basic}
+
+Using the computation of the K-Lipschitz function of the each layer in discriminator, the spectral
+norm of each layer weight matrix can be normalized so the updated weights of the discriminator after
+each epoch of training becomes:
+
+\begin{equation}
+    \overline{W}_{\mathrm{SN}}(W) :=W / \sigma(W) 
+\end{equation}
+
+
+% TODO conclusion paragraph, maybe the complete proof should be include in the appendix.
+
+\subsubsection{Conditional Entropy (ALICE Framework)}
+\label{sec:alad_alice}
+
+The BiGAN framework in section \ref{sec:bigan} aims to learn both the mapping from the input image
+data to a latent representation with its encoder module and the inverse of that mapping relation
+with its generator module. It acquires these mappings by training its enoder and generator modules
+together in an adversarial manner to learn a joint distribtuion depicted in equation
+\ref{eqn:bigan_ex} and \ref{eqn:bigan_gz}. The problem suggested by the ALICE
+framework\cite{Li2017TowardsUA} is that learning the joint distribution alone doesn't help the model
+to reconstruct images necesarily faithful to the reproductions of the input data.
+\cite{Li2017TowardsUA} This is because the objective function is built only to match joint
+distributions of image and noise pairs at the same time potential dependency structures or
+correlations between two random variables within each joint repsentation is not specified or
+constrained. \cite{Li2017TowardsUA}
+
+In order to reduce the identifiability issues associated with the objective of BiGAN, the
+conditionals $P_{G}(x|z)$ and $P_{E}(z|x)$ needs to be constrained and be under supervision using a
+paired samples from the domain $\Omega_{x}$ and $\Omega_{z}$. Information-theoretic measure
+conditional entropy is used to provide this regularization. 
+
+Conditional entropy quantifies the amount of information needed to describe the outcome of a random variable 
+$Y$ given that the value of another random variable $X$ is known \cite{Cover:2006:EIT:1146355}  under the joint distribution 
+$$
+\pi(x ,y ) ,\quad x \in X , y \in Y
+$$ 
+For the BiGAN framework the conditional entropies are defined below:
+
+\begin{align}
+    H^{\pi}(\boldsymbol{x} | \boldsymbol{z}) \triangleq-\mathbb{E}_{\pi(\boldsymbol{x}, \boldsymbol{z})}[\log \pi(\boldsymbol{x} | \boldsymbol{z})] \\[5pt]
+    H^{\pi}(\boldsymbol{z} | \boldsymbol{x}) \triangleq-\mathbb{E}_{\pi(\boldsymbol{x}, \boldsymbol{z})}[\log \pi(\boldsymbol{z} | \boldsymbol{x})] 
+\end{align}
+
+The Conditional entropy defined above is dependant on the underlying distribution of the random
+variables, in this case the distribution of the encoder and generator modules $p_{G}(x)$ and
+$p_{E}(z)$. In practise this value is intractable because we dont have access to the saddle points
+of the objective function beforehand. As an alternative, the approximation of the conditional
+entropy is calculated by bounding CE to the criterion of cycle-consistency \cite{Zhu2017UnpairedIT}
+
+Cycle consistency is the similarity of the reconstruction to the input data. Denoting the
+reconstruction of $x$ as $x'$, the cycle can be defined as: 
+
+\begin{equation}
+  x' = G(z'), \quad z' = E(x),\quad x \in \Omega_{x},\quad x' \approx G(E(x)) 
+\end{equation}
+
+In other gan frameworks like Cycle-GAN\cite{Zhu2017UnpairedIT}, Disco-GAN \cite{Kim2017LearningTD}
+and Dual-GAN \cite{Yi2017DualGANUD} cycle consistency constraint is implemented leveraging
+$\ell_{k}$ losses with $k=1,2$. Using $\ell_2$ based pixel-wise loss functions to reconstruct the samples
+leads to blurry images during inference \cite{Larsen2016AutoencodingBP}\cite{Li2017TowardsUA}.
+To enforce a better constraint and to improve the quality of the reconstructed samples, this
+framework suggests using the feature layer of the discriminator to compute the loss for the
+conditional entropy constraint. The objective function to approximate this constrainst is given
+below:
+\begin{multline}
+    \label{eqn:alice}
+     \min _{\boldsymbol{E}, \boldsymbol{G}} \max _{\boldsymbol{D}}
+\mathcal{L}_{\mathrm{Cycle}}(E,G,D)
+=\mathbb{E}_{\boldsymbol{x} \sim p_{\text{data}}(\boldsymbol{x})}\left[\log
+\sigma\left(f_{\boldsymbol{D}}(\boldsymbol{x}, \boldsymbol{x})\right)\right] \\
++\mathbb{E}_{\hat{\boldsymbol{x}} \sim p_{\boldsymbol{G}}(\hat{\boldsymbol{x}} | \boldsymbol{z}),
+\boldsymbol{z} \sim p_{\boldsymbol{E}}(\boldsymbol{z} | \boldsymbol{x})} \log
+\left(1-\sigma\left(f_{\boldsymbol{D}}(\boldsymbol{x}, \hat{\boldsymbol{x}})\right)\right) ] 
+\end{multline}
+
+This additional adversarial training is implemented into the ALAD architecture to enforce a
+contraint to improve the quality of reconstructed noise and the image. Its addition is explained in
+the next part of the section. 
+
+\subsubsection{ALAD Architecture}
+\label{sec:alad_arc}
+
+Training of the framework shares the same adversarial approach with BiGAN
+(\ref{sec:bigan}).Generator module simulataneously learns the mapping from input data to a latent
+representation while the encoder module learns the opposite. Model also incorporates the mentioned
+improvements to increase the stabilization of the training procedure.  The architecture overview is
+illustrated in figure \ref{fig:alad_model}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=.9\textwidth]{alad}
+    \caption{ALAD architecture overview}
+    \label{fig:alad_model}
+\end{figure}
+
+
+
+Formally the ALAD architecture tries to match the joint distributions 
+\begin{equation}
+    p_{E} (x, z) = p_{E}(z | x) p_{\text{data}}(x) \\[5pt]
+    p_{G} (x, z) = p_{G}(x | z) p_{Z}(z)
+\end{equation}
+and tries the seperate the data, noise pairs $(x, E(x))$ and $(G(z), z)$ with an adversarial
+discriminator module D. For this framework we refer to the main discriminator as $D_{xz}$. The core
+objective function with the updated terms is :
+\begin{equation}
+\begin{aligned} V\left(D_{x z}, E, G\right) &=\mathbb{E}_{x \sim p_{\text{data}}}\left[\log D_{x z}(x, E(x))\right] \\ &+\mathbb{E}_{z \sim p_{Z}}\left[1-\log D_{x z}(G(z), z)\right]
+ \end{aligned}
+\end{equation}
+
+Section \ref{sec:alad_alice} explains the convergence problem of the joint distribution. Because of
+the lack of constraints imposed on the $p_{\text{data}}$ and $p_{Z}$, the objective function may not
+converge properly and this consequentially decreases the quality of the reconstructed samples,
+namely $x' \approx G(E(x))$. In addition to the image reconstruction, to enforce a constaint on the
+noise encoding from the input image, $z' \approx (E(G(z)))$, ALAD architecture also adds a second
+objective function to the overall adversarial training loop to regularize the conditional
+distributions. The CE term for the image and for the noise is defined below.
+\begin{align}
+    H^{\pi}(x | z)=-\mathbb{G}_{\pi(x, z)}[\log \pi(x | z)] \\[5pt]
+    H^{\pi}(z | x)=-\mathbb{E}_{\pi(x, z)}[\log \pi(z | x)] 
+\end{align}
+
+As explained in the previous section, since the saddle points beforehand can't be obtained for the
+computation, these terms can be approximated with the discriminators $D_{xx}$ and $D_{zz}$
+respectively. The training of these discriminators is added to the main adversarial training loop as
+a part of the discriminator module training. Their objective functions are defined in equation
+\ref{eqn:alad_discs}
+
+\begin{align}
+    \label{eqn:alad_discs}
+\begin{split} V\left(D_{x x}, E, G\right) ={}&\mathbb{E}_{x \sim p_{\text{data}}}\left[\log D_{x x}(x, x)\right] \\ &+\mathbb{E}_{x \sim p_{\text{data}}}\left[1-\log D_{x x}(x, G(E(x)))\right] \end{split}  \\[5pt]
+\begin{split} V\left(D_{z z}, E, G\right) ={}&\mathbb{E}_{z \sim p_{\mathcal{Z}}}\left[\log D_{z z}(z, z)\right] \\ &+\mathbb{E}_{z \sim p_{\mathcal{Z}}}\left[1-\log D_{z z}(z, E(G(z)))\right] \end{split}    
+\end{align}
+
+Putting it all together, ALAD framework solves the following combination of value function during the adversarial
+training. 
+\begin{equation}
+\begin{array}{l}{\min _{G, E} \max _{D_{x z}, D_{x x}, D_{z z}} V\left(D_{x z}, D_{x x}, D_{z z}, E, G\right)=} \\ {V\left(D_{x z}, E, G\right)+V\left(D_{x x}, E, G\right)+V\left(D_{z z}, E, G\right)}\end{array} 
+\end{equation}
+
+During the training, the generator and the encoder are updated simulatenously. In the
+second part of the adversarial training, all the discriminators update their weights to both
+regularize the reconstructions and to converge to equilibrium for the main value function. Spectral
+normalization is used in every convolutional layer of the discriminators. Framework also implemented
+them to the layers of the encoder network with the purpose of  further increasing the quality of the reconstructed
+samples. \cite{DBLP:journals/corr/abs-1812-02288}.The
+result of the training and its analysis will be discussed in chapter \ref{chap:expres}.
+
+The Anomaly score computation of the framework is based on the quality of the reconstructed query
+samples. If the reconstructed query image is distant to the original input it will obtain a greater
+anomaly score. ALAD framework suggests that because of the nature of the spatial data, even though
+there are similarities, obtained noise during reconstruction may mask potential feature
+similarities, preventing their detection. The suggested approach of the framework is to compute the
+anomaly score using the feature layer of the $D_{xx}$ discriminator shown in equation
+\ref{eqn:alad_an}.
+\begin{equation}
+  \label{eqn:alad_an}
+  A(x)=\left\|f_{x x}(x, x)-f_{x x}(x, G(E(x)))\right\|_{1} 
+\end{equation}
+
+In this equation, $f(\cdot, \cdot)$ represents the vector of activations of the layer before the
+output of the $D_{xx}$ discriminator \cite{DBLP:journals/corr/abs-1812-02288}. Anomaly score
+$A(\cdot)$ captures the confidence such that the given image is well encoded and reconstructed by
+the generator and therefore it is from the real data distribution.
+\cite{DBLP:journals/corr/abs-1812-02288} However different kinds of anomaly score computations are
+also considered for the sake of comparison. 
+
+These are (including the one we discussed ):
+
+\begin{equation}
+\begin{aligned} \bullet L_{1} & : A(x)=\left\|x-x^{\prime}\right\|_{1} \\ \bullet L_{2} & : A(x)=\left\|x-x^{\prime}\right\|_{2} \\ \bullet \text { Logits } & : A(x)=\log \left(D_{x x}\left(x, x^{\prime}\right)\right) \\ \bullet \text { Features } & : A(x)=\left\|f_{x x}(x, x)-f_{x x}\left(x, x^{\prime}\right)\right\|_{1} \end{aligned}
+\end{equation}
+
+Overall this framework aims to improve the generator and encoder learning with improvements such as spectral
+normalization and conditional entropy discriminators. Its performance with our dataset and ways to
+improve the adversarial training will be discussed in chapter \ref{chap:expres}
+
+\subsection{GANomaly \& Skip-GANomaly}
+\label{sec:ganomaly}
+
+GANomaly framework \cite{Akay2018GANomalySA} and Skip-GANomaly \cite{Akay2019SkipGANomalySC} are the
+most recent models that focuses on the anomaly detection using adversarial training. 
+Their performance on the benchmark datasets like CIFAR-10
+\cite{cifar10} and SVHN \cite{Netzer2011ReadingDI} exceeds the previous mentioned frameworks. This
+section will explain their structure and their differences in terms of one another.
+
+GANomaly and Skip-Ganomaly models differ with a significant change in the model itself. Both 
+models contain a generator and discriminator modules but generator module is actually composed of an
+adversarial autoencoder network. Details of the both architecture will be discussed in order.
+
+Generator module of the GANomaly framework composed of an encoder-decoder network as can be seen in
+figure \ref{fig:ganomaly_model}. The third module is the encoder network for the generated samples.
+Generator network takes the image data as an input and sequentially it creates the latent
+representation of the image and reconstruction from the latent representation then the second
+encoder network encodes the latent representation of the reconstructed sample. Discriminator network
+shares the same functionality as in GAN framework. \cite{Goodfellow:2014:GAN:2969033.2969125}
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=.9\textwidth]{ganomaly}
+    \caption{GANomaly architecture overview}
+    \label{fig:ganomaly_model}
+\end{figure}
+
+ With the use of the adversarial autoencoders, framework obtains a superior reconstruction ability
+compared to the previous models. But in doing so, its generative sub-module decoder is not a true
+generative component from the perspective of the generative adversarial networks. With the change of
+the model architecture its training objective also changes. GANomaly framework uses adversarial
+training scheme but its generator module loss is the combination of 3 separate loss functions. These
+are:
+\begin{itemize}
+   \item Adversarial Loss
+   \item Contextual Loss
+   \item Encoder Loss 
+\end{itemize} 
+
+Adversarial loss represents the loss function component for the adversarial training of the
+framework. Instead of maximizing the probability of discriminator's attaining generated image as
+real, it has a loss function derived from the \cite{fm} that uses feature matching. The main purpose
+of this type of loss function is to reduce the instability in the GAN training. Adversarial loss
+depicted in equation \ref{eqn:ganomaly_adv} is the $\mathcal{L}_{2}$ distance of the feature
+representation of the original and the generated image, respectively. \cite{Akay2018GANomalySA}
+Feature layer is extracted from the activation layer before the output of the discriminator.  
+\begin{equation}
+    \label{eqn:ganomaly_adv}
+    \mathcal{L}_{a d v}=\mathbb{E}_{x \sim p_{\mathbf{x}}}\left\|f(x)-\mathbb{E}_{x \sim p_{\mathbf{x}}} f\left(G(x) \|_{2}\right.\right. 
+\end{equation}
+
+Only adversarial loss does not help to optimize the generator towards reconstructing images similar
+to the input data. To this end, contextual loss is also added to the generator loss function.
+According to \cite{Isola2017ImagetoImageTW}, using $\mathcal{L}_1$ instead of $\mathcal{L}_2$
+decreases the blurriness in the generated images, so the following contextual loss that measures the
+distance between original image and the generated one is added to the to the total generator loss.
+\begin{equation}
+    \mathcal{L}_{c o n}=\mathbb{E}_{x \sim p_{\mathbf{X}}}\|x-G(x)\|_{1} 
+\end{equation}
+
+Additional encoder loss is also added to the generator to improve the encoding of the latent
+representation of the reconstruction. This loss function aims to minimize the distance between the
+encoded latent representation of the input image and the reconstruction. The Loss function is
+depicted below.
+\begin{equation}
+    \mathcal{L}_{e n c}=\mathbb{E}_{x \sim p_{\mathbf{X}}}\left\|G_{E}(x)-E(G(x))\right\|_{2} 
+\end{equation}
+
+Overall, the objective loss function of the generator is defined in equation
+\ref{eqn:ganomaly_oall} where the weight parameters $w_{adv}, w_{con} \text { and } w_{enc}$
+are used to change the impact of individual losses.
+\begin{equation}
+    \label{eqn:ganomaly_oall}
+    \mathcal{L}=w_{a d v} \mathcal{L}_{a d v}+w_{c o n} \mathcal{L}_{c o n}+w_{e n c} \mathcal{L}_{e n c} 
+\end{equation}
+
+GANomaly framework uses encoder loss function also as an anomaly score measure.  
+\begin{equation}
+    \mathcal{A}(\hat{x})=\left\|G_{E}(\hat{x})-E(G(\hat{x}))\right\|_{1}  
+\end{equation}
+
+Skip-GANomaly framework\cite{Akay2019SkipGANomalySC} is the continuation of the GANomaly architecture with changes mainly to the
+generator network. As can be seen from figure \ref{fig:sganomaly_model}, encoder and decoder
+networks inside the generator framework is connected using skip connections. 
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=.9\textwidth]{skip_ganomaly}
+    \caption{Skip GANomaly architecture overview \cite{Akay2019SkipGANomalySC}}
+    \label{fig:sganomaly_model}
+\end{figure}
+
+At each layer of the encoder, convolutional feature map is concatenated to the corresponding decoder
+layer. Addition of skip connections provides a better reconstruction capability to the generator
+than the GANomaly framework. \cite{Akay2018GANomalySA}. Generator objective function is built using
+the same logic. Because of the exclusion of the secondary encoder network, the encoder loss is
+obtained using the feature layer of the discriminator. 
+\begin{equation}
+    \mathcal{L}_{enc}=\underset{x \sim p_{x}}{\mathbb{E}}|f(x)-f(\hat{x})|_{2}  
+\end{equation}
+
+To find anomalies during the inference stage, Skip-GANomaly framework combines the encoder loss with
+the use of contextual loss. 
+\begin{equation}
+    \mathcal{A}(\dot{x})=\lambda R(\dot{x})+(1-\lambda) L(\dot{x})  
+\end{equation}
+
+$R(\dot{x})$ represents the contextual loss with the reconstruction term and $L(\dot{x})$ represents
+the encoder loss with the latent representation term. Term $\lambda$ is used to adjust the impact of
+the loss functions to the overall anomaly score.
+
+Both GANomaly and Skip-GANomaly uses adversarial encoder architecture in their generator networks
+and therefore have superior reconstruction capabilities compared to the previous 3 framework. The
+primal problem with their architecture is that they don't adapt the true distribution of the input
+data. They learn the underlying latent representation well to reconstruct the input and detect
+anomalies. However their generator network represents the scenerio where the generator has learnt the
+input data distribution fairly well. In order to improve the results of a GAN based anomaly
+detection framework, insights gained from these 2 networks are significantly important. Their
+contribution to the improved framework and their performance analysis regards to other models will
+be explored in chapters \ref{chap:arim} and \ref{chap:expres} respectively. 
+\endgroup

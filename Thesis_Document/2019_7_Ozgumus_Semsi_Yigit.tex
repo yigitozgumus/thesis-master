@@ -1,0 +1,157 @@
+\documentclass[12pt,a4paper,twoside,openright]{memoir}
+%\usepackage[a4paper,width=140mm,top=35mm,bottom=35mm,bindingoffset=10mm]{geometry}
+% Font encoding
+\usepackage[T1]{fontenc}
+% input encoding
+\usepackage[utf8]{inputenc}
+% Font package
+\usepackage{kpfonts}
+% Language package
+\usepackage[english]{babel}
+% Enhanced support for graphics
+\usepackage{graphicx}
+% Color addition
+\usepackage{xcolor}
+% Figure adding
+\usepackage{subfig}
+\usepackage{amsmath}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\usepackage{enumitem}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amstext}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{prop}{Proposition}[section]
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+% Context sensitive quotation
+\usepackage{csquotes}
+% Algorithm package
+\usepackage{algpseudocode}
+\usepackage[section]{algorithm}
+\algdef{SE}[DOWHILE]{Do}{doWhile}{\algorithmicdo}[1]{\algorithmicwhile\ #1}%
+% Alias counters
+\usepackage{aliascnt}
+% Bolding
+\usepackage{bm}
+% Environment package
+\usepackage{verbatim}
+% Multirow table
+\usepackage{multirow}
+% Line spacing
+\usepackage{setspace}
+\usepackage{enumitem}
+\setlist{nolistsep}
+% Customize captions
+\usepackage{caption}
+\captionsetup[table]{labelfont={small,sc},font={small,sc},
+labelsep=newline, justification=centering, skip=5pt, position=top}
+\captionsetup[figure]{margin=10pt, font=small, labelfont=bf, labelsep=endash}
+% Enumerate and itemize within paragraphs
+% eps figure manipulation
+\usepackage{psfrag}
+\usepackage{lipsum}
+% URL management
+\usepackage[hyphens]{url}
+% Publication quality tables
+\usepackage{booktabs}
+% Execute command after the next page break
+\usepackage{afterpage}
+% Quotation management
+\usepackage[font=itshape]{quoting}
+% Latex tabulars
+\usepackage{tabu}
+% Contol float placement
+\usepackage{placeins}
+% Image directory
+\graphicspath{{images/}}
+% Chapter style for the thesis
+\chapterstyle{veelo}
+\addto\extrasenglish{
+\renewcommand{\chapterautorefname}{Chapter}
+\renewcommand{\sectionautorefname}{Section}
+\renewcommand{\subsectionautorefname}{Subsection}
+\renewcommand{\subsubsectionautorefname}{Subsection}
+}
+% Customize header and footer
+\usepackage{fancyhdr}
+\pagestyle{ruled}
+% Bibliography management
+\usepackage[backend=bibtex]{biblatex}
+% Citation management
+\usepackage[hidelinks]{hyperref}
+% Glossary management
+\usepackage[xindy, acronym, nomain, shortcuts, toc]{glossaries}
+% Latin modern latin
+\usepackage[variablett]{lmodern}
+% Euro symbol
+\usepackage[gen]{eurosym}
+\usepackage{indentfirst}
+\makeglossaries
+\loadglsentries{back_matter/acronyms}
+\bibliography{back_matter/references}
+% Graphic management
+\usepackage{tikz}
+\allowdisplaybreaks
+\setsecnumdepth {paragraph}
+\maxtocdepth {paragraph}
+\begin{document}
+\nonzeroparskip
+%-------------------------------------------------------------------------------
+\frontmatter
+\input{front_matter/cover.tex}
+%-------------------------------------------------------------------------------
+%\input{front_matter/dedication.tex}
+%-------------------------------------------------------------------------------
+\chapter*{Acknowledgements}
+\input{front_matter/acknowledgement.tex}
+%-------------------------------------------------------------------------------
+\newpage
+\tableofcontents
+\cleardoublepage
+\listoffigures
+\listoftables
+%-------------------------------------------------------------------------------
+\mainmatter
+\pagestyle {ruled}
+\chapter*{Abstract}
+\input{chapters/abstract.tex}
+\chapter*{Sommario}
+\input{chapters/abstract_it.tex}
+%\glsresetall
+%-------------------------------------------------------------------------------
+\chapter{Introduction}
+\label{chap:intro}
+\input{chapters/introduction.tex}
+%-------------------------------------------------------------------------------
+%\pagestyle {ruled}
+\chapter{State of the Art}
+\label{chap:sota}
+\input{chapters/sota.tex}
+% %-------------------------------------------------------------------------------
+\chapter{Latest Developments}
+\label{chap:latdel}
+\input{chapters/latdel.tex}
+%-------------------------------------------------------------------------------
+\chapter{Architectural Improvements}
+\label{chap:arim}
+\input{chapters/arim.tex}
+%-------------------------------------------------------------------------------
+\chapter{Experimental Results }
+\label{chap:expres}
+\input{chapters/exp_results.tex}
+%-------------------------------------------------------------------------------
+\chapter{Conclusion and Future Work}
+\label{chap:conc}
+\input{chapters/conclusion.tex}
+%-------------------------------------------------------------------------------
+\appendix
+\chapter{Model Implementation Details}
+\input{chapters/appendix.tex}
+
+%\chapter*{Bibliography}
+\backmatter
+\printbibliography
+
+\end{document}

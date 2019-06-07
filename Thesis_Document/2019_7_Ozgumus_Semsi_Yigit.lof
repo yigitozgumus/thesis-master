@@ -1,0 +1,44 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\babel@toc {english}{}
+\defcounter {refsection}{0}\relax 
+\addvspace {10pt}
+\defcounter {refsection}{0}\relax 
+\addvspace {10pt}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {21}{\ignorespaces GAN architecture overview\relax }}{12}{figure.caption.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {22}{\ignorespaces Simple Autoencoder architecture\relax }}{18}{figure.caption.10}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {23}{\ignorespaces Stacked Autoencoder with multiple layers\relax }}{18}{figure.caption.11}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {24}{\ignorespaces ALI architecture overview\relax }}{23}{figure.caption.12}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {25}{\ignorespaces BiGAN architecture overview\relax }}{24}{figure.caption.13}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {26}{\ignorespaces ALAD architecture overview\relax }}{33}{figure.caption.14}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {27}{\ignorespaces GANomaly architecture overview\relax }}{36}{figure.caption.15}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {28}{\ignorespaces Skip GANomaly architecture overview \cite {Akay2019SkipGANomalySC}\relax }}{38}{figure.caption.16}
+\defcounter {refsection}{0}\relax 
+\addvspace {10pt}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {31}{\ignorespaces F-AnoGAN Framework Overview \cite {pub.1111824956}\relax }}{42}{figure.caption.17}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {32}{\ignorespaces F-AnoGAN Training Strategies \cite {pub.1111824956}\relax }}{43}{figure.caption.18}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {33}{\ignorespaces Anomaly Score computations for both training methods \cite {pub.1111824956}\relax }}{44}{figure.caption.19}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Anomaly Score computation scheme for izi and $izi_f$ method}}}{44}{subfigure.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Anomaly Score computation scheme for ziz architecture}}}{44}{subfigure.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {34}{\ignorespaces F-AnoGAN Training Strategies \cite {Zhao2016EnergybasedGA}\relax }}{45}{figure.caption.20}
+\defcounter {refsection}{0}\relax 
+\addvspace {10pt}
+\defcounter {refsection}{0}\relax 
+\addvspace {10pt}
+\defcounter {refsection}{0}\relax 
+\addvspace {10pt}
+\defcounter {refsection}{0}\relax 
+\addvspace {10pt}

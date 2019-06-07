@@ -1,0 +1,158 @@
+%!TEX root = ../2019_7_Ozgumus_Semsi_Yigit.tex
+
+\begingroup
+
+\section{Experiment Settings}
+
+\subsection{Figure of Merit}
+\section{GAN Based Model Analysis}
+% Anogan
+
+\begin{table}[]
+	\centering
+	\caption{Ablation study for AnoGAN to test the effect of various training improvements for stabilization.}
+	\label{tab:anogan_ablation}
+	\resizebox{\textwidth}{!}{%
+		\begin{tabular}{|c|l|llll|}
+			\hline
+			\multicolumn{2}{|c|}{\multirow{2}{*}{\textbf{Model}}} & \multicolumn{4}{c|}{\textbf{Metrics}} \\ \cline{3-6} 
+			\multicolumn{2}{|c|}{} & AUROC & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c|}{F1 Score} \\ \hline
+			\multirow{8}{*}{AnoGAN} & Normal &  &  &  &  \\ \cline{2-6} 
+			& IN &  &  &  &  \\ \cline{2-6} 
+			& SL &  &  &  &  \\ \cline{2-6} 
+			& LF &  &  &  &  \\ \cline{2-6} 
+			& IN + SL &  &  &  &  \\ \cline{2-6} 
+			& IN + LF &  &  &  &  \\ \cline{2-6} 
+			& SL + LF &  &  &  &  \\ \cline{2-6} 
+			& LF + SL + IN &  &  &  &  \\ \hline
+		\end{tabular}%
+	}
+\end{table}
+% Bigan
+ test
+\begin{table}[]
+	\centering
+	\caption{Ablation study for BiGAN to test the effect of various training improvements for stabilization.}
+	\label{tab:bigan_ablation}
+	\resizebox{\textwidth}{!}{%
+		\begin{tabular}{|c|l|llll|}
+			\hline
+			\multicolumn{2}{|c|}{\multirow{2}{*}{\textbf{Model}}} & \multicolumn{4}{c|}{\textbf{Metrics}} \\ \cline{3-6} 
+			\multicolumn{2}{|c|}{} & AUROC & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c|}{F1 Score} \\ \hline
+			\multirow{8}{*}{BiGAN} & Normal &  &  &  &  \\ \cline{2-6} 
+			& IN &  &  &  &  \\ \cline{2-6} 
+			& SL &  &  &  &  \\ \cline{2-6} 
+			& LF &  &  &  &  \\ \cline{2-6} 
+			& IN + SL &  &  &  &  \\ \cline{2-6} 
+			& IN + LF &  &  &  &  \\ \cline{2-6} 
+			& SL + LF &  &  &  &  \\ \cline{2-6} 
+			& LF + SL + IN &  &  &  &  \\ \hline
+		\end{tabular}%
+	}
+\end{table}
+
+% ALAD
+\begin{table}[]
+	\centering
+	\caption{Ablation study for ALAD to test the effect of various training improvements for stabilization.}
+	\label{tab:alad_ablation}
+	\resizebox{\textwidth}{!}{%
+		\begin{tabular}{|c|l|llll|}
+			\hline
+			\multicolumn{2}{|c|}{\multirow{2}{*}{\textbf{Model}}} & \multicolumn{4}{c|}{\textbf{Metrics}} \\ \cline{3-6} 
+			\multicolumn{2}{|c|}{} & AUROC & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c|}{F1 Score} \\ \hline
+			\multirow{8}{*}{ALAD} & Normal &  &  &  &  \\ \cline{2-6} 
+			& IN &  &  &  &  \\ \cline{2-6} 
+			& SL &  &  &  &  \\ \cline{2-6} 
+			& LF &  &  &  &  \\ \cline{2-6} 
+			& IN + SL &  &  &  &  \\ \cline{2-6} 
+			& IN + LF &  &  &  &  \\ \cline{2-6} 
+			& SL + LF &  &  &  &  \\ \cline{2-6} 
+			& LF + SL + IN &  &  &  &  \\ \hline
+		\end{tabular}%
+	}
+\end{table}
+
+\section{AR Based Model Analysis}
+
+% GAnomaly
+\begin{table}[]
+	\centering
+	\caption{Ablation study for GANomaly to test the effect of various training improvements for stabilization. }
+	\label{tab:ganomaly_ablation}
+	\resizebox{\textwidth}{!}{%
+		\begin{tabular}{|c|l|llll|}
+			\hline
+			\multicolumn{2}{|c|}{\multirow{2}{*}{\textbf{Model}}} & \multicolumn{4}{c|}{\textbf{Metrics}} \\ \cline{3-6} 
+			\multicolumn{2}{|c|}{} & AUROC & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c|}{F1 Score} \\ \hline
+			\multirow{8}{*}{GANomaly} & Normal &  &  &  &  \\ \cline{2-6} 
+			& IN &  &  &  &  \\ \cline{2-6} 
+			& SL &  &  &  &  \\ \cline{2-6} 
+			& LF &  &  &  &  \\ \cline{2-6} 
+			& IN + SL &  &  &  &  \\ \cline{2-6} 
+			& IN + LF &  &  &  &  \\ \cline{2-6} 
+			& SL + LF &  &  &  &  \\ \cline{2-6} 
+			& LF + SL + IN &  &  &  &  \\ \hline
+		\end{tabular}%
+	}
+\end{table}
+% Skip Ganomaly
+
+\begin{table}[]
+	\centering
+	\caption{Ablation study for Skip-GANomaly to test the effect of various training improvements for stabilization.}
+	\label{tab:sganomaly_ablation}
+	\resizebox{\textwidth}{!}{%
+		\begin{tabular}{|c|l|llll|}
+			\hline
+			\multicolumn{2}{|c|}{\multirow{2}{*}{\textbf{Model}}} & \multicolumn{4}{c|}{\textbf{Metrics}} \\ \cline{3-6} 
+			\multicolumn{2}{|c|}{} & AUROC & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c|}{F1 Score} \\ \hline
+			\multirow{8}{*}{Skip-GANomaly} & Normal &  &  &  &  \\ \cline{2-6} 
+			& IN &  &  &  &  \\ \cline{2-6} 
+			& SL &  &  &  &  \\ \cline{2-6} 
+			& LF &  &  &  &  \\ \cline{2-6} 
+			& IN + SL &  &  &  &  \\ \cline{2-6} 
+			& IN + LF &  &  &  &  \\ \cline{2-6} 
+			& SL + LF &  &  &  &  \\ \cline{2-6} 
+			& LF + SL + IN &  &  &  &  \\ \hline
+		\end{tabular}%
+	}
+\end{table}
+\section{Improved Model Analysis}
+\section{Discussion of Experiment Results}
+
+This chapter will explain the experimental results for all the models and improvements. It will also
+point out a discussion about what could be improved and the future direction.
+
+There will be 3 classes of models to be considered. 
+\begin{itemize}
+    \item Models that maps $z$ to $x$ to find the image distrbituion and uses inverse sample for
+    reconstruction $\rightarrow$ AnoGAN, BiGAN and ALAD
+    \item Models that maps directly image distribution by integrating an encoder to the generator
+    module hence creating in practise an autoencoder, and uses again, reconstruction $\rightarrow$
+    Ganomaly and skip ganomaly
+    \item Models that tries new methods to explore different solution strategies \begin{itemize}
+        \item Training with full image $\rightarrow$ Segmentation papers
+        \item Ganomaly + Noise addition (one Class paper concurrent work) to improve the performance
+        of the image distribution learning.
+        \item Energy Based GANS (loss function change), Can this method be applied to the encoder
+        network as well, to better capture the noise distribution.
+    \end{itemize}
+\end{itemize}
+
+\begin{itemize}
+    \item All models will be tested with the standard improvements of the gan training. \begin{itemize}
+        \item Label Flipping $\rightarrow$ improves gradints of the discriminator
+        \item Soft Labels $\rightarrow$ Better than 0,1 reference the papers
+        \item Adding noise to the input image and rectrated image to confuse discriminator
+        $\rightarrow$ robustness
+    \end{itemize}
+    \item Best performance models then will be tested with a training with validation that is based
+    on the reconstruction of the image. 
+    \item All model results with ablation study
+    \item Improved model results
+    \item Visual Results like precision recall, AUC curve, Histogram of Anomalies
+    \item Numerical Results like the result of the model performances in a table `†'
+\end{itemize}
+
+\endgroup
