@@ -11,30 +11,30 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10pt}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {51}{\ignorespaces Ablation study for AnoGAN to test the effect of various training improvements for stabilization.\relax }}{49}{table.caption.21}
+\contentsline {table}{\numberline {51}{\ignorespaces Ablation study for AnoGAN to test the effect of various training improvements for stabilization.\relax }}{51}{table.caption.21}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {52}{\ignorespaces Ablation study for BiGAN to test the effect of various training improvements for stabilization.\relax }}{50}{table.caption.22}
+\contentsline {table}{\numberline {52}{\ignorespaces Ablation study for BiGAN to test the effect of various training improvements for stabilization.\relax }}{52}{table.caption.22}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {53}{\ignorespaces Ablation study for ALAD to test the effect of various training improvements for stabilization.\relax }}{50}{table.caption.23}
+\contentsline {table}{\numberline {53}{\ignorespaces Ablation study for ALAD to test the effect of various training improvements for stabilization.\relax }}{52}{table.caption.23}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {54}{\ignorespaces Ablation study for GANomaly to test the effect of various training improvements for stabilization. \relax }}{51}{table.caption.24}
+\contentsline {table}{\numberline {54}{\ignorespaces Ablation study for GANomaly to test the effect of various training improvements for stabilization. \relax }}{53}{table.caption.24}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {55}{\ignorespaces Ablation study for Skip-GANomaly to test the effect of various training improvements for stabilization.\relax }}{51}{table.caption.25}
-\defcounter {refsection}{0}\relax 
-\addvspace {10pt}
+\contentsline {table}{\numberline {55}{\ignorespaces Ablation study for Skip-GANomaly to test the effect of various training improvements for stabilization.\relax }}{53}{table.caption.25}
 \defcounter {refsection}{0}\relax 
 \addvspace {10pt}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {A1}{\ignorespaces Architecture and Hyperparameters of AnoGAN Model\relax }}{55}{table.caption.26}
+\addvspace {10pt}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {A2}{\ignorespaces Architecture and Hyperparameters of BiGAN Model\relax }}{56}{table.caption.27}
+\contentsline {table}{\numberline {A1}{\ignorespaces Architecture and Hyperparameters of AnoGAN Model\relax }}{57}{table.caption.26}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {A3}{\ignorespaces Architecture and Hyperparameters of ALAD Model\relax }}{57}{table.caption.28}
+\contentsline {table}{\numberline {A2}{\ignorespaces Architecture and Hyperparameters of BiGAN Model\relax }}{58}{table.caption.27}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {A4}{\ignorespaces Architecture and Hyperparameters of GANomaly Model\relax }}{58}{table.caption.29}
+\contentsline {table}{\numberline {A3}{\ignorespaces Architecture and Hyperparameters of ALAD Model\relax }}{59}{table.caption.28}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {A5}{\ignorespaces Architecture and Hyperparameters of Skip-GANomaly Model\relax }}{59}{table.caption.30}
+\contentsline {table}{\numberline {A4}{\ignorespaces Architecture and Hyperparameters of GANomaly Model\relax }}{60}{table.caption.29}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {A6}{\ignorespaces Architecture and Hyperparameters of EBGAN Model\relax }}{60}{table.caption.31}
+\contentsline {table}{\numberline {A5}{\ignorespaces Architecture and Hyperparameters of Skip-GANomaly Model\relax }}{61}{table.caption.30}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {A7}{\ignorespaces Architecture and Hyperparameters of SENCEBGAN Model\relax }}{60}{table.caption.32}
+\contentsline {table}{\numberline {A6}{\ignorespaces Architecture and Hyperparameters of EBGAN Model\relax }}{62}{table.caption.31}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {A7}{\ignorespaces Architecture and Hyperparameters of SENCEBGAN Model\relax }}{62}{table.caption.32}

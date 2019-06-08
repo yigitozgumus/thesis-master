@@ -796,6 +796,50 @@
     \warn{\item Can't use 'location' + 'address'}
   \endentry
 
+  \entry{Gulrajani2017ImprovedTO}{inproceedings}{}
+    \name{author}{5}{}{%
+      {{hash=GI}{%
+         family={Gulrajani},
+         familyi={G\bibinitperiod},
+         given={Ishaan},
+         giveni={I\bibinitperiod},
+      }}%
+      {{hash=AF}{%
+         family={Ahmed},
+         familyi={A\bibinitperiod},
+         given={Faruk},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=AM}{%
+         family={Arjovsky},
+         familyi={A\bibinitperiod},
+         given={Mart{\'i}n},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=DV}{%
+         family={Dumoulin},
+         familyi={D\bibinitperiod},
+         given={Vincent},
+         giveni={V\bibinitperiod},
+      }}%
+      {{hash=CAC}{%
+         family={Courville},
+         familyi={C\bibinitperiod},
+         given={Aaron\bibnamedelima C.},
+         giveni={A\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{GI+1}
+    \strng{fullhash}{GIAFAMDVCAC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{booktitle}{NIPS}
+    \field{title}{Improved Training of Wasserstein GANs}
+    \field{year}{2017}
+  \endentry
+
   \entry{Isola2017ImagetoImageTW}{article}{}
     \name{author}{4}{}{%
       {{hash=IP}{%
@@ -1087,6 +1131,53 @@
     \field{booktitle}{ICML}
     \field{title}{Autoencoding beyond pixels using a learned similarity metric}
     \field{year}{2016}
+  \endentry
+
+  \entry{LeCun06atutorial}{inproceedings}{}
+    \name{author}{5}{}{%
+      {{hash=LY}{%
+         family={LeCun},
+         familyi={L\bibinitperiod},
+         given={Yann},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=CS}{%
+         family={Chopra},
+         familyi={C\bibinitperiod},
+         given={Sumit},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=HR}{%
+         family={Hadsell},
+         familyi={H\bibinitperiod},
+         given={Raia},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=HFJ}{%
+         family={Huang},
+         familyi={H\bibinitperiod},
+         given={Fu\bibnamedelima Jie},
+         giveni={F\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=ea}{%
+         prefix={et},
+         prefixi={e\bibinitperiod},
+         family={al.},
+         familyi={a\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {MIT Press}%
+    }
+    \strng{namehash}{LY+1}
+    \strng{fullhash}{LYCSHRHFJae1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \field{booktitle}{PREDICTING STRUCTURED DATA}
+    \field{title}{A tutorial on energy-based learning}
+    \field{year}{2006}
   \endentry
 
   \entry{Li2017TowardsUA}{inproceedings}{}

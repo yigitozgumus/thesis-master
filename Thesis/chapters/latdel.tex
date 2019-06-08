@@ -148,13 +148,86 @@ inference. Chapter \ref{chap:arim} will explain its contribution to the proposed
 \section{Energy Based Generative Adversarial Networks}
 \label{sec:ebgan}
 
+Training a GAN framework perhaps the most sensitive part of working with them. There has been an
+extensive amount of research to improve the stabilization of the adversarial training or perhaps
+offer a new methodology. \cite{fm} and \cite{methods} offer number modifications to the original
+adversarial training setup to improve the generation performance ,decrease the stabilization and
+prevent issues such as mode collapse\footnotemark. \cite{Arjovsky2017WassersteinG} and
+\cite{Gulrajani2017ImprovedTO} offers a new method to compute the loss and ways to stabilize it.
+Mainly because of its adversarial setting, training of GAN frameworks will always be a topic of
+interest. Energy based generative adversarial networks \cite{Zhao2016EnergybasedGA} offers a new
+training method by redefining the loss functions and the functionality of the discriminator network.
+This section will introduce the architecture and how it works.
 
+\footnotetext{Mode collapse is the scenerio where generator learns enough information to fool the discriminator very early. It finds a generation that fools the discriminator and does not learn anything else from the discriminator. Because of that all the generated samples from the generator look the same, defeating the purpose of generating from the distribution of the data.\cite{methods}}
+
+Energy based models measures the current state of the model by assigning a scalar predefined energy
+as a degree of compatibility \cite{LeCun06atutorial}. Training energy based models consists of
+mapping low energy outputs to the samples with the "correct" class, and mapping higher energy
+outputs to the "incorrect" class. From the perspective of GANs, EBGAN model is trained to ouput
+lower energy for the real data, while the generated data (fake images) outputs a higher energy. The
+model architecture can be seen in figure \ref{fig:ebgan_model}.
 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=1.0\textwidth]{ebgan_model}
-	\caption{F-AnoGAN Training Strategies \cite{Zhao2016EnergybasedGA}}
+	\caption{EBGAN Model Structure \cite{Zhao2016EnergybasedGA}}
 	\label{fig:ebgan_model}
 \end{figure}
+
+The main structural difference of this framework from the other ones is that discriminator is
+defined as an auto encoder network to provide the reconstruction of the inputs. The energy value
+function is defined as the margin loss of the input and the reconstructed sample
+\cite{Zhao2016EnergybasedGA} as a reconstruction error. 
+
+Formally a margin is used to create an energy gap between the correct output and the incorrect
+output. For data sample $x$, and a generated sample $G(z)$ with $z$ being sampled from a known
+distribution $p_z$, The discriminator loss $\mathcal{L}_{D}$ and the generator loss
+$\mathcal{L}_{G}$ are formally defined in equation \ref{eqn:ebgan_formal}.
+
+\begin{equation}
+\label{eqn:ebgan_formal}
+\begin{aligned}D(x)&=\|\operatorname{Dec}(E n c(x))-x\|\\ \mathcal{L}_{D}(x, z) &=D(x)+[m-D(G(z))]^{+} \\ \mathcal{L}_{G}(z) &=D(G(z)) \end{aligned}
+\end{equation}
+
+where $D(x)$ is the reconstuction loss and  $[\cdot]^{+}=\max (0, \cdot)$. Minimizing
+$\mathcal{L}_{G}$ with respect to the generator is similar to maximizing the second term of the
+$\mathcal{L}_{D}$. Instead of calculating the probability of the input being real or fake,
+discriminator is responsible for attaining the correct amount of energy to the input images. 
+
+Using autoencoder network as a discriminator brings additional advantages to the training setting.
+Rather than using a single target information to train the model, reconstruction based output offers
+a more diverse targets for the discriminator \cite{Zhao2016EnergybasedGA}. One of the reasons of the
+stabilization issues in the adversarial training is that discriminator might provide gradients not
+useful enough for generator to improve the quality of the generated samples. Having a reconstruction
+loss output might provide a better gradient in terms of different directions as opposed to binary
+logistic loss. Another advantage is that even though they are trained with an adversarial setting,
+autoencoder networks might prove useful to learn the underlying energy manifold of the data without
+supervision or negative examples when they are trained using a proper regularization constraint.
+This means that in this setting generated samples and input data are both used to model the
+underlying energy manifold of the data. 
+
+EBGAN framework argues that, the discriminator network is regularized by exposing generated samples
+from the generator  which it should output higher reconstruction energies
+\cite{Zhao2016EnergybasedGA}. The benefit of this regularization is that instead of a hand crafted
+predefined one, the regularization term can also be trained along with the discriminator.
+Adversarial training allows a direct connection between learning the energy function and producing
+contradictive samples in that regard. 
+
+EBGAN framework also adds additional penalty called pulling away term (PT) that run at a
+representation level to prevent mode collapse depicted in equation \ref{eqn:ebgan_pt}.
+
+\begin{equation}
+\label{eqn:ebgan_pt}
+	f_{P T}(S)=\frac{1}{N(N-1)} \sum_{i} \sum_{j \neq i}\left(\frac{S_{i}^{\top} S_{j}}{\left\|S_{i}\right\|\left\|S_{j}\right\|}\right)^{2}
+\end{equation}
+
+ $S$ is the feature output from the encoder for generated images. Pulling-away term measures the
+ cosine similarity among all generated images features $S$ in a minibatch. If the mode collapses,
+ the feature vectors will thereupon be similar, i.e. the angles are close to zero and the cosine
+ will max-out. Therefore, it will add a high penalty if there are too similar.
+ \cite{Zhao2016EnergybasedGA}
+ 
+ 
 
 \endgroup
