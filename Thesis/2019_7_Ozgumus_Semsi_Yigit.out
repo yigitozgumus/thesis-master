@@ -19,7 +19,7 @@
 \BOOKMARK [1][-]{section.3.1}{F-AnoGAN Framework}{chapter.3}% 19
 \BOOKMARK [1][-]{section.3.2}{Energy Based Generative Adversarial Networks}{chapter.3}% 20
 \BOOKMARK [0][-]{chapter.4}{Architectural Improvements}{}% 21
-\BOOKMARK [1][-]{section.4.1}{SEM Images Dataset}{chapter.4}% 22
+\BOOKMARK [1][-]{section.4.1}{SEM Image Dataset}{chapter.4}% 22
 \BOOKMARK [1][-]{section.4.2}{Analysis of Aforementioned Approaches}{chapter.4}% 23
 \BOOKMARK [1][-]{section.4.3}{Encoded Energy Based Generative Adversarial Network}{chapter.4}% 24
 \BOOKMARK [1][-]{section.4.4}{Sequentially Encoded Energy Based Generative Adversarial Network}{chapter.4}% 25
@@ -39,4 +39,4 @@
 \BOOKMARK [1][-]{section.A.5}{Skip-GANomaly Implementation}{appendix.A}% 39
 \BOOKMARK [1][-]{section.A.6}{EBGAN Implementation}{appendix.A}% 40
 \BOOKMARK [1][-]{section.A.7}{SENCEBGAN Implementation}{appendix.A}% 41
-\BOOKMARK [0][-]{section*.34}{Bibliography}{}% 42
+\BOOKMARK [0][-]{section*.40}{Bibliography}{}% 42

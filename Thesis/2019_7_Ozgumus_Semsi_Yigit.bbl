@@ -340,6 +340,50 @@
     \field{year}{1986}
   \endentry
 
+  \entry{carrera2016defect}{article}{}
+    \name{author}{4}{}{%
+      {{hash=CD}{%
+         family={Carrera},
+         familyi={C\bibinitperiod},
+         given={Diego},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=MF}{%
+         family={Manganini},
+         familyi={M\bibinitperiod},
+         given={Fabio},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=BG}{%
+         family={Boracchi},
+         familyi={B\bibinitperiod},
+         given={Giacomo},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=LE}{%
+         family={Lanzarone},
+         familyi={L\bibinitperiod},
+         given={Ettore},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {IEEE}%
+    }
+    \strng{namehash}{CD+1}
+    \strng{fullhash}{CDMFBGLE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{number}{2}
+    \field{pages}{551\bibrangedash 561}
+    \field{title}{Defect detection in SEM images of nanofibrous materials}
+    \field{volume}{13}
+    \field{journaltitle}{IEEE Transactions on Industrial Informatics}
+    \field{year}{2016}
+  \endentry
+
   \entry{Chandola:2009:ADS:1541880.1541882}{article}{}
     \name{author}{3}{}{%
       {{hash=CV}{%
@@ -1812,6 +1856,17 @@
     \field{title}{Unsupervised Anomaly Detection with Generative Adversarial
   Networks to Guide Marker Discovery}
     \field{year}{2017}
+  \endentry
+
+  \entry{sem}{article}{}
+    \keyw{Dataset}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{title}{SEM Image Dataset)}
+    \verb{url}
+    \verb http://web.mi.imati.cnr.it/ettore/NanoTwice
+    \endverb
   \endentry
 
   \entry{sohrab2011basic}{book}{}

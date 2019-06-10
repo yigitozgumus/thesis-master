@@ -16,50 +16,50 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated field_info (elt_size=4) to 12089 items from 5000.
+Reallocated field_info (elt_size=4) to 12367 items from 5000.
 Database file #1: 2019_7_Ozgumus_Semsi_Yigit-blx.bib
 Database file #2: back_matter/references.bib
 Biblatex version: 3.8
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-You've used 51 entries,
+You've used 53 entries,
             6268 wiz_defined-function locations,
-            1538 strings with 20898 characters,
-and the built_in function-call counts, 350394 in all, are:
-= -- 25368
-> -- 6446
-< -- 1821
-+ -- 9554
-- -- 2481
-* -- 26628
-:= -- 36910
+            1547 strings with 21168 characters,
+and the built_in function-call counts, 358867 in all, are:
+= -- 25908
+> -- 6553
+< -- 1861
++ -- 9749
+- -- 2522
+* -- 27225
+:= -- 37689
 add.period$ -- 0
-call.type$ -- 51
-change.case$ -- 942
+call.type$ -- 53
+change.case$ -- 961
 chr.to.int$ -- 102
-cite$ -- 100
-duplicate$ -- 38126
-empty$ -- 31213
-format.name$ -- 4138
-if$ -- 70795
+cite$ -- 104
+duplicate$ -- 39141
+empty$ -- 32102
+format.name$ -- 4219
+if$ -- 72538
 int.to.chr$ -- 0
-int.to.str$ -- 129
+int.to.str$ -- 133
 missing$ -- 0
-newline$ -- 2085
-num.names$ -- 2581
-pop$ -- 17891
+newline$ -- 2140
+num.names$ -- 2629
+pop$ -- 18575
 preamble$ -- 1
-purify$ -- 1336
+purify$ -- 1362
 quote$ -- 0
-skip$ -- 9683
+skip$ -- 9916
 stack$ -- 0
-substring$ -- 43206
-swap$ -- 8880
-text.length$ -- 1494
-text.prefix$ -- 51
+substring$ -- 44063
+swap$ -- 9131
+text.length$ -- 1532
+text.prefix$ -- 53
 top$ -- 1
-type$ -- 1722
+type$ -- 1790
 warning$ -- 0
-while$ -- 4624
+while$ -- 4726
 width$ -- 0
-write$ -- 2035
+write$ -- 2088

@@ -3,9 +3,7 @@
 
 This chapter is dedicated to the exploration of state of the art approaches in the fields relevant
 to the thesis. The organization of the chapter is the following: Section 2.1 will define what
-anomaly detection is and explain different approaches towards its solution. Section 2.2 will explain
-what SEM image is, how it's acquired, define the anomaly detection problem in that context and
-explain state of the art methods that are used specific to this problem. Section 2.3 will give
+anomaly detection is and explain different approaches towards its solution.  Section 2.2 will give
 necessary background information about Generative Adversarial Networks (GAN) and Autoencoder
 Networks. First the principles behind how GANs work will be presented then the autoencoder network
 architecture will be explained. This section is particularly significant to relate how different
@@ -24,7 +22,7 @@ exceptions, aberrations, surprises, peculiarities and
 contaminents.\cite{Chandola:2009:ADS:1541880.1541882} Sometimes these can be used interchangebly in
 the context. These distinctions in the definition are primarily relies not only on the features of
 the data such as its dimentional complexity, its continuity and its format, but also on what is
-considered an anomaly for that specific domain.This makes it harder to conceptualize the problem of
+considered an anomaly for that specific domain. This makes it harder to conceptualize the problem of
 anomaly detection with a general definition and a solution approach that can encompass all different
 domains.
 
@@ -36,7 +34,7 @@ impact on a broad spectrum of problems then the primary approach types to solve 
 problem will be introduced.
 
 The categorization threshold to define different application domains is endless but the use of
-anomaly detection can be categorized down to these six general fields.
+anomaly detection can be categorized down to these five general fields.
 \cite{Pimentel:2014:RRN:2588908.2589196}
 These are:
 \begin{itemize}
@@ -51,7 +49,7 @@ These are:
 
 Anomaly detection methods have a huge impact on the IT security systems, in which the objectives
 include network intrusion detection and fraud detection. \cite{Pimentel:2014:RRN:2588908.2589196}
-With the increased usage of computerized systems and the inclusion of the internet based services to
+With the increased use of computerized systems and the inclusion of the internet based services to
 our daily lives, maintainability and the availability of these systems became much more important.
 For systems like these, anomaly is considered as a priority because it indicates significant but
 rare events and can prompt to critical actions to be taken in a wide range of application domain.
@@ -213,7 +211,7 @@ observe the example architecture in the figure \ref{fig:gan_network}.
     \label{fig:gan_network}
 \end{figure}
 
-From this point on, I will use "image" to specify the type of the input and the target data because
+From this point on, "image" will be used to specify the type of the input and the target data because
 GAN frameworks are mainly designed to work with high dimensional spatial data like images so it will
 be consistent when explaining the theorem and also the central focus of the thesis is on the spatial
 data. 
@@ -247,7 +245,7 @@ criterions :
 While this equation describes the relation between the two adversaries, it does not provide a
 definite explanation how this training objective finds equilibrium and whether that equilibrium also
 provides us with the optimal generator or not. For this analysis we will use bottom up approach and
-prove the theorem mentioned in the original GAN paper. \cite{Goodfellow:2014:GAN:2969033.2969125}
+prove the theorem mentioned in the original GAN approach \cite{Goodfellow:2014:GAN:2969033.2969125}.
 
 \begin{theorem}
 \label{thr:gan}
@@ -395,8 +393,8 @@ are identical, we can conclude the proof by stating that the global minimum poin
 
 Intuition behind the adversarial training of this framework is important because all the subsequent
 approaches that will be discussed in the thesis that use GAN's fundamentally benefit from this
-framework to train their networks. As we will see in the BiGAN\ref{sec:bigan} and similar models, addition of
-Encoder Network changes the overall minimax game played by the adversary networks but underlying
+framework to train their networks. As we will see in the BiGAN (section \ref{sec:bigan}) and similar models, addition of
+encoder network changes the overall minimax game played by the adversary networks but underlying
 logic still depends on the value function of the GANs.
 
 \subsection{Autoencoder Networks}
@@ -1095,7 +1093,7 @@ the generator and therefore it is from the real data distribution.
 \cite{DBLP:journals/corr/abs-1812-02288} However different kinds of anomaly score computations are
 also considered for the sake of comparison. 
 
-These are (including the one we discussed ):
+These are (including the one discussed ):
 
 \begin{equation}
 \begin{aligned} \bullet L_{1} & : A(x)=\left\|x-x^{\prime}\right\|_{1} \\ \bullet L_{2} & : A(x)=\left\|x-x^{\prime}\right\|_{2} \\ \bullet \text { Logits } & : A(x)=\log \left(D_{x x}\left(x, x^{\prime}\right)\right) \\ \bullet \text { Features } & : A(x)=\left\|f_{x x}(x, x)-f_{x x}\left(x, x^{\prime}\right)\right\|_{1} \end{aligned}
