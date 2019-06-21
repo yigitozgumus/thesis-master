@@ -127,6 +127,35 @@
     \field{year}{2019}
   \endentry
 
+  \entry{an2015variational}{article}{}
+    \name{author}{2}{}{%
+      {{hash=AJ}{%
+         family={An},
+         familyi={A\bibinitperiod},
+         given={Jinwon},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=CS}{%
+         family={Cho},
+         familyi={C\bibinitperiod},
+         given={Sungzoon},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{AJCS1}
+    \strng{fullhash}{AJCS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{pages}{1\bibrangedash 18}
+    \field{title}{Variational autoencoder based anomaly detection using
+  reconstruction probability}
+    \field{volume}{2}
+    \field{journaltitle}{Special Lecture on IE}
+    \field{year}{2015}
+  \endentry
+
   \entry{image_anomaly}{inproceedings}{}
     \name{author}{3}{}{%
       {{hash=AP}{%
@@ -340,6 +369,43 @@
     \field{year}{1986}
   \endentry
 
+  \entry{boracchi2014novelty}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=BG}{%
+         family={Boracchi},
+         familyi={B\bibinitperiod},
+         given={Giacomo},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=CD}{%
+         family={Carrera},
+         familyi={C\bibinitperiod},
+         given={Diego},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=WB}{%
+         family={Wohlberg},
+         familyi={W\bibinitperiod},
+         given={Brendt},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {IEEE}%
+    }
+    \strng{namehash}{BGCDWB1}
+    \strng{fullhash}{BGCDWB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{booktitle}{2014 IEEE Symposium on Intelligent Embedded Systems
+  (IES)}
+    \field{pages}{47\bibrangedash 54}
+    \field{title}{Novelty detection in images by sparse representations}
+    \field{year}{2014}
+  \endentry
+
   \entry{carrera2016defect}{article}{}
     \name{author}{4}{}{%
       {{hash=CD}{%
@@ -381,6 +447,54 @@
     \field{title}{Defect detection in SEM images of nanofibrous materials}
     \field{volume}{13}
     \field{journaltitle}{IEEE Transactions on Industrial Informatics}
+    \field{year}{2016}
+  \endentry
+
+  \entry{carrera-2016-scale}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=CD}{%
+         family={Carrera},
+         familyi={C\bibinitperiod},
+         given={Diego},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=BG}{%
+         family={Boracchi},
+         familyi={B\bibinitperiod},
+         given={Giacomo},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=FA}{%
+         family={Foi},
+         familyi={F\bibinitperiod},
+         given={Alessandro},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=WB}{%
+         family={Wohlberg},
+         familyi={W\bibinitperiod},
+         given={Brendt},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CD+1}
+    \strng{fullhash}{CDBGFAWB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{booktitle}{Proceedings of IEEE International Conference on Image
+  Processing (ICIP)}
+    \verb{doi}
+    \verb 10.1109/ICIP.2016.7533089
+    \endverb
+    \field{pages}{3892\bibrangedash 3896}
+    \field{title}{Scale-invariant anomaly detection with multiscale
+  group-sparse models}
+    \list{location}{1}{%
+      {Phoenix, AZ, USA}%
+    }
+    \field{month}{09}
     \field{year}{2016}
   \endentry
 
@@ -884,6 +998,46 @@
     \field{year}{2017}
   \endentry
 
+  \entry{he2016deep}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=HK}{%
+         family={He},
+         familyi={H\bibinitperiod},
+         given={Kaiming},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=ZX}{%
+         family={Zhang},
+         familyi={Z\bibinitperiod},
+         given={Xiangyu},
+         giveni={X\bibinitperiod},
+      }}%
+      {{hash=RS}{%
+         family={Ren},
+         familyi={R\bibinitperiod},
+         given={Shaoqing},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=SJ}{%
+         family={Sun},
+         familyi={S\bibinitperiod},
+         given={Jian},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HK+1}
+    \strng{fullhash}{HKZXRSSJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{booktitle}{Proceedings of the IEEE conference on computer vision and
+  pattern recognition}
+    \field{pages}{770\bibrangedash 778}
+    \field{title}{Deep residual learning for image recognition}
+    \field{year}{2016}
+  \endentry
+
   \entry{Isola2017ImagetoImageTW}{article}{}
     \name{author}{4}{}{%
       {{hash=IP}{%
@@ -1224,6 +1378,31 @@
     \field{year}{2006}
   \endentry
 
+  \entry{leveau2017adversarial}{article}{}
+    \name{author}{2}{}{%
+      {{hash=LV}{%
+         family={Leveau},
+         familyi={L\bibinitperiod},
+         given={Valentin},
+         giveni={V\bibinitperiod},
+      }}%
+      {{hash=JA}{%
+         family={Joly},
+         familyi={J\bibinitperiod},
+         given={Alexis},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{LVJA1}
+    \strng{fullhash}{LVJA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \field{title}{Adversarial autoencoders for novelty detection}
+    \field{year}{2017}
+  \endentry
+
   \entry{Li2017TowardsUA}{inproceedings}{}
     \name{author}{7}{}{%
       {{hash=LC}{%
@@ -1415,7 +1594,7 @@
     \field{year}{2018}
   \endentry
 
-  \entry{Napoletano_2018}{article}{}
+  \entry{Napoletano2018anomaly}{article}{}
     \name{author}{3}{}{%
       {{hash=NP}{%
          family={Napoletano},
@@ -1510,6 +1689,58 @@
     \field{title}{Reading Digits in Natural Images with Unsupervised Feature
   Learning}
     \field{year}{2011}
+  \endentry
+
+  \entry{Pidhorskyi:2018:GPN:3327757.3327787}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=PS}{%
+         family={Pidhorskyi},
+         familyi={P\bibinitperiod},
+         given={Stanislav},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=AR}{%
+         family={Almohsen},
+         familyi={A\bibinitperiod},
+         given={Ranya},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=ADA}{%
+         family={Adjeroh},
+         familyi={A\bibinitperiod},
+         given={Donald\bibnamedelima A.},
+         giveni={D\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=DG}{%
+         family={Doretto},
+         familyi={D\bibinitperiod},
+         given={Gianfranco},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Curran Associates Inc.}%
+    }
+    \strng{namehash}{PS+1}
+    \strng{fullhash}{PSARADADG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \field{booktitle}{Proceedings of the 32Nd International Conference on
+  Neural Information Processing Systems}
+    \field{pages}{6823\bibrangedash 6834}
+    \field{series}{NIPS'18}
+    \field{title}{Generative Probabilistic Novelty Detection with Adversarial
+  Autoencoders}
+    \verb{url}
+    \verb http://dl.acm.org/citation.cfm?id=3327757.3327787
+    \endverb
+    \list{location}{1}{%
+      {Montr\&\#233;al, Canada}%
+    }
+    \field{year}{2018}
+    \warn{\item Can't use 'location' + 'address'}
   \endentry
 
   \entry{Pimentel:2014:RRN:2588908.2589196}{article}{}
@@ -1647,6 +1878,49 @@
       {Burlington, MA}%
     }
     \field{year}{2004}
+  \endentry
+
+  \entry{sabokrou2018adversarially}{misc}{}
+    \name{author}{4}{}{%
+      {{hash=SM}{%
+         family={Sabokrou},
+         familyi={S\bibinitperiod},
+         given={Mohammad},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=KM}{%
+         family={Khalooei},
+         familyi={K\bibinitperiod},
+         given={Mohammad},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=FM}{%
+         family={Fathy},
+         familyi={F\bibinitperiod},
+         given={Mahmood},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=AE}{%
+         family={Adeli},
+         familyi={A\bibinitperiod},
+         given={Ehsan},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \keyw{seminar unsupervised}
+    \strng{namehash}{SM+1}
+    \strng{fullhash}{SMKMFMAE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{note}{cite arxiv:1802.09088Comment: CVPR 2018 Accepted Paper}
+    \field{title}{Adversarially Learned One-Class Classifier for Novelty
+  Detection}
+    \verb{url}
+    \verb http://arxiv.org/abs/1802.09088
+    \endverb
+    \field{year}{2018}
   \endentry
 
   \entry{pmlr-v5-salakhutdinov09a}{inproceedings}{}
@@ -2177,6 +2451,39 @@
     \field{journaltitle}{2017 IEEE International Conference on Computer Vision
   (ICCV)}
     \field{year}{2017}
+  \endentry
+
+  \entry{zontak2010defect}{article}{}
+    \name{author}{2}{}{%
+      {{hash=ZM}{%
+         family={Zontak},
+         familyi={Z\bibinitperiod},
+         given={Maria},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=CI}{%
+         family={Cohen},
+         familyi={C\bibinitperiod},
+         given={Israel},
+         giveni={I\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{ZMCI1}
+    \strng{fullhash}{ZMCI1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{Z}
+    \field{sortinithash}{Z}
+    \field{number}{2}
+    \field{pages}{129\bibrangedash 141}
+    \field{title}{Defect detection in patterned wafers using anisotropic
+  kernels}
+    \field{volume}{21}
+    \field{journaltitle}{Machine Vision and Applications}
+    \field{year}{2010}
   \endentry
 \enddatalist
 \endinput

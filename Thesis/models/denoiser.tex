@@ -1,0 +1,158 @@
+ \documentclass[border=15pt, multi, tikz]{standalone}
+%\usepackage{blocks}
+\usepackage{import}
+\subimport{../layers/}{init}
+\usetikzlibrary{positioning}
+\usepackage[utf8]{inputenc}
+\def\ConvColor{rgb:yellow,5;red,7.5;white,5}
+\def\ConvTColor{rgb:yellow,4;red,3;white,1}
+\def\ConvReluColor{rgb:yellow,5;red,5;white,5}
+\def\PoolColor{rgb:red,1;black,0.3}
+\def\imageColor{rgb:white,10}
+\def\SumColor{rgb:blue,5;green,15}
+\def\bnColor{rgb:blue,5;white,3;green,2}
+\def\denColor{rgb:blue,7;white,3;green,3}
+\def\maskColor{rgb:blue,8;black,6;green,3}
+\def\outmaskColor{rgb:red,8;yellow,12;white,3}
+\def\outdenoisedColor{rgb:green,10;yellow,8;white,5}
+\def\lrColor{rgb:red,3;blue,3;white,3}
+\def\FcColor{rgb:blue,5;red,2.5;white,5}
+\def\FcReluColor{rgb:blue,5;red,5;white,4}
+\def\SoftmaxColor{rgb:magenta,5;black,7}
+\def\strideColor{rgb:black,5;white,3}
+\newcommand{\copymidarrow}{\tikz \draw[-Stealth,line width =0.8mm,draw={rgb:blue,4;red,1;green,1;black,3}] (-0.3,0) -- ++(0.3,0);}
+\begin{document}
+\begin{tikzpicture}
+\tikzstyle{copyconnection}=[ultra thick,every node/.style={sloped,allow upside down},draw={rgb:blue,4;red,1;green,1;black,3},opacity=0.7]
+\tikzstyle{connection}=[ultra thick,every node/.style={sloped,allow upside
+down},draw=\edgecolor,opacity=0.7]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Encoder
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pic[shift={(0,0,0)}] at (0,0,0)
+{Box={name=input,caption=image,xlabel={{"","dummy"}},ylabel=28,zlabel=28,opacity=1.0,fill=\imageColor,height=50,width=1,depth=50}};
+% % conv1_1,bn_1, leakyrelu 1
+% Stride of convolution
+\pic[shift={(2,0,0)}] at (input-east)
+{Box={name=test,caption=Stride2,zlabel=5,ylabel=5,fill=\strideColor,height=5,
+width=2,depth=5}};
+\pic[shift={(2,0,0)}] at (input-east)
+{Box={name=cvt1,caption=conv1,xlabel={{"512","dummy"}},ylabel=,zlabel=,fill=\ConvTColor,height=50,width=2,depth=50}};
+\pic[shift={(0,0,0)}] at (cvt1-east)
+{RightBandedBox={name=bnlr2,caption=,ylabel=2,zlabel=2,fill=\bnColor,bandfill=\lrColor,height=50,width=2,depth=50}};
+
+% % conv1_1,bn_1, leakyrelu 1
+% Stride of convolution
+\pic[shift={(2,0,0)}] at (bnlr2-east)
+{Box={name=test,caption=Stride2,zlabel=5,ylabel=5,fill=\strideColor,height=5,
+width=4,depth=5}};
+\pic[shift={(2,0,0)}] at (bnlr2-east)
+{Box={name=cvt2,caption=conv2,xlabel={{"256","dummy"}},ylabel=,zlabel=,fill=\ConvTColor,height=40,width=4,depth=40}};
+\pic[shift={(0,0,0)}] at (cvt2-east)
+{RightBandedBox={name=bnlr3,caption=,ylabel=7,zlabel=7,fill=\bnColor,bandfill=\lrColor,height=40,width=2,depth=40}};
+
+% % conv1_1,bn_1, leakyrelu 1
+% Stride of convolution
+\pic[shift={(2,0,0)}] at (bnlr3-east)
+{Box={name=test,caption=Stride2,zlabel=5,ylabel=5,fill=\strideColor,height=5,
+width=8,depth=5}};
+\pic[shift={(2,0,0)}] at (bnlr3-east)
+{Box={name=cvt3,caption=conv3,xlabel={{"128","dummy"}},ylabel=,zlabel=,fill=\ConvTColor,height=30,width=8,depth=30}};
+\pic[shift={(0,0,0)}] at (cvt3-east)
+{RightBandedBox={name=bnlr4,caption=,ylabel=14,zlabel=14,fill=\bnColor,bandfill=\lrColor,height=30,width=2,depth=30}};
+
+% Final convolution
+\pic[shift={(2,0,0)}] at (bnlr4-east)
+{Box={name=cvt3,caption=latent representation,xlabel={{"1","dummy"}},ylabel=28,zlabel=28,fill=\ConvTColor,height=10,width=16,depth=10}};
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Decoder
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pic[shift={(2,0,0)}] at (cvt3-east)
+{Box={name=cv1,caption=convt1,xlabel={{"32","dummy"}},ylabel=,zlabel=,fill=\ConvColor,height=30,width=8,depth=30}};
+\pic[shift={(0,0,0)}] at (cv1-east)
+{RightBandedBox={name=bnlr_d1,caption=,ylabel=14,zlabel=14,fill=\bnColor,bandfill=\lrColor,height=30,width=2,depth=30}};
+
+\pic[shift={(2,0,0)}] at (bnlr_d1-east)
+{Box={name=cv2,caption=convt2,xlabel={{"64","dummy"}},ylabel=,zlabel=,fill=\ConvColor,height=40,width=4,depth=40}};
+\pic[shift={(0,0,0)}] at (cv2-east)
+{RightBandedBox={name=bnlr_d2,caption=,ylabel=7,zlabel=7,fill=\bnColor,bandfill=\lrColor,height=40,width=2,depth=40}};
+
+\pic[shift={(2,0,0)}] at (bnlr_d2-east)
+{Box={name=cv3,caption=convt3,xlabel={{"128","dummy"}},ylabel=,zlabel=,fill=\ConvColor,height=50,width=2,depth=50}};
+\pic[shift={(0,0,0)}] at (cv3-east)
+{RightBandedBox={name=bnlr_d3,caption=,ylabel=2,zlabel=2,fill=\bnColor,bandfill=\lrColor,height=50,width=2,depth=50}};
+
+\pic[shift={(2,0,0)}] at (bnlr_d3-east)
+{Box={name=output,caption=image',xlabel={{"","dummy"}},ylabel=28,zlabel=28,opacity=1.0,fill=\imageColor,height=50,width=1,depth=50}};
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Denoiser Part
+\pic[shift={(2,0,0)}] at (output-east)
+{Box={name=den1,caption=conv63,xlabel={{"63","dummy"}},ylabel=,zlabel=,opacity=0.75,fill=\denColor,height=50,width=4,depth=50}};
+
+\pic[shift={(1,0,0)}] at (den1-east)
+{Box={name=den2,caption=conv63,xlabel={{"63","dummy"}},ylabel=,zlabel=,opacity=0.75,fill=\denColor,height=50,width=4,depth=50}};
+
+\pic[shift={(8,0,0)}] at (den2-east)
+{Box={name=den3,caption=conv63,xlabel={{"63","dummy"}},ylabel=,zlabel=,opacity=0.75,fill=\denColor,height=50,width=4,depth=50}};
+
+
+
+
+\pic[shift={(2,-15,0)}] at (den1-east)
+{Box={name=mask1,caption=conv1,xlabel={{"1","dummy"}},ylabel=,zlabel=,fill=\maskColor,height=50,width=1,depth=50}};
+\pic[shift={(1,0,0)}] at (mask1-east)
+{Box={name=mask2,caption=conv1,xlabel={{"1","dummy"}},ylabel=,zlabel=,fill=\maskColor,height=50,width=1,depth=50}};
+\pic[shift={(8,0,0)}] at (mask2-east)
+{Box={name=mask3,caption=conv1,xlabel={{"1","dummy"}},ylabel=,zlabel=,fill=\maskColor,height=50,width=1,depth=50}};
+
+\pic[shift={(5,0,0)}] at (mask3-east)
+{Box={name=mask,caption=Feature Mask,xlabel={{"","dummy"}},ylabel=28,zlabel=28,opacity=0.5,fill=\outmaskColor,height=50,width=1,depth=50}};
+
+\pic[shift={(5,15,0)}] at (mask3-east)
+{Box={name=denoised,caption=Denoised,xlabel={{"","dummy"}},ylabel=32,zlabel=32,opacity=0.5,fill=\outdenoisedColor,height=50,width=1,depth=50}};
+
+\pic[shift={(0,2.5,0)}] at (denoised-north) {Ball={name=elt1,%
+        fill=\SumColor,opacity=0.6,%
+        radius=2.5,logo=$+$}};
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %% Draw Arrow Connections
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\draw [connection]  (input-east)        -- node {\midarrow} (cvt1-west); 
+\draw [connection](bnlr2-east)        -- node {\midarrow} (cvt2-west); 
+\draw [connection]  (bnlr3-east)        -- node{\midarrow} (cvt3-west);
+\draw [connection] (cvt2-east) -- node{\midarrow} (cv1-west);
+\draw [connection] (bnlr_d1-east) -- node{\midarrow} (cv2-west);
+\draw [connection] (bnlr_d2-east) -- node{\midarrow} (cv3-west);
+\draw [connection] (bnlr_d3-east) -- node{\midarrow} (output-west);
+% Denoiser
+\draw [connection] (output-east) -- node{\midarrow} (den1-west);
+\path (den1-east) -- (mask1-west|-den1-west) coordinate[pos=0.5] (con1-mid) ;
+\path (den2-east) -- (mask2-west|-den2-west) coordinate[pos=0.5] (con2-mid) ;
+\path (den3-east) -- (mask3-west|-den3-west) coordinate[pos=0.5] (con3-mid) ;
+\path (mask3-east) -- (denoised-west|-mask3-west) coordinate[pos=0.5] (con4-mid) ;
+
+
+\draw[connection](den1-east)--node{\midarrow}(con1-mid)--node{\midarrow}(mask1-west-|con1-mid)--node{\midarrow}(mask1-west);
+\draw[connection](den2-east)--node{\midarrow}(con2-mid)--node{\midarrow}(mask2-west-|con2-mid)--node{\midarrow}(mask2-west);
+\draw[connection](den3-east)--node{\midarrow}(con3-mid)--node{\midarrow}(mask3-west-|con3-mid)--node{\midarrow}(mask3-west);
+\draw[connection](mask3-east)--node{\midarrow}(con4-mid)--node{\midarrow}(denoised-west-|con4-mid)--node{\midarrow}(denoised-west);
+\draw[connection](mask3-east) --node{\midarrow} (mask-west);
+% Image addition to mask layer
+\path (output-southeast) -- (output-northeast) coordinate[pos=1.25] (output-top) ;
+\path (denoised-south)  -- (denoised-north)  coordinate[pos=1.25] (denoised-top) ;
+%\path (output-south) -- (mask1-west|-output-south) coordinate[pos=0.0] (con-img);
+\draw [copyconnection]  (output-northeast)  
+-- node {\copymidarrow}(output-top)
+-- node {\copymidarrow} (elt1-west);
+\draw [copyconnection] (elt1-south) --node{\copymidarrow}(denoised-north);
+%\draw[connection](output-south) --node{\midarrow}(con-img) --node{\midarrow}(mask1-west-|con-img) --node{\midarrow}(mask1-west);
+\draw[densely dotted] (den2-east) --node[text width=2.5cm,midway,above]{17 Layers} (den3-west);
+\draw[densely dotted] (mask2-east) --node[text width=2.5cm,midway,above]{17 Layers} (mask3-west);
+
+
+
+\end{tikzpicture}
+\end{document}

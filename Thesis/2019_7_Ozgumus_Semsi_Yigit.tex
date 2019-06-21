@@ -40,7 +40,6 @@
 % Multirow table
 \usepackage{multirow}
 % Line spacing
-\usepackage{setspace}
 \usepackage{enumitem}
 \setlist{nolistsep}
 % Customize captions
@@ -77,6 +76,10 @@ labelsep=newline, justification=centering, skip=5pt, position=top}
 % Customize header and footer
 \usepackage{fancyhdr}
 \pagestyle{ruled}
+\DisemulatePackage{setspace}
+\usepackage{setspace}
+%\renewcommand{\baselinestretch}{1.12}
+%\linespread{1.1}
 % Bibliography management
 \usepackage[backend=bibtex]{biblatex}
 % Citation management
@@ -85,6 +88,9 @@ linkcolor = blue,
 urlcolor  = blue,
 citecolor = black,
 anchorcolor = blue]{hyperref}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{adjustbox}
 % Glossary management
 \usepackage[xindy, acronym, nomain, shortcuts, toc]{glossaries}
 % Latin modern latin
@@ -100,6 +106,7 @@ anchorcolor = blue]{hyperref}
 \allowdisplaybreaks
 \setsecnumdepth {paragraph}
 \maxtocdepth {paragraph}
+%\onehalfspacing
 \begin{document}
 \nonzeroparskip
 %-------------------------------------------------------------------------------
@@ -108,22 +115,22 @@ anchorcolor = blue]{hyperref}
 %-------------------------------------------------------------------------------
 %\input{front_matter/dedication.tex}
 %-------------------------------------------------------------------------------
-\chapter*{Acknowledgements}
+\chapter{Abstract}
+\input{chapters/abstract.tex}
+\chapter{Sommario}
+\input{chapters/abstract_it.tex}
+%\glsresetall
+%-------------------------------------------------------------------------------
+\chapter{Acknowledgements}
 \input{front_matter/acknowledgement.tex}
 %-------------------------------------------------------------------------------
 \newpage
 \tableofcontents
-\cleardoublepage
+\clearpage
 \listoffigures
 \listoftables
-%-------------------------------------------------------------------------------
 \mainmatter
 \pagestyle {ruled}
-\chapter*{Abstract}
-\input{chapters/abstract.tex}
-\chapter*{Sommario}
-\input{chapters/abstract_it.tex}
-%\glsresetall
 %-------------------------------------------------------------------------------
 \chapter{Introduction}
 \label{chap:intro}
@@ -153,7 +160,7 @@ anchorcolor = blue]{hyperref}
 \appendix
 \chapter{Model Implementation Details}
 \input{chapters/appendix.tex}
-
+\cleardoublepage
 %\chapter*{Bibliography}
 \backmatter
 \printbibliography

@@ -2,38 +2,83 @@
 
 \begingroup
 
-This chapter presents the modifications applied to aforementioned approaches to improve the performance of the anomaly detection. All the discussed models measures its performance metric on well known datasets, such as CIFAR-10 \cite{cifar10} and SVHN \cite{Netzer2011ReadingDI}. The dataset used in this thesis presents additional challenges to this problem we aim to solve. The first section will introduce its dataset to the reader and will give examples. Next section will discuss the shortcomings of the previous approaches regarding the interpretation of the dataset and detection of the existent anomalies. Sections \ref{sec:encebgan} and \ref{sec:sencebgan} will explain the modified architecture and the significance of the changes.
+This chapter presents the modifications applied to aforementioned approaches to improve the performance 
+of the anomaly detection. All the discussed models measures its performance metric on well known datasets, 
+such as CIFAR-10 \cite{cifar10} and SVHN \cite{Netzer2011ReadingDI}. The dataset used in this thesis presents 
+additional challenges to this problem we aim to solve. The first section will introduce its dataset to the 
+reader and will give examples. Next section will discuss the shortcomings of the previous approaches regarding 
+the interpretation of the dataset and detection of the existent anomalies. Sections \ref{sec:encebgan} and 
+\ref{sec:sencebgan} will explain the modified architecture and the significance of the changes.
 
 \section{SEM Image Dataset}
 \label{sec:sem}
 
-Nanofibrous materials acquired increasingly significant demand from variety of fields in the Industry. It constitutes a foundation material for a lot of products including areas in medicine, filtration, sensors and manufacturing applications. \cite{carrera2016defect}. Despite the demand and continuous research development towards its production, manufacturing nanofibrous materials is still  challenge for scaled of mass production. Several techniques for producing nanofibers have been presented in the literature. \cite{carrera2016defect}. Electrospinning method is the focus of this anomaly detection task. It produces a structure which consists of filaments woven in without a certain pattern.  You can see one of the images of the material produced without any anomalies in figure \ref{fig:data_norm}.
+Nanofibrous materials acquired increasingly significant demand from variety of fields in the Industry. 
+It constitutes a foundation material for a lot of products including areas in medicine, filtration, sensors 
+and manufacturing applications. \cite{carrera2016defect}. Despite the demand and continuous research 
+development towards its production, manufacturing nanofibrous materials is still  challenge for scaled of 
+mass production. Several techniques for producing nanofibers have been presented in the literature. 
+\cite{carrera2016defect}. Electrospinning method is the focus of this anomaly detection task. It produces 
+a structure which consists of filaments woven in with randomized geometric pattern. You can see one of the images 
+of the material produced without any anomalies in figure \ref{fig:data_norm}.
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=1.0\textwidth]{dataset}
+	\includegraphics[width=0.75\textwidth]{dataset}
 	\caption{Part of Training Dataset from the SEM Image Dataset \cite{sem}}
 	\label{fig:data_norm}
 \end{figure}
 
-
-\begin{figure}[h!] \subfloat[Normal regions]{
-		\begin{minipage}[c][1\width]{0.5\textwidth}
+Dataset consists of 5 images with no anomalies and 40 sample images that have various types of anomalous regions. To preserve 
+computational efficiency without sacrifising from performance, training dataset and testing dataset is sampled from SEM image dataset.
+\begin{figure}[h!]
+	 \subfloat[Normal regions]{
+		\begin{minipage}[c][0.8\width]{0.5\textwidth}
 			\centering
 			\fbox{\includegraphics[width=1\textwidth]{sample_normal}}
+			\label{fig:data_sample_normal}
 	\end{minipage}}
-	\hfill 	
+	\hspace*{\fill}%
 	\subfloat[Anomalous regions]{
-		\begin{minipage}[c][1\width]{0.5\textwidth}
+		\begin{minipage}[c][0.8\width]{0.5\textwidth}
 			\centering
 			\fbox{\includegraphics[width=1\textwidth]{sample_anomaly}}
+			\label{fig:data_sample_anomaly}
 	\end{minipage}}
 	\caption{Normal and Anomalous region patches for the training and testing}
 	\label{fig:data_samples}
 \end{figure}
 
+$32 \times 32$ patches are selected as the image size as if proposed framework prove useful for the anomaly detection, 
+testing the model with other known datasets such as CIFAR10 \cite{cifar10} and SVHN \cite{Netzer2011ReadingDI} would be more convenient. 
+$28 \times 28$ patch size is also considered but choosing $28 \times 28$ image size forced model to have less transposed convolution 
+layers and GAN models designed with that architecture experienced model collapse frequently in the preliminary experiments.
+ Figure \ref{fig:data_sample_normal} shows the example patches used for the 
+training phase. Training dataset consists of patches which contains no anomalies. Figure \ref{fig:data_sample_anomaly} 
+shows the anomalous samples which are used in the inference stage. The Anomalous regions can reside in both the topmost layer
+or can be hidden in deep in the woven structure.
 \section{Analysis of Aforementioned Approaches}
 \label{sec:analysis_before}
+
+This section presents an analysis on the performance of GAN based state of the art anomaly detection methods 
+presented in section \ref{sec:gan_based_sota} and a discussion to identify the shortcomings of these methods. 
+Stabilization issues in the adversarial training stage, the method to calculate the anomaly score, and reconstruction 
+issues related to the encoding of latent representation will be discussed.
+
+Proposed methods in chapter \ref{chap:sota} can be further divided into 2 seperate categories with respect to their generator structure. 
+\begin{itemize}
+	\item AnoGAN (\ref{sec:anogan}), BiGAN (\ref{sec:bigan}) and ALAD (\ref{sec:alad})
+	\item GANomaly and Skip-GANomaly (\ref{sec:ganomaly})
+\end{itemize}
+
+First group has a generator that accepts the noise as an input and uses adversarial training to match the generated sample distribution 
+to the input data distribution. The latter uses an autoencoder based network behalf of the generator but still uses adversarial setting 
+to learn the latent representation. Stabilization of loss functions of generator and discriminator is still an important issue in GAN training. 
+Some works in literature proposed additional stabilization "tricks" to improve the convergence properties of the objective function 
+and prevent mode collapse (\cite{methods,fm}). These include adding noise with a decay over time to both input image and generated 
+sample before putting through discriminator to add a factor of robustness to the discriminator, using soft labels to define the true 
+and fake member class instead of the binary truth values and flipping labels of the true and generated images to fool the discriminator 
+and provide higher gradient flow to generator early on in the training to help it learn to generate images better \cite{fm}.
 
 \begin{figure}[h!]
 	\centering

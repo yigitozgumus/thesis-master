@@ -12,8 +12,9 @@ developed for anomaly detection will be studied as state of the art. How they ar
 how they work in practise will be described.
 
 \section{Anomaly Detection}
-
-Using the terminology of machine learning, anomaly detection can be defined as the task of
+\label{sec:ad}
+%Using the terminology of machine learning, 
+Anomaly detection can be defined as the task of
 classifying test data that differs in some respect from the data for the model that is availabla
 during training. \cite{Pimentel:2014:RRN:2588908.2589196} This definition correctly describes the
 task on the abstract level but does not clarify what anomaly actually is. Depending on the the
@@ -33,7 +34,7 @@ In the rest of this section, I will explain different use cases for anomaly dete
 impact on a broad spectrum of problems then the primary approach types to solve anomaly detection
 problem will be introduced.
 
-The categorization threshold to define different application domains is endless but the use of
+The categorization threshold to define different application domains is constantly changing parallel to developments in the literature but the application areas of 
 anomaly detection can be categorized down to these five general fields.
 \cite{Pimentel:2014:RRN:2588908.2589196}
 These are:
@@ -156,14 +157,49 @@ output, these models define a reconstruction error tailored to the nature of the
 type of data and measures this error with respect to certain anomaly threshold. Since the modelled
 underlying data has the features specific to the training dataset, when the anomalous sample is
 feeded through this pipeline, its representation and consequently its reconstruction will be made
-poorly hence giving a greater reconstruction error. In the later sections, state of the art
-generative adversarial network based frameworks that uses this approach will be introduced. How the
-reconstruction loss is computed and anomaly score is formed will be explained in each framework.
+poorly hence giving a greater reconstruction error. 
 
 % TODO Paragraph with other works that uses reconstruction to detect anomalies ?
+\subsection{Related Works}
+\label{sec:relworks}
+
+In this subsection, previous works and state of the art related to anomaly detection in images and proceed with
+ particular case of SEM images will be listed. Proposed methods for anomaly detection for images can be 
+ grouped in reference-based and reference-free ones \cite{Chandola:2009:ADS:1541880.1541882}. Reference-based methods 
+ compares the input image with a template image which is anomaly-free by definition and result of this 
+ comparison decides in run-time whether input includes anomalous component or not \cite{zontak2010defect}.
+  However, they are not feasible for considered SEM images where filament structures follow pseudo 
+  random rather than geometric pattern \cite{carrera2016defect}. 
+
+On the other hand, reference-free methods are more applicable because they can detect anomalies by 
+using features that can consistently create varying responses for normal and anomaly regions
+ \cite{carrera2016defect}. This concept is also well-known as novelty detection \cite{Pimentel:2014:RRN:2588908.2589196}. 
+
+This problem of particular dataset of SEM images previously studied in \cite{carrera2016defect},
+ \cite{carrera-2016-scale} and \cite{boracchi2014novelty} and these methods are based on learning a 
+ sparse dictionary that represents the normal regions and in run-time, if the input does not conform 
+ with the learned dictionary, it is detected as anomaly. Another approach that introduces convolutional 
+ neural networks is established by Napoletano et al. \cite{Napoletano2018anomaly}. To extract feature 
+ for "normality" concept, they exploit pretrained network called ResNet which consists of residual networks 
+ and trained by large number of images \cite{he2016deep}. After feature extraction, for test phase, they 
+ create a dictionary by using K-means clustering to have the representation of normal regions.
+
+Another powerful model for novelty detection problems is auto-encoders. Auto-encoders are quite useful 
+tools to learn the dynamics of a distribution defined over images and to generate examples that corresponds 
+to a sample on learned distribution. Therefore, they are easily deployed for the motivations of novelty 
+detection as done in \cite{an2015variational}, \cite{leveau2017adversarial} and
+\cite{Pidhorskyi:2018:GPN:3327757.3327787}. Particularly, in Sabokrou et al.\cite{sabokrou2018adversarially},
+leverages two staged network that is composed by auto-encoders and convolutional neural networks is explored for
+the novelty detection. 
+
+In the later sections, state of the art
+generative adversarial network based frameworks  will be introduced. How the
+reconstruction loss is computed and anomaly score is formed will be explained in each framework.
+
+
 
 \section{Architectural Components}
-
+\label{sec:arch_comp}
 This section will explain the two main network types used in the state of the art anomaly detection
 frameworks in the following sections. Generative adversarial networks section will describe how the
 framework is formed, the intuition behind its adversarial training scheme. Autoencoder networks
@@ -506,7 +542,7 @@ $$
 
 % konuyu bagla ve sonuc paragrafi
 \section{GAN Based Anomaly Detection Methods}
-
+\label{sec:gan_based_sota}
 % TODO This part should be a long paragraph with citations%
 Anomaly detection on spatial data using reconstruction based methods primarily converges around
 variational autoencoders and other stuff. The GAN based approaches in this field are relatively new.
@@ -516,6 +552,7 @@ approach will be evaluated by their problem description, the type of data they u
 architecture and anomaly score computation. 
 
 \subsection{AnoGAN}
+\label{sec:anogan}
 
 AnoGAN model is the first approach that utilizes GANs for the anomaly detection task.
 \cite{Schlegl2017UnsupervisedAD} It focuses on the problem of detecting anomalous regions in optical

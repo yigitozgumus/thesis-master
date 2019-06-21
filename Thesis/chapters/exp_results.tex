@@ -2,9 +2,54 @@
 
 \begingroup
 
+This chapter presents the performance of the gan based anomaly detection models and proposed model. 
+
+
 \section{Experiment Settings}
 
-\subsection{Figure of Merit}
+
+
+
+\subsection{Performance Metrics}
+This section will introduce the performance metrics used for the interpretation of the experiments performed.
+These are:
+\begin{itemize}
+	\item Precision
+	\item Recall
+	\item F1 Score
+	\item AUROC (Area Under Receiver Operating Characteristic curve)
+\end{itemize}
+
+ \textbf{Recall} is the ability of a model to find all the relevant cases within a dataset. In our case detection 
+of all anomalies in a test would give us a recall of 1.0. \textbf{Precision} on the other hand is the ability 
+ofa classification model to identify \textbf{only} the relevant data points. While recall expresses 
+the ability to find all relevant instances in a dataset, precision expresses the proportion of the 
+data points our model says was relevant actually were relevant. The calculation of the both metrics 
+is given below
+\begin{align}
+\textbf{recall} & = \frac{\text{true positives}}{\text{true positives} + \text{false negatives}} \\[5pt]
+\textbf{precision} & = \frac{\text{true positives}}{\text{true positives} + \text{false positives}}
+\end{align}
+
+Precision and recall comprises a trade off situation. If the model favors the precision, the recall 
+decreases because eliminating the false positives inadvertently increases the false negative rate and 
+vice versa. To give equal importance to both metrics, \textbf{F1 score} is used. The F1 score is the 
+harmonic mean of precision and recall taking both metrics into account in the following equation:
+\begin{equation}
+\text{F}_{1} = 2 \times \frac{\text{precision} \times \text{recall}}{\text{precision} + \text{recall}}
+\end{equation}
+
+The last metric we use to interpret the model performance is area under receiver operating characteristic 
+curve, \textbf{AUROC} for short. ROC curve visualizes the trade of relationship between the false positive 
+and true positive rate. True positive rate is actually recall. False positive rate is the probability 
+of false detection for the system. The calculations for these rates are provided below:
+\begin{align}
+\textbf{True Positive Rate} & = \frac{\text{true positives}}{\text{true positives} + \text{false negatives}} \\[5pt]
+\textbf{False Positive Rate} & = \frac{\text{false positives}}{\text{true negatives} + \text{false positives}}
+\end{align}
+
+the AUROC value can be obtained by calculating the area under the ROC curve which has a range between 0 and 1 with a higher number indicating better classification performance.
+
 \section{GAN Based Model Analysis}
 % Anogan
 
@@ -17,14 +62,14 @@
 			\hline
 			\multicolumn{2}{|c|}{\multirow{2}{*}{\textbf{Model}}} & \multicolumn{4}{c|}{\textbf{Metrics}} \\ \cline{3-6} 
 			\multicolumn{2}{|c|}{} & AUROC & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c|}{F1 Score} \\ \hline
-			\multirow{8}{*}{AnoGAN} & Normal & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\ \cline{2-6} 
-			& IN & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\ \cline{2-6} 
-			& SL & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\ \cline{2-6} 
-			& LF & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\ \cline{2-6} 
-			& IN + SL & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\ \cline{2-6} 
-			& IN + LF & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\ \cline{2-6} 
-			& SL + LF & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\ \cline{2-6} 
-			& LF + SL + IN & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\ \hline
+			\multirow{8}{*}{AnoGAN} & Normal & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
+			& IN & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
+			& SL & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
+			& LF & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
+			& IN + SL & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
+			& IN + LF & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
+			& SL + LF & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
+			& LF + SL + IN & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \hline
 		\end{tabular}%
 	}
 \end{table}
@@ -39,14 +84,14 @@
 			\hline
 			\multicolumn{2}{|c|}{\multirow{2}{*}{\textbf{Model}}} & \multicolumn{4}{c|}{\textbf{Metrics}} \\ \cline{3-6} 
 			\multicolumn{2}{|c|}{} & AUROC & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c|}{F1 Score} \\ \hline
-			\multirow{8}{*}{BiGAN} & Normal & \multicolumn{1}{c}{0.39614} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\ \cline{2-6} 
-			& IN & \multicolumn{1}{c}{0.59329} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\ \cline{2-6} 
-			& SL & \multicolumn{1}{c}{0.54633} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\ \cline{2-6} 
-			& LF & \multicolumn{1}{c}{0.63394} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\ \cline{2-6} 
-			& IN + SL & \multicolumn{1}{c}{0.53644} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\ \cline{2-6} 
-			& IN + LF & \multicolumn{1}{c}{0.54526} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\ \cline{2-6} 
-			& SL + LF & \multicolumn{1}{c}{0.57391} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\ \cline{2-6} 
-			& LF + SL + IN & \multicolumn{1}{c}{0.36905} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\ \hline
+			\multirow{8}{*}{BiGAN} & Normal & \multicolumn{1}{c}{0.39614} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
+			& IN & \multicolumn{1}{c}{0.59329} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
+			& SL & \multicolumn{1}{c}{0.54633} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
+			& LF & \multicolumn{1}{c}{0.63394} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
+			& IN + SL & \multicolumn{1}{c}{0.53644} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
+			& IN + LF & \multicolumn{1}{c}{0.54526} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
+			& SL + LF & \multicolumn{1}{c}{0.57391} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
+			& LF + SL + IN & \multicolumn{1}{c}{0.36905} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \hline
 		\end{tabular}%
 	}
 \end{table}
@@ -61,14 +106,14 @@
 			\hline
 			\multicolumn{2}{|c|}{\multirow{2}{*}{\textbf{Model}}} & \multicolumn{4}{c|}{\textbf{Metrics}} \\ \cline{3-6} 
 			\multicolumn{2}{|c|}{} & AUROC & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c|}{F1 Score} \\ \hline
-			\multirow{8}{*}{ALAD} & Normal & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\ \cline{2-6} 
-			& IN & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\ \cline{2-6} 
-			& SL & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\ \cline{2-6} 
-			& LF & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\ \cline{2-6} 
-			& IN + SL & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\ \cline{2-6} 
-			& IN + LF & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\ \cline{2-6} 
-			& SL + LF & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\ \cline{2-6} 
-			& LF + SL + IN & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\ \hline
+			\multirow{8}{*}{ALAD} & Normal & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c}{} \\ \cline{2-6} 
+			& IN & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
+			& SL & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
+			& LF & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
+			& IN + SL & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
+			& IN + LF & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
+			& SL + LF & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
+			& LF + SL + IN & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \hline
 		\end{tabular}%
 	}
 \end{table}
@@ -86,13 +131,13 @@
 			\multicolumn{2}{|c|}{\multirow{2}{*}{\textbf{Model}}} & \multicolumn{4}{c|}{\textbf{Metrics}} \\ \cline{3-6} 
 			\multicolumn{2}{|c|}{} & AUROC & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c|}{F1 Score} \\ \hline
 			\multirow{8}{*}{GANomaly} & Normal & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\ \cline{2-6} 
-			& IN & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\ \cline{2-6} 
-			& SL & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\ \cline{2-6} 
-			& LF & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\ \cline{2-6} 
-			& IN + SL & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\ \cline{2-6} 
-			& IN + LF & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\ \cline{2-6} 
-			& SL + LF & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\ \cline{2-6} 
-			& LF + SL + IN & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\ \hline
+			& IN & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
+			& SL & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
+			& LF & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
+			& IN + SL & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
+			& IN + LF & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
+			& SL + LF & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
+			& LF + SL + IN & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \hline
 		\end{tabular}%
 	}
 \end{table}
@@ -107,14 +152,14 @@
 			\hline
 			\multicolumn{2}{|c|}{\multirow{2}{*}{\textbf{Model}}} & \multicolumn{4}{c|}{\textbf{Metrics}} \\ \cline{3-6} 
 			\multicolumn{2}{|c|}{} & AUROC & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c|}{F1 Score} \\ \hline
-			\multirow{8}{*}{Skip-GANomaly} & Normal & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\ \cline{2-6} 
-			& IN & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\ \cline{2-6} 
-			& SL & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\ \cline{2-6} 
-			& LF & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\ \cline{2-6} 
-			& IN + SL & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\ \cline{2-6} 
-			& IN + LF & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\ \cline{2-6} 
-			& SL + LF & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\ \cline{2-6} 
-			& LF + SL + IN & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\ \hline
+			\multirow{8}{*}{Skip-GANomaly} & Normal & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
+			& IN & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
+			& SL & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
+			& LF & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
+			& IN + SL & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
+			& IN + LF & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
+			& SL + LF & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
+			& LF + SL + IN & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \hline
 		\end{tabular}%
 	}
 \end{table}

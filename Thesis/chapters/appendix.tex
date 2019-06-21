@@ -5,302 +5,383 @@
 This section contains all the model implementation details. The repository for the thesis 
 can be found at \href{https://github.com/yigitozgumus/Polimi_Thesis}{this address}. All the
 experiments are conducted with the corresponding configuration files in the \textbf{configs} folder.
+Tensorflow 1.13\footnote{\href{https://www.tensorflow.org}{https://www.tensorflow.org}} is used as the underlying framework with Python 3.7\footnote{\href{https://www.python.org/downloads/release/python-370/}{https://www.python.org/downloads/release/python-370/}}
 
 \section{AnoGAN Implementation}
 
-anogan placeholder
-\begin{table}[]
-	\centering
+\footnotesize
+\begin{longtable}[c]{@{}lccccc@{}}
 	\caption{Architecture and Hyperparameters of AnoGAN Model}
-	\label{tab:anogan_imp}
-	\resizebox{\textwidth}{!}{%
-		\begin{tabular}{llcccc}
-			\hline
-			\multicolumn{1}{c}{Operation} & Kernel & \multicolumn{1}{l}{Stride} & \multicolumn{1}{l}{Feature Maps/ Units} & \multicolumn{1}{l}{BN ?} & \multicolumn{1}{l}{Activation} \\ \hline
-			\multicolumn{6}{l}{\textbf{Generator}} \\
-			Dense & \multicolumn{1}{c}{} &  & 4 $\times$ 4 $\times$ 512 & $\checkmark$ & Leaky Relu \\
-			Transposed Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 512 & $\checkmark$ & Leaky Relu \\
-			Transposed Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 256 & $\checkmark$ & Leaky Relu \\
-			Transposed Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 128 & $\checkmark$ & Leaky Relu \\
-			Transposed Convolution & \multicolumn{1}{c}{5$\times$5} & 1$\times$1 & 1 &  & TanH \\ \hline
-			Latent Dimension & \multicolumn{5}{l}{256} \\
-			Leaky Relu Slope & \multicolumn{5}{l}{0.2} \\
-			Batch Norm Momentum & \multicolumn{5}{l}{0.8} \\
-			Optimizer & \multicolumn{5}{l}{$\text { Adam }(\mathrm{lr}=5 \mathrm{e}-5, \text { beta } 1=0.5, \text { beta } 2=0.999,)$} \\ \hline
-			\multicolumn{6}{l}{\textbf{Discriminator}} \\
-			Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 64 & $\checkmark$ & Leaky Relu \\
-			Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 128 & $\checkmark$ & Leaky Relu \\
-			Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 256 & $\checkmark$ & Leaky Relu \\
-			Dense & \multicolumn{1}{c}{} &  & 1 &  & Sigmoid \\ \hline
-			Leaky ReLU Slope & \multicolumn{5}{l}{0.2} \\
-			Batch Norm Momentum & \multicolumn{5}{l}{0.8} \\
-			Optimizer & \multicolumn{5}{l}{$\text { Adam }(\mathrm{lr}=1 \mathrm{e}-6, \text { beta } 1=0.5, \text { beta } 2=0.999,)$} \\ \hline
-			Epochs & 50 & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\
-			Batch Size & \multicolumn{5}{l}{64}
-		\end{tabular}%
-	}
-\end{table}
+	\label{tab:anogan_imp}\\
+	\toprule
+	Operation & Kernel & Stride & Feature Maps/ Units & BN ? & Activation \\* \midrule
+	\endfirsthead
+	\toprule
+	Operation & Kernel & Stride & Feature Maps/ Units & BN ? & Activation \\* \midrule
+	\endhead
+	\bottomrule
+	\endfoot
+	\endlastfoot
+	\multicolumn{6}{l}{\textbf{Generator}} \\
+	Dense & \multicolumn{1}{c}{} &  & 4 $\times$ 4 $\times$ 512 & $\checkmark$ & Leaky Relu \\
+	Transposed Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 512 & $\checkmark$ & Leaky Relu \\
+	Transposed Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 256 & $\checkmark$ & Leaky Relu \\
+	Transposed Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 128 & $\checkmark$ & Leaky Relu \\
+	Transposed Convolution & \multicolumn{1}{c}{5$\times$5} & 1$\times$1 & 1 &  & TanH \\ \hline
+	Latent Dimension & \multicolumn{5}{l}{256} \\
+	Leaky Relu Slope & \multicolumn{5}{l}{0.2} \\
+	Batch Norm Momentum & \multicolumn{5}{l}{0.8} \\
+	Optimizer & \multicolumn{5}{l}{$\text { Adam }(\mathrm{lr}=5 \mathrm{e}-5, \text { beta } 1=0.5, \text { beta } 2=0.999,)$} \\ \hline
+	\multicolumn{6}{l}{\textbf{Discriminator}} \\
+	Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 64 & $\checkmark$ & Leaky Relu \\
+	Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 128 & $\checkmark$ & Leaky Relu \\
+	Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 256 & $\checkmark$ & Leaky Relu \\
+	Dense & \multicolumn{1}{c}{} &  & 1 &  & Sigmoid \\ \hline
+	Leaky ReLU Slope & \multicolumn{5}{l}{0.2} \\
+	Batch Norm Momentum & \multicolumn{5}{l}{0.8} \\
+	Optimizer & \multicolumn{5}{l}{$\text { Adam }(\mathrm{lr}=1 \mathrm{e}-6, \text { beta } 1=0.5, \text { beta } 2=0.999,)$} \\ \hline
+	Epochs & 50 & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\
+	Batch Size & \multicolumn{5}{l}{64}
+\end{longtable}
 
 \section{BiGAN Implementation}
 
-bigan placeholder
 
-\begin{table}[]
-	\centering
+\footnotesize
+\begin{longtable}[c]{@{}lccccc@{}}
 	\caption{Architecture and Hyperparameters of BiGAN Model}
-	\label{tab:bigan_imp}
-	\resizebox{\textwidth}{!}{%
-		\begin{tabular}{llcccc}
-			\hline
-			\multicolumn{1}{c}{Operation} & Kernel & \multicolumn{1}{l}{Stride} & \multicolumn{1}{l}{Feature Maps/ Units} & \multicolumn{1}{l}{BN ?} & \multicolumn{1}{l}{Activation} \\ \hline
-			\multicolumn{6}{l}{\textbf{Generator}} \\
-			Dense & \multicolumn{1}{c}{} &  & 4 $\times$ 4 $\times$ 512 & $\checkmark$ & Leaky Relu \\
-			Transposed Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 512 & $\checkmark$ & Leaky Relu \\
-			Transposed Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 256 & $\checkmark$ & Leaky Relu \\
-			Transposed Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 128 & $\checkmark$ & Leaky Relu \\
-			Transposed Convolution & \multicolumn{1}{c}{$\times$5} & 1$\times$1 & 1 &  & TanH \\ \hline
-			Latent Dimension & \multicolumn{5}{l}{256} \\
-			Leaky Relu Slope & \multicolumn{5}{l}{0.2} \\
-			Batch Norm Momentum & \multicolumn{5}{l}{0.8} \\
-			Optimizer & \multicolumn{5}{l}{$\text { Adam }(\mathrm{lr}=5 \mathrm{e}-5, \text { beta } 1=0.5, \text { beta } 2=0.999,)$} \\ \hline
-			\multicolumn{6}{l}{\textbf{Discriminator}} \\
-			Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 64 & $\checkmark$ & Leaky Relu \\
-			Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 128 & $\checkmark$ & Leaky Relu \\
-			Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 256 & $\checkmark$ & Leaky Relu \\
-			Dense & \multicolumn{1}{c}{} &  & 1 &  & Sigmoid \\ \hline
-			Leaky ReLU Slope & \multicolumn{5}{l}{0.2} \\
-			Batch Norm Momentum & \multicolumn{5}{l}{0.8} \\
-			Optimizer & \multicolumn{5}{l}{$\text { Adam }(\mathrm{lr}=1 \mathrm{e}-6, \text { beta } 1=0.5, \text { beta } 2=0.999,)$} \\ \hline
-			\multicolumn{6}{l}{\textbf{Encoder}} \\
-			Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 64 & $\checkmark$ & Leaky Relu \\
-			Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 128 & $\checkmark$ & Leaky Relu \\
-			Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 256 & $\checkmark$ & Leaky Relu \\
-			Dense & \multicolumn{1}{c}{} &  & 256 &  &  \\ \hline
-			Leaky ReLU Slope & \multicolumn{5}{l}{0.2} \\
-			Batch Norm Momentum & \multicolumn{5}{l}{0.8} \\
-			Optimizer & \multicolumn{5}{l}{$\text { Adam }(\mathrm{lr}=1 \mathrm{e}-6, \text { beta } 1=0.5, \text { beta } 2=0.999,)$} \\ \hline
-			Epochs & 50 & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\
-			Batch Size & \multicolumn{5}{l}{64}
-		\end{tabular}%
-	}
-\end{table}
+	\label{tab:bigan_imp}\\
+	\toprule
+	Operation & Kernel & Stride & Feature Maps/ Units & BN ? & Activation \\* \midrule
+	\endfirsthead
+	\toprule
+	Operation & Kernel & Stride & Feature Maps/ Units & BN ? & Activation \\* \midrule
+	\endhead
+	\bottomrule
+	\endfoot
+	\endlastfoot
+	\multicolumn{6}{l}{\textbf{Generator}} \\
+	Dense & \multicolumn{1}{c}{} &  & 4 $\times$ 4 $\times$ 512 & $\checkmark$ & Leaky Relu \\
+	Transposed Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 512 & $\checkmark$ & Leaky Relu \\
+	Transposed Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 256 & $\checkmark$ & Leaky Relu \\
+	Transposed Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 128 & $\checkmark$ & Leaky Relu \\
+	Transposed Convolution & \multicolumn{1}{c}{$\times$5} & 1$\times$1 & 1 &  & TanH \\ \hline
+	Latent Dimension & \multicolumn{5}{l}{256} \\
+	Leaky Relu Slope & \multicolumn{5}{l}{0.2} \\
+	Batch Norm Momentum & \multicolumn{5}{l}{0.8} \\
+	Optimizer & \multicolumn{5}{l}{$\text { Adam }(\mathrm{lr}=5 \mathrm{e}-5, \text { beta } 1=0.5, \text { beta } 2=0.999,)$} \\ \hline
+	\multicolumn{6}{l}{\textbf{Discriminator}} \\
+	Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 64 & $\checkmark$ & Leaky Relu \\
+	Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 128 & $\checkmark$ & Leaky Relu \\
+	Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 256 & $\checkmark$ & Leaky Relu \\
+	Dense & \multicolumn{1}{c}{} &  & 1 &  & Sigmoid \\ \hline
+	Leaky ReLU Slope & \multicolumn{5}{l}{0.2} \\
+	Batch Norm Momentum & \multicolumn{5}{l}{0.8} \\
+	Optimizer & \multicolumn{5}{l}{$\text { Adam }(\mathrm{lr}=1 \mathrm{e}-6, \text { beta } 1=0.5, \text { beta } 2=0.999,)$} \\ \hline
+	\multicolumn{6}{l}{\textbf{Encoder}} \\
+	Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 64 &  & Leaky Relu \\
+	Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 128 & $\checkmark$ & Leaky Relu \\
+	Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 256 & $\checkmark$ & Leaky Relu \\
+	Dense & \multicolumn{1}{c}{} &  & 256 &  &  \\ \hline
+	Leaky ReLU Slope & \multicolumn{5}{l}{0.2} \\
+	Batch Norm Momentum & \multicolumn{5}{l}{0.8} \\
+	Optimizer & \multicolumn{5}{l}{$\text { Adam }(\mathrm{lr}=1 \mathrm{e}-6, \text { beta } 1=0.5, \text { beta } 2=0.999,)$} \\ \hline
+	Epochs & 50 & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\
+	Batch Size & \multicolumn{5}{l}{64}
+	
+\end{longtable}
+
 
 \section{ALAD Implementation}
 
-ALAD placeholder
 
-\begin{table}[]
-	\centering
+\footnotesize
+\begin{longtable}[c]{@{}lccccc@{}}
 	\caption{Architecture and Hyperparameters of ALAD Model}
-	\label{tab:alad_imp}
-	\resizebox{\textwidth}{!}{%
-		\begin{tabular}{llcccc}
-			\hline
-			\multicolumn{1}{c}{Operation} & Kernel & \multicolumn{1}{l}{Stride} & \multicolumn{1}{l}{Feature Maps/ Units} & \multicolumn{1}{l}{BN ?} & \multicolumn{1}{l}{Activation} \\ \hline
-			\multicolumn{6}{l}{\textbf{Generator}} \\
-			Dense & \multicolumn{1}{c}{} &  & 4 $\times$ 4 $\times$ 512 & $\checkmark$ & Leaky Relu \\
-			Transposed Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 512 & $\checkmark$ & Leaky Relu \\
-			Transposed Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 256 & $\checkmark$ & Leaky Relu \\
-			Transposed Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 128 & $\checkmark$ & Leaky Relu \\
-			Transposed Convolution & \multicolumn{1}{c}{4$\times$4} & 1$\times$1 & 1 &  & TanH \\ \hline
-			Latent Dimension & \multicolumn{5}{l}{256} \\
-			Leaky Relu Slope & \multicolumn{5}{l}{0.2} \\
-			Batch Norm Momentum & \multicolumn{5}{l}{0.8} \\
-			Optimizer & \multicolumn{5}{l}{$\text { Adam }(\mathrm{lr}=5 \mathrm{e}-5, \text { beta } 1=0.5, \text { beta } 2=0.999,)$} \\ \hline
-			\multicolumn{6}{l}{\textbf{Discriminator XZ}} \\
-			Convolution($x$) & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 128 & $\checkmark$ & Leaky Relu \\
-			Convolution($x$) & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 256 & $\checkmark$ & Leaky Relu \\
-			Convolution($x$) & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 512 & $\checkmark$ & Leaky Relu \\
-			Reshape & \multicolumn{5}{l}{$\text{Batch} \times 512 \times 4 \times 4$} \\
-			Convolution($z$) & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 512 & Dropout & Leaky Relu \\
-			Convolution($z$) & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 512 & Dropout & Leaky Relu \\
-			Concatenate &\multicolumn{5}{l}{} \\
-			Convolution & \multicolumn{1}{c}{1$\times$1} & 1$\times$1 & 1024 & Dropout & Leaky Relu \\
-			Convolution & \multicolumn{1}{c}{1$\times$1} & 1$\times$1 & 1024 & Dropout & Leaky Relu \\
-			Dense & \multicolumn{1}{c}{} &  & 1 &  & Sigmoid \\ \hline
-			Leaky ReLU Slope & \multicolumn{5}{l}{0.2} \\
-			Dropout Rate & \multicolumn{5}{l}{0.2} \\
-			Batch Norm Momentum & \multicolumn{5}{l}{0.8} \\
-			Optimizer & \multicolumn{5}{l}{$\text { Adam }(\mathrm{lr}=1 \mathrm{e}-6, \text { beta } 1=0.5, \text { beta } 2=0.999,)$} \\ \hline
-			\multicolumn{6}{l}{\textbf{Encoder}} \\
-			Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 32 & $\checkmark$ & Leaky Relu \\
-			Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 64 & $\checkmark$ & Leaky Relu \\
-			Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 128 & $\checkmark$ & Leaky Relu \\
-			Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 256 & $\checkmark$ & Leaky Relu \\
-			Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 256 &  &  \\ \hline
-			Leaky ReLU Slope & \multicolumn{5}{l}{0.2} \\
-			Batch Norm Momentum & \multicolumn{5}{l}{0.8} \\
-			Optimizer & \multicolumn{5}{l}{$\text { Adam }(\mathrm{lr}=1 \mathrm{e}-6, \text { beta } 1=0.5, \text { beta } 2=0.999,)$} \\ \hline
-			\multicolumn{6}{l}{\textbf{Discriminator XX}} \\
-			Concatenate &\multicolumn{5}{l}{f} \\
-			Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 64 & Dropout & Leaky Relu \\
-			Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 128 & Dropout & Leaky Relu \\
-			Dense & \multicolumn{1}{c}{} &  & 1 &  & Sigmoid \\ \hline
-			Leaky ReLU Slope & \multicolumn{5}{l}{0.2} \\
-			Batch Norm Momentum & \multicolumn{5}{l}{0.8} \\
-			Optimizer & \multicolumn{5}{l}{$\text { Adam }(\mathrm{lr}=1 \mathrm{e}-6, \text { beta } 1=0.5, \text { beta } 2=0.999,)$} \\ \hline
-			\multicolumn{6}{l}{\textbf{Discriminator ZZ}} \\
-			Dense & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 64 & Dropout & Leaky Relu \\
-			Dense & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 32 & Dropout & Leaky Relu \\
-			Dense & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 1 & Dropout & Leaky Relu \\ \hline
-			Leaky ReLU Slope & \multicolumn{5}{l}{0.2} \\
-			Dropout Rate & \multicolumn{5}{l}{0.2} \\
-			Batch Norm Momentum & \multicolumn{5}{l}{0.8} \\
-			Optimizer & \multicolumn{5}{l}{$\text { Adam }(\mathrm{lr}=1 \mathrm{e}-6, \text { beta } 1=0.5, \text { beta } 2=0.999,)$} \\ \hline
-			Epochs & 50 & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\
-			Batch Size & \multicolumn{5}{l}{64}
-		\end{tabular}%
-	}
-\end{table}
+	\label{tab:alad_imp}\\
+	\toprule
+	Operation & Kernel & Stride & Feature Maps/ Units & BN ? & Activation \\* \midrule
+	\endfirsthead
+	\toprule
+	Operation & Kernel & Stride & Feature Maps/ Units & BN ? & Activation \\* \midrule
+	\endhead
+	\bottomrule
+	\endfoot
+	\endlastfoot
+	%%HERE
+	\multicolumn{6}{l}{\textbf{Generator}} \\
+	Dense & \multicolumn{1}{c}{} &  & 4 $\times$ 4 $\times$ 512 & $\checkmark$ & Leaky Relu \\
+	Transposed Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 512 & $\checkmark$ & Leaky Relu \\
+	Transposed Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 256 & $\checkmark$ & Leaky Relu \\
+	Transposed Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 128 & $\checkmark$ & Leaky Relu \\
+	Transposed Convolution & \multicolumn{1}{c}{4$\times$4} & 1$\times$1 & 1 &  & TanH \\ \hline
+	Latent Dimension & \multicolumn{5}{l}{256} \\
+	Leaky Relu Slope & \multicolumn{5}{l}{0.2} \\
+	Batch Norm Momentum & \multicolumn{5}{l}{0.8} \\
+	Optimizer & \multicolumn{5}{l}{$\text { Adam }(\mathrm{lr}=5 \mathrm{e}-5, \text { beta } 1=0.5, \text { beta } 2=0.999,)$} \\ \hline
+	\multicolumn{6}{l}{\textbf{Discriminator XZ}} \\
+	Convolution($x$) & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 128 & $\checkmark$ & Leaky Relu \\
+	Convolution($x$) & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 256 & $\checkmark$ & Leaky Relu \\
+	Convolution($x$) & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 512 & $\checkmark$ & Leaky Relu \\
+	Reshape & \multicolumn{5}{l}{$\text{Batch} \times 512 \times 4 \times 4$} \\
+	Convolution($z$) & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 512 & Dropout & Leaky Relu \\
+	Convolution($z$) & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 512 & Dropout & Leaky Relu \\
+	Concatenate &\multicolumn{5}{l}{} \\
+	Convolution & \multicolumn{1}{c}{1$\times$1} & 1$\times$1 & 1024 & Dropout & Leaky Relu \\
+	Convolution & \multicolumn{1}{c}{1$\times$1} & 1$\times$1 & 1024 & Dropout & Leaky Relu \\
+	Dense & \multicolumn{1}{c}{} &  & 1 &  & Sigmoid \\ \hline
+	Leaky ReLU Slope & \multicolumn{5}{l}{0.2} \\
+	Dropout Rate & \multicolumn{5}{l}{0.2} \\
+	Batch Norm Momentum & \multicolumn{5}{l}{0.8} \\
+	Optimizer & \multicolumn{5}{l}{$\text { Adam }(\mathrm{lr}=1 \mathrm{e}-6, \text { beta } 1=0.5, \text { beta } 2=0.999,)$} \\ \hline
+	\multicolumn{6}{l}{\textbf{Encoder}} \\
+	Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 32 & $\checkmark$ & Leaky Relu \\
+	Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 64 & $\checkmark$ & Leaky Relu \\
+	Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 128 & $\checkmark$ & Leaky Relu \\
+	Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 256 & $\checkmark$ & Leaky Relu \\
+	Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 256 &  &  \\ \hline
+	Leaky ReLU Slope & \multicolumn{5}{l}{0.2} \\
+	Batch Norm Momentum & \multicolumn{5}{l}{0.8} \\
+	Optimizer & \multicolumn{5}{l}{$\text { Adam }(\mathrm{lr}=1 \mathrm{e}-6, \text { beta } 1=0.5, \text { beta } 2=0.999,)$} \\ \hline
+	\multicolumn{6}{l}{\textbf{Discriminator XX}} \\
+	Concatenate &\multicolumn{5}{l}{f} \\
+	Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 64 & Dropout & Leaky Relu \\
+	Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 128 & Dropout & Leaky Relu \\
+	Dense & \multicolumn{1}{c}{} &  & 1 &  & Sigmoid \\ \hline
+	Leaky ReLU Slope & \multicolumn{5}{l}{0.2} \\
+	Batch Norm Momentum & \multicolumn{5}{l}{0.8} \\
+	Optimizer & \multicolumn{5}{l}{$\text { Adam }(\mathrm{lr}=1 \mathrm{e}-6, \text { beta } 1=0.5, \text { beta } 2=0.999,)$} \\ \hline
+	\multicolumn{6}{l}{\textbf{Discriminator ZZ}} \\
+	Dense & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 64 & Dropout & Leaky Relu \\
+	Dense & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 32 & Dropout & Leaky Relu \\
+	Dense & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 1 & Dropout & Leaky Relu \\ \hline
+	Leaky ReLU Slope & \multicolumn{5}{l}{0.2} \\
+	Dropout Rate & \multicolumn{5}{l}{0.2} \\
+	Batch Norm Momentum & \multicolumn{5}{l}{0.8} \\
+	Optimizer & \multicolumn{5}{l}{$\text { Adam }(\mathrm{lr}=1 \mathrm{e}-6, \text { beta } 1=0.5, \text { beta } 2=0.999,)$} \\ \hline
+	Epochs & 50 & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\
+	Batch Size & \multicolumn{5}{l}{64}
+\end{longtable}
+
 
 \section{GANomaly Implementation}
 
-Ganomaly placeholder
 
-\begin{table}[]
-	\centering
+\footnotesize
+\begin{longtable}[c]{@{}lccccc@{}}
 	\caption{Architecture and Hyperparameters of GANomaly Model}
-	\label{tab:ganomaly_imp}
-	\resizebox{\textwidth}{!}{%
-		\begin{tabular}{llcccc}
-			\hline
-			\multicolumn{1}{c}{Operation} & Kernel & \multicolumn{1}{l}{Stride} & \multicolumn{1}{l}{Feature Maps/ Units} & \multicolumn{1}{l}{BN ?} & \multicolumn{1}{l}{Activation} \\ \hline
-			\multicolumn{6}{l}{\textbf{Generator}} \\
-			\multicolumn{6}{l}{\textbf{Encoder}} \\
-			Convolution & \multicolumn{1}{c}{5$\times$5} & 2$\times$2 & 64 &  & Leaky Relu \\
-			Convolution & \multicolumn{1}{c}{5$\times$5} & 2$\times$2 & 128 & $\checkmark$ & Leaky Relu \\
-			Convolution & \multicolumn{1}{c}{5$\times$5} & 2$\times$2 & 256 & $\checkmark$ & Leaky Relu \\
-			Dense & \multicolumn{1}{c}{} &  & 256 &  &  \\ 
-			\multicolumn{6}{l}{\textbf{Decoder}} \\
-			Transposed Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 256 & $\checkmark$ & Leaky Relu \\
-			Transposed Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 128 & $\checkmark$ & Leaky Relu \\
-			Transposed Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 64 & $\checkmark$ & Leaky Relu \\
-			Transposed Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 32 & $\checkmark$ & Leaky Relu \\
-			Transposed Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 16 & $\checkmark$ & Leaky Relu \\
-			Transposed Convolution & \multicolumn{1}{c}{4$\times$4} & 1$\times$1 & 1 &  & TanH \\ \hline
-			Latent Dimension & \multicolumn{5}{l}{256} \\
-			Leaky Relu Slope & \multicolumn{5}{l}{0.2} \\
-			Batch Norm Momentum & \multicolumn{5}{l}{0.8} \\
-			Optimizer & \multicolumn{5}{l}{$\text { Adam }(\mathrm{lr}=5 \mathrm{e}-5, \text { beta } 1=0.5, \text { beta } 2=0.999,)$} \\ \hline
-			\multicolumn{6}{l}{\textbf{Encoder 2}} \\
-			Convolution & \multicolumn{1}{c}{5$\times$5} & 2$\times$2 & 64 &  & Leaky Relu \\
-			Convolution & \multicolumn{1}{c}{5$\times$5} & 2$\times$2 & 128 & $\checkmark$ & Leaky Relu \\
-			Convolution & \multicolumn{1}{c}{5$\times$5} & 2$\times$2 & 256 & $\checkmark$ & Leaky Relu \\
-			Dense & \multicolumn{1}{c}{} &  & 256 &  &  \\ 
-			\multicolumn{6}{l}{\textbf{Discriminator}} \\
-			Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 64 & $\checkmark$ & Leaky Relu \\
-			Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 128 & $\checkmark$ & Leaky Relu \\
-			Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 256 & $\checkmark$ & Leaky Relu \\
-			Dense & \multicolumn{1}{c}{} &  & 1 &  & Sigmoid \\ \hline
-			Leaky ReLU Slope & \multicolumn{5}{l}{0.2} \\
-			Batch Norm Momentum & \multicolumn{5}{l}{0.8} \\
-			Optimizer & \multicolumn{5}{l}{$\text { Adam }(\mathrm{lr}=1 \mathrm{e}-6, \text { beta } 1=0.5, \text { beta } 2=0.999,)$} \\ \hline
-			Epochs & 50 & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\
-			Batch Size & \multicolumn{5}{l}{64}
-		\end{tabular}%
-	}
-\end{table}
+	\label{tab:ganomaly_imp}\\
+	\toprule
+	Operation & Kernel & Stride & Feature Maps/ Units & BN ? & Activation \\* \midrule
+	\endfirsthead
+	\toprule
+	Operation & Kernel & Stride & Feature Maps/ Units & BN ? & Activation \\* \midrule
+	\endhead
+	\bottomrule
+	\endfoot
+	\endlastfoot
+	%%HERE
+	\multicolumn{6}{l}{\textbf{Generator}} \\
+	\multicolumn{6}{l}{\textbf{Encoder}} \\
+	Convolution & \multicolumn{1}{c}{5$\times$5} & 2$\times$2 & 64 &  & Leaky Relu \\
+	Convolution & \multicolumn{1}{c}{5$\times$5} & 2$\times$2 & 128 & $\checkmark$ & Leaky Relu \\
+	Convolution & \multicolumn{1}{c}{5$\times$5} & 2$\times$2 & 256 & $\checkmark$ & Leaky Relu \\
+	Dense & \multicolumn{1}{c}{} &  & 256 &  &  \\ 
+	\multicolumn{6}{l}{\textbf{Decoder}} \\
+	Transposed Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 256 & $\checkmark$ & Leaky Relu \\
+	Transposed Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 128 & $\checkmark$ & Leaky Relu \\
+	Transposed Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 64 & $\checkmark$ & Leaky Relu \\
+	Transposed Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 32 & $\checkmark$ & Leaky Relu \\
+	Transposed Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 16 & $\checkmark$ & Leaky Relu \\
+	Transposed Convolution & \multicolumn{1}{c}{4$\times$4} & 1$\times$1 & 1 &  & TanH \\ \hline
+	Latent Dimension & \multicolumn{5}{l}{256} \\
+	Leaky Relu Slope & \multicolumn{5}{l}{0.2} \\
+	Batch Norm Momentum & \multicolumn{5}{l}{0.8} \\
+	Optimizer & \multicolumn{5}{l}{$\text { Adam }(\mathrm{lr}=5 \mathrm{e}-5, \text { beta } 1=0.5, \text { beta } 2=0.999,)$} \\ \hline
+	\multicolumn{6}{l}{\textbf{Encoder 2}} \\
+	Convolution & \multicolumn{1}{c}{5$\times$5} & 2$\times$2 & 64 &  & Leaky Relu \\
+	Convolution & \multicolumn{1}{c}{5$\times$5} & 2$\times$2 & 128 & $\checkmark$ & Leaky Relu \\
+	Convolution & \multicolumn{1}{c}{5$\times$5} & 2$\times$2 & 256 & $\checkmark$ & Leaky Relu \\
+	Dense & \multicolumn{1}{c}{} &  & 256 &  &  \\ 
+	\multicolumn{6}{l}{\textbf{Discriminator}} \\
+	Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 64 & $\checkmark$ & Leaky Relu \\
+	Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 128 & $\checkmark$ & Leaky Relu \\
+	Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 256 & $\checkmark$ & Leaky Relu \\
+	Dense & \multicolumn{1}{c}{} &  & 1 &  & Sigmoid \\ \hline
+	Leaky ReLU Slope & \multicolumn{5}{l}{0.2} \\
+	Batch Norm Momentum & \multicolumn{5}{l}{0.8} \\
+	Optimizer & \multicolumn{5}{l}{$\text { Adam }(\mathrm{lr}=1 \mathrm{e}-6, \text { beta } 1=0.5, \text { beta } 2=0.999,)$} \\ \hline
+	Epochs & 50 & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\
+	Batch Size & \multicolumn{5}{l}{64}
+\end{longtable}
+
 
 \section{Skip-GANomaly Implementation}
 
-\begin{table}[]
-	\centering
+\footnotesize
+\begin{longtable}[c]{@{}lccccc@{}}
 	\caption{Architecture and Hyperparameters of Skip-GANomaly Model}
-	\label{tab:sganomaly_imp}
-	\resizebox{\textwidth}{!}{%
-		\begin{tabular}{llcccc}
-			\hline
-			\multicolumn{1}{c}{Operation} & Kernel & \multicolumn{1}{l}{Stride} & \multicolumn{1}{l}{Feature Maps/ Units} & \multicolumn{1}{l}{BN ?} & \multicolumn{1}{l}{Activation} \\ \hline
-			\multicolumn{6}{l}{\textbf{Generator}} \\
-			Dense & \multicolumn{1}{c}{} &  & 4 $\times$ 4 $\times$ 512 & $\checkmark$ & Leaky Relu \\
-			Transposed Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 512 & $\checkmark$ & Leaky Relu \\
-			Transposed Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 256 & $\checkmark$ & Leaky Relu \\
-			Transposed Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 128 & $\checkmark$ & Leaky Relu \\
-			Transposed Convolution & \multicolumn{1}{c}{4$\times$4} & 1$\times$1 & 1 &  & TanH \\ \hline
-			Latent Dimension & \multicolumn{5}{l}{256} \\
-			Leaky Relu Slope & \multicolumn{5}{l}{0.2} \\
-			Batch Norm Momentum & \multicolumn{5}{l}{0.8} \\
-			Optimizer & \multicolumn{5}{l}{$\text { Adam }(\mathrm{lr}=5 \mathrm{e}-5, \text { beta } 1=0.5, \text { beta } 2=0.999,)$} \\ \hline
-			\multicolumn{6}{l}{\textbf{Discriminator}} \\
-			Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 64 & $\checkmark$ & Leaky Relu \\
-			Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 128 & $\checkmark$ & Leaky Relu \\
-			Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 256 & $\checkmark$ & Leaky Relu \\
-			Dense & \multicolumn{1}{c}{} &  & 1 &  & Sigmoid \\ \hline
-			Leaky ReLU Slope & \multicolumn{5}{l}{0.2} \\
-			Batch Norm Momentum & \multicolumn{5}{l}{0.8} \\
-			Optimizer & \multicolumn{5}{l}{$\text { Adam }(\mathrm{lr}=1 \mathrm{e}-6, \text { beta } 1=0.5, \text { beta } 2=0.999,)$} \\ \hline
-			Epochs & 50 & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\
-			Batch Size & \multicolumn{5}{l}{64}
-		\end{tabular}%
-	}
-\end{table}
+	\label{tab:sganomaly_imp}\\
+	\toprule
+	Operation & Kernel & Stride & Feature Maps/ Units & BN ? & Activation \\* \midrule
+	\endfirsthead
+	\toprule
+	Operation & Kernel & Stride & Feature Maps/ Units & BN ? & Activation \\* \midrule
+	\endhead
+	\bottomrule
+	\endfoot
+	\endlastfoot
+	%%HERE
+	\multicolumn{6}{l}{\textbf{Generator}} \\
+	Convolution & \multicolumn{1}{c}{5$\times$5} & 2$\times$2 & 64 & $\checkmark$ & Leaky Relu \\
+	Convolution & \multicolumn{1}{c}{5$\times$5} & 2$\times$2 & 128 & $\checkmark$ & Leaky Relu \\
+	Convolution & \multicolumn{1}{c}{5$\times$5} & 2$\times$2 & 256 & $\checkmark$ & Leaky Relu \\
+	Convolution & \multicolumn{1}{c}{5$\times$5} & 2$\times$2 & 512 & $\checkmark$ & Leaky Relu \\
+	Convolution & \multicolumn{1}{c}{5$\times$5} & 2$\times$2 & 512 & $\checkmark$ & Leaky Relu \\
+	Transposed Convolution & \multicolumn{1}{c}{5$\times$5} & 2$\times$2 & 512 & $\checkmark$ & Leaky Relu \\
+	Transposed Convolution & \multicolumn{1}{c}{5$\times$5} & 2$\times$2 & 256 & $\checkmark$ & Leaky Relu \\
+	Transposed Convolution & \multicolumn{1}{c}{5$\times$5} & 2$\times$2 & 128 & $\checkmark$ & Leaky Relu \\
+	Transposed Convolution & \multicolumn{1}{c}{5$\times$5} & 2$\times$2 & 64 & $\checkmark$ & Leaky Relu \\
+	Transposed Convolution & \multicolumn{1}{c}{5$\times$5} & 2$\times$2 & 1 &  &  \\
+	Latent Dimension & \multicolumn{5}{l}{256} \\
+	Leaky Relu Slope & \multicolumn{5}{l}{0.2} \\
+	Batch Norm Momentum & \multicolumn{5}{l}{0.8} \\
+	Optimizer & \multicolumn{5}{l}{$\text { Adam }(\mathrm{lr}=5 \mathrm{e}-5, \text { beta } 1=0.5, \text { beta } 2=0.999,)$} \\ \hline
+	\multicolumn{6}{l}{\textbf{Discriminator}} \\
+	Convolution & \multicolumn{1}{c}{5$\times$5} & 2$\times$2 & 64 & $\checkmark$ & Leaky Relu \\
+	Convolution & \multicolumn{1}{c}{5$\times$5} & 2$\times$2 & 128 & $\checkmark$ & Leaky Relu \\
+	Convolution & \multicolumn{1}{c}{5$\times$5} & 2$\times$2 & 256 & $\checkmark$ & Leaky Relu \\
+	Dense & \multicolumn{1}{c}{} &  & 1 &  & Sigmoid \\ \hline
+	Leaky ReLU Slope & \multicolumn{5}{l}{0.2} \\
+	Batch Norm Momentum & \multicolumn{5}{l}{0.8} \\
+	Optimizer & \multicolumn{5}{l}{$\text { Adam }(\mathrm{lr}=1 \mathrm{e}-6, \text { beta } 1=0.5, \text { beta } 2=0.999,)$} \\ \hline
+	Epochs & 50 & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\
+	Batch Size & \multicolumn{5}{l}{64}
+\end{longtable}
 
-\section{EBGAN Implementation}
+\section{ENCEBGAN Implementation}
 
-\begin{table}[]
-	\centering
-	\caption{Architecture and Hyperparameters of EBGAN Model}
-	\label{tab:ebgan_imp}
-	\resizebox{\textwidth}{!}{%
-		\begin{tabular}{llcccc}
-			\hline
-			\multicolumn{1}{c}{Operation} & Kernel & \multicolumn{1}{l}{Stride} & \multicolumn{1}{l}{Feature Maps/ Units} & \multicolumn{1}{l}{BN ?} & \multicolumn{1}{l}{Activation} \\ \hline
-			\multicolumn{6}{l}{\textbf{Generator}} \\
-			Dense & \multicolumn{1}{c}{} &  & 4 $\times$ 4 $\times$ 512 & $\checkmark$ & Leaky Relu \\
-			Transposed Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 512 & $\checkmark$ & Leaky Relu \\
-			Transposed Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 256 & $\checkmark$ & Leaky Relu \\
-			Transposed Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 128 & $\checkmark$ & Leaky Relu \\
-			Transposed Convolution & \multicolumn{1}{c}{4$\times$4} & 1$\times$1 & 1 &  & TanH \\ \hline
-			Latent Dimension & \multicolumn{5}{l}{256} \\
-			Leaky Relu Slope & \multicolumn{5}{l}{0.2} \\
-			Batch Norm Momentum & \multicolumn{5}{l}{0.8} \\
-			Optimizer & \multicolumn{5}{l}{$\text { Adam }(\mathrm{lr}=5 \mathrm{e}-5, \text { beta } 1=0.5, \text { beta } 2=0.999,)$} \\ \hline
-			\multicolumn{6}{l}{\textbf{Discriminator}} \\
-			Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 64 & $\checkmark$ & Leaky Relu \\
-			Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 128 & $\checkmark$ & Leaky Relu \\
-			Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 256 & $\checkmark$ & Leaky Relu \\
-			Dense & \multicolumn{1}{c}{} &  & 1 &  & Sigmoid \\ \hline
-			Leaky ReLU Slope & \multicolumn{5}{l}{0.2} \\
-			Batch Norm Momentum & \multicolumn{5}{l}{0.8} \\
-			Optimizer & \multicolumn{5}{l}{$\text { Adam }(\mathrm{lr}=1 \mathrm{e}-6, \text { beta } 1=0.5, \text { beta } 2=0.999,)$} \\ \hline
-			Epochs & 50 & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\
-			Batch Size & \multicolumn{5}{l}{64}
-		\end{tabular}%
-	}
-\end{table}
+\begin{longtable}[c]{@{}lccccc@{}}
+	\caption{Architecture and Hyperparameters of ENCEBGAN Model}
+	\label{tab:encebgan_imp}\\
+	\toprule
+	Operation & Kernel & Stride & Feature Maps/ Units & BN ? & Activation \\* \midrule
+	\endfirsthead
+	\toprule
+	Operation & Kernel & Stride & Feature Maps/ Units & BN ? & Activation \\* \midrule
+	\endhead
+	\bottomrule
+	\endfoot
+	\endlastfoot
+	\multicolumn{6}{l}{\textbf{Generator}} \\
+	Dense & \multicolumn{1}{c}{} &  & 4 $\times$ 4 $\times$ 256 & $\checkmark$ & Leaky Relu \\
+	Transposed Convolution & \multicolumn{1}{c}{5$\times$5} & 2$\times$2 & 128 & $\checkmark$ & Leaky Relu \\
+	Transposed Convolution & \multicolumn{1}{c}{5$\times$5} & 2$\times$2 & 64 & $\checkmark$ & Leaky Relu \\
+	Transposed Convolution & \multicolumn{1}{c}{5$\times$5} & 2$\times$2 & 32 & $\checkmark$ & Leaky Relu \\
+	Transposed Convolution & \multicolumn{1}{c}{5$\times$5} & 2$\times$2 & 1 &  & TanH\\
+	Latent Dimension & \multicolumn{5}{l}{256} \\
+	Leaky Relu Slope & \multicolumn{5}{l}{0.2} \\
+	Batch Norm Momentum & \multicolumn{5}{l}{0.8} \\
+	Optimizer & \multicolumn{5}{l}{$\text { Adam }(\mathrm{lr}=1 \mathrm{e}-5, \text { beta } 1=0.5, \text { beta } 2=0.999,)$} \\ \hline
+	\multicolumn{6}{l}{\textbf{Discriminator}} \\
+	Convolution & \multicolumn{1}{c}{5$\times$5} & 2$\times$2 & 32 & $\checkmark$ & Leaky Relu \\
+	Convolution & \multicolumn{1}{c}{5$\times$5} & 2$\times$2 & 64 & $\checkmark$ & Leaky Relu \\
+	Convolution & \multicolumn{1}{c}{5$\times$5} & 2$\times$2 & 128 & $\checkmark$ & Leaky Relu \\
+	Dense & \multicolumn{1}{c}{} &  & 256 &  &  \\ \hline
+	Transposed Convolution & \multicolumn{1}{c}{5$\times$5} & 2$\times$2 & 256 & $\checkmark$ & Leaky Relu \\
+	Transposed Convolution & \multicolumn{1}{c}{5$\times$5} & 2$\times$2 & 128 & $\checkmark$ & Leaky Relu \\
+	Transposed Convolution & \multicolumn{1}{c}{5$\times$5} & 2$\times$2 & 64 & $\checkmark$ & Leaky Relu \\
+	Transposed Convolution & \multicolumn{1}{c}{5$\times$5} & 2$\times$2 & 32 & $\checkmark$ & Leaky Relu \\
+	Transposed Convolution & \multicolumn{1}{c}{5$\times$5} & 2$\times$2 & 1 &  & TanH\\
+	Latent Dimension & \multicolumn{5}{l}{256} \\
+	Leaky Relu Slope & \multicolumn{5}{l}{0.2} \\
+	Batch Norm Momentum & \multicolumn{5}{l}{0.8} \\
+	Optimizer & \multicolumn{5}{l}{$\text { Adam }(\mathrm{lr}=5 \mathrm{e}-6, \text { beta } 1=0.5, \text { beta } 2=0.999,)$} \\ \hline
+	\multicolumn{6}{l}{\textbf{Encoder}} \\
+	Convolution & \multicolumn{1}{c}{5$\times$5} & 2$\times$2 & 64 &  & Leaky Relu \\
+	Convolution & \multicolumn{1}{c}{5$\times$5} & 2$\times$2 & 128 & $\checkmark$ & Leaky Relu \\
+	Convolution & \multicolumn{1}{c}{5$\times$5} & 2$\times$2 & 256 & $\checkmark$ & Leaky Relu \\
+	Dense & \multicolumn{1}{c}{} &  & 256 &  &  \\ 
+	Leaky ReLU Slope & \multicolumn{5}{l}{0.2} \\
+	Batch Norm Momentum & \multicolumn{5}{l}{0.8} \\
+	Optimizer & \multicolumn{5}{l}{$\text { Adam }(\mathrm{lr}=5 \mathrm{e}-5, \text { beta } 1=0.5, \text { beta } 2=0.999,)$} \\ \hline
+	Epochs & 50 & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\
+	Batch Size & \multicolumn{5}{l}{64}
+		
+\end{longtable}
 
 \section{SENCEBGAN Implementation}
 
-\begin{table}[]
-	\centering
+\begin{longtable}[c]{@{}lccccc@{}}
 	\caption{Architecture and Hyperparameters of SENCEBGAN Model}
-	\label{tab:sencebgan_imp}
-	\resizebox{\textwidth}{!}{%
-		\begin{tabular}{llcccc}
-			\hline
-			\multicolumn{1}{c}{Operation} & Kernel & \multicolumn{1}{l}{Stride} & \multicolumn{1}{l}{Feature Maps/ Units} & \multicolumn{1}{l}{BN ?} & \multicolumn{1}{l}{Activation} \\ \hline
-			\multicolumn{6}{l}{\textbf{Generator}} \\
-			Dense & \multicolumn{1}{c}{} &  & 4 $\times$ 4 $\times$ 512 & $\checkmark$ & Leaky Relu \\
-			Transposed Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 512 & $\checkmark$ & Leaky Relu \\
-			Transposed Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 256 & $\checkmark$ & Leaky Relu \\
-			Transposed Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 128 & $\checkmark$ & Leaky Relu \\
-			Transposed Convolution & \multicolumn{1}{c}{4$\times$4} & 1$\times$1 & 1 &  & TanH \\ \hline
-			Latent Dimension & \multicolumn{5}{l}{256} \\
-			Leaky Relu Slope & \multicolumn{5}{l}{0.2} \\
-			Batch Norm Momentum & \multicolumn{5}{l}{0.8} \\
-			Optimizer & \multicolumn{5}{l}{$\text { Adam }(\mathrm{lr}=5 \mathrm{e}-5, \text { beta } 1=0.5, \text { beta } 2=0.999,)$} \\ \hline
-			\multicolumn{6}{l}{\textbf{Discriminator}} \\
-			Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 64 & $\checkmark$ & Leaky Relu \\
-			Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 128 & $\checkmark$ & Leaky Relu \\
-			Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 256 & $\checkmark$ & Leaky Relu \\
-			Dense & \multicolumn{1}{c}{} &  & 1 &  & Sigmoid \\ \hline
-			Leaky ReLU Slope & \multicolumn{5}{l}{0.2} \\
-			Batch Norm Momentum & \multicolumn{5}{l}{0.8} \\
-			Optimizer & \multicolumn{5}{l}{$\text { Adam }(\mathrm{lr}=1 \mathrm{e}-6, \text { beta } 1=0.5, \text { beta } 2=0.999,)$} \\ \hline
-			Epochs & 50 & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\
-			Batch Size & \multicolumn{5}{l}{64}
-		\end{tabular}%
-	}
-\end{table}
+	\label{tab:sencebgan_imp}\\
+	\toprule
+	Operation & Kernel & Stride & Feature Maps/ Units & BN ? & Activation \\* \midrule
+	\endfirsthead
+	\toprule
+	Operation & Kernel & Stride & Feature Maps/ Units & BN ? & Activation \\* \midrule
+	\endhead
+	\bottomrule
+	\endfoot
+	\endlastfoot
+		\multicolumn{6}{l}{\textbf{Generator}} \\
+	Dense & \multicolumn{1}{c}{} &  & 4 $\times$ 4 $\times$ 256 & $\checkmark$ & Leaky Relu \\
+	Transposed Convolution & \multicolumn{1}{c}{5$\times$5} & 2$\times$2 & 128 & $\checkmark$ & Leaky Relu \\
+	Transposed Convolution & \multicolumn{1}{c}{5$\times$5} & 2$\times$2 & 64 & $\checkmark$ & Leaky Relu \\
+	Transposed Convolution & \multicolumn{1}{c}{5$\times$5} & 2$\times$2 & 32 & $\checkmark$ & Leaky Relu \\
+	Transposed Convolution & \multicolumn{1}{c}{5$\times$5} & 2$\times$2 & 1 &  & TanH\\
+	Latent Dimension & \multicolumn{5}{l}{256} \\
+	Leaky Relu Slope & \multicolumn{5}{l}{0.2} \\
+	Batch Norm Momentum & \multicolumn{5}{l}{0.8} \\
+	Optimizer & \multicolumn{5}{l}{$\text { Adam }(\mathrm{lr}=1 \mathrm{e}-5, \text { beta } 1=0.5, \text { beta } 2=0.999,)$} \\ \hline
+	\multicolumn{6}{l}{\textbf{Discriminator}} \\
+	Convolution & \multicolumn{1}{c}{5$\times$5} & 2$\times$2 & 32 & $\checkmark$ & Leaky Relu \\
+	Convolution & \multicolumn{1}{c}{5$\times$5} & 2$\times$2 & 64 & $\checkmark$ & Leaky Relu \\
+	Convolution & \multicolumn{1}{c}{5$\times$5} & 2$\times$2 & 128 & $\checkmark$ & Leaky Relu \\
+	Dense & \multicolumn{1}{c}{} &  & 256 &  &  \\ \hline
+	Transposed Convolution & \multicolumn{1}{c}{5$\times$5} & 2$\times$2 & 256 & $\checkmark$ & Leaky Relu \\
+	Transposed Convolution & \multicolumn{1}{c}{5$\times$5} & 2$\times$2 & 128 & $\checkmark$ & Leaky Relu \\
+	Transposed Convolution & \multicolumn{1}{c}{5$\times$5} & 2$\times$2 & 64 & $\checkmark$ & Leaky Relu \\
+	Transposed Convolution & \multicolumn{1}{c}{5$\times$5} & 2$\times$2 & 32 & $\checkmark$ & Leaky Relu \\
+	Transposed Convolution & \multicolumn{1}{c}{5$\times$5} & 2$\times$2 & 1 &  & TanH\\
+	Latent Dimension & \multicolumn{5}{l}{256} \\
+	Leaky Relu Slope & \multicolumn{5}{l}{0.2} \\
+	Batch Norm Momentum & \multicolumn{5}{l}{0.8} \\
+	Optimizer & \multicolumn{5}{l}{$\text { Adam }(\mathrm{lr}=5 \mathrm{e}-6, \text { beta } 1=0.5, \text { beta } 2=0.999,)$} \\ \hline
+	\multicolumn{6}{l}{\textbf{Encoder}} \\
+	Convolution & \multicolumn{1}{c}{5$\times$5} & 2$\times$2 & 64 &  & Leaky Relu \\
+	Convolution & \multicolumn{1}{c}{5$\times$5} & 2$\times$2 & 128 & $\checkmark$ & Leaky Relu \\
+	Convolution & \multicolumn{1}{c}{5$\times$5} & 2$\times$2 & 256 & $\checkmark$ & Leaky Relu \\
+	Dense & \multicolumn{1}{c}{} &  & 256 &  &  \\ 
+	Leaky ReLU Slope & \multicolumn{5}{l}{0.2} \\
+	Batch Norm Momentum & \multicolumn{5}{l}{0.8} \\
+	Optimizer & \multicolumn{5}{l}{$\text { Adam }(\mathrm{lr}=5 \mathrm{e}-5, \text { beta } 1=0.5, \text { beta } 2=0.999,)$} \\ \hline
+	\multicolumn{6}{l}{\textbf{Encoder 2}} \\
+	Convolution & \multicolumn{1}{c}{5$\times$5} & 2$\times$2 & 64 &  & Leaky Relu \\
+	Convolution & \multicolumn{1}{c}{5$\times$5} & 2$\times$2 & 128 & $\checkmark$ & Leaky Relu \\
+	Convolution & \multicolumn{1}{c}{5$\times$5} & 2$\times$2 & 256 & $\checkmark$ & Leaky Relu \\
+	Dense & \multicolumn{1}{c}{} &  & 256 &  &  \\ 
+	Leaky ReLU Slope & \multicolumn{5}{l}{0.2} \\
+	Batch Norm Momentum & \multicolumn{5}{l}{0.8} \\
+	Optimizer & \multicolumn{5}{l}{$\text { Adam }(\mathrm{lr}=5 \mathrm{e}-5, \text { beta } 1=0.5, \text { beta } 2=0.999,)$} \\ \hline
+	\multicolumn{6}{l}{\textbf{Discriminator XX}} \\
+	Concatenate &\multicolumn{5}{l}{f} \\
+	Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 64 & Dropout & Leaky Relu \\
+	Convolution & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 128 & Dropout & Leaky Relu \\
+	Dense & \multicolumn{1}{c}{} &  & 1 &  & Sigmoid \\ \hline
+	Leaky ReLU Slope & \multicolumn{5}{l}{0.2} \\
+	Batch Norm Momentum & \multicolumn{5}{l}{0.8} \\
+	Optimizer & \multicolumn{5}{l}{$\text { Adam }(\mathrm{lr}=1 \mathrm{e}-6, \text { beta } 1=0.5, \text { beta } 2=0.999,)$} \\ \hline
+	\multicolumn{6}{l}{\textbf{Discriminator ZZ}} \\
+	Dense & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 64 & Dropout & Leaky Relu \\
+	Dense & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 32 & Dropout & Leaky Relu \\
+	Dense & \multicolumn{1}{c}{4$\times$4} & 2$\times$2 & 1 & Dropout & Leaky Relu \\ \hline
+	Leaky ReLU Slope & \multicolumn{5}{l}{0.2} \\
+	Dropout Rate & \multicolumn{5}{l}{0.2} \\
+	Batch Norm Momentum & \multicolumn{5}{l}{0.8} \\
+	Optimizer & \multicolumn{5}{l}{$\text { Adam }(\mathrm{lr}=1 \mathrm{e}-6, \text { beta } 1=0.5, \text { beta } 2=0.999,)$} \\ \hline
+	Epochs & 50 & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\
+	Batch Size & \multicolumn{5}{l}{64}
+\end{longtable}
 
 \endgroup
