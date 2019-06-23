@@ -24,16 +24,16 @@ down},draw=\edgecolor,opacity=0.7]
 %% Encoder
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \pic[shift={(0,0,0)}] at (0,0,0)
-{Box={name=input,caption=image,xlabel={{"","dummy"}},ylabel=28,zlabel=28,opacity=1.0,fill=\imageColor,height=50,width=1,depth=50}};
+{Box={name=input,caption=image,xlabel={{"","dummy"}},ylabel=32,zlabel=32,opacity=1.0,fill=\imageColor,height=50,width=1,depth=50}};
 % % conv1_1,bn_1, leakyrelu 1
 % Stride of convolution
 \pic[shift={(2,0,0)}] at (input-east)
 {Box={name=test,caption=Stride2,zlabel=5,ylabel=5,fill=\strideColor,height=5,
 width=2,depth=5}};
 \pic[shift={(2,0,0)}] at (input-east)
-{Box={name=cvt1,caption=convt1,xlabel={{"512","dummy"}},ylabel=,zlabel=,fill=\ConvTColor,height=50,width=2,depth=50}};
+{Box={name=cvt1,caption=convt1,xlabel={{"128","dummy"}},ylabel=,zlabel=,fill=\ConvTColor,height=50,width=2,depth=50}};
 \pic[shift={(0,0,0)}] at (cvt1-east)
-{RightBandedBox={name=bnlr2,caption=,ylabel=2,zlabel=2,fill=\bnColor,bandfill=\lrColor,height=50,width=2,depth=50}};
+{RightBandedBox={name=bnlr2,caption=,ylabel=16,zlabel=16,fill=\bnColor,bandfill=\lrColor,height=50,width=2,depth=50}};
 
 % % conv1_1,bn_1, leakyrelu 1
 % Stride of convolution
@@ -43,7 +43,7 @@ width=4,depth=5}};
 \pic[shift={(2,0,0)}] at (bnlr2-east)
 {Box={name=cvt2,caption=convt2,xlabel={{"256","dummy"}},ylabel=,zlabel=,fill=\ConvTColor,height=40,width=4,depth=40}};
 \pic[shift={(0,0,0)}] at (cvt2-east)
-{RightBandedBox={name=bnlr3,caption=,ylabel=7,zlabel=7,fill=\bnColor,bandfill=\lrColor,height=40,width=2,depth=40}};
+{RightBandedBox={name=bnlr3,caption=,ylabel=8,zlabel=8,fill=\bnColor,bandfill=\lrColor,height=40,width=2,depth=40}};
 
 % % conv1_1,bn_1, leakyrelu 1
 % Stride of convolution
@@ -51,34 +51,44 @@ width=4,depth=5}};
 {Box={name=test,caption=Stride2,zlabel=5,ylabel=5,fill=\strideColor,height=5,
 width=8,depth=5}};
 \pic[shift={(2,0,0)}] at (bnlr3-east)
-{Box={name=cvt3,caption=convt3,xlabel={{"128","dummy"}},ylabel=,zlabel=,fill=\ConvTColor,height=30,width=8,depth=30}};
+{Box={name=cvt3,caption=convt3,xlabel={{"512","dummy"}},ylabel=,zlabel=,fill=\ConvTColor,height=30,width=8,depth=30}};
 \pic[shift={(0,0,0)}] at (cvt3-east)
-{RightBandedBox={name=bnlr4,caption=,ylabel=14,zlabel=14,fill=\bnColor,bandfill=\lrColor,height=30,width=2,depth=30}};
+{RightBandedBox={name=bnlr4,caption=,ylabel=4,zlabel=4,fill=\bnColor,bandfill=\lrColor,height=30,width=2,depth=30}};
 
 % Final convolution
 \pic[shift={(2,0,0)}] at (bnlr4-east)
-{Box={name=cvt3,caption=latent representation,xlabel={{"1","dummy"}},ylabel=28,zlabel=28,fill=\ConvTColor,height=10,width=16,depth=10}};
+{Box={name=cvt3,caption=latent representation,xlabel={{"1","dummy"}},ylabel=32,zlabel=32,fill=\ConvTColor,height=10,width=16,depth=10}};
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Decoder
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \pic[shift={(2,0,0)}] at (cvt3-east)
-{Box={name=cv1,caption=conv1,xlabel={{"32","dummy"}},ylabel=,zlabel=,fill=\ConvColor,height=30,width=8,depth=30}};
+{Box={name=cv1,caption=conv1,xlabel={{"512","dummy"}},ylabel=,zlabel=,fill=\ConvColor,height=30,width=8,depth=30}};
 \pic[shift={(0,0,0)}] at (cv1-east)
-{RightBandedBox={name=bnlr_d1,caption=,ylabel=14,zlabel=14,fill=\bnColor,bandfill=\lrColor,height=30,width=2,depth=30}};
+{RightBandedBox={name=bnlr_d1,caption=,ylabel=2,zlabel=2,fill=\bnColor,bandfill=\lrColor,height=30,width=2,depth=30}};
 
 \pic[shift={(2,0,0)}] at (bnlr_d1-east)
-{Box={name=cv2,caption=conv2,xlabel={{"64","dummy"}},ylabel=,zlabel=,fill=\ConvColor,height=40,width=4,depth=40}};
+{Box={name=cv2,caption=conv2,xlabel={{"256","dummy"}},ylabel=,zlabel=,fill=\ConvColor,height=35,width=4,depth=35}};
 \pic[shift={(0,0,0)}] at (cv2-east)
-{RightBandedBox={name=bnlr_d2,caption=,ylabel=7,zlabel=7,fill=\bnColor,bandfill=\lrColor,height=40,width=2,depth=40}};
+{RightBandedBox={name=bnlr_d2,caption=,ylabel=4,zlabel=4,fill=\bnColor,bandfill=\lrColor,height=35,width=2,depth=35}};
 
 \pic[shift={(2,0,0)}] at (bnlr_d2-east)
-{Box={name=cv3,caption=conv3,xlabel={{"128","dummy"}},ylabel=,zlabel=,fill=\ConvColor,height=50,width=2,depth=50}};
+{Box={name=cv3,caption=conv3,xlabel={{"128","dummy"}},ylabel=,zlabel=,fill=\ConvColor,height=40,width=2,depth=40}};
 \pic[shift={(0,0,0)}] at (cv3-east)
-{RightBandedBox={name=bnlr_d3,caption=,ylabel=2,zlabel=2,fill=\bnColor,bandfill=\lrColor,height=50,width=2,depth=50}};
+{RightBandedBox={name=bnlr_d3,caption=,ylabel=8,zlabel=8,fill=\bnColor,bandfill=\lrColor,height=40,width=2,depth=40}};
 
 \pic[shift={(2,0,0)}] at (bnlr_d3-east)
-{Box={name=output,caption=image',xlabel={{"","dummy"}},ylabel=28,zlabel=28,opacity=1.0,fill=\imageColor,height=50,width=1,depth=50}};
+{Box={name=cv4,caption=conv3,xlabel={{"64","dummy"}},ylabel=,zlabel=,fill=\ConvColor,height=45,width=2,depth=45}};
+\pic[shift={(0,0,0)}] at (cv4-east)
+{RightBandedBox={name=bnlr_d4,caption=,ylabel=16,zlabel=16,fill=\bnColor,bandfill=\lrColor,height=45,width=2,depth=45}};
+
+\pic[shift={(2,0,0)}] at (bnlr_d4-east)
+{Box={name=cv5,caption=conv3,xlabel={{"1","dummy"}},ylabel=,zlabel=,fill=\ConvColor,height=50,width=2,depth=50}};
+\pic[shift={(0,0,0)}] at (cv5-east)
+{RightBandedBox={name=bnlr_d5,caption=,ylabel=32,zlabel=32,fill=\bnColor,bandfill=\lrColor,height=50,width=2,depth=50}};
+
+\pic[shift={(2,0,0)}] at (bnlr_d5-east)
+{Box={name=output,caption=image',xlabel={{"","dummy"}},ylabel=32,zlabel=32,opacity=1.0,fill=\imageColor,height=50,width=1,depth=50}};
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % %% Draw Arrow Connections
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
