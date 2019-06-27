@@ -237,13 +237,103 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subfigure}{\numberline {(f)}{\ignorespaces {ALAD Reconstruction}}}{52}{subfigure.5.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {46}{\ignorespaces ENCEBGAN Model Overview \relax }}{53}{figure.caption.26}
+\contentsline {figure}{\numberline {46}{\ignorespaces ENCEBGAN Model Overview \relax }}{54}{figure.caption.26}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {47}{\ignorespaces SENCEBGAN Model Overview \relax }}{53}{figure.caption.27}
+\contentsline {figure}{\numberline {47}{\ignorespaces Training graphs and qualitative examples from ENCEBGAN Model\relax }}{55}{figure.caption.27}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {48}{\ignorespaces SENCEBGAN Model Overview \relax }}{54}{figure.caption.28}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Generator Training Graph}}}{55}{subfigure.7.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {49}{\ignorespaces SENCEBGAN Image Reconstruction \relax }}{55}{figure.caption.29}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Discriminator Training Graph}}}{55}{subfigure.7.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Encoder Training Graph}}}{55}{subfigure.7.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {ENCEBGAN Generated Sample}}}{55}{subfigure.7.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {ENCEBGAN Query Sample}}}{55}{subfigure.7.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {ENCEBGAN Reconstruction}}}{55}{subfigure.7.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Generator Training Graph}}}{55}{subfigure.7.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Discriminator Training Graph}}}{55}{subfigure.7.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Encoder Training Graph}}}{55}{subfigure.7.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {ENCEBGAN Generated Sample}}}{55}{subfigure.7.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {ENCEBGAN Query Sample}}}{55}{subfigure.7.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {ENCEBGAN Reconstruction}}}{55}{subfigure.7.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Generator Training Graph}}}{55}{subfigure.7.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Discriminator Training Graph}}}{55}{subfigure.7.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Encoder Training Graph}}}{55}{subfigure.7.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {ENCEBGAN Generated Sample}}}{55}{subfigure.7.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {ENCEBGAN Query Sample}}}{55}{subfigure.7.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {ENCEBGAN Reconstruction}}}{55}{subfigure.7.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Generator Training Graph}}}{55}{subfigure.7.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Discriminator Training Graph}}}{55}{subfigure.7.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Encoder Training Graph}}}{55}{subfigure.7.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {ENCEBGAN Generated Sample}}}{55}{subfigure.7.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {ENCEBGAN Query Sample}}}{55}{subfigure.7.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {ENCEBGAN Reconstruction}}}{55}{subfigure.7.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Generator Training Graph}}}{55}{subfigure.7.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Discriminator Training Graph}}}{55}{subfigure.7.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Encoder Training Graph}}}{55}{subfigure.7.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {ENCEBGAN Generated Sample}}}{55}{subfigure.7.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {ENCEBGAN Query Sample}}}{55}{subfigure.7.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {ENCEBGAN Reconstruction}}}{55}{subfigure.7.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {48}{\ignorespaces Reconstruction examples of Autoencoder Variant Models\relax }}{56}{figure.caption.28}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Query Sample}}}{56}{subfigure.8.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {GANomaly Reconstruction}}}{56}{subfigure.8.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Skip-GANomaly Reconstruction}}}{56}{subfigure.8.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Query Sample}}}{56}{subfigure.8.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {GANomaly Reconstruction}}}{56}{subfigure.8.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Skip-GANomaly Reconstruction}}}{56}{subfigure.8.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Query Sample}}}{56}{subfigure.8.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {GANomaly Reconstruction}}}{56}{subfigure.8.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Skip-GANomaly Reconstruction}}}{56}{subfigure.8.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Query Sample}}}{56}{subfigure.8.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {GANomaly Reconstruction}}}{56}{subfigure.8.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Skip-GANomaly Reconstruction}}}{56}{subfigure.8.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Query Sample}}}{56}{subfigure.8.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {GANomaly Reconstruction}}}{56}{subfigure.8.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Skip-GANomaly Reconstruction}}}{56}{subfigure.8.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {49}{\ignorespaces SENCEBGAN Model Overview \relax }}{57}{figure.caption.29}
 \defcounter {refsection}{0}\relax 
 \addvspace {10pt}
 \defcounter {refsection}{0}\relax 

@@ -90,7 +90,7 @@ citecolor = black,
 anchorcolor = blue]{hyperref}
 \usepackage{longtable}
 \usepackage{booktabs}
-\usepackage{adjustbox}
+\usepackage[export]{adjustbox}
 % Glossary management
 \usepackage[xindy, acronym, nomain, shortcuts, toc]{glossaries}
 % Latin modern latin
@@ -103,6 +103,8 @@ anchorcolor = blue]{hyperref}
 \bibliography{back_matter/references}
 % Graphic management
 \usepackage{tikz}
+\usepackage{makecell, tabularx}
+\usepackage{rotating}
 \allowdisplaybreaks
 \setsecnumdepth {paragraph}
 \maxtocdepth {paragraph}

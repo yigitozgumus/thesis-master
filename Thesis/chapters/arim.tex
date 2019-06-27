@@ -66,9 +66,11 @@ the topmost layer or can be hidden in deep in the woven structure.
 
 This section presents an analysis on the performance of GAN based state of the art anomaly detection
 methods presented in section \ref{sec:gan_based_sota} and a discussion to identify the shortcomings
-of these methods. Stabilization issues in the adversarial training stage, the method to calculate
-the anomaly score, and reconstruction issues related to the encoding of latent representation will
-be discussed.
+of these methods. Stabilization issues in the adversarial training stage, reconstruction problems
+related to the encoding of latent representation and the method of computing the anomaly score will
+be discussed. While discussing these issues, the proposed model will be introduced incrementally by
+addressing the modifications and measures to mitigate the affect of these shortcomings to the
+performance.
 
 Proposed methods in chapter \ref{chap:sota} can be further divided into 2 seperate categories with
 respect to their generator structure. 
@@ -79,7 +81,7 @@ respect to their generator structure.
 
 First group has a generator that accepts the noise as an input and uses adversarial training to
 match the generated sample distribution to the input data distribution. The latter uses an
-autoencoder based decoder behalf of the generator but still employs adversarial training to learn
+autoencoder based decoder in favor of the generator but still employs adversarial training to learn
 the latent representation. During the analysis of the first two observations, autoencoder variants
 will not be considered for discussion since their generator network does not suffer from the
 stabilization issues of GANs.
@@ -140,7 +142,6 @@ samples from the final training epoch.
 		& \subfloat[BiGAN generated image
 		sample]{\includegraphics[width=0.3\textwidth]{arim/gan_training/bigan_gan}} & \subfloat[ALAD
 		generated image sample]{\includegraphics[width=0.3\textwidth]{arim/gan_training/alad_gan}}
-		\\
 	\end{tabular}
 	\end{tabularx}
 	\caption{Training information for the Pure GAN models. For graphs, x axis is the number of epochs and the y axis is the loss value}\label{fig:arim_training}
@@ -152,18 +153,18 @@ desired. This trend is observed in the majority of the experiments and in the ab
 well. From the perspective of the image generation, samples generated from GANs are not contextually
 sound enough to represent the target distribution of the SEM image dataset. To obtain a more concise
 observation the reconstructions of these GANs will also be inspected. 
-
-Considering the results of these experiments, training objective of the EBGAN model is adopted to
-obtain a more stable training with our dataset.  (See eqn. \ref{eqn:ebgan_used})
 \begin{equation}
 \label{eqn:ebgan_used}
 \begin{aligned}
-	D(x)&=\|\operatorname{Dec}(E n c(x))-x\|\\[5pt]
-	V(G, D) &= D(G(z)) + D(x)+[m-D(G(z))]^{+} \\[5pt]
- 	\mathcal{L}_{D}(x, z) &=D(x)+[m-D(G(z))]^{+} \\[5pt]
-  	\mathcal{L}_{G}(z) &=D(G(z))
+D(x)&=\|\operatorname{Dec}(E n c(x))-x\|\\[5pt]
+V(G, D) &= D(G(z)) + D(x)+[m-D(G(z))]^{+} \\[5pt]
+\mathcal{L}_{D}(x, z) &=D(x)+[m-D(G(z))]^{+} \\[5pt]
+\mathcal{L}_{G}(z) &=D(G(z))
 \end{aligned}
 \end{equation}
+Considering the results of these experiments, training objective of the EBGAN model is adopted to
+obtain a more stable training with our dataset.  (See eqn. \ref{eqn:ebgan_used})
+
 
 Defining loss function as a value of energy still preserves the adversarial aspect of the objective
 function. An auto encoder network acts as a discriminator module and attains an energies to the real
@@ -236,14 +237,15 @@ ability to reconstruct a given image after training. At this point in pipeline, 
 generator also comes into play. In both models, the training of the encoder network is computed by
 feeding the latent representation obtained from the encoder and feeding it to the generator to
 reconstruct the training data. So performance and proper training of the encoder network also
-depends on the adversarial training of generator. In the minimax game played by BiGAN
-and ALAD, both encoder and generator tries to fool the discriminator. Therefore stabilization problem of 
-generator inadvertantly affects the encoder convergence which also affects the quality of the reconstructions obtained from 
-the model. Some distortions and the information loss is expected in the generator based reconstruction. In our dataset, 
-these imperfections cause reconstructed samples to be interpreted as anomalous sample though the input is a normal sample. 
-Figure \ref{fig:arim_reconstruct} shows the reconstructions from AnoGAN, BiGAN and ALAD's inference stage. 
+depends on the adversarial training of generator. In the minimax game played by BiGAN and ALAD, both
+encoder and generator tries to fool the discriminator. Therefore stabilization problem of generator
+inadvertantly affects the encoder convergence which also affects the quality of the reconstructions
+obtained from the model. Some distortions and the information loss is expected in the generator
+based reconstruction. In our dataset, these imperfections cause reconstructed samples to be
+interpreted as anomalous sample though the input is a normal sample. Figure
+\ref{fig:arim_reconstruct} shows the reconstructions from AnoGAN, BiGAN and ALAD's inference stage. 
 
-\begin{figure}[h!]	
+\begin{figure}[!ht]	
 	\def\tabularxcolumn#1{m{#1}}
 	\begin{tabularx}{\linewidth}{@{}XXX@{}}
 		\begin{tabular}{ccc}
@@ -263,43 +265,242 @@ Figure \ref{fig:arim_reconstruct} shows the reconstructions from AnoGAN, BiGAN a
 	\caption{Reconstructed samples from the pure GAN models. Upper row is the given query image and the bottom row is their reconstructions}\label{fig:arim_reconstruct}
 \end{figure}
 
+Proposed model in this work also uses additional encoder network to get the inverse mapping
+information. Several modifications are applied to the training in order to improve the stabilization
+and ensure the convergence of the encoder. Eqn. \ref{eqn:ebgan_used} propose the modified generator
+discriminator approach. Addition of the encoder network and its training is also based on an energy
+based training.
+\begin{equation}
+\label{eqn:encebgan_used}
+\begin{aligned}
+D(x)&=\|\operatorname{Dec}(E n c(x))-x\|\\[5pt]
+V(G,E, D) &= D(G(z)) + D(x)+[m-D(G(z))]^{+} + D(G(E(x))) \\[5pt]
+\mathcal{L}_{E}(x) &= D(G(E(x)))
+\end{aligned}
+\end{equation}
+
+Like AnoGAN and ALAD, proposed model also trains encoder network with generator networks help to
+obtain the reconstruction. However, instead of training all the networks in the adversarial setting,
+proposed model separates the trainig of the generator discriminator pair and the encoder network.
+Training strategy presented in F-AnoGAN framework (see section \ref{sec:fanogan}) proposes an
+initial adversarial training. In the second part of the training the encoder network is trained by
+creating a pipeline with the other network components with fixed weights (inference mode) (See
+figure \ref{fig:fanogan_training}). This approach focuses on the encoder training objective by
+removing the dependency between encoder and generator which in turn also decreases the potential
+stabilization issues of the generator network.
+
+So far, configuring the models' objective function to an energy based setting and separating the
+joint training into sequential steps give the model two opportunities:
+
+\begin{itemize}
+	\item The stabilization of the GAN training, which means better reconstruction performance.
+	\item Easy convergence for encoder network because it isn't trained concurrently with the
+	generator so learning latent reprensetation is uni directional gradient descent.
+\end{itemize}
+
+Next section will discussed the model with the mentioned changes and continue to analyze the
+existent shortcomings despite the improvements.
+
 \subsection{Encoded Energy Based Generative Adversarial Network}
 \label{sec:encebgan}
 
+The first iteration of the proposed model is called encoded energy based generative adversarial
+network,or ENCEBGAN. This section presents how its built, its training scheme and the issues it
+solved.
+
+ENCEBGAN consists of an energy based generative adversarial network framework with an additional
+encoder network. The roles of the networks are identical to BiGAN (\ref{sec:bigan}). Two main
+differences are the change in the rationale in adversarial training component and separation of the
+encoder network training. Figure \ref{fig:encebgan_model} presents the network components with an
+emphasis on the training sequence.
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=1.0\textwidth]{encebgan}
+	\includegraphics[width=1.0\textwidth]{arim/encebgan/encebgan}
 	\caption{ENCEBGAN Model Overview }
 	\label{fig:encebgan_model}
 \end{figure}
 
-\subsection{Anomaly Score Computation}
+Training of the model is divided into two sections. In the first section generator and discriminator
+trains adversarially to learn the mapping from image space to latent space. While generator learns
+the mapping, discriminator is concurrently learning to reconstruct the training dataset and learns
+to encode the training data on its own. This latent representation will be used later on as an
+auxilary information for anomaly score computation. After the adversarial training is completed,
+pipeline is created from the encoder generator networks to form a conceptual autoencoder and whole
+network is trained using the reconstruction error based objective function for the encoder network.
+In second stage, generator and discriminator don't learn any additional information about the
+dataset. This approach proved to be useful to stabilize both generator and encoder hence increased
+the reconstruction quality of our model. Anomaly score computation is the same as the pure gan based
+methods which is the reconstruction error between the query and the output of encoder generator
+pipeline as depicted in equation \ref{eqn:enceb_ad}. 
+\begin{equation}
+	\label{eqn:enceb_ad}
+	\mathcal{A}(x) = \norm{x - G(E(x))}^2
+\end{equation}
 
-\begin{figure}[h!]
-	\centering
-	\includegraphics[width=0.75\textwidth]{reconstruct_ganomaly}
-	\caption{SENCEBGAN Model Overview }
-	\label{fig:sencebgan_model}
+Figure \ref{fig:arim_encebgan_info} presents the training graph information and reconstructed
+samples as a comparison to reconstructions in figure \ref{fig:arim_reconstruct}.
+\begin{figure}[!ht]	
+	\def\tabularxcolumn#1{m{#1}}
+	\begin{tabularx}{\linewidth}{@{}XXX@{}}
+		\begin{tabular}{ccc}
+			\subfloat[Generator Training Graph]{\includegraphics[width=0.3\textwidth]{arim/encebgan/encebgan_loss_generator}} 
+			& \subfloat[Discriminator Training
+			Graph]{\includegraphics[width=0.3\textwidth]{arim/encebgan/encebgan_loss_discriminator}}
+			& \subfloat[Encoder Training
+			Graph]{\includegraphics[width=0.3\textwidth]{arim/encebgan/encebgan_loss_encoder}} \\
+			\subfloat[ENCEBGAN Generated Sample]{\includegraphics[width=0.3\textwidth]{arim/encebgan/encebgan_generated}} 
+			& \subfloat[ENCEBGAN Query
+			Sample]{\includegraphics[width=0.3\textwidth]{arim/encebgan/encebgan_input}} &
+			\subfloat[ENCEBGAN
+			Reconstruction]{\includegraphics[width=0.3\textwidth]{arim/encebgan/encebgan_reconstruct}}\\
+			
+		\end{tabular}
+	\end{tabularx}
+	\caption{Training graphs and qualitative examples from ENCEBGAN Model}\label{fig:arim_encebgan_info}
 \end{figure}
 
+With previously mentioned architectural improvements, ENCEBGAN performed better than BiGAN and ALAD
+and obtained the same performance as AnoGAN which will discussed in chapter \ref{chap:expres}.
+Seperating the training of encoder and changing the adversarial objective function mechanics
+consequently stabilized the convergence of both networks and the reconstruction quality has
+increased compared to the pure gan based models.
+
+Imperfections in the reconstructions are usually expected in reconstruction based anomaly detection
+methods since the network trained to learn the latent representation is regularized to prevent
+overfitting. In SEM image dataset, anomalous regions can occur in any level of the image with
+varying levels of brightness. During the experiments of the models it is observed that,
+imperfections in the reconstructions may be identified as anomalous regions even though the image is
+anomaly free. This issue inadvertently cripples the anomaly detection performance of ENCEBGAN (and
+other pure gan based models). 
+
+Next section will discuss the anomaly score computation methods featured in both pure gan based and
+autoencoder variant models, and explan the addition of a secondary encoder network to improve the
+overall performance of the proposed model.
+
+\subsection{Anomaly Score Computation}
+
+% Why we divided Their difference
+Previously we divided the state of the art gan based anomaly detection methods into two main
+categories. Pure gan based models and autoencoder variants. The main difference between these groups
+is that decoder (generator equivalent) network of these models is trained only with the latent
+representation of the image supplied from the encoder network. Since they learn to reconstruct using
+the encoded version of the training data, their reconstructions are superior compared to the pure
+gan based methods. Figure \ref{fig:arim_anoscore} shows an example reconstruction from both GANomaly
+and Skip-GANomaly \ref{sec:ganomaly}. 
+
+\begin{figure}[!ht]	
+	\def\tabularxcolumn#1{m{#1}}
+	\begin{tabularx}{\linewidth}{@{}XXX@{}}
+		\begin{tabular}{ccc}
+			\subfloat[Query Sample]{\includegraphics[width=0.3\textwidth]{arim/anomaly_score/anoscore_input}} 
+			& \subfloat[GANomaly
+			Reconstruction]{\includegraphics[width=0.3\textwidth]{arim/anomaly_score/anoscore_ganomaly}}
+			& \subfloat[Skip-GANomaly
+			Reconstruction]{\includegraphics[width=0.3\textwidth]{arim/anomaly_score/anoscore_sganomaly}}
+			\\			
+		\end{tabular}
+	\end{tabularx}
+	\caption{Reconstruction examples of Autoencoder Variant Models}\label{fig:arim_anoscore}
+\end{figure}
+
+Architectural difference between GANomaly and Skip-GANomaly is the additional skip connections
+between the encoder and decoder network of the latter. This information transfer enables
+Skip-GANomaly to retain more information about the data and help it to accumulate this data across
+the layers during the decoding stage of the reconstruction. One interesting observation is that even
+though the general quality of the Skip-GANomaly model is better than GANomaly on the SEM image
+dataset, ablation study performed in chapter \ref{chap:expres}(see Table \ref{tab:ganomaly_ablation} and 
+\ref{tab:sganomaly_ablation}) shows that overall GANomalyprediction performance is superior compared to Skip-GANomaly. 
+
+Both anomaly score computation is based on the reconstruction based error, but GANomaly uses a
+secondary encoder network to learn the latent representation of the reconstruction and uses this
+information to compute the anomaly score (see eqn. \ref{eqn:ganomaly_as}). Skip-GANomaly on the
+other hand composes the contextual data (reconstruction loss) with the latent loss which is obtained
+from the feature layer of its discriminator network (see eqn. \ref{eqn:sganomaly_as}). We speculate
+that training a secondary encoder network improved GANomaly model's interpretation of the anomalous
+sample data. Erroneous predictions that are caused due to misinterpreting imperfect reconstructions
+as samples that contains anomalous regions may be averted by interpreting both input image and its
+reconstruction at the latent dimensional complexity. 
+
+Considering these observations and related improvements, next section will present the final version of the proposed 
+model for anomaly detection. General architecture of the model, its training procedure and its inference stage for anomaly 
+detection will be discussed.
 
 \section{Sequentially Encoded Energy Based Generative Adversarial Network}
 \label{sec:sencebgan}
 
+Sequentially encoded energy based generative adversarial network is the main proposed model that aims to mitigate the disadvantageous 
+outcomes of stabilization and convergence problems experienced vy the previously mentioned methods (see chapter \ref{chap:sota}).
+Even though it is presented incrementally throughout the chapter, its general architecture, training strategy and its approach to 
+anomaly detection problem will be discussed.
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=1.0\textwidth]{sencebgan}
+	\includegraphics[width=1.0\textwidth]{arim/sencebgan/sencebgan}
 	\caption{SENCEBGAN Model Overview }
 	\label{fig:sencebgan_model}
 \end{figure}
 
-\begin{figure}[h!]
-	\centering
-	\includegraphics[width=0.75\textwidth]{reconstruct_sencebgan}
-	\caption{SENCEBGAN Image Reconstruction  }
-	\label{fig:sencebgan_model}
-\end{figure}
+SENCEBGAN model consists of an energy based generative adversarial network and 2 additional encoder networks. The first encoder network 
+learns the representation of training data and its called generator encoder or $E_{G}$. Second encoder learns the latent representation 
+of the reconstructions of the training data provided by the generator network. This encoder network will be mentioned as reconstruction 
+encoder or $E_{R}$. Training objective of the model is given in equation \ref{eqn:sencebgan_formula}.
+\begin{equation}
+	\begin{aligned}
+		D(x)&=\|\operatorname{Dec}(E n c(x))-x\|\\[5pt]
+		V(G,E_{G},E_{R}, D) &= \underbrace{D(G(z))}_{\text{Generator}} + \underbrace{D(x)+[m-D(G(z))]^{+}}_{\text{Discriminator}} +\\ & \underbrace{D(G(E_{G}(x)))}_{\text{Encoder}_{G}} + \underbrace{\norm{E_{G}(x) - E_{R}(G(E_{G}(x)))}^2}_{\text{Encoder}_{R}}
+	\end{aligned}
+	\label{eqn:sencebgan_formula}
+\end{equation}
 
+Training objective is divided into three separate sequences. In the first stage of the training, energy based gan framework is trained. 
+After the training is completed, autoencoder architecture is formed by merging $E_{G}$ and Generator $G$ with fixed weights. Combined with 
+discriminator (also fixed weights) $E_{G}$ is trained using the reconstruction error produced from the temporary autoencoder configuration. 
+In the last stage, $E_{R}$ is trained to learn the latent representation of the reconstructed samples. Training is performed using the $\ell_{2}$
+norm of the encoded representation residual (see eqn. \ref{eqn:sencebgan_loss}). 
+\begin{equation}
+	\label{eqn:sencebgan_loss}
+	\begin{aligned}
+		\mathcal{L}_{E_{G}}(x) &= D(G(E(x))) \\[5pt]
+		\mathcal{L}_{E_{R}}(x) &= \norm{E_{G}(x) - E_{R}(G(E_{G}))(x)}^2
+ 	\end{aligned}
+\end{equation}
+
+SENCEBGAN model separates anomaly detection computation into image based and latent dimension based categories. Different anomaly score computations 
+are tested to measure the impact of the additional encoder networks and observe both implicit encoding and reconstruction capability of the discriminator network. 
+\begin{equation}
+	\label{eqn:sencebgan_eqn_im}
+	\begin{aligned}
+	\mathcal{A}_{R}(x) & = \norm{x - G(E_{G}(x))}^ 2 \\[5pt]
+	\mathcal{A}_{R_{D}}(x) & = \norm{D(x) - D(G(E_{G}(x)))}^2\\[5pt]
+	\mathcal{A}_{IC}(x) & = \lambda \cdot \mathcal{A}_{R}(x) + (1 - \lambda) \cdot \mathcal{A}_{R_{D}}
+	\end{aligned}
+\end{equation}
+
+Score functions defined in equation \ref{eqn:sencebgan_eqn_im} defines the anomaly measure using spatial data. $\mathcal{A}_{R}(x)$ calculates the 
+reconstruction error during the inference stage. This anomaly score is the one used in all pure GAN based models. In order to test the 
+reconstruction capability of the discriminator $\mathcal{A}_{R_{D}}(x)$ score is employed. This score is calculated by performing 2 consecutive
+ reconstructions on the sample image. $\mathcal{A}_{IC}(x)$ is image based combination anomaly score implemented to measure each of the image based 
+ anomaly scores' affect on an ensemble approach.
+\begin{equation}
+	\label{eqn:sencebgan_eqn_z}
+	\begin{aligned}
+	\mathcal{A}_{L}(x) & = \norm{E_{G}(x) - E_{R}(G(E_{G}(x)))}^2  \\[5pt]
+	\mathcal{A}_{L_{D}}(x) & = \norm{E_{G}(x) - L_{D_{Z}}(G(E_{G}(x)))}^2 \\[5pt]
+	\mathcal{A}_{L_{D_{Z}}}(x) & = \norm{L_{D_{Z}}(x) - L_{D_{Z}}(G(E_{G}(x)))}^2 \\[5pt]
+	\mathcal{A}_{LC}(x) & = \lambda \cdot \mathcal{A}_{L} + (1 - \lambda) \cdot \mathcal{A}_{L_{D_{Z}}} 
+	\end{aligned}
+\end{equation}
+
+Secondary encoder network $E_{R}$ added to the model's pipeline enabled model to capability to inspect the normality of query images in 
+latent dimensional space and provided an alternative medium regards to anomaly score computation. Inspired by the GANomaly model's (see sec.
+ \ref{sec:ganomaly}) evaluation method, various types of anomaly score evaluations based on the latent representation space is depicted 
+ in equation \ref{eqn:sencebgan_eqn_z}. $\mathcal{A}_{L}(x)$ measures anomaly score based on the $\ell_{2}$ norm of the difference between 
+ encodings obtained during the pipeline. Encoding capability of the discriminator network is also explored in these category. 
+ $\mathcal{A}_{L_{D}}(x)$ and $\mathcal{A}_{L_{D_{Z}}}(x)$ scores tests the anomaly score by comparing the latent representation obtained 
+ by the discriminator network. Finally, combined anomaly score for latent represenation is employed to measure the affect of each score to an 
+ ensemble methods. 
+ 
+In terms of the performance, proposed model performed better than all previously mentioned models except GANomaly. Performance analysis and 
+observations regarding to its potential improvements and different configurations will be explored in chapter \ref{chap:expres}.
 
 
 \endgroup

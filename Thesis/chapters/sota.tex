@@ -1217,6 +1217,7 @@ are used to change the impact of individual losses.
 
 GANomaly framework uses encoder loss function also as an anomaly score measure.  
 \begin{equation}
+\label{eqn:ganomaly_as}
     \mathcal{A}(\hat{x})=\left\|G_{E}(\hat{x})-E(G(\hat{x}))\right\|_{1}  
 \end{equation}
 
@@ -1242,6 +1243,7 @@ obtained using the feature layer of the discriminator.
 To find anomalies during the inference stage, Skip-GANomaly framework combines the encoder loss with
 the use of contextual loss. 
 \begin{equation}
+	\label{eqn:sganomaly_as}
     \mathcal{A}(\dot{x})=\lambda R(\dot{x})+(1-\lambda) L(\dot{x})  
 \end{equation}
 

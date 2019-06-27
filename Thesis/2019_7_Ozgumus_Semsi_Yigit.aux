@@ -383,8 +383,10 @@
 \citation{Akay2018GANomalySA}
 \abx@aux@segm{0}{0}{Akay2018GANomalySA}
 \newlabel{eqn:ganomaly_oall}{{2.94}{35}{GANomaly \& Skip-GANomaly}{equation.2.3.94}{}}
+\newlabel{eqn:ganomaly_as}{{2.95}{35}{GANomaly \& Skip-GANomaly}{equation.2.3.95}{}}
 \@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {figure}{\numberline {28}{\ignorespaces Skip GANomaly architecture overview \cite {Akay2019SkipGANomalySC}\relax }}{35}{figure.caption.16}}
 \newlabel{fig:sganomaly_model}{{\M@TitleReference {28}{Skip GANomaly architecture overview \cite {Akay2019SkipGANomalySC}\relax }}{35}{Skip GANomaly architecture overview \cite {Akay2019SkipGANomalySC}\relax }{figure.caption.16}{}}
+\newlabel{eqn:sganomaly_as}{{2.97}{35}{GANomaly \& Skip-GANomaly}{equation.2.3.97}{}}
 \citation{Schlegl2017UnsupervisedAD}
 \abx@aux@segm{0}{0}{Schlegl2017UnsupervisedAD}
 \citation{pub.1111824956}
@@ -611,43 +613,94 @@
 \@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {AnoGAN Reconstruction}}}{52}{subfigure.5.4}}
 \@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {BiGAN Reconstruction}}}{52}{subfigure.5.5}}
 \@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {ALAD Reconstruction}}}{52}{subfigure.5.6}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.3}Encoded Energy Based Generative Adversarial Network}{52}{subsection.4.2.3}}
-\newlabel{sec:encebgan}{{\M@TitleReference {4.2.3}{Encoded Energy Based Generative Adversarial Network}}{52}{Encoded Energy Based Generative Adversarial Network}{subsection.4.2.3}{}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.4}Anomaly Score Computation}{52}{subsection.4.2.4}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {4.3}Sequentially Encoded Energy Based Generative Adversarial Network}{52}{section.4.3}}
-\newlabel{sec:sencebgan}{{\M@TitleReference {4.3}{Sequentially Encoded Energy Based Generative Adversarial Network}}{52}{Sequentially Encoded Energy Based Generative Adversarial Network}{section.4.3}{}}
-\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {figure}{\numberline {46}{\ignorespaces ENCEBGAN Model Overview \relax }}{53}{figure.caption.26}}
-\newlabel{fig:encebgan_model}{{\M@TitleReference {46}{ENCEBGAN Model Overview \relax }}{53}{ENCEBGAN Model Overview \relax }{figure.caption.26}{}}
-\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {figure}{\numberline {47}{\ignorespaces SENCEBGAN Model Overview \relax }}{53}{figure.caption.27}}
-\newlabel{fig:sencebgan_model}{{\M@TitleReference {47}{SENCEBGAN Model Overview \relax }}{53}{SENCEBGAN Model Overview \relax }{figure.caption.27}{}}
-\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {figure}{\numberline {48}{\ignorespaces SENCEBGAN Model Overview \relax }}{54}{figure.caption.28}}
-\newlabel{fig:sencebgan_model}{{\M@TitleReference {48}{SENCEBGAN Model Overview \relax }}{54}{SENCEBGAN Model Overview \relax }{figure.caption.28}{}}
-\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {figure}{\numberline {49}{\ignorespaces SENCEBGAN Image Reconstruction \relax }}{55}{figure.caption.29}}
-\newlabel{fig:sencebgan_model}{{\M@TitleReference {49}{SENCEBGAN Image Reconstruction \relax }}{55}{SENCEBGAN Image Reconstruction \relax }{figure.caption.29}{}}
+\newlabel{eqn:encebgan_used}{{4.3}{53}{Convergence of Encoder Training}{equation.4.2.3}{}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.3}Encoded Energy Based Generative Adversarial Network}{53}{subsection.4.2.3}}
+\newlabel{sec:encebgan}{{\M@TitleReference {4.2.3}{Encoded Energy Based Generative Adversarial Network}}{53}{Encoded Energy Based Generative Adversarial Network}{subsection.4.2.3}{}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {figure}{\numberline {46}{\ignorespaces ENCEBGAN Model Overview \relax }}{54}{figure.caption.26}}
+\newlabel{fig:encebgan_model}{{\M@TitleReference {46}{ENCEBGAN Model Overview \relax }}{54}{ENCEBGAN Model Overview \relax }{figure.caption.26}{}}
+\newlabel{eqn:enceb_ad}{{4.4}{54}{Encoded Energy Based Generative Adversarial Network}{equation.4.2.4}{}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {figure}{\numberline {47}{\ignorespaces Training graphs and qualitative examples from ENCEBGAN Model\relax }}{55}{figure.caption.27}}
+\newlabel{fig:arim_encebgan_info}{{\M@TitleReference {47}{Training graphs and qualitative examples from ENCEBGAN Model\relax }}{55}{Training graphs and qualitative examples from ENCEBGAN Model\relax }{figure.caption.27}{}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Generator Training Graph}}}{55}{subfigure.7.1}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Discriminator Training Graph}}}{55}{subfigure.7.2}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Encoder Training Graph}}}{55}{subfigure.7.3}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {ENCEBGAN Generated Sample}}}{55}{subfigure.7.4}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {ENCEBGAN Query Sample}}}{55}{subfigure.7.5}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {ENCEBGAN Reconstruction}}}{55}{subfigure.7.6}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Generator Training Graph}}}{55}{subfigure.7.1}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Discriminator Training Graph}}}{55}{subfigure.7.2}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Encoder Training Graph}}}{55}{subfigure.7.3}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {ENCEBGAN Generated Sample}}}{55}{subfigure.7.4}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {ENCEBGAN Query Sample}}}{55}{subfigure.7.5}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {ENCEBGAN Reconstruction}}}{55}{subfigure.7.6}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Generator Training Graph}}}{55}{subfigure.7.1}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Discriminator Training Graph}}}{55}{subfigure.7.2}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Encoder Training Graph}}}{55}{subfigure.7.3}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {ENCEBGAN Generated Sample}}}{55}{subfigure.7.4}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {ENCEBGAN Query Sample}}}{55}{subfigure.7.5}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {ENCEBGAN Reconstruction}}}{55}{subfigure.7.6}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Generator Training Graph}}}{55}{subfigure.7.1}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Discriminator Training Graph}}}{55}{subfigure.7.2}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Encoder Training Graph}}}{55}{subfigure.7.3}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {ENCEBGAN Generated Sample}}}{55}{subfigure.7.4}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {ENCEBGAN Query Sample}}}{55}{subfigure.7.5}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {ENCEBGAN Reconstruction}}}{55}{subfigure.7.6}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Generator Training Graph}}}{55}{subfigure.7.1}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Discriminator Training Graph}}}{55}{subfigure.7.2}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Encoder Training Graph}}}{55}{subfigure.7.3}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {ENCEBGAN Generated Sample}}}{55}{subfigure.7.4}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {ENCEBGAN Query Sample}}}{55}{subfigure.7.5}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {ENCEBGAN Reconstruction}}}{55}{subfigure.7.6}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.4}Anomaly Score Computation}{56}{subsection.4.2.4}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {figure}{\numberline {48}{\ignorespaces Reconstruction examples of Autoencoder Variant Models\relax }}{56}{figure.caption.28}}
+\newlabel{fig:arim_anoscore}{{\M@TitleReference {48}{Reconstruction examples of Autoencoder Variant Models\relax }}{56}{Reconstruction examples of Autoencoder Variant Models\relax }{figure.caption.28}{}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Query Sample}}}{56}{subfigure.8.1}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {GANomaly Reconstruction}}}{56}{subfigure.8.2}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Skip-GANomaly Reconstruction}}}{56}{subfigure.8.3}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Query Sample}}}{56}{subfigure.8.1}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {GANomaly Reconstruction}}}{56}{subfigure.8.2}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Skip-GANomaly Reconstruction}}}{56}{subfigure.8.3}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Query Sample}}}{56}{subfigure.8.1}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {GANomaly Reconstruction}}}{56}{subfigure.8.2}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Skip-GANomaly Reconstruction}}}{56}{subfigure.8.3}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Query Sample}}}{56}{subfigure.8.1}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {GANomaly Reconstruction}}}{56}{subfigure.8.2}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Skip-GANomaly Reconstruction}}}{56}{subfigure.8.3}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Query Sample}}}{56}{subfigure.8.1}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {GANomaly Reconstruction}}}{56}{subfigure.8.2}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Skip-GANomaly Reconstruction}}}{56}{subfigure.8.3}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {4.3}Sequentially Encoded Energy Based Generative Adversarial Network}{57}{section.4.3}}
+\newlabel{sec:sencebgan}{{\M@TitleReference {4.3}{Sequentially Encoded Energy Based Generative Adversarial Network}}{57}{Sequentially Encoded Energy Based Generative Adversarial Network}{section.4.3}{}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {figure}{\numberline {49}{\ignorespaces SENCEBGAN Model Overview \relax }}{57}{figure.caption.29}}
+\newlabel{fig:sencebgan_model}{{\M@TitleReference {49}{SENCEBGAN Model Overview \relax }}{57}{SENCEBGAN Model Overview \relax }{figure.caption.29}{}}
+\newlabel{eqn:sencebgan_formula}{{4.5}{58}{Sequentially Encoded Energy Based Generative Adversarial Network}{equation.4.3.5}{}}
+\newlabel{eqn:sencebgan_loss}{{4.6}{58}{Sequentially Encoded Energy Based Generative Adversarial Network}{equation.4.3.6}{}}
+\newlabel{eqn:sencebgan_eqn_im}{{4.7}{58}{Sequentially Encoded Energy Based Generative Adversarial Network}{equation.4.3.7}{}}
+\newlabel{eqn:sencebgan_eqn_z}{{4.8}{59}{Sequentially Encoded Energy Based Generative Adversarial Network}{equation.4.3.8}{}}
 \@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\addvspace {10pt}}
 \@writefile{lot}{\defcounter {refsection}{0}\relax }\@writefile{lot}{\addvspace {10pt}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {chapter}{\chapternumberline {5}Experimental Results }{57}{chapter.5}}
-\newlabel{chap:expres}{{\M@TitleReference {5}{Experimental Results }}{57}{Experimental Results}{chapter.5}{}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {5.1}Experiment Settings}{57}{section.5.1}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}Performance Metrics}{57}{subsection.5.1.1}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {5.2}Pure GAN Model Analysis}{58}{section.5.2}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {5.3}Autoencoder Variant Model Analysis}{58}{section.5.3}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {5.4}Improved Model Analysis}{58}{section.5.4}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {5.5}Discussion of Experiment Results}{58}{section.5.5}}
-\@writefile{lot}{\defcounter {refsection}{0}\relax }\@writefile{lot}{\contentsline {table}{\numberline {51}{\ignorespaces Ablation study for AnoGAN to test the effect of various training improvements for stabilization.\relax }}{59}{table.caption.30}}
-\newlabel{tab:anogan_ablation}{{\M@TitleReference {51}{Ablation study for AnoGAN to test the effect of various training improvements for stabilization.\relax }}{59}{Ablation study for AnoGAN to test the effect of various training improvements for stabilization.\relax }{table.caption.30}{}}
-\@writefile{lot}{\defcounter {refsection}{0}\relax }\@writefile{lot}{\contentsline {table}{\numberline {52}{\ignorespaces Ablation study for BiGAN to test the effect of various training improvements for stabilization.\relax }}{59}{table.caption.31}}
-\newlabel{tab:bigan_ablation}{{\M@TitleReference {52}{Ablation study for BiGAN to test the effect of various training improvements for stabilization.\relax }}{59}{Ablation study for BiGAN to test the effect of various training improvements for stabilization.\relax }{table.caption.31}{}}
-\@writefile{lot}{\defcounter {refsection}{0}\relax }\@writefile{lot}{\contentsline {table}{\numberline {53}{\ignorespaces Ablation study for ALAD to test the effect of various training improvements for stabilization.\relax }}{60}{table.caption.32}}
-\newlabel{tab:alad_ablation}{{\M@TitleReference {53}{Ablation study for ALAD to test the effect of various training improvements for stabilization.\relax }}{60}{Ablation study for ALAD to test the effect of various training improvements for stabilization.\relax }{table.caption.32}{}}
-\@writefile{lot}{\defcounter {refsection}{0}\relax }\@writefile{lot}{\contentsline {table}{\numberline {54}{\ignorespaces Ablation study for GANomaly to test the effect of various training improvements for stabilization. \relax }}{60}{table.caption.33}}
-\newlabel{tab:ganomaly_ablation}{{\M@TitleReference {54}{Ablation study for GANomaly to test the effect of various training improvements for stabilization. \relax }}{60}{Ablation study for GANomaly to test the effect of various training improvements for stabilization. \relax }{table.caption.33}{}}
-\@writefile{lot}{\defcounter {refsection}{0}\relax }\@writefile{lot}{\contentsline {table}{\numberline {55}{\ignorespaces Ablation study for Skip-GANomaly to test the effect of various training improvements for stabilization.\relax }}{61}{table.caption.34}}
-\newlabel{tab:sganomaly_ablation}{{\M@TitleReference {55}{Ablation study for Skip-GANomaly to test the effect of various training improvements for stabilization.\relax }}{61}{Ablation study for Skip-GANomaly to test the effect of various training improvements for stabilization.\relax }{table.caption.34}{}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {chapter}{\chapternumberline {5}Experimental Results }{61}{chapter.5}}
+\newlabel{chap:expres}{{\M@TitleReference {5}{Experimental Results }}{61}{Experimental Results}{chapter.5}{}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {5.1}Experiment Settings}{61}{section.5.1}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}Performance Metrics}{61}{subsection.5.1.1}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {5.2}Pure GAN Model Analysis}{62}{section.5.2}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {5.3}Autoencoder Variant Model Analysis}{62}{section.5.3}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {5.4}Improved Model Analysis}{62}{section.5.4}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {5.5}Discussion of Experiment Results}{62}{section.5.5}}
+\@writefile{lot}{\defcounter {refsection}{0}\relax }\@writefile{lot}{\contentsline {table}{\numberline {51}{\ignorespaces Ablation study for AnoGAN to test the effect of various training improvements for stabilization.\relax }}{63}{table.caption.30}}
+\newlabel{tab:anogan_ablation}{{\M@TitleReference {51}{Ablation study for AnoGAN to test the effect of various training improvements for stabilization.\relax }}{63}{Ablation study for AnoGAN to test the effect of various training improvements for stabilization.\relax }{table.caption.30}{}}
+\@writefile{lot}{\defcounter {refsection}{0}\relax }\@writefile{lot}{\contentsline {table}{\numberline {52}{\ignorespaces Ablation study for BiGAN to test the effect of various training improvements for stabilization.\relax }}{63}{table.caption.31}}
+\newlabel{tab:bigan_ablation}{{\M@TitleReference {52}{Ablation study for BiGAN to test the effect of various training improvements for stabilization.\relax }}{63}{Ablation study for BiGAN to test the effect of various training improvements for stabilization.\relax }{table.caption.31}{}}
+\@writefile{lot}{\defcounter {refsection}{0}\relax }\@writefile{lot}{\contentsline {table}{\numberline {53}{\ignorespaces Ablation study for ALAD to test the effect of various training improvements for stabilization.\relax }}{64}{table.caption.32}}
+\newlabel{tab:alad_ablation}{{\M@TitleReference {53}{Ablation study for ALAD to test the effect of various training improvements for stabilization.\relax }}{64}{Ablation study for ALAD to test the effect of various training improvements for stabilization.\relax }{table.caption.32}{}}
+\@writefile{lot}{\defcounter {refsection}{0}\relax }\@writefile{lot}{\contentsline {table}{\numberline {54}{\ignorespaces Ablation study for GANomaly to test the effect of various training improvements for stabilization. \relax }}{64}{table.caption.33}}
+\newlabel{tab:ganomaly_ablation}{{\M@TitleReference {54}{Ablation study for GANomaly to test the effect of various training improvements for stabilization. \relax }}{64}{Ablation study for GANomaly to test the effect of various training improvements for stabilization. \relax }{table.caption.33}{}}
+\@writefile{lot}{\defcounter {refsection}{0}\relax }\@writefile{lot}{\contentsline {table}{\numberline {55}{\ignorespaces Ablation study for Skip-GANomaly to test the effect of various training improvements for stabilization.\relax }}{65}{table.caption.34}}
+\newlabel{tab:sganomaly_ablation}{{\M@TitleReference {55}{Ablation study for Skip-GANomaly to test the effect of various training improvements for stabilization.\relax }}{65}{Ablation study for Skip-GANomaly to test the effect of various training improvements for stabilization.\relax }{table.caption.34}{}}
 \@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\addvspace {10pt}}
 \@writefile{lot}{\defcounter {refsection}{0}\relax }\@writefile{lot}{\addvspace {10pt}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {chapter}{\chapternumberline {6}Conclusion and Future Work}{63}{chapter.6}}
-\newlabel{chap:conc}{{\M@TitleReference {6}{Conclusion and Future Work}}{63}{Conclusion and Future Work}{chapter.6}{}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {chapter}{\chapternumberline {6}Conclusion and Future Work}{67}{chapter.6}}
+\newlabel{chap:conc}{{\M@TitleReference {6}{Conclusion and Future Work}}{67}{Conclusion and Future Work}{chapter.6}{}}
 \gdef \LT@i {\LT@entry 
     {5}{113.11024pt}\LT@entry 
     {1}{40.91692pt}\LT@entry 
@@ -657,12 +710,12 @@
     {5}{55.72255pt}}
 \@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\addvspace {10pt}}
 \@writefile{lot}{\defcounter {refsection}{0}\relax }\@writefile{lot}{\addvspace {10pt}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {appendix}{\chapternumberline {A}Model Implementation Details}{65}{appendix.A}}
-\newlabel{chap:imp_details}{{\M@TitleReference {A}{Model Implementation Details}}{65}{Model Implementation Details}{appendix.A}{}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {A.1}AnoGAN Implementation}{65}{section.A.1}}
-\newlabel{app:anogan}{{\M@TitleReference {A.1}{AnoGAN Implementation}}{65}{AnoGAN Implementation}{section.A.1}{}}
-\@writefile{lot}{\defcounter {refsection}{0}\relax }\@writefile{lot}{\contentsline {table}{\numberline {A1}{\ignorespaces Architecture and Hyperparameters of AnoGAN Model\relax }}{65}{table.A.1}}
-\newlabel{tab:anogan_imp}{{\M@TitleReference {A1}{AnoGAN Implementation}}{65}{Architecture and Hyperparameters of AnoGAN Model\relax }{table.A.1}{}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {appendix}{\chapternumberline {A}Model Implementation Details}{69}{appendix.A}}
+\newlabel{chap:imp_details}{{\M@TitleReference {A}{Model Implementation Details}}{69}{Model Implementation Details}{appendix.A}{}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {A.1}AnoGAN Implementation}{69}{section.A.1}}
+\newlabel{app:anogan}{{\M@TitleReference {A.1}{AnoGAN Implementation}}{69}{AnoGAN Implementation}{section.A.1}{}}
+\@writefile{lot}{\defcounter {refsection}{0}\relax }\@writefile{lot}{\contentsline {table}{\numberline {A1}{\ignorespaces Architecture and Hyperparameters of AnoGAN Model\relax }}{69}{table.A.1}}
+\newlabel{tab:anogan_imp}{{\M@TitleReference {A1}{AnoGAN Implementation}}{69}{Architecture and Hyperparameters of AnoGAN Model\relax }{table.A.1}{}}
 \gdef \LT@ii {\LT@entry 
     {5}{113.11024pt}\LT@entry 
     {1}{40.91692pt}\LT@entry 
@@ -670,12 +723,12 @@
     {1}{103.9452pt}\LT@entry 
     {1}{34.63832pt}\LT@entry 
     {5}{55.72255pt}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {A.2}BiGAN Implementation}{66}{section.A.2}}
-\newlabel{app:bigan}{{\M@TitleReference {A.2}{BiGAN Implementation}}{66}{BiGAN Implementation}{section.A.2}{}}
-\@writefile{lot}{\defcounter {refsection}{0}\relax }\@writefile{lot}{\contentsline {table}{\numberline {A2}{\ignorespaces Architecture and Hyperparameters of BiGAN Model\relax }}{66}{table.A.2}}
-\newlabel{tab:bigan_imp}{{\M@TitleReference {A2}{BiGAN Implementation}}{66}{Architecture and Hyperparameters of BiGAN Model\relax }{table.A.2}{}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {A.3}ALAD Implementation}{66}{section.A.3}}
-\newlabel{app:alad}{{\M@TitleReference {A.3}{ALAD Implementation}}{66}{ALAD Implementation}{section.A.3}{}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {A.2}BiGAN Implementation}{70}{section.A.2}}
+\newlabel{app:bigan}{{\M@TitleReference {A.2}{BiGAN Implementation}}{70}{BiGAN Implementation}{section.A.2}{}}
+\@writefile{lot}{\defcounter {refsection}{0}\relax }\@writefile{lot}{\contentsline {table}{\numberline {A2}{\ignorespaces Architecture and Hyperparameters of BiGAN Model\relax }}{70}{table.A.2}}
+\newlabel{tab:bigan_imp}{{\M@TitleReference {A2}{BiGAN Implementation}}{70}{Architecture and Hyperparameters of BiGAN Model\relax }{table.A.2}{}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {A.3}ALAD Implementation}{70}{section.A.3}}
+\newlabel{app:alad}{{\M@TitleReference {A.3}{ALAD Implementation}}{70}{ALAD Implementation}{section.A.3}{}}
 \gdef \LT@iii {\LT@entry 
     {5}{113.11024pt}\LT@entry 
     {1}{40.91692pt}\LT@entry 
@@ -683,8 +736,8 @@
     {1}{103.9452pt}\LT@entry 
     {5}{48.83347pt}\LT@entry 
     {5}{55.72255pt}}
-\@writefile{lot}{\defcounter {refsection}{0}\relax }\@writefile{lot}{\contentsline {table}{\numberline {A3}{\ignorespaces Architecture and Hyperparameters of ALAD Model\relax }}{67}{table.A.3}}
-\newlabel{tab:alad_imp}{{\M@TitleReference {A3}{ALAD Implementation}}{67}{Architecture and Hyperparameters of ALAD Model\relax }{table.A.3}{}}
+\@writefile{lot}{\defcounter {refsection}{0}\relax }\@writefile{lot}{\contentsline {table}{\numberline {A3}{\ignorespaces Architecture and Hyperparameters of ALAD Model\relax }}{71}{table.A.3}}
+\newlabel{tab:alad_imp}{{\M@TitleReference {A3}{ALAD Implementation}}{71}{Architecture and Hyperparameters of ALAD Model\relax }{table.A.3}{}}
 \gdef \LT@iv {\LT@entry 
     {5}{113.11024pt}\LT@entry 
     {1}{40.91692pt}\LT@entry 
@@ -692,10 +745,10 @@
     {1}{103.9452pt}\LT@entry 
     {1}{34.63832pt}\LT@entry 
     {5}{55.72255pt}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {A.4}GANomaly Implementation}{68}{section.A.4}}
-\newlabel{app:ganomaly}{{\M@TitleReference {A.4}{GANomaly Implementation}}{68}{GANomaly Implementation}{section.A.4}{}}
-\@writefile{lot}{\defcounter {refsection}{0}\relax }\@writefile{lot}{\contentsline {table}{\numberline {A4}{\ignorespaces Architecture and Hyperparameters of GANomaly Model\relax }}{68}{table.A.4}}
-\newlabel{tab:ganomaly_imp}{{\M@TitleReference {A4}{GANomaly Implementation}}{68}{Architecture and Hyperparameters of GANomaly Model\relax }{table.A.4}{}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {A.4}GANomaly Implementation}{72}{section.A.4}}
+\newlabel{app:ganomaly}{{\M@TitleReference {A.4}{GANomaly Implementation}}{72}{GANomaly Implementation}{section.A.4}{}}
+\@writefile{lot}{\defcounter {refsection}{0}\relax }\@writefile{lot}{\contentsline {table}{\numberline {A4}{\ignorespaces Architecture and Hyperparameters of GANomaly Model\relax }}{72}{table.A.4}}
+\newlabel{tab:ganomaly_imp}{{\M@TitleReference {A4}{GANomaly Implementation}}{72}{Architecture and Hyperparameters of GANomaly Model\relax }{table.A.4}{}}
 \gdef \LT@v {\LT@entry 
     {5}{113.11024pt}\LT@entry 
     {1}{40.91692pt}\LT@entry 
@@ -703,14 +756,14 @@
     {1}{103.9452pt}\LT@entry 
     {1}{34.63832pt}\LT@entry 
     {5}{55.72255pt}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {A.5}Skip-GANomaly Implementation}{69}{section.A.5}}
-\newlabel{app:sganomaly}{{\M@TitleReference {A.5}{Skip-GANomaly Implementation}}{69}{Skip-GANomaly Implementation}{section.A.5}{}}
-\@writefile{lot}{\defcounter {refsection}{0}\relax }\@writefile{lot}{\contentsline {table}{\numberline {A5}{\ignorespaces Architecture and Hyperparameters of Skip-GANomaly Model\relax }}{69}{table.A.5}}
-\newlabel{tab:sganomaly_imp}{{\M@TitleReference {A5}{Skip-GANomaly Implementation}}{69}{Architecture and Hyperparameters of Skip-GANomaly Model\relax }{table.A.5}{}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {A.6}ENCEBGAN Implementation}{69}{section.A.6}}
-\newlabel{app:encebgan}{{\M@TitleReference {A.6}{ENCEBGAN Implementation}}{69}{ENCEBGAN Implementation}{section.A.6}{}}
-\@writefile{lot}{\defcounter {refsection}{0}\relax }\@writefile{lot}{\contentsline {table}{\numberline {A6}{\ignorespaces Architecture and Hyperparameters of ENCEBGAN Model\relax }}{69}{table.A.6}}
-\newlabel{tab:encebgan_imp}{{\M@TitleReference {A6}{ENCEBGAN Implementation}}{69}{Architecture and Hyperparameters of ENCEBGAN Model\relax }{table.A.6}{}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {A.5}Skip-GANomaly Implementation}{73}{section.A.5}}
+\newlabel{app:sganomaly}{{\M@TitleReference {A.5}{Skip-GANomaly Implementation}}{73}{Skip-GANomaly Implementation}{section.A.5}{}}
+\@writefile{lot}{\defcounter {refsection}{0}\relax }\@writefile{lot}{\contentsline {table}{\numberline {A5}{\ignorespaces Architecture and Hyperparameters of Skip-GANomaly Model\relax }}{73}{table.A.5}}
+\newlabel{tab:sganomaly_imp}{{\M@TitleReference {A5}{Skip-GANomaly Implementation}}{73}{Architecture and Hyperparameters of Skip-GANomaly Model\relax }{table.A.5}{}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {A.6}ENCEBGAN Implementation}{73}{section.A.6}}
+\newlabel{app:encebgan}{{\M@TitleReference {A.6}{ENCEBGAN Implementation}}{73}{ENCEBGAN Implementation}{section.A.6}{}}
+\@writefile{lot}{\defcounter {refsection}{0}\relax }\@writefile{lot}{\contentsline {table}{\numberline {A6}{\ignorespaces Architecture and Hyperparameters of ENCEBGAN Model\relax }}{73}{table.A.6}}
+\newlabel{tab:encebgan_imp}{{\M@TitleReference {A6}{ENCEBGAN Implementation}}{73}{Architecture and Hyperparameters of ENCEBGAN Model\relax }{table.A.6}{}}
 \gdef \LT@vi {\LT@entry 
     {5}{113.11024pt}\LT@entry 
     {1}{40.91692pt}\LT@entry 
@@ -718,10 +771,10 @@
     {1}{103.9452pt}\LT@entry 
     {1}{34.63832pt}\LT@entry 
     {5}{55.72255pt}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {A.7}SENCEBGAN Implementation}{70}{section.A.7}}
-\newlabel{app:sencebgan}{{\M@TitleReference {A.7}{SENCEBGAN Implementation}}{70}{SENCEBGAN Implementation}{section.A.7}{}}
-\@writefile{lot}{\defcounter {refsection}{0}\relax }\@writefile{lot}{\contentsline {table}{\numberline {A7}{\ignorespaces Architecture and Hyperparameters of SENCEBGAN Model\relax }}{70}{table.A.7}}
-\newlabel{tab:sencebgan_imp}{{\M@TitleReference {A7}{SENCEBGAN Implementation}}{70}{Architecture and Hyperparameters of SENCEBGAN Model\relax }{table.A.7}{}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {A.7}SENCEBGAN Implementation}{74}{section.A.7}}
+\newlabel{app:sencebgan}{{\M@TitleReference {A.7}{SENCEBGAN Implementation}}{74}{SENCEBGAN Implementation}{section.A.7}{}}
+\@writefile{lot}{\defcounter {refsection}{0}\relax }\@writefile{lot}{\contentsline {table}{\numberline {A7}{\ignorespaces Architecture and Hyperparameters of SENCEBGAN Model\relax }}{74}{table.A.7}}
+\newlabel{tab:sencebgan_imp}{{\M@TitleReference {A7}{SENCEBGAN Implementation}}{74}{Architecture and Hyperparameters of SENCEBGAN Model\relax }{table.A.7}{}}
 \gdef \LT@vii {\LT@entry 
     {5}{113.11024pt}\LT@entry 
     {1}{40.91692pt}\LT@entry 
@@ -729,7 +782,7 @@
     {1}{103.9452pt}\LT@entry 
     {7}{48.83347pt}\LT@entry 
     {5}{55.72255pt}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {chapter}{Bibliography}{73}{section*.36}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {chapter}{Bibliography}{77}{section*.36}}
 \abx@aux@refcontextdefaultsdone
 \abx@aux@defaultrefcontext{0}{AHMED201619}{nty/global//global/global}
 \abx@aux@defaultrefcontext{0}{Akay2018GANomalySA}{nty/global//global/global}
@@ -791,5 +844,5 @@
 \abx@aux@defaultrefcontext{0}{Zhao2016EnergybasedGA}{nty/global//global/global}
 \abx@aux@defaultrefcontext{0}{Zhu2017UnpairedIT}{nty/global//global/global}
 \abx@aux@defaultrefcontext{0}{zontak2010defect}{nty/global//global/global}
-\memsetcounter{lastsheet}{90}
-\memsetcounter{lastpage}{78}
+\memsetcounter{lastsheet}{94}
+\memsetcounter{lastpage}{82}
