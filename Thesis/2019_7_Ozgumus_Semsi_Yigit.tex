@@ -84,10 +84,10 @@ labelsep=newline, justification=centering, skip=5pt, position=top}
 \usepackage[backend=bibtex]{biblatex}
 % Citation management
 \usepackage[colorlinks = true,
-linkcolor = blue,
-urlcolor  = blue,
+linkcolor = black,
+urlcolor  = black,
 citecolor = black,
-anchorcolor = blue]{hyperref}
+anchorcolor = black]{hyperref}
 \usepackage{longtable}
 \usepackage{booktabs}
 \usepackage[export]{adjustbox}
@@ -108,29 +108,33 @@ anchorcolor = blue]{hyperref}
 \allowdisplaybreaks
 \setsecnumdepth {paragraph}
 \maxtocdepth {paragraph}
-%\onehalfspacing
+
+
 \begin{document}
 \nonzeroparskip
 %-------------------------------------------------------------------------------
 \frontmatter
 \input{front_matter/cover.tex}
+\cleardoublepage
 %-------------------------------------------------------------------------------
-%\input{front_matter/dedication.tex}
+\input{front_matter/dedication.tex}
+%-------------------------------------------------------------------------------
+%\glsresetall
+%-------------------------------------------------------------------------------
+\pagestyle{plain}
+\chapter*{Acknowledgements}
+\input{front_matter/acknowledgement.tex}
+%-------------------------------------------------------------------------------
+\cleardoublepage
+\tableofcontents
+\clearpage
+\listoffigures
+\listoftables
 %-------------------------------------------------------------------------------
 \chapter{Abstract}
 \input{chapters/abstract.tex}
 \chapter{Sommario}
 \input{chapters/abstract_it.tex}
-%\glsresetall
-%-------------------------------------------------------------------------------
-\chapter{Acknowledgements}
-\input{front_matter/acknowledgement.tex}
-%-------------------------------------------------------------------------------
-\newpage
-\tableofcontents
-\clearpage
-\listoffigures
-\listoftables
 \mainmatter
 \pagestyle {ruled}
 %-------------------------------------------------------------------------------

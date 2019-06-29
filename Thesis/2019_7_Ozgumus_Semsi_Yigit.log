@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2019.1.28)  29 JUN 2019 10:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2019.1.28)  29 JUN 2019 15:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2285,53 +2285,53 @@ File: english.lbx 2018/03/04 v3.11 biblatex localization (PK/MW)
 (./2019_7_Ozgumus_Semsi_Yigit.aux)
 \openout1 = `2019_7_Ozgumus_Semsi_Yigit.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/jkp/m/it on input line 112.
-LaTeX Font Info:    Try loading font information for OML+jkp on input line 112.
+LaTeX Font Info:    Checking defaults for OML/jkp/m/it on input line 113.
+LaTeX Font Info:    Try loading font information for OML+jkp on input line 113.
 
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/kpfonts/omljkp.fd
 File: omljkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 112.
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 112.
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Checking defaults for OMS/jkp/m/n on input line 112.
-LaTeX Font Info:    Try loading font information for OMS+jkp on input line 112.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 113.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 113.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Checking defaults for OMS/jkp/m/n on input line 113.
+LaTeX Font Info:    Try loading font information for OMS+jkp on input line 113.
 
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/kpfonts/omsjkp.fd
 File: omsjkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Checking defaults for OMX/jkp/m/n on input line 112.
-LaTeX Font Info:    Try loading font information for OMX+jkp on input line 112.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Checking defaults for OMX/jkp/m/n on input line 113.
+LaTeX Font Info:    Try loading font information for OMX+jkp on input line 113.
 
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/kpfonts/omxjkp.fd
 File: omxjkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Checking defaults for U/jkpexa/m/n on input line 112.
-LaTeX Font Info:    Try loading font information for U+jkpexa on input line 112
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Checking defaults for U/jkpexa/m/n on input line 113.
+LaTeX Font Info:    Try loading font information for U+jkpexa on input line 113
 .
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/kpfonts/ujkpexa.fd
 File: ujkpexa.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 112.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 112.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 113.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 113.
 
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 112.
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 112.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 113.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 113.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -2421,10 +2421,10 @@ Package biblatex Warning: BibTeX reported the following issues
 (biblatex)                - Invalid format of field 'month'.
 
 )
-Package biblatex Info: Reference section=0 on input line 112.
-Package biblatex Info: Reference segment=0 on input line 112.
+Package biblatex Info: Reference section=0 on input line 113.
+Package biblatex Info: Reference segment=0 on input line 113.
 \AtBeginShipoutBox=\box61
-Package hyperref Info: Link coloring ON on input line 112.
+Package hyperref Info: Link coloring ON on input line 113.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 
@@ -2435,17 +2435,17 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 Redoing nameref's sectioning
 Redoing nameref's label
-LaTeX Info: Redefining \nameref on input line 112.
-LaTeX Info: Redefining \ref on input line 112.
-LaTeX Info: Redefining \pageref on input line 112.
-LaTeX Info: Redefining \nameref on input line 112.
+LaTeX Info: Redefining \nameref on input line 113.
+LaTeX Info: Redefining \ref on input line 113.
+LaTeX Info: Redefining \pageref on input line 113.
+LaTeX Info: Redefining \nameref on input line 113.
 (./2019_7_Ozgumus_Semsi_Yigit.out) (./2019_7_Ozgumus_Semsi_Yigit.out)
 \@outlinefile=\write10
 \openout10 = `2019_7_Ozgumus_Semsi_Yigit.out'.
 
 
 ABD: EveryShipout initializing macros (./front_matter/cover.tex
-<images/polimi.png, id=216, 2007.5pt x 477.785pt>
+<images/polimi.png, id=195, 2007.5pt x 477.785pt>
 File: images/polimi.png Graphic file (type png)
 <use images/polimi.png>
 Package pdftex.def Info: images/polimi.png  used on input line 25.
@@ -2455,7 +2455,7 @@ Overfull \hbox (17.62482pt too wide) in paragraph at lines 30--31
 [][] 
  []
 
-<images/logo.png, id=218, 907.39pt x 901.3675pt>
+<images/logo.png, id=197, 907.39pt x 901.3675pt>
 File: images/logo.png Graphic file (type png)
 <use images/logo.png>
 Package pdftex.def Info: images/logo.png  used on input line 45.
@@ -2470,13 +2470,13 @@ Non-PDF special ignored!
 {/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./image
 s/polimi.png> <./images/logo.png>] [2
 
-] (./chapters/abstract.tex) [3] [4
+] (./front_matter/dedication.tex) [3]
+[4
+
+] (./front_matter/acknowledgement.tex) [5] [6
 
 ]
-(./chapters/abstract_it.tex) [5] [6
-
-] (./front_matter/acknowledgement.tex)
-[7] (./2019_7_Ozgumus_Semsi_Yigit.toc
+(./2019_7_Ozgumus_Semsi_Yigit.toc
 LaTeX Font Info:    Try loading font information for OT1+lmr on input line 4.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/ot1lmr.fd
@@ -2527,105 +2527,111 @@ LaTeX Font Info:    Try loading font information for OT1+jkp on input line 4.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/kpfonts/ot1jkp.fd
 File: ot1jkp.fd 2007/08/30 Fontinst v1.928 font definitions for OT1/jkp.
-) [8]) [9]
-(./2019_7_Ozgumus_Semsi_Yigit.lof)
-Underfull \vbox (badness 1424) has occurred while \output is active []
+) [7]) [8]
+(./2019_7_Ozgumus_Semsi_Yigit.lof [9
 
- [10
+]) (./2019_7_Ozgumus_Semsi_Yigit.lot)
+[10] [11] [12
 
-]
-(./2019_7_Ozgumus_Semsi_Yigit.lot) [11] [12
+] (./chapters/abstract.tex) [13] [14
 
-] (./chapters/introduction.tex
-[1
+] (./chapters/abstract_it.tex) [15] [16
+
+] (./chapters/introduction.tex [1
 
 ]) [2] (./chapters/sota.tex [3
 
 ]
-LaTeX Font Info:    Try loading font information for TS1+lmr on input line 42.
+LaTeX Font Info:    Try loading font information for TS1+lmr on input line 38.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) [4]
-Overfull \hbox (6.90408pt too wide) in paragraph at lines 82--92
-\T1/lmr/m/n/12 te-ri-als [[][]39[][]] may eas-ily de-velop de-fects in the man-
-u-fac-tur-ing pipeline.Therefore
+Overfull \hbox (22.57108pt too wide) in paragraph at lines 78--88
+\T1/lmr/m/n/12 ma-te-ri-als [[][]39[][]] may eas-ily de-velop de-fects in the m
+an-u-fac-tur-ing pipeline.Therefore
  []
 
-[5] [6] [7] [8]
-<images/gan.pdf, id=531, 1534.74184pt x 879.38437pt>
+[5] [6]
+Overfull \hbox (9.88997pt too wide) in paragraph at lines 161--168
+\T1/lmr/m/n/12 ages can be grouped in reference-based and reference-free ones [
+[][]14[][]]. Reference-
+ []
+
+[7] [8]
+<images/gan.pdf, id=547, 1534.74184pt x 879.38437pt>
 File: images/gan.pdf Graphic file (type pdf)
 <use images/gan.pdf>
-Package pdftex.def Info: images/gan.pdf  used on input line 245.
+Package pdftex.def Info: images/gan.pdf  used on input line 238.
 (pdftex.def)             Requested size: 344.69766pt x 197.50406pt.
  [9 <./images/gan.pdf>] [10] [11]
 
 Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 372.
+(amsmath)                trying to recover with `aligned' on input line 365.
 
 
 Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 372.
+(amsmath)                trying to recover with `aligned' on input line 365.
 
 
-Overfull \hbox (1.35275pt too wide) detected at line 372
+Overfull \hbox (1.35275pt too wide) detected at line 365
  []$[]\OML/lmm/m/it/12 C\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 G\OT1/lmr/m/n/12 ) \O
 MS/lmsy/m/n/12 ^^@ \OT1/lmr/m/n/12 (\OMS/lmsy/m/n/12 ^^@ []\OT1/lmr/m/n/12 (4))
  = [] \OML/lmm/m/it/12 p[] [] \OT1/lmr/m/n/12 + [] \OML/lmm/m/it/12 p[] []$ [] 
  
  []
 
-[12]
+
+Underfull \vbox (badness 5908) has occurred while \output is active []
+
+ [12]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 388.
+(Font)              <10> on input line 381.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7.6> on input line 388.
+(Font)              <7.6> on input line 381.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 388.
- [13]
-<images/ae_simple.png, id=658, 1814.9406pt x 1889.1378pt>
+(Font)              <6> on input line 381.
+
+[13]
+<images/ae_simple.png, id=672, 1814.9406pt x 1889.1378pt>
 File: images/ae_simple.png Graphic file (type png)
 <use images/ae_simple.png>
-Package pdftex.def Info: images/ae_simple.png  used on input line 444.
+Package pdftex.def Info: images/ae_simple.png  used on input line 437.
 (pdftex.def)             Requested size: 287.25pt x 298.98207pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<images/autoencoder.pdf, id=659, 944.96538pt x 457.04051pt>
+<images/autoencoder.pdf, id=673, 944.96538pt x 457.04051pt>
 File: images/autoencoder.pdf Graphic file (type pdf)
 <use images/autoencoder.pdf>
-Package pdftex.def Info: images/autoencoder.pdf  used on input line 458.
+Package pdftex.def Info: images/autoencoder.pdf  used on input line 451.
 (pdftex.def)             Requested size: 344.69766pt x 166.71727pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[14]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [15 <./images/ae_simple.png> <./images/autoencoder.pdf>] [16] [17] [18]
-Underfull \vbox (badness 1728) has occurred while \output is active []
-
- [19]
-<images/aligan.pdf, id=724, 1017.93501pt x 223.35846pt>
+[14] [15 <./images/ae_simple.png> <./images/autoencoder.pdf>] [16] [17]
+[18] [19]
+<images/aligan.pdf, id=739, 1017.93501pt x 223.35846pt>
 File: images/aligan.pdf Graphic file (type pdf)
 <use images/aligan.pdf>
-Package pdftex.def Info: images/aligan.pdf  used on input line 659.
+Package pdftex.def Info: images/aligan.pdf  used on input line 652.
 (pdftex.def)             Requested size: 344.69766pt x 75.63412pt.
-<images/bigan.png, id=726, 2017.5375pt x 791.1156pt>
+ [20 <./images/aligan.pdf>]
+<images/bigan.png, id=771, 2017.5375pt x 791.1156pt>
 File: images/bigan.png Graphic file (type png)
 <use images/bigan.png>
-Package pdftex.def Info: images/bigan.png  used on input line 677.
+Package pdftex.def Info: images/bigan.png  used on input line 670.
 (pdftex.def)             Requested size: 344.69766pt x 135.1518pt.
 
+Underfull \vbox (badness 3568) has occurred while \output is active []
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+ [21 <./images/bigan.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[20 <./images/aligan.pdf>]
-Underfull \vbox (badness 2875) has occurred while \output is active []
-
- [21 <./images/bigan.png>] [22] [23]
-Overfull \hbox (3.50192pt too wide) detected at line 821
+ [22]
+[23]
+Overfull \hbox (3.50192pt too wide) detected at line 814
 [] \OT1/lmr/m/n/12 = \U/msb/m/n/12 E[]\OT1/lmr/m/n/12 [[](\OT1/lmr/bx/n/12 x\OM
 L/lmm/m/it/12 ; \OT1/lmr/bx/n/12 z\OT1/lmr/m/n/12 ) [] \OML/lmm/m/it/12 D\OT1/l
 mr/m/n/12 (\OT1/lmr/bx/n/12 x\OML/lmm/m/it/12 ; \OT1/lmr/bx/n/12 z\OT1/lmr/m/n/
@@ -2635,49 +2641,37 @@ mr/m/n/12 (\OT1/lmr/bx/n/12 x\OML/lmm/m/it/12 ; \OT1/lmr/bx/n/12 z\OT1/lmr/m/n/
 1/lmr/m/n/12 ))]
  []
 
-
-Underfull \vbox (badness 7486) has occurred while \output is active []
-
- [24]
-[25]
-Underfull \vbox (badness 7451) has occurred while \output is active []
-
- [26]
-[27] [28] [29]
-<images/alad.png, id=915, 2415.0225pt x 1483.7031pt>
+[24] [25] [26] [27] [28] [29]
+<images/alad.png, id=928, 2415.0225pt x 1483.7031pt>
 File: images/alad.png Graphic file (type png)
 <use images/alad.png>
-Package pdftex.def Info: images/alad.png  used on input line 1056.
+Package pdftex.def Info: images/alad.png  used on input line 1049.
 (pdftex.def)             Requested size: 344.69766pt x 211.76947pt.
- [30 <./images/alad.png>]
-Underfull \vbox (badness 3302) has occurred while \output is active []
 
- [31]
-Underfull \vbox (badness 4595) has occurred while \output is active []
 
- [32]
-<images/ganomaly.png, id=955, 2362.9881pt x 1210.5225pt>
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[30] [31 <./images/alad.png>] [32]
+<images/ganomaly.png, id=970, 2362.9881pt x 1210.5225pt>
 File: images/ganomaly.png Graphic file (type png)
 <use images/ganomaly.png>
-Package pdftex.def Info: images/ganomaly.png  used on input line 1164.
+Package pdftex.def Info: images/ganomaly.png  used on input line 1157.
 (pdftex.def)             Requested size: 344.69766pt x 176.58334pt.
-
-[33 <./images/ganomaly.png>] [34]
-<images/skip_ganomaly.png, id=980, 1206.5075pt x 565.11125pt>
+ [33 <./images/ganomaly.png>] [34]
+<images/skip_ganomaly.png, id=996, 1206.5075pt x 565.11125pt>
 File: images/skip_ganomaly.png Graphic file (type png)
 <use images/skip_ganomaly.png>
-Package pdftex.def Info: images/skip_ganomaly.png  used on input line 1229.
+Package pdftex.def Info: images/skip_ganomaly.png  used on input line 1222.
 (pdftex.def)             Requested size: 344.69766pt x 161.4464pt.
-) [35 <./images/skip_ganomaly.png>] [36]
-(./chapters/latdel.tex [37
+ [35 <./images/skip_ganomaly.png>]) [36] (./chapters/latdel.tex [37
 
 ]
-<images/fanogan_framework.png, id=1007, 1243.64626pt x 466.74374pt>
+<images/fanogan_framework.png, id=1022, 1243.64626pt x 466.74374pt>
 File: images/fanogan_framework.png Graphic file (type png)
 <use images/fanogan_framework.png>
 Package pdftex.def Info: images/fanogan_framework.png  used on input line 34.
 (pdftex.def)             Requested size: 344.69766pt x 129.36267pt.
-<images/fanogan_training.png, id=1014, 1243.64626pt x 466.74374pt>
+<images/fanogan_training.png, id=1029, 1243.64626pt x 466.74374pt>
 File: images/fanogan_training.png Graphic file (type png)
 <use images/fanogan_training.png>
 Package pdftex.def Info: images/fanogan_training.png  used on input line 51.
@@ -2690,12 +2684,12 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 Underfull \vbox (badness 7030) has occurred while \output is active []
 
  [39 <./images/fanogan_training.png>]
-<images/fanogan_anomaly_1.png, id=1033, 590.205pt x 246.9225pt>
+<images/fanogan_anomaly_1.png, id=1049, 590.205pt x 246.9225pt>
 File: images/fanogan_anomaly_1.png Graphic file (type png)
 <use images/fanogan_anomaly_1.png>
 Package pdftex.def Info: images/fanogan_anomaly_1.png  used on input line 115.
 (pdftex.def)             Requested size: 191.5pt x 80.11697pt.
-<images/fanogan_anomaly_2.png, id=1034, 373.395pt x 246.9225pt>
+<images/fanogan_anomaly_2.png, id=1050, 373.395pt x 246.9225pt>
 File: images/fanogan_anomaly_2.png Graphic file (type png)
 <use images/fanogan_anomaly_2.png>
 Package pdftex.def Info: images/fanogan_anomaly_2.png  used on input line 121.
@@ -2706,7 +2700,7 @@ Overfull \hbox (7.83322pt too wide) in paragraph at lines 115--122
  []
 
 [40 <./images/fanogan_anomaly_1.png> <./images/fanogan_anomaly_2.png>] [41]
-<images/ebgan_model.png, id=1068, 982.67125pt x 308.15125pt>
+<images/ebgan_model.png, id=1084, 982.67125pt x 308.15125pt>
 File: images/ebgan_model.png Graphic file (type png)
 <use images/ebgan_model.png>
 Package pdftex.def Info: images/ebgan_model.png  used on input line 177.
@@ -2715,7 +2709,7 @@ Package pdftex.def Info: images/ebgan_model.png  used on input line 177.
 [42 <./images/ebgan_model.png>]) [43] [44
 
 ] (./chapters/arim.tex
-<images/dataset.png, id=1101, 1027.84pt x 702.625pt>
+<images/dataset.png, id=1116, 1027.84pt x 702.625pt>
 File: images/dataset.png Graphic file (type png)
 <use images/dataset.png>
 Package pdftex.def Info: images/dataset.png  used on input line 29.
@@ -2724,7 +2718,7 @@ Package pdftex.def Info: images/dataset.png  used on input line 29.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<images/sample_normal.png, id=1104, 1094.0875pt x 672.5125pt>
+<images/sample_normal.png, id=1119, 1094.0875pt x 672.5125pt>
 File: images/sample_normal.png Graphic file (type png)
 <use images/sample_normal.png>
 Package pdftex.def Info: images/sample_normal.png  used on input line 42.
@@ -2734,7 +2728,7 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 42--42
  [][] 
  []
 
-<images/sample_anomaly.png, id=1105, 1094.0875pt x 672.5125pt>
+<images/sample_anomaly.png, id=1120, 1094.0875pt x 672.5125pt>
 File: images/sample_anomaly.png Graphic file (type png)
 <use images/sample_anomaly.png>
 Package pdftex.def Info: images/sample_anomaly.png  used on input line 48.
@@ -2832,25 +2826,25 @@ arim/gan_training/bigan_gan.png> <./images/arim/gan_training/alad_gan.png>]
 File: images/arim/encoder_conv/bigan_loss_encoder.png Graphic file (type png)
 <use images/arim/encoder_conv/bigan_loss_encoder.png>
 Package pdftex.def Info: images/arim/encoder_conv/bigan_loss_encoder.png  used 
-on input line 230.
+on input line 231.
 (pdftex.def)             Requested size: 114.90117pt x 69.62947pt.
 File: images/arim/encoder_conv/alad_loss_encoder.png Graphic file (type png)
 <use images/arim/encoder_conv/alad_loss_encoder.png>
 Package pdftex.def Info: images/arim/encoder_conv/alad_loss_encoder.png  used o
-n input line 230.
+n input line 231.
 (pdftex.def)             Requested size: 114.90117pt x 69.62947pt.
 
-Underfull \hbox (badness 2707) in paragraph at lines 230--230
+Underfull \hbox (badness 2707) in paragraph at lines 231--231
 []\T1/lmr/b/n/10 (b) |\T1/lmr/m/n/10 ALAD En-coder
  []
 
 File: images/arim/encoder_conv/enceb_loss_encoder.png Graphic file (type png)
 <use images/arim/encoder_conv/enceb_loss_encoder.png>
 Package pdftex.def Info: images/arim/encoder_conv/enceb_loss_encoder.png  used 
-on input line 230.
+on input line 231.
 (pdftex.def)             Requested size: 114.90117pt x 69.62947pt.
 
-Overfull \hbox (3.7035pt too wide) in paragraph at lines 230--230
+Overfull \hbox (3.7035pt too wide) in paragraph at lines 231--231
 []|[]| 
  []
 
@@ -2860,55 +2854,55 @@ oder_conv/alad_loss_encoder.png> <./images/arim/encoder_conv/enceb_loss_encoder
 File: images/arim/encoder_conv/anogan_sample.png Graphic file (type png)
 <use images/arim/encoder_conv/anogan_sample.png>
 Package pdftex.def Info: images/arim/encoder_conv/anogan_sample.png  used on in
-put line 264.
+put line 265.
 (pdftex.def)             Requested size: 114.90117pt x 114.90323pt.
 
-Underfull \hbox (badness 1242) in paragraph at lines 264--264
+Underfull \hbox (badness 1242) in paragraph at lines 265--265
 []\T1/lmr/b/n/10 (a) |\T1/lmr/m/n/10 AnoGAN Query
  []
 
 File: images/arim/encoder_conv/bigan_sample.png Graphic file (type png)
 <use images/arim/encoder_conv/bigan_sample.png>
 Package pdftex.def Info: images/arim/encoder_conv/bigan_sample.png  used on inp
-ut line 264.
+ut line 265.
 (pdftex.def)             Requested size: 114.90117pt x 114.90323pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 264--264
+Underfull \hbox (badness 10000) in paragraph at lines 265--265
 []\T1/lmr/b/n/10 (b) |\T1/lmr/m/n/10 Bi-GAN Query
  []
 
 File: images/arim/encoder_conv/alad_sample.png Graphic file (type png)
 <use images/arim/encoder_conv/alad_sample.png>
 Package pdftex.def Info: images/arim/encoder_conv/alad_sample.png  used on inpu
-t line 264.
+t line 265.
 (pdftex.def)             Requested size: 114.90117pt x 114.90323pt.
 File: images/arim/encoder_conv/anogan_reconstruct.png Graphic file (type png)
 <use images/arim/encoder_conv/anogan_reconstruct.png>
 Package pdftex.def Info: images/arim/encoder_conv/anogan_reconstruct.png  used 
-on input line 264.
+on input line 265.
 (pdftex.def)             Requested size: 114.90117pt x 114.90323pt.
 File: images/arim/encoder_conv/bigan_reconstruct.png Graphic file (type png)
 <use images/arim/encoder_conv/bigan_reconstruct.png>
 Package pdftex.def Info: images/arim/encoder_conv/bigan_reconstruct.png  used o
-n input line 264.
+n input line 265.
 (pdftex.def)             Requested size: 114.90117pt x 114.90323pt.
 
-Underfull \hbox (badness 5847) in paragraph at lines 264--264
+Underfull \hbox (badness 5847) in paragraph at lines 265--265
 []\T1/lmr/b/n/10 (e) |\T1/lmr/m/n/10 Bi-GAN Re-con-
  []
 
 File: images/arim/encoder_conv/alad_reconstruct.png Graphic file (type png)
 <use images/arim/encoder_conv/alad_reconstruct.png>
 Package pdftex.def Info: images/arim/encoder_conv/alad_reconstruct.png  used on
- input line 264.
+ input line 265.
 (pdftex.def)             Requested size: 114.90117pt x 114.90323pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 264--264
+Underfull \hbox (badness 10000) in paragraph at lines 265--265
 []\T1/lmr/b/n/10 (f) |\T1/lmr/m/n/10 ALAD Re-con-
  []
 
 
-Overfull \hbox (3.7035pt too wide) in paragraph at lines 264--264
+Overfull \hbox (3.7035pt too wide) in paragraph at lines 265--265
 []|[]| 
  []
 
@@ -2919,61 +2913,61 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 /bigan_sample.png> <./images/arim/encoder_conv/alad_sample.png> <./images/arim/
 encoder_conv/anogan_reconstruct.png> <./images/arim/encoder_conv/bigan_reconstr
 uct.png> <./images/arim/encoder_conv/alad_reconstruct.png>]
-<images/arim/encebgan/encebgan.pdf, id=1229, 1944.79369pt x 908.76715pt>
+<images/arim/encebgan/encebgan.pdf, id=1245, 1944.79369pt x 908.76715pt>
 File: images/arim/encebgan/encebgan.pdf Graphic file (type pdf)
 <use images/arim/encebgan/encebgan.pdf>
 Package pdftex.def Info: images/arim/encebgan/encebgan.pdf  used on input line 
-318.
+319.
 (pdftex.def)             Requested size: 383.0pt x 178.96301pt.
  [53]
 File: images/arim/encebgan/encebgan_loss_generator.png Graphic file (type png)
 <use images/arim/encebgan/encebgan_loss_generator.png>
 Package pdftex.def Info: images/arim/encebgan/encebgan_loss_generator.png  used
- on input line 358.
+ on input line 359.
 (pdftex.def)             Requested size: 114.90117pt x 69.62947pt.
 File: images/arim/encebgan/encebgan_loss_discriminator.png Graphic file (type p
 ng)
 <use images/arim/encebgan/encebgan_loss_discriminator.png>
 Package pdftex.def Info: images/arim/encebgan/encebgan_loss_discriminator.png  
-used on input line 358.
+used on input line 359.
 (pdftex.def)             Requested size: 114.90117pt x 69.62947pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 358--358
+Underfull \hbox (badness 10000) in paragraph at lines 359--359
 []\T1/lmr/b/n/10 (b) |\T1/lmr/m/n/10 Dis-crim-i-na-tor
  []
 
 File: images/arim/encebgan/encebgan_loss_encoder.png Graphic file (type png)
 <use images/arim/encebgan/encebgan_loss_encoder.png>
 Package pdftex.def Info: images/arim/encebgan/encebgan_loss_encoder.png  used o
-n input line 358.
+n input line 359.
 (pdftex.def)             Requested size: 114.90117pt x 69.62947pt.
 File: images/arim/encebgan/encebgan_generated.png Graphic file (type png)
 <use images/arim/encebgan/encebgan_generated.png>
 Package pdftex.def Info: images/arim/encebgan/encebgan_generated.png  used on i
-nput line 358.
+nput line 359.
 (pdftex.def)             Requested size: 114.90117pt x 114.90323pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 358--358
+Underfull \hbox (badness 10000) in paragraph at lines 359--359
 []\T1/lmr/b/n/10 (d) |\T1/lmr/m/n/10 ENCE-B-GAN
  []
 
 File: images/arim/encebgan/encebgan_input.png Graphic file (type png)
 <use images/arim/encebgan/encebgan_input.png>
 Package pdftex.def Info: images/arim/encebgan/encebgan_input.png  used on input
- line 358.
+ line 359.
 (pdftex.def)             Requested size: 114.90117pt x 114.90323pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 358--358
+Underfull \hbox (badness 10000) in paragraph at lines 359--359
 []\T1/lmr/b/n/10 (e) |\T1/lmr/m/n/10 ENCE-B-GAN
  []
 
 File: images/arim/encebgan/encebgan_reconstruct.png Graphic file (type png)
 <use images/arim/encebgan/encebgan_reconstruct.png>
 Package pdftex.def Info: images/arim/encebgan/encebgan_reconstruct.png  used on
- input line 358.
+ input line 359.
 (pdftex.def)             Requested size: 114.90117pt x 114.90323pt.
 
-Overfull \hbox (3.7035pt too wide) in paragraph at lines 358--358
+Overfull \hbox (3.7035pt too wide) in paragraph at lines 359--359
 []|[]| 
  []
 
@@ -2987,46 +2981,46 @@ er.png> <./images/arim/encebgan/encebgan_generated.png> <./images/arim/encebgan
 File: images/arim/anomaly_score/anoscore_input.png Graphic file (type png)
 <use images/arim/anomaly_score/anoscore_input.png>
 Package pdftex.def Info: images/arim/anomaly_score/anoscore_input.png  used on 
-input line 402.
+input line 403.
 (pdftex.def)             Requested size: 114.90117pt x 114.90323pt.
 File: images/arim/anomaly_score/anoscore_ganomaly.png Graphic file (type png)
 <use images/arim/anomaly_score/anoscore_ganomaly.png>
 Package pdftex.def Info: images/arim/anomaly_score/anoscore_ganomaly.png  used 
-on input line 402.
+on input line 403.
 (pdftex.def)             Requested size: 114.90117pt x 114.90323pt.
 
-Underfull \hbox (badness 3138) in paragraph at lines 402--402
+Underfull \hbox (badness 3138) in paragraph at lines 403--403
 []\T1/lmr/b/n/10 (b) |\T1/lmr/m/n/10 GANomaly Re-
  []
 
 File: images/arim/anomaly_score/anoscore_sganomaly.png Graphic file (type png)
 <use images/arim/anomaly_score/anoscore_sganomaly.png>
 Package pdftex.def Info: images/arim/anomaly_score/anoscore_sganomaly.png  used
- on input line 402.
+ on input line 403.
 (pdftex.def)             Requested size: 114.90117pt x 114.90323pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 402--402
+Underfull \hbox (badness 10000) in paragraph at lines 403--403
 []\T1/lmr/b/n/10 (c) |\T1/lmr/m/n/10 Skip-GANomaly
  []
 
 
-Overfull \hbox (3.7035pt too wide) in paragraph at lines 402--402
+Overfull \hbox (3.7035pt too wide) in paragraph at lines 403--403
 []|[]| 
  []
 
 [56 <./images/arim/anomaly_score/anoscore_input.png> <./images/arim/anomaly_sco
 re/anoscore_ganomaly.png> <./images/arim/anomaly_score/anoscore_sganomaly.png>]
-<images/arim/sencebgan/sencebgan.pdf, id=1313, 1944.79369pt x 908.76715pt>
+<images/arim/sencebgan/sencebgan.pdf, id=1328, 1944.79369pt x 908.76715pt>
 File: images/arim/sencebgan/sencebgan.pdf Graphic file (type pdf)
 <use images/arim/sencebgan/sencebgan.pdf>
 Package pdftex.def Info: images/arim/sencebgan/sencebgan.pdf  used on input lin
-e 439.
+e 440.
 (pdftex.def)             Requested size: 383.0pt x 178.96301pt.
 
 Class memoir Warning: The material used in the headers is too large
 (28.99998pt) for the given head height (14.5pt), it is recommended to
 either increase the head height or redesign the header
-(in both cases you will find help in the memoir manual). on input line 450.
+(in both cases you will find help in the memoir manual). on input line 451.
 
 
 Overfull \vbox (14.49998pt too high) has occurred while \output is active []
@@ -3039,7 +3033,7 @@ Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 [59] [60
 
 ] (./chapters/exp_results.tex [61] [62]
-<images/expres/roc_curve.png, id=1382, 462.528pt x 346.896pt>
+<images/expres/roc_curve.png, id=1397, 462.528pt x 346.896pt>
 File: images/expres/roc_curve.png Graphic file (type png)
 <use images/expres/roc_curve.png>
 Package pdftex.def Info: images/expres/roc_curve.png  used on input line 85.
@@ -3048,10 +3042,432 @@ Package pdftex.def Info: images/expres/roc_curve.png  used on input line 85.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[63] [64 <./images/expres/roc_curve.png>] [65] [66] [67]) [68]
-(./chapters/conclusion.tex) [69
+[63] [64 <./images/expres/roc_curve.png>] [65]
+File: images/expres/anogan/hist.png Graphic file (type png)
+<use images/expres/anogan/hist.png>
+Package pdftex.def Info: images/expres/anogan/hist.png  used on input line 188.
 
-] [70
+(pdftex.def)             Requested size: 114.90117pt x 85.9792pt.
+
+Underfull \hbox (badness 3930) in paragraph at lines 188--188
+[]\T1/lmr/b/n/10 (a) |\T1/lmr/m/n/10 Sep-a-ra-tion His-
+ []
+
+File: images/expres/anogan/prc.jpg Graphic file (type jpg)
+<use images/expres/anogan/prc.jpg>
+Package pdftex.def Info: images/expres/anogan/prc.jpg  used on input line 188.
+(pdftex.def)             Requested size: 114.90117pt x 86.17328pt.
+
+Underfull \hbox (badness 6675) in paragraph at lines 188--188
+[]\T1/lmr/b/n/10 (b) |\T1/lmr/m/n/10 Pre-ci-sion/Recall
+ []
+
+File: images/expres/anogan/roc.png Graphic file (type png)
+<use images/expres/anogan/roc.png>
+Package pdftex.def Info: images/expres/anogan/roc.png  used on input line 188.
+(pdftex.def)             Requested size: 114.90117pt x 86.17328pt.
+
+Overfull \hbox (3.7035pt too wide) in paragraph at lines 188--188
+[]|[]| 
+ []
+
+[66 <./images/expres/anogan/hist.png> <./images/expres/anogan/prc.jpg> <./image
+s/expres/anogan/roc.png>]
+File: images/expres/bigan/hist.png Graphic file (type png)
+<use images/expres/bigan/hist.png>
+Package pdftex.def Info: images/expres/bigan/hist.png  used on input line 231.
+(pdftex.def)             Requested size: 114.90117pt x 85.68808pt.
+
+Underfull \hbox (badness 3930) in paragraph at lines 231--231
+[]\T1/lmr/b/n/10 (a) |\T1/lmr/m/n/10 Sep-a-ra-tion His-
+ []
+
+File: images/expres/bigan/prc.jpg Graphic file (type jpg)
+<use images/expres/bigan/prc.jpg>
+Package pdftex.def Info: images/expres/bigan/prc.jpg  used on input line 231.
+(pdftex.def)             Requested size: 114.90117pt x 86.17328pt.
+
+Underfull \hbox (badness 6675) in paragraph at lines 231--231
+[]\T1/lmr/b/n/10 (b) |\T1/lmr/m/n/10 Pre-ci-sion/Recall
+ []
+
+File: images/expres/bigan/roc.png Graphic file (type png)
+<use images/expres/bigan/roc.png>
+Package pdftex.def Info: images/expres/bigan/roc.png  used on input line 231.
+(pdftex.def)             Requested size: 114.90117pt x 86.17328pt.
+
+Overfull \hbox (3.7035pt too wide) in paragraph at lines 231--231
+[]|[]| 
+ []
+
+File: images/expres/bigan/ims/input_0.png Graphic file (type png)
+<use images/expres/bigan/ims/input_0.png>
+Package pdftex.def Info: images/expres/bigan/ims/input_0.png  used on input lin
+e 255.
+(pdftex.def)             Requested size: 61.2814pt x 61.27821pt.
+
+Overfull \hbox (1.7814pt too wide) in paragraph at lines 255--255
+[]|[]| 
+ []
+
+File: images/expres/bigan/ims/input_10.png Graphic file (type png)
+<use images/expres/bigan/ims/input_10.png>
+Package pdftex.def Info: images/expres/bigan/ims/input_10.png  used on input li
+ne 255.
+(pdftex.def)             Requested size: 61.2814pt x 61.27821pt.
+
+Overfull \hbox (1.7814pt too wide) in paragraph at lines 255--255
+[]|[]| 
+ []
+
+File: images/expres/bigan/ims/input_20.png Graphic file (type png)
+<use images/expres/bigan/ims/input_20.png>
+Package pdftex.def Info: images/expres/bigan/ims/input_20.png  used on input li
+ne 255.
+(pdftex.def)             Requested size: 61.2814pt x 61.27821pt.
+
+Overfull \hbox (1.7814pt too wide) in paragraph at lines 255--255
+[]|[]| 
+ []
+
+File: images/expres/bigan/ims/input_30.png Graphic file (type png)
+<use images/expres/bigan/ims/input_30.png>
+Package pdftex.def Info: images/expres/bigan/ims/input_30.png  used on input li
+ne 255.
+(pdftex.def)             Requested size: 61.2814pt x 61.27821pt.
+
+Overfull \hbox (1.7814pt too wide) in paragraph at lines 255--255
+[]|[]| 
+ []
+
+File: images/expres/bigan/ims/input_40.png Graphic file (type png)
+<use images/expres/bigan/ims/input_40.png>
+Package pdftex.def Info: images/expres/bigan/ims/input_40.png  used on input li
+ne 255.
+(pdftex.def)             Requested size: 61.2814pt x 61.27821pt.
+
+Overfull \hbox (1.7814pt too wide) in paragraph at lines 255--255
+[]|[]| 
+ []
+
+File: images/expres/bigan/ims/input_50.png Graphic file (type png)
+<use images/expres/bigan/ims/input_50.png>
+Package pdftex.def Info: images/expres/bigan/ims/input_50.png  used on input li
+ne 255.
+(pdftex.def)             Requested size: 61.2814pt x 61.27821pt.
+
+Overfull \hbox (1.7814pt too wide) in paragraph at lines 255--255
+[]|[]| 
+ []
+
+File: images/expres/bigan/ims/rec_0.png Graphic file (type png)
+<use images/expres/bigan/ims/rec_0.png>
+Package pdftex.def Info: images/expres/bigan/ims/rec_0.png  used on input line 
+255.
+(pdftex.def)             Requested size: 61.2814pt x 61.27821pt.
+
+Overfull \hbox (1.7814pt too wide) in paragraph at lines 255--255
+[]|[]| 
+ []
+
+File: images/expres/bigan/ims/rec_10.png Graphic file (type png)
+<use images/expres/bigan/ims/rec_10.png>
+Package pdftex.def Info: images/expres/bigan/ims/rec_10.png  used on input line
+ 255.
+(pdftex.def)             Requested size: 61.2814pt x 61.27821pt.
+
+Overfull \hbox (1.7814pt too wide) in paragraph at lines 255--255
+[]|[]| 
+ []
+
+File: images/expres/bigan/ims/rec_20.png Graphic file (type png)
+<use images/expres/bigan/ims/rec_20.png>
+Package pdftex.def Info: images/expres/bigan/ims/rec_20.png  used on input line
+ 255.
+(pdftex.def)             Requested size: 61.2814pt x 61.27821pt.
+
+Overfull \hbox (1.7814pt too wide) in paragraph at lines 255--255
+[]|[]| 
+ []
+
+File: images/expres/bigan/ims/rec_30.png Graphic file (type png)
+<use images/expres/bigan/ims/rec_30.png>
+Package pdftex.def Info: images/expres/bigan/ims/rec_30.png  used on input line
+ 255.
+(pdftex.def)             Requested size: 61.2814pt x 61.27821pt.
+
+Overfull \hbox (1.7814pt too wide) in paragraph at lines 255--255
+[]|[]| 
+ []
+
+File: images/expres/bigan/ims/rec_40.png Graphic file (type png)
+<use images/expres/bigan/ims/rec_40.png>
+Package pdftex.def Info: images/expres/bigan/ims/rec_40.png  used on input line
+ 255.
+(pdftex.def)             Requested size: 61.2814pt x 61.27821pt.
+
+Overfull \hbox (1.7814pt too wide) in paragraph at lines 255--255
+[]|[]| 
+ []
+
+File: images/expres/bigan/ims/rec_50.png Graphic file (type png)
+<use images/expres/bigan/ims/rec_50.png>
+Package pdftex.def Info: images/expres/bigan/ims/rec_50.png  used on input line
+ 255.
+(pdftex.def)             Requested size: 61.2814pt x 61.27821pt.
+
+Overfull \hbox (1.7814pt too wide) in paragraph at lines 255--255
+[]|[]| 
+ []
+
+
+Overfull \hbox (5.53409pt too wide) in paragraph at lines 259--262
+[]\T1/lmr/m/n/12 Ablation study for ALAD model is pre-sented in ta-ble [][]54[]
+[]. Un-like AnoGAN
+ []
+
+[67 <./images/expres/bigan/hist.png> <./images/expres/bigan/prc.jpg> <./images/
+expres/bigan/roc.png>]
+File: images/expres/anogan/hist.png Graphic file (type png)
+<use images/expres/anogan/hist.png>
+Package pdftex.def Info: images/expres/anogan/hist.png  used on input line 294.
+
+(pdftex.def)             Requested size: 114.90117pt x 85.9792pt.
+
+Underfull \hbox (badness 3930) in paragraph at lines 294--294
+[]\T1/lmr/b/n/10 (a) |\T1/lmr/m/n/10 Sep-a-ra-tion His-
+ []
+
+File: images/expres/anogan/prc.jpg Graphic file (type jpg)
+<use images/expres/anogan/prc.jpg>
+Package pdftex.def Info: images/expres/anogan/prc.jpg  used on input line 294.
+(pdftex.def)             Requested size: 114.90117pt x 86.17328pt.
+
+Underfull \hbox (badness 6675) in paragraph at lines 294--294
+[]\T1/lmr/b/n/10 (b) |\T1/lmr/m/n/10 Pre-ci-sion/Recall
+ []
+
+File: images/expres/anogan/roc.png Graphic file (type png)
+<use images/expres/anogan/roc.png>
+Package pdftex.def Info: images/expres/anogan/roc.png  used on input line 294.
+(pdftex.def)             Requested size: 114.90117pt x 86.17328pt.
+
+Overfull \hbox (3.7035pt too wide) in paragraph at lines 294--294
+[]|[]| 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: images/expres/bigan/ims/input_0.png Graphic file (type png)
+<use images/expres/bigan/ims/input_0.png>
+Package pdftex.def Info: images/expres/bigan/ims/input_0.png  used on input lin
+e 314.
+(pdftex.def)             Requested size: 61.2814pt x 61.27821pt.
+
+Overfull \hbox (1.7814pt too wide) in paragraph at lines 314--314
+[]|[]| 
+ []
+
+File: images/expres/bigan/ims/input_10.png Graphic file (type png)
+<use images/expres/bigan/ims/input_10.png>
+Package pdftex.def Info: images/expres/bigan/ims/input_10.png  used on input li
+ne 314.
+(pdftex.def)             Requested size: 61.2814pt x 61.27821pt.
+
+Overfull \hbox (1.7814pt too wide) in paragraph at lines 314--314
+[]|[]| 
+ []
+
+File: images/expres/bigan/ims/input_20.png Graphic file (type png)
+<use images/expres/bigan/ims/input_20.png>
+Package pdftex.def Info: images/expres/bigan/ims/input_20.png  used on input li
+ne 314.
+(pdftex.def)             Requested size: 61.2814pt x 61.27821pt.
+
+Overfull \hbox (1.7814pt too wide) in paragraph at lines 314--314
+[]|[]| 
+ []
+
+File: images/expres/bigan/ims/input_30.png Graphic file (type png)
+<use images/expres/bigan/ims/input_30.png>
+Package pdftex.def Info: images/expres/bigan/ims/input_30.png  used on input li
+ne 314.
+(pdftex.def)             Requested size: 61.2814pt x 61.27821pt.
+
+Overfull \hbox (1.7814pt too wide) in paragraph at lines 314--314
+[]|[]| 
+ []
+
+File: images/expres/bigan/ims/input_40.png Graphic file (type png)
+<use images/expres/bigan/ims/input_40.png>
+Package pdftex.def Info: images/expres/bigan/ims/input_40.png  used on input li
+ne 314.
+(pdftex.def)             Requested size: 61.2814pt x 61.27821pt.
+
+Overfull \hbox (1.7814pt too wide) in paragraph at lines 314--314
+[]|[]| 
+ []
+
+File: images/expres/bigan/ims/input_50.png Graphic file (type png)
+<use images/expres/bigan/ims/input_50.png>
+Package pdftex.def Info: images/expres/bigan/ims/input_50.png  used on input li
+ne 314.
+(pdftex.def)             Requested size: 61.2814pt x 61.27821pt.
+
+Overfull \hbox (1.7814pt too wide) in paragraph at lines 314--314
+[]|[]| 
+ []
+
+File: images/expres/bigan/ims/rec_0.png Graphic file (type png)
+<use images/expres/bigan/ims/rec_0.png>
+Package pdftex.def Info: images/expres/bigan/ims/rec_0.png  used on input line 
+314.
+(pdftex.def)             Requested size: 61.2814pt x 61.27821pt.
+
+Overfull \hbox (1.7814pt too wide) in paragraph at lines 314--314
+[]|[]| 
+ []
+
+File: images/expres/bigan/ims/rec_10.png Graphic file (type png)
+<use images/expres/bigan/ims/rec_10.png>
+Package pdftex.def Info: images/expres/bigan/ims/rec_10.png  used on input line
+ 314.
+(pdftex.def)             Requested size: 61.2814pt x 61.27821pt.
+
+Overfull \hbox (1.7814pt too wide) in paragraph at lines 314--314
+[]|[]| 
+ []
+
+File: images/expres/bigan/ims/rec_20.png Graphic file (type png)
+<use images/expres/bigan/ims/rec_20.png>
+Package pdftex.def Info: images/expres/bigan/ims/rec_20.png  used on input line
+ 314.
+(pdftex.def)             Requested size: 61.2814pt x 61.27821pt.
+
+Overfull \hbox (1.7814pt too wide) in paragraph at lines 314--314
+[]|[]| 
+ []
+
+File: images/expres/bigan/ims/rec_30.png Graphic file (type png)
+<use images/expres/bigan/ims/rec_30.png>
+Package pdftex.def Info: images/expres/bigan/ims/rec_30.png  used on input line
+ 314.
+(pdftex.def)             Requested size: 61.2814pt x 61.27821pt.
+
+Overfull \hbox (1.7814pt too wide) in paragraph at lines 314--314
+[]|[]| 
+ []
+
+File: images/expres/bigan/ims/rec_40.png Graphic file (type png)
+<use images/expres/bigan/ims/rec_40.png>
+Package pdftex.def Info: images/expres/bigan/ims/rec_40.png  used on input line
+ 314.
+(pdftex.def)             Requested size: 61.2814pt x 61.27821pt.
+
+Overfull \hbox (1.7814pt too wide) in paragraph at lines 314--314
+[]|[]| 
+ []
+
+File: images/expres/bigan/ims/rec_50.png Graphic file (type png)
+<use images/expres/bigan/ims/rec_50.png>
+Package pdftex.def Info: images/expres/bigan/ims/rec_50.png  used on input line
+ 314.
+(pdftex.def)             Requested size: 61.2814pt x 61.27821pt.
+
+Overfull \hbox (1.7814pt too wide) in paragraph at lines 314--314
+[]|[]| 
+ []
+
+[68 <./images/expres/bigan/ims/input_0.png> <./images/expres/bigan/ims/input_10
+.png> <./images/expres/bigan/ims/input_20.png> <./images/expres/bigan/ims/input
+_30.png> <./images/expres/bigan/ims/input_40.png> <./images/expres/bigan/ims/in
+put_50.png> <./images/expres/bigan/ims/rec_0.png> <./images/expres/bigan/ims/re
+c_10.png> <./images/expres/bigan/ims/rec_20.png> <./images/expres/bigan/ims/rec
+_30.png> <./images/expres/bigan/ims/rec_40.png> <./images/expres/bigan/ims/rec_
+50.png>]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: images/expres/ganomaly/hist.png Graphic file (type png)
+<use images/expres/ganomaly/hist.png>
+Package pdftex.def Info: images/expres/ganomaly/hist.png  used on input line 35
+7.
+(pdftex.def)             Requested size: 114.90117pt x 87.61922pt.
+
+Underfull \hbox (badness 3930) in paragraph at lines 357--357
+[]\T1/lmr/b/n/10 (a) |\T1/lmr/m/n/10 Sep-a-ra-tion His-
+ []
+
+File: images/expres/ganomaly/prc.jpg Graphic file (type jpg)
+<use images/expres/ganomaly/prc.jpg>
+Package pdftex.def Info: images/expres/ganomaly/prc.jpg  used on input line 357
+.
+(pdftex.def)             Requested size: 114.90117pt x 86.17328pt.
+
+Underfull \hbox (badness 6675) in paragraph at lines 357--357
+[]\T1/lmr/b/n/10 (b) |\T1/lmr/m/n/10 Pre-ci-sion/Recall
+ []
+
+File: images/expres/ganomaly/roc.png Graphic file (type png)
+<use images/expres/ganomaly/roc.png>
+Package pdftex.def Info: images/expres/ganomaly/roc.png  used on input line 357
+.
+(pdftex.def)             Requested size: 114.90117pt x 86.17328pt.
+
+Overfull \hbox (3.7035pt too wide) in paragraph at lines 357--357
+[]|[]| 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[69]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: images/expres/anogan/hist.png Graphic file (type png)
+<use images/expres/anogan/hist.png>
+Package pdftex.def Info: images/expres/anogan/hist.png  used on input line 398.
+
+(pdftex.def)             Requested size: 114.90117pt x 85.9792pt.
+
+Underfull \hbox (badness 3930) in paragraph at lines 398--398
+[]\T1/lmr/b/n/10 (a) |\T1/lmr/m/n/10 Sep-a-ra-tion His-
+ []
+
+File: images/expres/anogan/prc.jpg Graphic file (type jpg)
+<use images/expres/anogan/prc.jpg>
+Package pdftex.def Info: images/expres/anogan/prc.jpg  used on input line 398.
+(pdftex.def)             Requested size: 114.90117pt x 86.17328pt.
+
+Underfull \hbox (badness 6675) in paragraph at lines 398--398
+[]\T1/lmr/b/n/10 (b) |\T1/lmr/m/n/10 Pre-ci-sion/Recall
+ []
+
+File: images/expres/anogan/roc.png Graphic file (type png)
+<use images/expres/anogan/roc.png>
+Package pdftex.def Info: images/expres/anogan/roc.png  used on input line 398.
+(pdftex.def)             Requested size: 114.90117pt x 86.17328pt.
+
+Overfull \hbox (3.7035pt too wide) in paragraph at lines 398--398
+[]|[]| 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [70 <./images/expres/ganomaly/hist.png> <./images/expres/ganomaly/prc.jpg> <./
+images/expres/ganomaly/roc.png>])
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [71]
+[72] (./chapters/conclusion.tex) [73
+
+] [74
 
 ] (./chapters/appendix.tex
 Overfull \hbox (3.47217pt too wide) in alignment at lines 14--19
@@ -3078,7 +3494,7 @@ Overfull \hbox (3.47217pt too wide) in alignment at lines 25--46
  [] [] [] [] [] [] 
  []
 
-[71]
+[75]
 Overfull \hbox (3.47217pt too wide) in alignment at lines 52--57
  [] [] [] [] [] [] 
  []
@@ -3133,7 +3549,7 @@ Overfull \hbox (17.66731pt too wide) in alignment at lines 111--133
  [] [] [] [] [] [] 
  []
 
-[72]
+[76]
 Overfull \hbox (17.66731pt too wide) in alignment at lines 133--153
  [] [] [] [] [] [] 
  []
@@ -3143,7 +3559,7 @@ Overfull \hbox (17.66731pt too wide) in alignment at lines 153--165
  [] [] [] [] [] [] 
  []
 
-[73]
+[77]
 Overfull \hbox (3.47217pt too wide) in alignment at lines 172--177
  [] [] [] [] [] [] 
  []
@@ -3173,7 +3589,7 @@ Overfull \hbox (3.47217pt too wide) in alignment at lines 205--217
  [] [] [] [] [] [] 
  []
 
-[74]
+[78]
 Overfull \hbox (3.47217pt too wide) in alignment at lines 223--228
  [] [] [] [] [] [] 
  []
@@ -3233,7 +3649,7 @@ Overfull \hbox (3.47217pt too wide) in alignment at lines 297--312
  [] [] [] [] [] [] 
  []
 
-[75]
+[79]
 Overfull \hbox (17.66731pt too wide) in alignment at lines 316--321
  [] [] [] [] [] [] 
  []
@@ -3263,102 +3679,102 @@ Overfull \hbox (17.66731pt too wide) in alignment at lines 348--367
  [] [] [] [] [] [] 
  []
 
-[76]
+[80]
 Overfull \hbox (17.66731pt too wide) in alignment at lines 367--386
  [] [] [] [] [] [] 
  []
 
-[77]) [78]
-LaTeX Font Info:    Try loading font information for T1+lmvtt on input line 169
+[81]) [82]
+LaTeX Font Info:    Try loading font information for T1+lmvtt on input line 173
 .
  (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/t1lmvtt.fd
 File: t1lmvtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-Overfull \hbox (35.1639pt too wide) in paragraph at lines 170--170
+Overfull \hbox (35.1639pt too wide) in paragraph at lines 174--174
 []\T1/lmr/m/n/12 Samet Akçay, Amir At-apour Abarghouei, and Toby P. Breckon. ^^
 P  GANomaly:
  []
 
 
-Overfull \hbox (0.49557pt too wide) in paragraph at lines 170--170
+Overfull \hbox (0.49557pt too wide) in paragraph at lines 174--174
 []\T1/lmr/m/n/12 Samet Akçay, Amir At-apour Abarghouei, and Toby P. Breckon. ^^
 P  Skip-
  []
 
 
-Overfull \hbox (14.67686pt too wide) in paragraph at lines 170--170
+Overfull \hbox (14.67686pt too wide) in paragraph at lines 174--174
 \T1/lmr/m/n/12 GANomaly: Skip Con-nected and Ad-ver-sar-i-ally Trained Encoder-
 Decoder
  []
 
 
-Overfull \hbox (8.88419pt too wide) in paragraph at lines 170--170
+Overfull \hbox (8.88419pt too wide) in paragraph at lines 174--174
 []\T1/lmr/m/n/12 Jinwon An and Sung-zoon Cho. ^^P  Vari-a-tional au-toen-coder 
 based anomaly
  []
 
 
-Overfull \hbox (13.70872pt too wide) in paragraph at lines 170--170
+Overfull \hbox (13.70872pt too wide) in paragraph at lines 174--174
 []\T1/lmr/m/n/12 M. Behni-a-far, A.R. Nowroozi, and H.R. Shahri-ari. ^^P  A Sur
 -vey of Anomaly
  []
 
 
-Overfull \hbox (71.94705pt too wide) in paragraph at lines 170--170
+Overfull \hbox (71.94705pt too wide) in paragraph at lines 174--174
 \T1/lmvtt/m/n/12 www . isecure -[] journal . com / article _ _835f5ca77e495cec3
 28b957653e1f4d566995 .
  []
 
-[79
+[83
 
 
 
-] [80]
-Overfull \hbox (41.30365pt too wide) in paragraph at lines 170--170
+] [84]
+Overfull \hbox (41.30365pt too wide) in paragraph at lines 174--174
 \T1/lmr/m/n/12 pp. 702^^U703. \T1/lmr/m/sc/12 url\T1/lmr/m/n/12 : [][]$\T1/lmvt
 t/m/n/12 https : / / ideas . repec . org / a / eee / csdana / v20y1995i6p703 -[
 ]
  []
 
-[81]
-Overfull \hbox (2.58212pt too wide) in paragraph at lines 170--170
+[85]
+Overfull \hbox (2.58212pt too wide) in paragraph at lines 174--174
 []\T1/lmr/m/n/12 Alex Krizhevsky, Vinod Nair, and Ge-of-frey Hin-ton. ^^P  CIFA
 R-10 (Cana-
  []
 
 
-Overfull \hbox (45.82083pt too wide) in paragraph at lines 170--170
+Overfull \hbox (45.82083pt too wide) in paragraph at lines 174--174
 []\T1/lmr/m/n/12 Markos Markou and Sameer Singh. ^^P  Nov-elty De-tec-tion: A R
 e-view&Mdash;Part
  []
 
 
-Overfull \hbox (14.22806pt too wide) in paragraph at lines 170--170
+Overfull \hbox (14.22806pt too wide) in paragraph at lines 174--174
 []\T1/lmr/m/n/12 Luis Martí et al. ^^P  Anomaly De-tec-tion Based on Sen-sor Da
 ta in Petroleum
  []
 
 
-Overfull \hbox (25.02553pt too wide) in paragraph at lines 170--170
+Overfull \hbox (25.02553pt too wide) in paragraph at lines 174--174
 \T1/lmr/m/n/12 NIPS'18. Montr&#233;al, Canada: Cur-ran As-so-ciates Inc., 2018,
  pp. 6823^^U
  []
 
-[82]
-Overfull \hbox (49.77696pt too wide) in paragraph at lines 170--170
+[86]
+Overfull \hbox (49.77696pt too wide) in paragraph at lines 174--174
 \T1/lmr/m/n/12 2009, pp. 448^^U455. \T1/lmr/m/sc/12 url\T1/lmr/m/n/12 : [][]$\T
 1/lmvtt/m/n/12 http : / / proceedings . mlr . press / v5 / salakhutdinov09a .
  []
 
 
-Overfull \hbox (39.21027pt too wide) in paragraph at lines 170--170
+Overfull \hbox (39.21027pt too wide) in paragraph at lines 174--174
 \T1/lmr/m/n/12 9780817682323. \T1/lmr/m/sc/12 url\T1/lmr/m/n/12 : [][]$\T1/lmvt
 t/m/n/12 https : / / books . google . it / books ? id = zjfaBwAAQBAJ$[][]\T1/lm
 r/m/n/12 . 
  []
 
-[83]
-Overfull \hbox (6.32457pt too wide) in paragraph at lines 170--170
+[87]
+Overfull \hbox (6.32457pt too wide) in paragraph at lines 174--174
 []\T1/lmr/m/n/12 Jun-Yan Zhu et al. ^^P  Un-paired Image-to-Image Trans-la-tion
  Us-ing Cycle-
  []
@@ -3367,14 +3783,14 @@ Overfull \hbox (6.32457pt too wide) in paragraph at lines 170--170
 Class memoir Warning: The material used in the headers is too large
 (28.99998pt) for the given head height (14.5pt), it is recommended to
 either increase the head height or redesign the header
-(in both cases you will find help in the memoir manual). on input line 171.
+(in both cases you will find help in the memoir manual). on input line 175.
 
 
 Package glossaries Warning: No \printglossary or \printglossaries found. 
 (Remove \makeglossaries if you don't want any glossaries.) 
 This document will not have a glossary.
 
-[84]
+[88]
 \tf@toc=\write11
 \openout11 = `2019_7_Ozgumus_Semsi_Yigit.toc'.
 
@@ -3384,26 +3800,26 @@ This document will not have a glossary.
 \tf@lot=\write13
 \openout13 = `2019_7_Ozgumus_Semsi_Yigit.lot'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 171.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 171.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 175.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 175.
  (./2019_7_Ozgumus_Semsi_Yigit.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 171.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 171.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 175.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 175.
 Package rerunfilecheck Info: File `2019_7_Ozgumus_Semsi_Yigit.out' has not chan
 ged.
-(rerunfilecheck)             Checksum: 9902B593FDD78865EAD5B28BFA26AC1F;3592.
+(rerunfilecheck)             Checksum: D86210DF51367085CE20726FE74D6CF3;3293.
 Package logreq Info: Writing requests to '2019_7_Ozgumus_Semsi_Yigit.run.xml'.
 \openout1 = `2019_7_Ozgumus_Semsi_Yigit.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 39671 strings out of 492649
- 710830 string characters out of 6129622
- 1313787 words of memory out of 5000000
- 42305 multiletter control sequences out of 15000+600000
+ 39808 strings out of 492649
+ 714715 string characters out of 6129622
+ 1314793 words of memory out of 5000000
+ 42389 multiletter control sequences out of 15000+600000
  190501 words of font info for 182 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,26n,89p,2023b,2882s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,26n,89p,2023b,2873s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/
 texlive/2018/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2018/t
 exmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2018/texmf-dist/
@@ -3447,10 +3863,10 @@ blic/lm/lmsy9.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmv
 tt10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbol
 s/msam10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/sy
 mbols/msbm10.pfb>
-Output written on 2019_7_Ozgumus_Semsi_Yigit.pdf (96 pages, 9961817 bytes).
+Output written on 2019_7_Ozgumus_Semsi_Yigit.pdf (104 pages, 12012747 bytes).
 PDF statistics:
- 1771 PDF objects out of 2073 (max. 8388607)
- 1512 compressed objects within 16 object streams
- 409 named destinations out of 1000 (max. 500000)
- 669 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1874 PDF objects out of 2073 (max. 8388607)
+ 1568 compressed objects within 16 object streams
+ 435 named destinations out of 1000 (max. 500000)
+ 734 words of extra memory for PDF output out of 10000 (max. 10000000)
 

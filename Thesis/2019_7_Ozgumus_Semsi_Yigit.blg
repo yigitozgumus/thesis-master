@@ -16,20 +16,19 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated field_info (elt_size=4) to 13618 items from 5000.
+Reallocated field_info (elt_size=4) to 13479 items from 5000.
 Database file #1: 2019_7_Ozgumus_Semsi_Yigit-blx.bib
 Database file #2: back_matter/references.bib
 Repeated entry---line 874 of file back_matter/references.bib
  : @article{zontak2010defect
  :                          ,
 I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "Napoletano_2018"
 Biblatex version: 3.8
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 You've used 61 entries,
             6268 wiz_defined-function locations,
-            1599 strings with 23002 characters,
+            1597 strings with 22972 characters,
 and the built_in function-call counts, 407949 in all, are:
 = -- 29297
 > -- 7514

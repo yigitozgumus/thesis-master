@@ -107,10 +107,10 @@ as a threshold is used to determine the optimal precision and recall values.
 
 \section{State of the Art GAN Based Model Experiments}
 \label{sec:exp_pure_gan}
-This section is devoted to the performance analysis of pure GAN based models. In the initial experiment stage, all state of the art gan 
-based models are implemented using the same generator and discriminator architecture. Since all the models are tested on known benchmark 
-datasets and there is no experiment with our dataset, all models' initial run is acquired as a baseline. Baseline performances 
-are reported in the table \ref{tab:exp_baseline}.
+This section is devoted to the performance analysis of pure GAN based models. In the initial experiment stage, 
+all state of the art gan based models are implemented using the same generator and discriminator architecture. 
+Since all the models are tested on known benchmark datasets and there is no experiment with our dataset, all models' 
+initial run is acquired as a baseline. Baseline performances are reported in the table \ref{tab:exp_baseline}.
 
 \begin{longtable}[c]{|c|cccc|}
 	\caption{Baseline performance values of the state of the art GAN based models}
@@ -127,13 +127,15 @@ are reported in the table \ref{tab:exp_baseline}.
 \multicolumn{1}{|c|}{Skip-GANomaly} & \multicolumn{1}{c}{0.53182} & \multicolumn{1}{c}{0.07379} & \multicolumn{1}{c}{0.23314} & \multicolumn{1}{c|}{0.11211} \\ \hline
 \end{longtable}
 
-After this initial test, it is observed that pure GAN based models performed poorly on our target dataset and only GANomaly model obtained a 
-full precision/recall curve even though it is below $0.5$. Precision recall curve is an alternative way of visualizing the precision and recall capacity 
-of a model. The definition of precision states that if the number of predictions are equal to the number of anomalies contained in the dataset then the 
-precision is exactly $1.0$. In order for that to be happen, model should not make a prediction unless it is absolutely certain hence with this criterion in mind 
-the model has an greater false negative rate. So if the precision is $1.0$ that means with a given threshold the model can always make the right prediction. 
-From the perspective of recall, it also means that there is a threshold value that enables model to find all anomalies contained in the dataset even if it increases 
-the overall false positive rate of prediction performance.  
+After this initial test, it is observed that pure GAN based models performed poorly on our target dataset and 
+only GANomaly model obtained a full precision/recall curve even though it is below $0.5$. Precision recall 
+curve is an alternative way of visualizing the precision and recall capacity of a model. The definition of 
+precision states that if the number of predictions are equal to the number of anomalies contained in the dataset then the 
+precision is exactly $1.0$. In order for that to be happen, model should not make a prediction unless it is 
+absolutely certain hence with this criterion in mind the model has an greater false negative rate. So if the 
+precision is $1.0$ that means with a given threshold the model can always make the right prediction. From the 
+perspective of recall, it also means that there is a threshold value that enables model to find all anomalies 
+contained in the dataset even if it increases the overall false positive rate of prediction performance.  
 
 \begin{table}[!h]
 	\centering
@@ -156,13 +158,43 @@ the overall false positive rate of prediction performance.
 	}
 \end{table}
 
+In the ablation studies, mainly 3 heuristic improvements are tested to improve the stabilization of the 
+training and consequently improve the performance. These are:
+\begin{itemize}
+	\item {(IN) Inclusion of noise to the real input images and generated images before feeding them into 
+		discriminator network to confuse disciminator. }
+	\item {(SL) Using soft labels for the class representation instead of hard 0,1 labelling for the cross 
+		entropy computation used in the adversarial loss}
+	\item {(LF) Flipping labels of the samples that are fed to the discriminator. Since the discriminator 
+		knows the type of the image provided to it, mixing the labels 
+	helps to confuse discriminator so that gradient flow to the generator does not decrease.}
+\end{itemize}
 
+In the ablation study of AnoGAN (see table \ref{tab:anogan_ablation}), overall performance couldn't pass 
+the $0.6$ mark. Addition of the noise and using soft labels improved the overall score by a small margin but 
+decreased the precision capacity of the model. Recall capacity is slightly improved with the addition of noise 
+and soft labelling. Using label flipping and soft labelling alone did not contribute any improvement on the 
+contrary it pulled down the AUROC value below $0.5$. Seperation histogram, precision/recall trade-off and 
+ROC curve of the best configuration is provided in figure \ref{fig:exp_ext_anogan}.
 
+\begin{figure}[h!]
+	\def\tabularxcolumn#1{m{#1}}
+	\begin{tabularx}{\linewidth}{@{}XXX@{}}
+		\begin{tabular}{ccc}
+			\subfloat[Separation Histogram]{\includegraphics[width=0.3\textwidth]{expres/anogan/hist}} 
+			& \subfloat[Precision/Recall Trade off]{\includegraphics[width=0.3\textwidth]{expres/anogan/prc}} &
+			\subfloat[ROC Curve]{\includegraphics[width=0.3\textwidth]{expres/anogan/roc}}
+		\end{tabular}
+	\end{tabularx}
+	\caption{Visual performance analysis info for the best configuration of ablation study of AnoGAN}\label{fig:exp_ext_anogan}
+\end{figure}
 
-\subsection{BiGAN}
-\label{sec:exp_bigan}
-% Bigan
- test
+Table \ref{tab:bigan_ablation} shows the ablation study for the BiGAN model. We observe that baseline 
+performance is only marginally improved by the addition of noise and label flipping. Single heuristic 
+additions considerably made worse the overall performance with the exception of using soft class labels. 
+Another aspect about the general performance is that even though its AUROC performance is higher than 
+AnoGAN, precision of the model achieved a lower score while improving its total recall value. 
+
 \begin{table}[!h]
 	\centering
 	\caption{Ablation study for BiGAN to test the effect of various training improvements for stabilization.}
@@ -184,9 +216,50 @@ the overall false positive rate of prediction performance.
 	}
 \end{table}
 
-\subsection{ALAD}
-\label{sec:exp_alad}
-% ALAD
+Considering the whole capacity of the model, we observe in figure \ref{fig:exp_ext_bigan} that the highest 
+capacity and recall values along the threshold axis decreased considerably. 
+
+
+\begin{figure}[h!]
+	\def\tabularxcolumn#1{m{#1}}
+	\begin{tabularx}{\linewidth}{@{}XXX@{}}
+		\begin{tabular}{ccc}
+			\subfloat[Separation Histogram]{\includegraphics[width=0.3\textwidth]{expres/bigan/hist}} 
+			& \subfloat[Precision/Recall Trade off]{\includegraphics[width=0.3\textwidth]{expres/bigan/prc}} &
+			\subfloat[ROC Curve]{\includegraphics[width=0.3\textwidth]{expres/bigan/roc}}
+		\end{tabular}
+	\end{tabularx}
+	\caption{Visual performance analysis info for the best configuration of ablation study of BiGAN}\label{fig:exp_ext_bigan}
+\end{figure}
+
+Figure \ref{fig:expres_recs_bigan} shows the reconstructions of given input images during the training. The convergence issue mentioned in
+section \ref{sec:conv_enc} supports the results provided here as can be seen from the training progression, there is no visual resemblance between 
+the input images and their corresponding reconstructions.
+
+\begin{figure}[!ht]	
+	\setlength\tabcolsep{1pt}
+	\settowidth\rotheadsize{Reconstructions}
+	\begin{tabularx}{\linewidth}{l XXXXXX}
+		\rothead{Image Samples}  & \includegraphics[width=0.16\textwidth,valign=m]{expres/bigan/ims/input_0}
+		& \includegraphics[width=0.16\textwidth,valign=m]{expres/bigan/ims/input_10}
+		& \includegraphics[width=0.16\textwidth,valign=m]{expres/bigan/ims/input_20}
+		& \includegraphics[width=0.16\textwidth,valign=m]{expres/bigan/ims/input_30}
+		& \includegraphics[width=0.16\textwidth,valign=m]{expres/bigan/ims/input_40}
+		& \includegraphics[width=0.16\textwidth,valign=m]{expres/bigan/ims/input_50} \\
+		\rothead{Reconstructions} & \includegraphics[width=0.16\textwidth,valign=m]{expres/bigan/ims/rec_0}
+		& \includegraphics[width=0.16\textwidth,valign=m]{expres/bigan/ims/rec_10} 
+		& \includegraphics[width=0.16\textwidth,valign=m]{expres/bigan/ims/rec_20} 
+		& \includegraphics[width=0.16\textwidth,valign=m]{expres/bigan/ims/rec_30} 
+		& \includegraphics[width=0.16\textwidth,valign=m]{expres/bigan/ims/rec_40} 
+		&\includegraphics[width=0.16\textwidth,valign=m]{expres/bigan/ims/rec_50}
+	\end{tabularx}
+	\caption{Reconstruction examples from BiGAN model training with best configuration (Epochs 1,10,20,30,40 and 50)}\label{fig:expres_recs_bigan}
+\end{figure}
+
+Ablation study for ALAD model is presented in table \ref{tab:alad_ablation}. Unlike AnoGAN and BiGAN, ALAD couldn't pass the 
+$0.5$ mark performance on its own. Using heuristics to improve the training proved useful in this model as the configuration with the 
+best performance is the one with all three heuristics combined. 
+
 \begin{table}[!h]
 	\centering
 	\caption{Ablation study for ALAD to test the effect of various training improvements for stabilization.}
@@ -208,13 +281,45 @@ the overall false positive rate of prediction performance.
 	}
 \end{table}
 
+\textcolor{red}{Commentary regarding to the visual aspects and the reconstructions will be added.( samples are unavailable due to Server maintanence at the moment)}
 
-This part of the experiment study presents the performance analysis of the autoencoder variants, namely GANomaly and Skip-GANomaly. Since these 
-methods are structurally does not contain a true generator network their performance are evaluated separately. Each model will be analysed in
-their respective sections.
-\subsection{GANomaly}
-\label{sec:exp_ganomaly}
-% GAnomaly
+\begin{figure}[h!]
+	\def\tabularxcolumn#1{m{#1}}
+	\begin{tabularx}{\linewidth}{@{}XXX@{}}
+		\begin{tabular}{ccc}
+			\subfloat[Separation Histogram]{\includegraphics[width=0.3\textwidth]{expres/anogan/hist}} 
+			& \subfloat[Precision/Recall Trade off]{\includegraphics[width=0.3\textwidth]{expres/anogan/prc}} &
+			\subfloat[ROC Curve]{\includegraphics[width=0.3\textwidth]{expres/anogan/roc}}
+		\end{tabular}
+	\end{tabularx}
+	\caption{Visual performance analysis info for the best configuration of ablation study of ALAD}\label{fig:exp_ext_alad}
+\end{figure}
+
+\begin{figure}[!ht]	
+	\setlength\tabcolsep{1pt}
+	\settowidth\rotheadsize{Reconstructions}
+	\begin{tabularx}{\linewidth}{l XXXXXX}
+		\rothead{Image Samples}  & \includegraphics[width=0.16\textwidth,valign=m]{expres/bigan/ims/input_0}
+		& \includegraphics[width=0.16\textwidth,valign=m]{expres/bigan/ims/input_10}
+		& \includegraphics[width=0.16\textwidth,valign=m]{expres/bigan/ims/input_20}
+		& \includegraphics[width=0.16\textwidth,valign=m]{expres/bigan/ims/input_30}
+		& \includegraphics[width=0.16\textwidth,valign=m]{expres/bigan/ims/input_40}
+		& \includegraphics[width=0.16\textwidth,valign=m]{expres/bigan/ims/input_50} \\
+		\rothead{Reconstructions} & \includegraphics[width=0.16\textwidth,valign=m]{expres/bigan/ims/rec_0}
+		& \includegraphics[width=0.16\textwidth,valign=m]{expres/bigan/ims/rec_10} 
+		& \includegraphics[width=0.16\textwidth,valign=m]{expres/bigan/ims/rec_20} 
+		& \includegraphics[width=0.16\textwidth,valign=m]{expres/bigan/ims/rec_30} 
+		& \includegraphics[width=0.16\textwidth,valign=m]{expres/bigan/ims/rec_40} 
+		&\includegraphics[width=0.16\textwidth,valign=m]{expres/bigan/ims/rec_50}
+	\end{tabularx}
+	\caption{Reconstruction examples from ALAD model training with best configuration (Epochs 1,10,20,30,40 and 50)}\label{fig:expres_recs_alad}
+\end{figure}
+
+In table \ref{tab:ganomaly_ablation} we present the performance results for GANomaly. Since it is not a pure gan based model (along with Skip-GANomaly)
+their performance measure is not used as a comparison for the proposed model. However ablation study is performed to measure the impact of general performance 
+since our proposed model procured its secondary encoder network with the initial intuition that the latent representation based anomaly detection 
+score performs better than image space in GANomaly architecture. 
+
 \begin{table}[!h]
 	\centering
 	\caption{Ablation study for GANomaly to test the effect of various training improvements for stabilization. }
@@ -236,10 +341,27 @@ their respective sections.
 	}
 \end{table}
 
-\subsection{Skip-GANomaly}
-\label{sec:exp_sganomaly
-}
+Experiments for GANomaly shows that heuristics aimed to improve the GAN stabilization didn't improve the AUROC value obtained from the baseline 
+performance. One can conclude that because of the generator is created from an autoencoder architecture, there is not a convergence issue 
+which observed on the pure GAN based models. As figure \ref{fig:exp_ext_ganomaly} shows, the separation histogram and precision/recall trade off 
+presents a significantly better results compared to the prior ablation study results. 
 
+\begin{figure}[h!]
+	\def\tabularxcolumn#1{m{#1}}
+	\begin{tabularx}{\linewidth}{@{}XXX@{}}
+		\begin{tabular}{ccc}
+			\subfloat[Separation Histogram]{\includegraphics[width=0.3\textwidth]{expres/ganomaly/hist}} 
+			& \subfloat[Precision/Recall Trade off]{\includegraphics[width=0.3\textwidth]{expres/ganomaly/prc}} &
+			\subfloat[ROC Curve]{\includegraphics[width=0.3\textwidth]{expres/ganomaly/roc}}
+		\end{tabular}
+	\end{tabularx}
+	\caption{Visual performance analysis info for the best configuration of ablation study of GANomaly}\label{fig:exp_ext_ganomaly}
+\end{figure}
+
+
+Table \ref{tab:sganomaly_ablation} shows the ablation study on the Skip-GANomaly model. All the combinations of the heuristics marginally 
+improved the overall AUROC performance. Despite noise inclusion obtained the best AUROC score, its combination with label flipping obtain a 
+fairly close score with a slightly higher F1 score. 
 \begin{table}[!h]
 	\centering
 	\caption{Ablation study for Skip-GANomaly to test the effect of various training improvements for stabilization.}
@@ -260,44 +382,73 @@ their respective sections.
 		\end{tabular}%
 	}
 \end{table}
+
+From the separation table and the precision/ recall trade off, we can observe that even though the Skip-GANomaly model is fairly similar to the GANomaly 
+architecture, its performance is not better than AnoGAN or BiGAN. We speculate that the main reason for this drop in the overall quality of the model is 
+using image space to compute the anomaly score. 
+
+\begin{figure}[h!]
+	\def\tabularxcolumn#1{m{#1}}
+	\begin{tabularx}{\linewidth}{@{}XXX@{}}
+		\begin{tabular}{ccc}
+			\subfloat[Separation Histogram]{\includegraphics[width=0.3\textwidth]{expres/anogan/hist}} 
+			& \subfloat[Precision/Recall Trade off]{\includegraphics[width=0.3\textwidth]{expres/anogan/prc}} &
+			\subfloat[ROC Curve]{\includegraphics[width=0.3\textwidth]{expres/anogan/roc}}
+		\end{tabular}
+	\end{tabularx}
+	\caption{Visual performance analysis info for the best configuration of ablation study of Skip-GANomaly}\label{fig:exp_ext_sganomaly}
+\end{figure}
+
+%If model learns the reconstruct the training data fairly well, some anomalous regions might also be reconstructed well enough to avoid detection. 
+%As we will discuss in the next section, Imperfections in the reconstruction of a normal image can also be perceived as anomalous regions. Because 
+%of the type of anomalies contained in the image 
+
 \section{Proposed Model Analysis}
 \label{sec:exp_sencebgan}
 
+This section presents the experiments performed to obtain the proposed model's architecture and to improve its performance. 
+First experiments are performed to increase the stabilization of the adversarial training. In the second stage of our development,
+we experimented the addition of an encoder network to obtain the inverse mapping from image space to latent space and worked on its 
+convergence issues examined in the BiGAN and ALAD. Lastly we study the additional encoder network to obtain the latent representation 
+of the reconstruction and increase the obtained performance.
+
+This section will be added 
+
 \section{Discussion of Experiment Results}
 \label{sec:exp_discuss}
-
-This chapter will explain the experimental results for all the models and improvements. It will also
-point out a discussion about what could be improved and the future direction.
-
-There will be 3 classes of models to be considered. 
-\begin{itemize}
-    \item Models that maps $z$ to $x$ to find the image distrbituion and uses inverse sample for
-    reconstruction $\rightarrow$ AnoGAN, BiGAN and ALAD
-    \item Models that maps directly image distribution by integrating an encoder to the generator
-    module hence creating in practise an autoencoder, and uses again, reconstruction $\rightarrow$
-    Ganomaly and skip ganomaly
-    \item Models that tries new methods to explore different solution strategies \begin{itemize}
-        \item Training with full image $\rightarrow$ Segmentation papers
-        \item Ganomaly + Noise addition (one Class paper concurrent work) to improve the performance
-        of the image distribution learning.
-        \item Energy Based GANS (loss function change), Can this method be applied to the encoder
-        network as well, to better capture the noise distribution.
-    \end{itemize}
-\end{itemize}
-
-\begin{itemize}
-    \item All models will be tested with the standard improvements of the gan training. \begin{itemize}
-        \item Label Flipping $\rightarrow$ improves gradints of the discriminator
-        \item Soft Labels $\rightarrow$ Better than 0,1 reference the papers
-        \item Adding noise to the input image and rectrated image to confuse discriminator
-        $\rightarrow$ robustness
-    \end{itemize}
-    \item Best performance models then will be tested with a training with validation that is based
-    on the reconstruction of the image. 
-    \item All model results with ablation study
-    \item Improved model results
-    \item Visual Results like precision recall, AUC curve, Histogram of Anomalies
-    \item Numerical Results like the result of the model performances in a table `†'
-\end{itemize}
+This section will be added
+%This chapter will explain the experimental results for all the models and improvements. It will also
+%point out a discussion about what could be improved and the future direction.
+%
+%There will be 3 classes of models to be considered. 
+%\begin{itemize}
+%    \item Models that maps $z$ to $x$ to find the image distrbituion and uses inverse sample for
+%    reconstruction $\rightarrow$ AnoGAN, BiGAN and ALAD
+%    \item Models that maps directly image distribution by integrating an encoder to the generator
+%    module hence creating in practise an autoencoder, and uses again, reconstruction $\rightarrow$
+%    Ganomaly and skip ganomaly
+%    \item Models that tries new methods to explore different solution strategies \begin{itemize}
+%        \item Training with full image $\rightarrow$ Segmentation papers
+%        \item Ganomaly + Noise addition (one Class paper concurrent work) to improve the performance
+%        of the image distribution learning.
+%        \item Energy Based GANS (loss function change), Can this method be applied to the encoder
+%        network as well, to better capture the noise distribution.
+%    \end{itemize}
+%\end{itemize}
+%
+%\begin{itemize}
+%    \item All models will be tested with the standard improvements of the gan training. \begin{itemize}
+%        \item Label Flipping $\rightarrow$ improves gradints of the discriminator
+%        \item Soft Labels $\rightarrow$ Better than 0,1 reference the papers
+%        \item Adding noise to the input image and rectrated image to confuse discriminator
+%        $\rightarrow$ robustness
+%    \end{itemize}
+%    \item Best performance models then will be tested with a training with validation that is based
+%    on the reconstruction of the image. 
+%    \item All model results with ablation study
+%    \item Improved model results
+%    \item Visual Results like precision recall, AUC curve, Histogram of Anomalies
+%    \item Numerical Results like the result of the model performances in a table `†'
+%\end{itemize}
 
 \endgroup

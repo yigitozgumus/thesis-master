@@ -2,39 +2,35 @@
 \begingroup
 
 This chapter is dedicated to the exploration of state of the art approaches in the fields relevant
-to the thesis. The organization of the chapter is the following: Section \ref{sec:ad} will define what
-anomaly detection is and explain different approaches towards its solution.  Section \ref{sec:arch_comp} will give
-necessary background information about Generative Adversarial Networks (GAN) and Autoencoder
-Networks. First the principles behind how GANs work will be presented then the autoencoder network
+to the thesis. The organization of the chapter is the following: Section \ref{sec:ad} will define
+anomaly detection problem and explain different approaches towards its solution.  Section \ref{sec:arch_comp} will give
+necessary background information about generative adversarial networks (GAN) and autoencoder
+networks. First, the principles behind how GANs work will be presented then the Autoencoder Network
 architecture will be explained. This section is particularly significant to relate how different
-architectures that uses these networks function. In section \ref{sec:gan_based_sota}, variety of architectures that is
+architectures that use these networks function. In section \ref{sec:gan_based_sota}, variety of architectures that is
 developed for anomaly detection will be studied as state of the art. How they are implemented and
 how they work in practise will be described.
 
 \section{Anomaly Detection}
 \label{sec:ad}
-%Using the terminology of machine learning, 
-Anomaly detection can be defined as the task of
-classifying test data that differs in some respect from the data for the model that is availabla
-during training. \cite{Pimentel:2014:RRN:2588908.2589196} This definition correctly describes the
-task on the abstract level but does not clarify what anomaly actually is. Depending on the the
-application domain, anomalies can be referred to as outliers, novelties, discordant observations,
-exceptions, aberrations, surprises, peculiarities and
-contaminents.\cite{Chandola:2009:ADS:1541880.1541882} Sometimes these can be used interchangebly in
+Anomaly detection can be defined as the task of classifying test data that differs in some respect 
+from the data for the model that is availabla during training. \cite{Pimentel:2014:RRN:2588908.2589196} 
+This definition correctly describes the task on the abstract level but does not clarify what anomaly 
+actually is. Depending on the the application domain, anomalies can be referred to as outliers, 
+novelties, discordant observations, exceptions, aberrations, surprises, peculiarities and
+contaminents.\cite{Chandola:2009:ADS:1541880.1541882} Sometimes these can be used interchangeably in
 the context. These distinctions in the definition are primarily relies not only on the features of
-the data such as its dimentional complexity, its continuity and its format, but also on what is
+the data such as its dimensional complexity, its continuity and format, but also on what is
 considered an anomaly for that specific domain. This makes it harder to conceptualize the problem of
 anomaly detection with a general definition and a solution approach that can encompass all different
 domains.
 
-%In the rest of this section, I will explain different use cases for anomaly detection to show its
-%impact on a broad spectrum of problems then I will describe the main challenges for anomaly
-%detection referring to the previous paragraph. Lastly primary types of approaches will be discussed.
 In the rest of this section, I will explain different use cases for anomaly detection to show its
 impact on a broad spectrum of problems then the primary approach types to solve anomaly detection
 problem will be introduced.
 
-The categorization threshold to define different application domains is constantly changing parallel to developments in the literature but the application areas of 
+The categorization threshold to define different application domains is constantly changing 
+parallel to developments in the literature but the application areas of 
 anomaly detection can be categorized down to these five general fields.
 \cite{Pimentel:2014:RRN:2588908.2589196}
 These are:
@@ -50,18 +46,18 @@ These are:
 
 Anomaly detection methods have a huge impact on the IT security systems, in which the objectives
 include network intrusion detection and fraud detection. \cite{Pimentel:2014:RRN:2588908.2589196}
-With the increased use of computerized systems and the inclusion of the internet based services to
+With rising use of computerized systems and the inclusion of the internet based services to
 our daily lives, maintainability and the availability of these systems became much more important.
 For systems like these, anomaly is considered as a priority because it indicates significant but
-rare events and can prompt to critical actions to be taken in a wide range of application domain.
+rare events and can prompt to critical actions to be taken in a wide range of application domains.
 \cite{AHMED201619}. For example a malicious process in a server may show increased use of resource
 from time to time that may be spotted as a type of anomaly in the system resource use patterns or
 the unusual amount of traffic on the network may indicate an intruder attack. \cite{FERNANDES20161}
 \cite{JABEZ2015338} Another aspect of the increased use of internet is its impact on the e-commerce
 field and dramatically growing online payment systems. This also includes a migration to internet
-banking in favor of the convenience of technology. As a result, insurance and credit card frauds,
+banking in favor of technological convenience. As a result, insurance and credit card frauds,
 scams towards phone and mobile data usage, and phishing attacks targeting financial transactions
-become more and more severe. \cite{finance_anomaly} In this context, behaviour of the consumer
+become more and more severe. \cite{finance_anomaly} In this context, behavior of the consumer
 becomes the data. Transaction history, time spent between consecutive transactions and the
 geographic data can be used to construct a model to detect anomalies in the purchase patterns.
 
@@ -73,19 +69,19 @@ the progression of the disease symptoms is a crucial factor for treatment monito
 important task for anomaly detection. Ability to differentiate between the instrumentation or
 recording errors and the actual clinically relevant change that may indicate a symptom should also
 be present in these anomaly detection systems. \cite{Pimentel:2014:RRN:2588908.2589196}. Patient
-data may include tabular information like the age, weight, blood test results, heart rate or
+data may include tabular information like the age, weight, blood test results, heart or
 respiratory rate \cite{inproceedings_medical}\cite{Markou:2003:NDR:959414.959416} or medical image data
 \cite{Schlegl2017UnsupervisedAD}. 
 
 \textbf{ Industrial Monitoring}
 
 Novelty detection became a huge part of the industrial automation systems from the quality control
-of the manufacturing progress to the performance maintanence of the equipments. Materials that have
-a complicated and delicate manufacturing process like cpu wafers \cite{Kim:2012:MLN:2076800.2076903} and nanofibrous
+of the manufacturing progress to the performance maintenance of the equipment. Materials that have
+a complicated and delicate manufacturing process like CPU wafers \cite{Kim:2012:MLN:2076800.2076903} and nanofibrous
 materials \cite{Napoletano2018anomaly} may easily develop defects in the manufacturing pipeline.Therefore using
 anomaly detection is a viable option to reduce the wasted material and optimize the cost of
 producing the target product. Same principle also applies to the equipment used in these pipelines.
-Equipments and assets have the risk of deteorating over time due to the usage
+Equipment and assets have the risk of deteriorating over time due to the usage
 and wear \cite{Pimentel:2014:RRN:2588908.2589196}. For example heavy extraction machines that is used in the
 petroleum industry like turbo machines \cite{s150202774} needs constant supervision for damage
 prevention. 
@@ -99,17 +95,17 @@ security systems and search and rescue. \cite{image_anomaly}
 
 \textbf{ Sensor Networks}
 
-With the improvements of the smart devices' involvement in our daily lives and the recent but promising developments
+With the improvements of smart devices' involvement in our daily lives and the recent but promising developments
 in the field of internet of things, the definition of acquiring and processing data is evolved.
 Various types of sensors, especially wireless, are heavily used to collect huge amount of data to
 feed various systems such as surveillance, environmental monitoring, and disaster management.
 \cite{UlIslam2018} These sensors usually used to create a network distributed over a large area with
 one or depending on the scale multiple sink nodes responsible for gathering information from the
-other sensors. In these distributed systems, sensors are used to compute or predict information
-depending on the problem. However the accuracy of these computations or predictions depends
+other sensors. These distributed systems are mainly used to collect and compute the gathered sensory data and predict 
+target information. However the accuracy of these computations or predictions depends
 primarily on the quality of the sensor measurements and with this scale the instrumentation error
 is unavoidable. That's why anomaly detection tasks usually deployed on these systems to observe
-sensory faults and prevent malicious attacks. \cite{Pimentel:2014:RRN:2588908.2589196} \cite{iot_anomaly}
+sensory faults and also prevent errors caused by malicious attacks. \cite{Pimentel:2014:RRN:2588908.2589196} \cite{iot_anomaly}
 
 
 Variety of approaches that belong to different sub domains of the machine learning, statistics ,
@@ -133,12 +129,12 @@ with the assumption that the input data is generated from an unknown probability
 and learning this distribution gives us an idea about the representation of normality for the input
 data, training set. Anomaly (or novelty in some approaches) threshold then can be determined which has
 certain probabilistic interpretation and can be used to detect the anomaly on the inference stage.
-\cite{Pimentel:2014:RRN:2588908.2589196} Distance based methods are another type of modelling
+\cite{Pimentel:2014:RRN:2588908.2589196} Distance based methods are another type of modeling
 technique used to model the training data with a probability density function equivalent process.
 Including the K-Nearest neighbour based and clustering based methods, distance based methods rely on
 distance metrics between the data points to create a representation for normality. For example
-considering the K-NN aproach, data points in the training dataset are identified to have close
-neighbour points using the distance metrics while if a sample has a greater distance to the
+considering the K-NN approach, data points in the training dataset are identified to have close
+neighbour points using the distance metrics while if a sample has greater distance to the
 nearest normal point with a value above the determined anomaly threshold, that sample is identified
 as an anomaly. Domain based methods works by creating a boundry based on the structure of the
 training dataset. \cite{Pimentel:2014:RRN:2588908.2589196} These methods are usually insensitive to
@@ -154,37 +150,36 @@ identified as the anomaly.
 Finally reconstruction based approaches which also is the focus of this thesis, model the underlying
 representation of the data and reconstructs it. Using the original input and the reconstructed
 output, these models define a reconstruction error tailored to the nature of the problem and the
-type of data and measures this error with respect to certain anomaly threshold. Since the modelled
+type of data, and measures this error with respect to certain anomaly threshold. Since the modeled
 underlying data has the features specific to the training dataset, when the anomalous sample is
-feeded through this pipeline, its representation and consequently its reconstruction will be made
+fed through this pipeline, its representation and consequently its reconstruction will be made
 poorly hence giving a greater reconstruction error. 
 
-% TODO Paragraph with other works that uses reconstruction to detect anomalies ?
 \subsection{Related Works}
 \label{sec:relworks}
 
 In this subsection, previous works and state of the art related to anomaly detection in images and proceed with
- particular case of SEM images will be listed. Proposed methods for anomaly detection for images can be 
- grouped in reference-based and reference-free ones \cite{Chandola:2009:ADS:1541880.1541882}. Reference-based methods 
- compares the input image with a template image which is anomaly-free by definition and result of this 
- comparison decides in run-time whether input includes anomalous component or not \cite{zontak2010defect}.
-  However, they are not feasible for considered SEM images where filament structures follow pseudo 
-  random rather than geometric pattern \cite{carrera2016defect}. 
+particular case of SEM images (see section \ref{sec:sem}) will be listed. Proposed methods for anomaly detection for images can be 
+grouped in reference-based and reference-free ones \cite{Chandola:2009:ADS:1541880.1541882}. Reference-based methods 
+compares the input image with a template image which is anomaly-free by definition and result of this 
+comparison decides in run-time whether input includes anomalous component or not \cite{zontak2010defect}.
+However, they are not feasible for considered SEM images where filament structures follow
+randomized rather than geometric pattern \cite{carrera2016defect}. 
 
 On the other hand, reference-free methods are more applicable because they can detect anomalies by 
 using features that can consistently create varying responses for normal and anomaly regions
- \cite{carrera2016defect}. This concept is also well-known as novelty detection \cite{Pimentel:2014:RRN:2588908.2589196}. 
+\cite{carrera2016defect}. This concept is also well-known as novelty detection \cite{Pimentel:2014:RRN:2588908.2589196}. 
 
 This problem of particular dataset of SEM images previously studied in \cite{carrera2016defect},
- \cite{carrera-2016-scale} and \cite{boracchi2014novelty} and these methods are based on learning a 
- sparse dictionary that represents the normal regions and in run-time, if the input does not conform 
- with the learned dictionary, it is detected as anomaly. Another approach that introduces convolutional 
- neural networks is established by Napoletano et al. \cite{Napoletano2018anomaly}. To extract feature 
- for "normality" concept, they exploit pretrained network called ResNet which consists of residual networks 
- and trained by large number of images \cite{he2016deep}. After feature extraction, for test phase, they 
- create a dictionary by using K-means clustering to have the representation of normal regions.
+\cite{carrera-2016-scale} and \cite{boracchi2014novelty} and these methods are based on learning a 
+sparse dictionary that represents the normal regions and in run-time, if the input does not conform 
+with the learned dictionary, it is detected as anomaly. Another approach that introduces convolutional 
+neural networks is established by Napoletano et al. \cite{Napoletano2018anomaly}. To extract feature 
+for "normality" concept, they exploit pretrained network called ResNet  which consists of residual networks 
+and trained by large number of images \cite{he2016deep}. After feature extraction, for test phase, they 
+create a dictionary by using K-means clustering to have the representation of normal regions.
 
-Another powerful model for novelty detection problems is auto-encoders. Auto-encoders are quite useful 
+Another powerful model for novelty detection problems is autoencoders (see section \ref{sec:ae}). Autoencoders are quite useful 
 tools to learn the dynamics of a distribution defined over images and to generate examples that corresponds 
 to a sample on learned distribution. Therefore, they are easily deployed for the motivations of novelty 
 detection as done in \cite{an2015variational}, \cite{leveau2017adversarial} and
@@ -192,18 +187,16 @@ detection as done in \cite{an2015variational}, \cite{leveau2017adversarial} and
 leverages two staged network that is composed by auto-encoders and convolutional neural networks is explored for
 the novelty detection. 
 
-In the later sections, state of the art
-generative adversarial network based frameworks  will be introduced. How the
-reconstruction loss is computed and anomaly score is formed will be explained in each framework.
-
-
+In the later sections, state of the art generative adversarial network based frameworks  will be 
+introduced. How training objective is formed and the criterion for anomaly score computation will 
+be explained in each framework.
 
 \section{Architectural Components}
 \label{sec:arch_comp}
-This section will explain the two main network types used in the state of the art anomaly detection
+This section introduces the two main network types used in the state of the art anomaly detection
 frameworks in the following sections. Generative adversarial networks section will describe how the
 framework is formed, the intuition behind its adversarial training scheme. Autoencoder networks
-section will give an introductionary information to the subject and introduce different kinds of
+section will give an introductory information to the subject and present different kinds of
 approaches that can be integrated into both the construction of the network and its training
 methodology. 
 
