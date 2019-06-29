@@ -27,23 +27,26 @@
 \BOOKMARK [1][-]{section.4.2}{Analysis of Aforementioned Approaches}{chapter.4}% 27
 \BOOKMARK [2][-]{subsection.4.2.1}{Stabilization of Adversarial Training}{section.4.2}% 28
 \BOOKMARK [2][-]{subsection.4.2.2}{Convergence of Encoder Training}{section.4.2}% 29
-\BOOKMARK [2][-]{subsection.4.2.3}{Encoded Energy Based Generative Adversarial Network}{section.4.2}% 30
-\BOOKMARK [2][-]{subsection.4.2.4}{Anomaly Score Computation}{section.4.2}% 31
-\BOOKMARK [1][-]{section.4.3}{Sequentially Encoded Energy Based Generative Adversarial Network}{chapter.4}% 32
+\BOOKMARK [1][-]{section.4.3}{Encoded Energy Based Generative Adversarial Network}{chapter.4}% 30
+\BOOKMARK [2][-]{subsection.4.3.1}{Anomaly Score Computation}{section.4.3}% 31
+\BOOKMARK [1][-]{section.4.4}{Sequentially Encoded Energy Based Generative Adversarial Network}{chapter.4}% 32
 \BOOKMARK [0][-]{chapter.5}{Experimental Results }{}% 33
 \BOOKMARK [1][-]{section.5.1}{Experiment Settings}{chapter.5}% 34
-\BOOKMARK [2][-]{subsection.5.1.1}{Performance Metrics}{section.5.1}% 35
-\BOOKMARK [1][-]{section.5.2}{Pure GAN Model Analysis}{chapter.5}% 36
-\BOOKMARK [1][-]{section.5.3}{Autoencoder Variant Model Analysis}{chapter.5}% 37
-\BOOKMARK [1][-]{section.5.4}{Improved Model Analysis}{chapter.5}% 38
-\BOOKMARK [1][-]{section.5.5}{Discussion of Experiment Results}{chapter.5}% 39
-\BOOKMARK [0][-]{chapter.6}{Conclusion and Future Work}{}% 40
-\BOOKMARK [0][-]{appendix.A}{Model Implementation Details}{}% 41
-\BOOKMARK [1][-]{section.A.1}{AnoGAN Implementation}{appendix.A}% 42
-\BOOKMARK [1][-]{section.A.2}{BiGAN Implementation}{appendix.A}% 43
-\BOOKMARK [1][-]{section.A.3}{ALAD Implementation}{appendix.A}% 44
-\BOOKMARK [1][-]{section.A.4}{GANomaly Implementation}{appendix.A}% 45
-\BOOKMARK [1][-]{section.A.5}{Skip-GANomaly Implementation}{appendix.A}% 46
-\BOOKMARK [1][-]{section.A.6}{ENCEBGAN Implementation}{appendix.A}% 47
-\BOOKMARK [1][-]{section.A.7}{SENCEBGAN Implementation}{appendix.A}% 48
-\BOOKMARK [0][-]{section*.36}{Bibliography}{}% 49
+\BOOKMARK [1][-]{section.5.2}{Performance Metrics}{chapter.5}% 35
+\BOOKMARK [1][-]{section.5.3}{State of the Art GAN Based Model Experiments}{chapter.5}% 36
+\BOOKMARK [2][-]{subsection.5.3.1}{BiGAN}{section.5.3}% 37
+\BOOKMARK [2][-]{subsection.5.3.2}{ALAD}{section.5.3}% 38
+\BOOKMARK [2][-]{subsection.5.3.3}{GANomaly}{section.5.3}% 39
+\BOOKMARK [2][-]{subsection.5.3.4}{Skip-GANomaly}{section.5.3}% 40
+\BOOKMARK [1][-]{section.5.4}{Proposed Model Analysis}{chapter.5}% 41
+\BOOKMARK [1][-]{section.5.5}{Discussion of Experiment Results}{chapter.5}% 42
+\BOOKMARK [0][-]{chapter.6}{Conclusion and Future Work}{}% 43
+\BOOKMARK [0][-]{appendix.A}{Model Implementation Details}{}% 44
+\BOOKMARK [1][-]{section.A.1}{AnoGAN Implementation}{appendix.A}% 45
+\BOOKMARK [1][-]{section.A.2}{BiGAN Implementation}{appendix.A}% 46
+\BOOKMARK [1][-]{section.A.3}{ALAD Implementation}{appendix.A}% 47
+\BOOKMARK [1][-]{section.A.4}{GANomaly Implementation}{appendix.A}% 48
+\BOOKMARK [1][-]{section.A.5}{Skip-GANomaly Implementation}{appendix.A}% 49
+\BOOKMARK [1][-]{section.A.6}{ENCEBGAN Implementation}{appendix.A}% 50
+\BOOKMARK [1][-]{section.A.7}{SENCEBGAN Implementation}{appendix.A}% 51
+\BOOKMARK [0][-]{section*.37}{Bibliography}{}% 52

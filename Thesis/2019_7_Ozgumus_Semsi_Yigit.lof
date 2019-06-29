@@ -21,7 +21,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {25}{\ignorespaces BiGAN architecture overview\relax }}{21}{figure.caption.13}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {26}{\ignorespaces ALAD architecture overview\relax }}{31}{figure.caption.14}
+\contentsline {figure}{\numberline {26}{\ignorespaces ALAD architecture overview\relax }}{30}{figure.caption.14}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {27}{\ignorespaces GANomaly architecture overview\relax }}{33}{figure.caption.15}
 \defcounter {refsection}{0}\relax 
@@ -336,6 +336,8 @@
 \contentsline {figure}{\numberline {49}{\ignorespaces SENCEBGAN Model Overview \relax }}{57}{figure.caption.29}
 \defcounter {refsection}{0}\relax 
 \addvspace {10pt}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {51}{\ignorespaces ROC Curve Example with AUROC value\relax }}{64}{figure.caption.30}
 \defcounter {refsection}{0}\relax 
 \addvspace {10pt}
 \defcounter {refsection}{0}\relax 

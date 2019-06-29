@@ -2,15 +2,40 @@
 
 \begingroup
 
-This chapter presents the performance of the gan based anomaly detection models and proposed model. 
+This chapter presents the performance of all the models introduced in this thesis including 
+the state of the art gan based anomaly detection methods (see section \ref{sec:gan_based_sota}) and 
+the proposed model SENCEBGAN which introduced on chapter \ref{chap:arim}. All experiments were run on 
+a server containing Titan X. In particular, we will investigate the AUROC scores of the models with their 
+corresponding precision and recall capacities across different cases. 
+
+Organization of this chapter as follows: Section \ref{sec:exp_settings} gives a detailed explanation 
+of the experimental setting providing obtaining the training and testing data and configurations of 
+the models. Section \ref{sec:perf_metric} introduces the performance metrics that are used to evaluate 
+and compare the models' performances. Following two sections, section \ref{sec:exp_pure_gan} and 
+\ref{sec:exp_sencebgan} describes the experiments conducted on the state of the art models and the 
+proposed model. FInally, section \ref{sec:exp_discuss} discusses the results of the experiments.
 
 
 \section{Experiment Settings}
+\label{sec:exp_settings}
+Training and testing data for the experiments are obtained from the SEM image dataset \cite{sem}. 
+Dataset contains 5 normal image samples with the resolution of $1024 \times 696$ and 40 Anomalous 
+images samples (same resolution) with a corresponding mask image that denotes where each anomalous 
+region is located. Training dataset is created by cropping $32 \times 32$ patches randomly from 
+the normal images. Test dataset is obtained using the same method but with an overlapping sequential 
+approach instead of randomization. Smaller patch size ($28 \times 28$) is also tested for preliminary 
+gan experiments. Due to its size, designed generator network has one less combined transposed 
+convolution layer (Transposed Convolution + Batch Normalization + Leaky ReLu) and some of the models 
+we introduced in chapter \ref{chap:sota} were designed for minimum $32 \times 32$ images. Therefore 
+$32 \times 32$ image patches are used throughout the experiments.
+ 
+For all experiments, same hyper parameter values regarding the optimizer used in the training are used 
+for all models. In terms of training, batch size and number of epochs are also fixed to equally 
+measure the learning capacity of the generator discriminator pairs contained in the models. Other 
+related hyper parameter selections will be mentioned in their respective sections throughout this chapter.
 
-
-
-
-\subsection{Performance Metrics}
+\section{Performance Metrics}
+\label{sec:perf_metric}
 This section will introduce the performance metrics used for the interpretation of the experiments performed.
 These are:
 \begin{itemize}
@@ -20,18 +45,32 @@ These are:
 	\item AUROC (Area Under Receiver Operating Characteristic curve)
 \end{itemize}
 
- \textbf{Recall} is the ability of a model to find all the relevant cases within a dataset. In our case detection 
-of all anomalies in a test would give us a recall of 1.0. \textbf{Precision} on the other hand is the ability 
-ofa classification model to identify \textbf{only} the relevant data points. While recall expresses 
-the ability to find all relevant instances in a dataset, precision expresses the proportion of the 
-data points our model says was relevant actually were relevant. The calculation of the both metrics 
-is given below
+To define these performance metrics, first the statistical measures used in  classification problems  
+will be introduced. Suppose we have a classification problem with a certain dataset. In this problem we 
+have a condition or a feature we want to identify and in general usually some part of the dataset has 
+this condition and the remaining part does not. If the prediction regarding to this condition is correct 
+for the sample this is called \textbf{true positive}.\textbf{Sensitivity} measures the true positive rate in a 
+classification problem. Same as the positive, \textbf{true negative} is correct rejection of the condition. 
+\textbf{Specifity} is therefore described as the proportion of the true negative samples that are correctly 
+rejected by the classification. There are 2 types of errors defined in this context. \textbf{Type 1} 
+error refers to the rate of falsely identifying a negative sample as positive. It is also called the 
+\textbf{false positive rate}. \textbf{Type 2} error measures the error rate of false rejections of the 
+positive samples which is also defined as the \textbf{false negative rate}. Our performance measures are 
+composed of these primal statistical measures. 
+
+\textbf{Recall} is the ability of a model to find all the relevant cases within a dataset. In our case, 
+detection of all the anomalous examples contained in the test set would indicate a perfect recall. Its 
+score range is $[0,1]$ inclusive. Increasing recall capacity decreases the false negative rate to 
+correctly identify all possible target class samples. \textbf{Precision} on the other hand is the 
+ability of a classification model to identify \textbf{only} the relevant data points. Increased precision 
+means a decrease in the false positive rate because a system favors precision aim towards eliminating all 
+false predictions. The calculation of the both metrics is given below
 \begin{align}
 \textbf{recall} & = \frac{\text{true positives}}{\text{true positives} + \text{false negatives}} \\[5pt]
 \textbf{precision} & = \frac{\text{true positives}}{\text{true positives} + \text{false positives}}
 \end{align}
 
-Precision and recall comprises a trade off situation. If the model favors the precision, the recall 
+Precision and recall comprises a trade off situation. If the model favors the precision, the recall capacity
 decreases because eliminating the false positives inadvertently increases the false negative rate and 
 vice versa. To give equal importance to both metrics, \textbf{F1 score} is used. The F1 score is the 
 harmonic mean of precision and recall taking both metrics into account in the following equation:
@@ -39,21 +78,64 @@ harmonic mean of precision and recall taking both metrics into account in the fo
 \text{F}_{1} = 2 \times \frac{\text{precision} \times \text{recall}}{\text{precision} + \text{recall}}
 \end{equation}
 
-The last metric we use to interpret the model performance is area under receiver operating characteristic 
-curve, \textbf{AUROC} for short. ROC curve visualizes the trade of relationship between the false positive 
-and true positive rate. True positive rate is actually recall. False positive rate is the probability 
-of false detection for the system. The calculations for these rates are provided below:
+The main metric we use to interpret the model performance is area under receiver operating characteristic 
+curve, \textbf{AUROC} for short. 
+\begin{figure}[h!]%
+	\centering
+	\includegraphics[width=0.8\textwidth]{expres/roc_curve}
+	\caption{ROC Curve Example with AUROC value}
+	\label{fig:roc_curve}%
+\end{figure}
+ROC curve visualizes the trade of relationship between the recall and precision capacity as the threshold for 
+identifying a positive in the model changes. The threshold is the indicator value above which a sample is considered in the 
+positive class. In our problem, threshold is determined from the anomaly score. ROC curve plots the true positive rate 
+on the y-axis versus the false positive rate on the x-axis. (See figure \ref{fig:roc_curve})
+True positive rate is actually recall. False positive rate is the probability of false detection for the system. 
+Calculations for these rates are provided below:
 \begin{align}
 \textbf{True Positive Rate} & = \frac{\text{true positives}}{\text{true positives} + \text{false negatives}} \\[5pt]
 \textbf{False Positive Rate} & = \frac{\text{false positives}}{\text{true negatives} + \text{false positives}}
 \end{align}
 
-the AUROC value can be obtained by calculating the area under the ROC curve which has a range between 0 and 1 with a higher number indicating better classification performance.
+the AUROC value can be obtained by calculating the area under the ROC curve which has a range between 0 and 1 
+with a higher number indicating better classification performance.
 
-\section{Pure GAN Model Analysis}
-This section presents the experiment results for the GAN based approaches which
+In the performed experiments, AUROC value is considered as the main comparison metric amongst the models. 
+Recall and precision are used to give an auxilary information about the model's prediction accuracy and capacity. 
+As a reporting criteria, highest F1 score obtained from the percentile interval between $80\%$ and $99.9\%$ is 
+as a threshold is used to determine the optimal precision and recall values. 
 
-\begin{table}[]
+\section{State of the Art GAN Based Model Experiments}
+\label{sec:exp_pure_gan}
+This section is devoted to the performance analysis of pure GAN based models. In the initial experiment stage, all state of the art gan 
+based models are implemented using the same generator and discriminator architecture. Since all the models are tested on known benchmark 
+datasets and there is no experiment with our dataset, all models' initial run is acquired as a baseline. Baseline performances 
+are reported in the table \ref{tab:exp_baseline}.
+
+\begin{longtable}[c]{|c|cccc|}
+	\caption{Baseline performance values of the state of the art GAN based models}
+	\label{tab:exp_baseline}\\
+	\hline
+	\multirow{2}{*}{\textbf{Models}} & \multicolumn{4}{c|}{\textbf{Metrics}} \\ \cline{2-5} 
+	& AUROC & Precision & Recall & F1 Score \\ \hline
+	\endhead
+	%
+ \multicolumn{1}{|c|}{AnoGAN} & \multicolumn{1}{c}{0.59941} & \multicolumn{1}{c}{0.14253} & \multicolumn{1}{c}{0.27783} & \multicolumn{1}{c|}{0.18841} \\ \hline
+\multicolumn{1}{|c|}{BiGAN} & \multicolumn{1}{c}{0.62699} & \multicolumn{1}{c}{0.10201} & \multicolumn{1}{c}{0.32227} & \multicolumn{1}{c|}{0.15497} \\ \hline
+\multicolumn{1}{|c|}{ALAD} & \multicolumn{1}{c}{0.44842} & \multicolumn{1}{c}{0.05521} & \multicolumn{1}{c}{0.17443} & \multicolumn{1}{c|}{0.08388} \\ \hline
+\multicolumn{1}{|c|}{GANomaly} & \multicolumn{1}{c}{0.77697} & \multicolumn{1}{c}{0.39701} & \multicolumn{1}{c}{0.31356} & \multicolumn{1}{c|}{0.35038} \\ \hline
+\multicolumn{1}{|c|}{Skip-GANomaly} & \multicolumn{1}{c}{0.53182} & \multicolumn{1}{c}{0.07379} & \multicolumn{1}{c}{0.23314} & \multicolumn{1}{c|}{0.11211} \\ \hline
+\end{longtable}
+
+After this initial test, it is observed that pure GAN based models performed poorly on our target dataset and only GANomaly model obtained a 
+full precision/recall curve even though it is below $0.5$. Precision recall curve is an alternative way of visualizing the precision and recall capacity 
+of a model. The definition of precision states that if the number of predictions are equal to the number of anomalies contained in the dataset then the 
+precision is exactly $1.0$. In order for that to be happen, model should not make a prediction unless it is absolutely certain hence with this criterion in mind 
+the model has an greater false negative rate. So if the precision is $1.0$ that means with a given threshold the model can always make the right prediction. 
+From the perspective of recall, it also means that there is a threshold value that enables model to find all anomalies contained in the dataset even if it increases 
+the overall false positive rate of prediction performance.  
+
+\begin{table}[!h]
 	\centering
 	\caption{Ablation study for AnoGAN to test the effect of various training improvements for stabilization.}
 	\label{tab:anogan_ablation}
@@ -62,21 +144,26 @@ This section presents the experiment results for the GAN based approaches which
 			\hline
 			\multicolumn{2}{|c|}{\multirow{2}{*}{\textbf{Model}}} & \multicolumn{4}{c|}{\textbf{Metrics}} \\ \cline{3-6} 
 			\multicolumn{2}{|c|}{} & AUROC & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c|}{F1 Score} \\ \hline
-			\multirow{8}{*}{AnoGAN} & Normal & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
-			& IN & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
-			& SL & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
-			& LF & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
-			& IN + SL & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
-			& IN + LF & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
-			& SL + LF & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
-			& LF + SL + IN & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \hline
-			
+			\multirow{8}{*}{AnoGAN} & Normal & \multicolumn{1}{c}{0.59941} & \multicolumn{1}{c}{\textbf{0.14253}} & \multicolumn{1}{c}{0.27783} & \multicolumn{1}{c|}{0.18841} \\ \cline{2-6} 
+			& IN & \multicolumn{1}{c}{0.59978} & \multicolumn{1}{c}{0.14010} & \multicolumn{1}{c}{0.27309} & \multicolumn{1}{c|}{0.18512} \\ \cline{2-6} 
+			& SL & \multicolumn{1}{c}{0.43092} & \multicolumn{1}{c}{0.06875} & \multicolumn{1}{c}{0.13401} & \multicolumn{1}{c|}{0.09087} \\ \cline{2-6} 
+			& LF & \multicolumn{1}{c}{0.43319} & \multicolumn{1}{c}{0.06822} & \multicolumn{1}{c}{0.17732} & \multicolumn{1}{c|}{0.09854} \\ \cline{2-6} 
+			& IN + SL & \multicolumn{1}{c}{\textbf{0.59987}} & \multicolumn{1}{c}{0.12877} & \multicolumn{1}{c}{\textbf{0.33468}} & \multicolumn{1}{c|}{\textbf{0.18958}} \\ \cline{2-6} 
+			& IN + LF & \multicolumn{1}{c}{0.52329} & \multicolumn{1}{c}{0.09075} & \multicolumn{1}{c}{0.23587} & \multicolumn{1}{c|}{0.13107} \\ \cline{2-6} 
+			& SL + LF & \multicolumn{1}{c}{0.53469} & \multicolumn{1}{c}{0.09440} & \multicolumn{1}{c}{0.24534} & \multicolumn{1}{c|}{0.13634} \\ \cline{2-6} 
+			& LF + SL + IN & \multicolumn{1}{c}{0.54625} & \multicolumn{1}{c}{0.09973} & \multicolumn{1}{c}{0.25922} & \multicolumn{1}{c|}{0.14405} \\ \hline	
 		\end{tabular}%
 	}
 \end{table}
+
+
+
+
+\subsection{BiGAN}
+\label{sec:exp_bigan}
 % Bigan
  test
-\begin{table}[]
+\begin{table}[!h]
 	\centering
 	\caption{Ablation study for BiGAN to test the effect of various training improvements for stabilization.}
 	\label{tab:bigan_ablation}
@@ -85,20 +172,22 @@ This section presents the experiment results for the GAN based approaches which
 			\hline
 			\multicolumn{2}{|c|}{\multirow{2}{*}{\textbf{Model}}} & \multicolumn{4}{c|}{\textbf{Metrics}} \\ \cline{3-6} 
 			\multicolumn{2}{|c|}{} & AUROC & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c|}{F1 Score} \\ \hline
-			\multirow{8}{*}{BiGAN} & Normal & \multicolumn{1}{c}{0.39614} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
-			& IN & \multicolumn{1}{c}{0.59329} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
-			& SL & \multicolumn{1}{c}{0.54633} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
-			& LF & \multicolumn{1}{c}{0.63394} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
-			& IN + SL & \multicolumn{1}{c}{0.53644} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
-			& IN + LF & \multicolumn{1}{c}{0.54526} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
-			& SL + LF & \multicolumn{1}{c}{0.57391} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
-			& LF + SL + IN & \multicolumn{1}{c}{0.36905} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \hline
+			\multirow{8}{*}{BiGAN} & Normal & \multicolumn{1}{c}{0.62699} & \multicolumn{1}{c}{0.10201} & \multicolumn{1}{c}{0.32227} & \multicolumn{1}{c|}{0.15497} \\ \cline{2-6} 
+			& IN & \multicolumn{1}{c}{0.38195} & \multicolumn{1}{c}{0.03721} & \multicolumn{1}{c}{0.11756} & \multicolumn{1}{c|}{0.05653} \\ \cline{2-6} 
+			& SL & \multicolumn{1}{c}{0.58904} & \multicolumn{1}{c}{0.08251} & \multicolumn{1}{c}{0.26066} & \multicolumn{1}{c|}{0.12534} \\ \cline{2-6} 
+			& LF & \multicolumn{1}{c}{0.39541} & \multicolumn{1}{c}{0.03532} & \multicolumn{1}{c}{0.11160} & \multicolumn{1}{c|}{0.05366} \\ \cline{2-6} 
+			& IN + SL & \multicolumn{1}{c}{0.52646} & \multicolumn{1}{c}{0.06978} & \multicolumn{1}{c}{0.22045} & \multicolumn{1}{c|}{0.10600} \\ \cline{2-6} 
+			& IN + LF & \multicolumn{1}{c}{\textbf{0.63362}} & \multicolumn{1}{c}{\textbf{0.10917}} & \multicolumn{1}{c}{\textbf{0.34490}} & \multicolumn{1}{c|}{\textbf{0.16585}} \\ \cline{2-6} 
+			& SL + LF & \multicolumn{1}{c}{0.57855} & \multicolumn{1}{c}{0.08483} & \multicolumn{1}{c}{0.26800} & \multicolumn{1}{c|}{0.12887} \\ \cline{2-6} 
+			& LF + SL + IN & \multicolumn{1}{c}{0.62912} & \multicolumn{1}{c}{0.10617} & \multicolumn{1}{c}{0.33542} & \multicolumn{1}{c|}{0.16129} \\ \hline
 		\end{tabular}%
 	}
 \end{table}
 
+\subsection{ALAD}
+\label{sec:exp_alad}
 % ALAD
-\begin{table}[]
+\begin{table}[!h]
 	\centering
 	\caption{Ablation study for ALAD to test the effect of various training improvements for stabilization.}
 	\label{tab:alad_ablation}
@@ -107,22 +196,26 @@ This section presents the experiment results for the GAN based approaches which
 			\hline
 			\multicolumn{2}{|c|}{\multirow{2}{*}{\textbf{Model}}} & \multicolumn{4}{c|}{\textbf{Metrics}} \\ \cline{3-6} 
 			\multicolumn{2}{|c|}{} & AUROC & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c|}{F1 Score} \\ \hline
-			\multirow{8}{*}{ALAD} & Normal & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c}{} \\ \cline{2-6} 
-			& IN & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
-			& SL & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
-			& LF & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
-			& IN + SL & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
-			& IN + LF & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
-			& SL + LF & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
-			& LF + SL + IN & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \hline
+			\multirow{8}{*}{ALAD} & Normal & \multicolumn{1}{c}{0.44842} & \multicolumn{1}{c}{0.05521} & \multicolumn{1}{c}{0.17443} & \multicolumn{1}{c|}{0.08388} \\ \cline{2-6} 
+			& IN & \multicolumn{1}{c}{0.49447} & \multicolumn{1}{c}{0.06171} & \multicolumn{1}{c}{0.19385} & \multicolumn{1}{c|}{0.09321} \\ \cline{2-6} 
+			& SL & \multicolumn{1}{c}{0.52920} & \multicolumn{1}{c}{\textbf{0.07854}} & \multicolumn{1}{c}{\textbf{0.24812}} & \multicolumn{1}{c|}{\textbf{0.11931}} \\ \cline{2-6} 
+			& LF & \multicolumn{1}{c}{0.55545} & \multicolumn{1}{c}{0.07326} & \multicolumn{1}{c}{0.23146} & \multicolumn{1}{c|}{0.11130} \\ \cline{2-6} 
+			& IN + SL & \multicolumn{1}{c}{0.48488} & \multicolumn{1}{c}{0.05918} & \multicolumn{1}{c}{0.18697} & \multicolumn{1}{c|}{0.08990} \\ \cline{2-6} 
+			& IN + LF & \multicolumn{1}{c}{0.52712} & \multicolumn{1}{c}{0.06450} & \multicolumn{1}{c}{0.20379} & \multicolumn{1}{c|}{0.09799} \\ \cline{2-6} 
+			& SL + LF & \multicolumn{1}{c}{0.49057} & \multicolumn{1}{c}{0.06441} & \multicolumn{1}{c}{0.20348} & \multicolumn{1}{c|}{0.09784} \\ \cline{2-6} 
+			& LF + SL + IN & \multicolumn{1}{c}{\textbf{0.55904}} & \multicolumn{1}{c}{0.07588} & \multicolumn{1}{c}{0.23971} & \multicolumn{1}{c|}{0.11527} \\ \hline
 		\end{tabular}%
 	}
 \end{table}
 
-\section{Autoencoder Variant Model Analysis}
 
+This part of the experiment study presents the performance analysis of the autoencoder variants, namely GANomaly and Skip-GANomaly. Since these 
+methods are structurally does not contain a true generator network their performance are evaluated separately. Each model will be analysed in
+their respective sections.
+\subsection{GANomaly}
+\label{sec:exp_ganomaly}
 % GAnomaly
-\begin{table}[]
+\begin{table}[!h]
 	\centering
 	\caption{Ablation study for GANomaly to test the effect of various training improvements for stabilization. }
 	\label{tab:ganomaly_ablation}
@@ -131,20 +224,23 @@ This section presents the experiment results for the GAN based approaches which
 			\hline
 			\multicolumn{2}{|c|}{\multirow{2}{*}{\textbf{Model}}} & \multicolumn{4}{c|}{\textbf{Metrics}} \\ \cline{3-6} 
 			\multicolumn{2}{|c|}{} & AUROC & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c|}{F1 Score} \\ \hline
-			\multirow{8}{*}{GANomaly} & Normal & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\ \cline{2-6} 
-			& IN & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
-			& SL & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
-			& LF & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
-			& IN + SL & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
-			& IN + LF & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
-			& SL + LF & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
-			& LF + SL + IN & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \hline
+			\multirow{8}{*}{GANomaly} & Normal & \multicolumn{1}{c}{\textbf{0.77697}} & \multicolumn{1}{c}{\textbf{0.39701}} & \multicolumn{1}{c}{0.31356} & \multicolumn{1}{c}{\textbf{0.35038}} \\ \cline{2-6} 
+			& IN & \multicolumn{1}{c}{0.63222} & \multicolumn{1}{c}{0.09891} & \multicolumn{1}{c}{0.31249} & \multicolumn{1}{c|}{0.15266} \\ \cline{2-6} 
+			& SL & \multicolumn{1}{c}{0.75224} & \multicolumn{1}{c}{0.35288} & \multicolumn{1}{c}{0.27870} & \multicolumn{1}{c|}{0.31143} \\ \cline{2-6} 
+			& LF & \multicolumn{1}{c}{0.76225} & \multicolumn{1}{c}{0.37611} & \multicolumn{1}{c}{0.29704} & \multicolumn{1}{c|}{0.33193} \\ \cline{2-6} 
+			& IN + SL & \multicolumn{1}{c}{0.62626} & \multicolumn{1}{c}{0.09693} & \multicolumn{1}{c}{0.30622} & \multicolumn{1}{c|}{0.14725} \\ \cline{2-6} 
+			& IN + LF & \multicolumn{1}{c}{0.64009} & \multicolumn{1}{c}{0.10496} & \multicolumn{1}{c}{\textbf{0.33160}} & \multicolumn{1}{c|}{0.15945} \\ \cline{2-6} 
+			& SL + LF & \multicolumn{1}{c}{0.76342} & \multicolumn{1}{c}{0.37495} & \multicolumn{1}{c}{0.29613} & \multicolumn{1}{c|}{0.33091} \\ \cline{2-6} 
+			& LF + SL + IN & \multicolumn{1}{c}{0.63179} & \multicolumn{1}{c}{0.09548} & \multicolumn{1}{c}{0.30163} & \multicolumn{1}{c|}{0.14504} \\ \hline
 		\end{tabular}%
 	}
 \end{table}
-% Skip Ganomaly
 
-\begin{table}[]
+\subsection{Skip-GANomaly}
+\label{sec:exp_sganomaly
+}
+
+\begin{table}[!h]
 	\centering
 	\caption{Ablation study for Skip-GANomaly to test the effect of various training improvements for stabilization.}
 	\label{tab:sganomaly_ablation}
@@ -152,20 +248,23 @@ This section presents the experiment results for the GAN based approaches which
 		\begin{tabular}{|c|l|llll|}
 			\hline
 			\multicolumn{2}{|c|}{\multirow{2}{*}{\textbf{Model}}} & \multicolumn{4}{c|}{\textbf{Metrics}} \\ \cline{3-6} 
-			\multicolumn{2}{|c|}{} & AUROC & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c|}{F1 Score} \\ \hline
-			\multirow{8}{*}{Skip-GANomaly} & Normal & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
-			& IN & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
-			& SL & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
-			& LF & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
-			& IN + SL & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
-			& IN + LF & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
-			& SL + LF & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \cline{2-6} 
-			& LF + SL + IN & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c|}{} \\ \hline
+\multicolumn{2}{|c|}{} & AUROC & \multicolumn{1}{c}{Precision} & \multicolumn{1}{c}{Recall} & \multicolumn{1}{c|}{F1 Score} \\ \hline
+\multirow{8}{*}{Skip-GANomaly} & Normal & \multicolumn{1}{c}{0.53182} & \multicolumn{1}{c}{0.07379} & \multicolumn{1}{c}{0.23314} & \multicolumn{1}{c|}{0.11211} \\ \cline{2-6} 
+& IN & \multicolumn{1}{c}{\textbf{0.58120}} & \multicolumn{1}{c}{0.10646} & \multicolumn{1}{c}{0.25225} & \multicolumn{1}{c|}{0.14973} \\ \cline{2-6} 
+& SL & \multicolumn{1}{c}{0.55309} & \multicolumn{1}{c}{0.08686} & \multicolumn{1}{c}{0.27442} & \multicolumn{1}{c|}{0.13196} \\ \cline{2-6} 
+& LF & \multicolumn{1}{c}{0.53703} & \multicolumn{1}{c}{0.07617} & \multicolumn{1}{c}{0.24063} & \multicolumn{1}{c|}{0.11571} \\ \cline{2-6} 
+& IN + SL & \multicolumn{1}{c}{0.57432} & \multicolumn{1}{c}{0.10156} & \multicolumn{1}{c}{0.24063} & \multicolumn{1}{c|}{0.14283} \\ \cline{2-6} 
+& IN + LF & \multicolumn{1}{c}{0.58041} & \multicolumn{1}{c}{\textbf{0.12485}} & \multicolumn{1}{c}{0.19721} & \multicolumn{1}{c|}{\textbf{0.15290}} \\ \cline{2-6} 
+& SL + LF & \multicolumn{1}{c}{0.55675} & \multicolumn{1}{c}{0.08749} & \multicolumn{1}{c}{\textbf{0.27641}} & \multicolumn{1}{c|}{0.13291} \\ \cline{2-6} 
+& LF + SL + IN & \multicolumn{1}{c}{0.57402} & \multicolumn{1}{c}{0.10407} & \multicolumn{1}{c}{0.24659} & \multicolumn{1}{c|}{0.14637} \\ \hline
 		\end{tabular}%
 	}
 \end{table}
-\section{Improved Model Analysis}
+\section{Proposed Model Analysis}
+\label{sec:exp_sencebgan}
+
 \section{Discussion of Experiment Results}
+\label{sec:exp_discuss}
 
 This chapter will explain the experimental results for all the models and improvements. It will also
 point out a discussion about what could be improved and the future direction.

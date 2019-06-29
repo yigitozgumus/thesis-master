@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2019.1.28)  27 JUN 2019 11:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2019.1.28)  29 JUN 2019 10:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2445,7 +2445,7 @@ LaTeX Info: Redefining \nameref on input line 112.
 
 
 ABD: EveryShipout initializing macros (./front_matter/cover.tex
-<images/polimi.png, id=203, 2007.5pt x 477.785pt>
+<images/polimi.png, id=216, 2007.5pt x 477.785pt>
 File: images/polimi.png Graphic file (type png)
 <use images/polimi.png>
 Package pdftex.def Info: images/polimi.png  used on input line 25.
@@ -2455,7 +2455,7 @@ Overfull \hbox (17.62482pt too wide) in paragraph at lines 30--31
 [][] 
  []
 
-<images/logo.png, id=205, 907.39pt x 901.3675pt>
+<images/logo.png, id=218, 907.39pt x 901.3675pt>
 File: images/logo.png Graphic file (type png)
 <use images/logo.png>
 Package pdftex.def Info: images/logo.png  used on input line 45.
@@ -2528,12 +2528,16 @@ LaTeX Font Info:    Try loading font information for OT1+jkp on input line 4.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/kpfonts/ot1jkp.fd
 File: ot1jkp.fd 2007/08/30 Fontinst v1.928 font definitions for OT1/jkp.
 ) [8]) [9]
-(./2019_7_Ozgumus_Semsi_Yigit.lof) (./2019_7_Ozgumus_Semsi_Yigit.lot [10
+(./2019_7_Ozgumus_Semsi_Yigit.lof)
+Underfull \vbox (badness 1424) has occurred while \output is active []
 
-])
-[11] [12
+ [10
 
-] (./chapters/introduction.tex [1
+]
+(./2019_7_Ozgumus_Semsi_Yigit.lot) [11] [12
+
+] (./chapters/introduction.tex
+[1
 
 ]) [2] (./chapters/sota.tex [3
 
@@ -2543,12 +2547,13 @@ LaTeX Font Info:    Try loading font information for TS1+lmr on input line 42.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) [4]
-
-LaTeX Warning: Citation 'Napoletano_2018' on page 5 undefined on input line 85.
-
+Overfull \hbox (6.90408pt too wide) in paragraph at lines 82--92
+\T1/lmr/m/n/12 te-ri-als [[][]39[][]] may eas-ily de-velop de-fects in the man-
+u-fac-tur-ing pipeline.Therefore
+ []
 
 [5] [6] [7] [8]
-<images/gan.pdf, id=507, 1534.74184pt x 879.38437pt>
+<images/gan.pdf, id=531, 1534.74184pt x 879.38437pt>
 File: images/gan.pdf Graphic file (type pdf)
 <use images/gan.pdf>
 Package pdftex.def Info: images/gan.pdf  used on input line 245.
@@ -2570,19 +2575,15 @@ MS/lmsy/m/n/12 ^^@ \OT1/lmr/m/n/12 (\OMS/lmsy/m/n/12 ^^@ []\OT1/lmr/m/n/12 (4))
  
  []
 
-
-Underfull \vbox (badness 5908) has occurred while \output is active []
-
- [12]
+[12]
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10> on input line 388.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7.6> on input line 388.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 388.
-
-[13]
-<images/ae_simple.png, id=632, 1814.9406pt x 1889.1378pt>
+ [13]
+<images/ae_simple.png, id=658, 1814.9406pt x 1889.1378pt>
 File: images/ae_simple.png Graphic file (type png)
 <use images/ae_simple.png>
 Package pdftex.def Info: images/ae_simple.png  used on input line 444.
@@ -2591,7 +2592,7 @@ Package pdftex.def Info: images/ae_simple.png  used on input line 444.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<images/autoencoder.pdf, id=633, 944.96538pt x 457.04051pt>
+<images/autoencoder.pdf, id=659, 944.96538pt x 457.04051pt>
 File: images/autoencoder.pdf Graphic file (type pdf)
 <use images/autoencoder.pdf>
 Package pdftex.def Info: images/autoencoder.pdf  used on input line 458.
@@ -2599,27 +2600,31 @@ Package pdftex.def Info: images/autoencoder.pdf  used on input line 458.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[14] [15 <./images/ae_simple.png> <./images/autoencoder.pdf>] [16] [17]
-[18] [19]
-<images/aligan.pdf, id=700, 1017.93501pt x 223.35846pt>
+[14]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [15 <./images/ae_simple.png> <./images/autoencoder.pdf>] [16] [17] [18]
+Underfull \vbox (badness 1728) has occurred while \output is active []
+
+ [19]
+<images/aligan.pdf, id=724, 1017.93501pt x 223.35846pt>
 File: images/aligan.pdf Graphic file (type pdf)
 <use images/aligan.pdf>
 Package pdftex.def Info: images/aligan.pdf  used on input line 659.
 (pdftex.def)             Requested size: 344.69766pt x 75.63412pt.
- [20 <./images/aligan.pdf>]
-<images/bigan.png, id=731, 2017.5375pt x 791.1156pt>
+<images/bigan.png, id=726, 2017.5375pt x 791.1156pt>
 File: images/bigan.png Graphic file (type png)
 <use images/bigan.png>
 Package pdftex.def Info: images/bigan.png  used on input line 677.
 (pdftex.def)             Requested size: 344.69766pt x 135.1518pt.
 
-Underfull \vbox (badness 3568) has occurred while \output is active []
 
- [21 <./images/bigan.png>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
- [22]
-[23]
+[20 <./images/aligan.pdf>]
+Underfull \vbox (badness 2875) has occurred while \output is active []
+
+ [21 <./images/bigan.png>] [22] [23]
 Overfull \hbox (3.50192pt too wide) detected at line 821
 [] \OT1/lmr/m/n/12 = \U/msb/m/n/12 E[]\OT1/lmr/m/n/12 [[](\OT1/lmr/bx/n/12 x\OM
 L/lmm/m/it/12 ; \OT1/lmr/bx/n/12 z\OT1/lmr/m/n/12 ) [] \OML/lmm/m/it/12 D\OT1/l
@@ -2630,37 +2635,49 @@ mr/m/n/12 (\OT1/lmr/bx/n/12 x\OML/lmm/m/it/12 ; \OT1/lmr/bx/n/12 z\OT1/lmr/m/n/
 1/lmr/m/n/12 ))]
  []
 
-[24] [25] [26] [27] [28] [29]
-<images/alad.png, id=888, 2415.0225pt x 1483.7031pt>
+
+Underfull \vbox (badness 7486) has occurred while \output is active []
+
+ [24]
+[25]
+Underfull \vbox (badness 7451) has occurred while \output is active []
+
+ [26]
+[27] [28] [29]
+<images/alad.png, id=915, 2415.0225pt x 1483.7031pt>
 File: images/alad.png Graphic file (type png)
 <use images/alad.png>
 Package pdftex.def Info: images/alad.png  used on input line 1056.
 (pdftex.def)             Requested size: 344.69766pt x 211.76947pt.
+ [30 <./images/alad.png>]
+Underfull \vbox (badness 3302) has occurred while \output is active []
 
+ [31]
+Underfull \vbox (badness 4595) has occurred while \output is active []
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[30] [31 <./images/alad.png>] [32]
-<images/ganomaly.png, id=931, 2362.9881pt x 1210.5225pt>
+ [32]
+<images/ganomaly.png, id=955, 2362.9881pt x 1210.5225pt>
 File: images/ganomaly.png Graphic file (type png)
 <use images/ganomaly.png>
 Package pdftex.def Info: images/ganomaly.png  used on input line 1164.
 (pdftex.def)             Requested size: 344.69766pt x 176.58334pt.
- [33 <./images/ganomaly.png>] [34]
-<images/skip_ganomaly.png, id=956, 1206.5075pt x 565.11125pt>
+
+[33 <./images/ganomaly.png>] [34]
+<images/skip_ganomaly.png, id=980, 1206.5075pt x 565.11125pt>
 File: images/skip_ganomaly.png Graphic file (type png)
 <use images/skip_ganomaly.png>
 Package pdftex.def Info: images/skip_ganomaly.png  used on input line 1229.
 (pdftex.def)             Requested size: 344.69766pt x 161.4464pt.
- [35 <./images/skip_ganomaly.png>]) [36] (./chapters/latdel.tex [37
+) [35 <./images/skip_ganomaly.png>] [36]
+(./chapters/latdel.tex [37
 
 ]
-<images/fanogan_framework.png, id=982, 1243.64626pt x 466.74374pt>
+<images/fanogan_framework.png, id=1007, 1243.64626pt x 466.74374pt>
 File: images/fanogan_framework.png Graphic file (type png)
 <use images/fanogan_framework.png>
 Package pdftex.def Info: images/fanogan_framework.png  used on input line 34.
 (pdftex.def)             Requested size: 344.69766pt x 129.36267pt.
-<images/fanogan_training.png, id=989, 1243.64626pt x 466.74374pt>
+<images/fanogan_training.png, id=1014, 1243.64626pt x 466.74374pt>
 File: images/fanogan_training.png Graphic file (type png)
 <use images/fanogan_training.png>
 Package pdftex.def Info: images/fanogan_training.png  used on input line 51.
@@ -2673,12 +2690,12 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 Underfull \vbox (badness 7030) has occurred while \output is active []
 
  [39 <./images/fanogan_training.png>]
-<images/fanogan_anomaly_1.png, id=1009, 590.205pt x 246.9225pt>
+<images/fanogan_anomaly_1.png, id=1033, 590.205pt x 246.9225pt>
 File: images/fanogan_anomaly_1.png Graphic file (type png)
 <use images/fanogan_anomaly_1.png>
 Package pdftex.def Info: images/fanogan_anomaly_1.png  used on input line 115.
 (pdftex.def)             Requested size: 191.5pt x 80.11697pt.
-<images/fanogan_anomaly_2.png, id=1010, 373.395pt x 246.9225pt>
+<images/fanogan_anomaly_2.png, id=1034, 373.395pt x 246.9225pt>
 File: images/fanogan_anomaly_2.png Graphic file (type png)
 <use images/fanogan_anomaly_2.png>
 Package pdftex.def Info: images/fanogan_anomaly_2.png  used on input line 121.
@@ -2689,7 +2706,7 @@ Overfull \hbox (7.83322pt too wide) in paragraph at lines 115--122
  []
 
 [40 <./images/fanogan_anomaly_1.png> <./images/fanogan_anomaly_2.png>] [41]
-<images/ebgan_model.png, id=1044, 982.67125pt x 308.15125pt>
+<images/ebgan_model.png, id=1068, 982.67125pt x 308.15125pt>
 File: images/ebgan_model.png Graphic file (type png)
 <use images/ebgan_model.png>
 Package pdftex.def Info: images/ebgan_model.png  used on input line 177.
@@ -2698,7 +2715,7 @@ Package pdftex.def Info: images/ebgan_model.png  used on input line 177.
 [42 <./images/ebgan_model.png>]) [43] [44
 
 ] (./chapters/arim.tex
-<images/dataset.png, id=1077, 1027.84pt x 702.625pt>
+<images/dataset.png, id=1101, 1027.84pt x 702.625pt>
 File: images/dataset.png Graphic file (type png)
 <use images/dataset.png>
 Package pdftex.def Info: images/dataset.png  used on input line 29.
@@ -2707,7 +2724,7 @@ Package pdftex.def Info: images/dataset.png  used on input line 29.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<images/sample_normal.png, id=1080, 1094.0875pt x 672.5125pt>
+<images/sample_normal.png, id=1104, 1094.0875pt x 672.5125pt>
 File: images/sample_normal.png Graphic file (type png)
 <use images/sample_normal.png>
 Package pdftex.def Info: images/sample_normal.png  used on input line 42.
@@ -2717,7 +2734,7 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 42--42
  [][] 
  []
 
-<images/sample_anomaly.png, id=1081, 1094.0875pt x 672.5125pt>
+<images/sample_anomaly.png, id=1105, 1094.0875pt x 672.5125pt>
 File: images/sample_anomaly.png Graphic file (type png)
 <use images/sample_anomaly.png>
 Package pdftex.def Info: images/sample_anomaly.png  used on input line 48.
@@ -2902,7 +2919,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 /bigan_sample.png> <./images/arim/encoder_conv/alad_sample.png> <./images/arim/
 encoder_conv/anogan_reconstruct.png> <./images/arim/encoder_conv/bigan_reconstr
 uct.png> <./images/arim/encoder_conv/alad_reconstruct.png>]
-<images/arim/encebgan/encebgan.pdf, id=1205, 1944.79369pt x 908.76715pt>
+<images/arim/encebgan/encebgan.pdf, id=1229, 1944.79369pt x 908.76715pt>
 File: images/arim/encebgan/encebgan.pdf Graphic file (type pdf)
 <use images/arim/encebgan/encebgan.pdf>
 Package pdftex.def Info: images/arim/encebgan/encebgan.pdf  used on input line 
@@ -2999,17 +3016,17 @@ Overfull \hbox (3.7035pt too wide) in paragraph at lines 402--402
 
 [56 <./images/arim/anomaly_score/anoscore_input.png> <./images/arim/anomaly_sco
 re/anoscore_ganomaly.png> <./images/arim/anomaly_score/anoscore_sganomaly.png>]
-<images/arim/sencebgan/sencebgan.pdf, id=1289, 1944.79369pt x 908.76715pt>
+<images/arim/sencebgan/sencebgan.pdf, id=1313, 1944.79369pt x 908.76715pt>
 File: images/arim/sencebgan/sencebgan.pdf Graphic file (type pdf)
 <use images/arim/sencebgan/sencebgan.pdf>
 Package pdftex.def Info: images/arim/sencebgan/sencebgan.pdf  used on input lin
-e 437.
+e 439.
 (pdftex.def)             Requested size: 383.0pt x 178.96301pt.
 
 Class memoir Warning: The material used in the headers is too large
 (28.99998pt) for the given head height (14.5pt), it is recommended to
 either increase the head height or redesign the header
-(in both cases you will find help in the memoir manual). on input line 446.
+(in both cases you will find help in the memoir manual). on input line 450.
 
 
 Overfull \vbox (14.49998pt too high) has occurred while \output is active []
@@ -3021,33 +3038,22 @@ Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
 [59] [60
 
-] (./chapters/exp_results.tex [61]
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 56.
-
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 79.
+] (./chapters/exp_results.tex [61] [62]
+<images/expres/roc_curve.png, id=1382, 462.528pt x 346.896pt>
+File: images/expres/roc_curve.png Graphic file (type png)
+<use images/expres/roc_curve.png>
+Package pdftex.def Info: images/expres/roc_curve.png  used on input line 85.
+(pdftex.def)             Requested size: 306.40117pt x 229.80956pt.
 
 
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 101.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
+[63] [64 <./images/expres/roc_curve.png>] [65] [66] [67]) [68]
+(./chapters/conclusion.tex) [69
 
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 125.
+] [70
 
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 147.
-
-[62] [63] [64]) [65] [66
-
-] (./chapters/conclusion.tex) [67] [68
-
-]
-(./chapters/appendix.tex
+] (./chapters/appendix.tex
 Overfull \hbox (3.47217pt too wide) in alignment at lines 14--19
  [] [] [] [] [] [] 
  []
@@ -3072,7 +3078,7 @@ Overfull \hbox (3.47217pt too wide) in alignment at lines 25--46
  [] [] [] [] [] [] 
  []
 
-[69]
+[71]
 Overfull \hbox (3.47217pt too wide) in alignment at lines 52--57
  [] [] [] [] [] [] 
  []
@@ -3127,7 +3133,7 @@ Overfull \hbox (17.66731pt too wide) in alignment at lines 111--133
  [] [] [] [] [] [] 
  []
 
-[70]
+[72]
 Overfull \hbox (17.66731pt too wide) in alignment at lines 133--153
  [] [] [] [] [] [] 
  []
@@ -3137,7 +3143,7 @@ Overfull \hbox (17.66731pt too wide) in alignment at lines 153--165
  [] [] [] [] [] [] 
  []
 
-[71]
+[73]
 Overfull \hbox (3.47217pt too wide) in alignment at lines 172--177
  [] [] [] [] [] [] 
  []
@@ -3167,7 +3173,7 @@ Overfull \hbox (3.47217pt too wide) in alignment at lines 205--217
  [] [] [] [] [] [] 
  []
 
-[72]
+[74]
 Overfull \hbox (3.47217pt too wide) in alignment at lines 223--228
  [] [] [] [] [] [] 
  []
@@ -3227,7 +3233,7 @@ Overfull \hbox (3.47217pt too wide) in alignment at lines 297--312
  [] [] [] [] [] [] 
  []
 
-[73]
+[75]
 Overfull \hbox (17.66731pt too wide) in alignment at lines 316--321
  [] [] [] [] [] [] 
  []
@@ -3257,12 +3263,12 @@ Overfull \hbox (17.66731pt too wide) in alignment at lines 348--367
  [] [] [] [] [] [] 
  []
 
-[74]
+[76]
 Overfull \hbox (17.66731pt too wide) in alignment at lines 367--386
  [] [] [] [] [] [] 
  []
 
-[75]) [76]
+[77]) [78]
 LaTeX Font Info:    Try loading font information for T1+lmvtt on input line 169
 .
  (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/t1lmvtt.fd
@@ -3303,18 +3309,18 @@ Overfull \hbox (71.94705pt too wide) in paragraph at lines 170--170
 28b957653e1f4d566995 .
  []
 
-[77
+[79
 
 
 
-] [78]
+] [80]
 Overfull \hbox (41.30365pt too wide) in paragraph at lines 170--170
 \T1/lmr/m/n/12 pp. 702^^U703. \T1/lmr/m/sc/12 url\T1/lmr/m/n/12 : [][]$\T1/lmvt
 t/m/n/12 https : / / ideas . repec . org / a / eee / csdana / v20y1995i6p703 -[
 ]
  []
 
-[79]
+[81]
 Overfull \hbox (2.58212pt too wide) in paragraph at lines 170--170
 []\T1/lmr/m/n/12 Alex Krizhevsky, Vinod Nair, and Ge-of-frey Hin-ton. ^^P  CIFA
 R-10 (Cana-
@@ -3338,7 +3344,7 @@ Overfull \hbox (25.02553pt too wide) in paragraph at lines 170--170
  pp. 6823^^U
  []
 
-[80]
+[82]
 Overfull \hbox (49.77696pt too wide) in paragraph at lines 170--170
 \T1/lmr/m/n/12 2009, pp. 448^^U455. \T1/lmr/m/sc/12 url\T1/lmr/m/n/12 : [][]$\T
 1/lmvtt/m/n/12 http : / / proceedings . mlr . press / v5 / salakhutdinov09a .
@@ -3351,7 +3357,7 @@ t/m/n/12 https : / / books . google . it / books ? id = zjfaBwAAQBAJ$[][]\T1/lm
 r/m/n/12 . 
  []
 
-[81]
+[83]
 Overfull \hbox (6.32457pt too wide) in paragraph at lines 170--170
 []\T1/lmr/m/n/12 Jun-Yan Zhu et al. ^^P  Un-paired Image-to-Image Trans-la-tion
  Us-ing Cycle-
@@ -3368,7 +3374,7 @@ Package glossaries Warning: No \printglossary or \printglossaries found.
 (Remove \makeglossaries if you don't want any glossaries.) 
 This document will not have a glossary.
 
-[82]
+[84]
 \tf@toc=\write11
 \openout11 = `2019_7_Ozgumus_Semsi_Yigit.toc'.
 
@@ -3385,25 +3391,16 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 171.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 171.
 Package rerunfilecheck Info: File `2019_7_Ozgumus_Semsi_Yigit.out' has not chan
 ged.
-(rerunfilecheck)             Checksum: B4A4DA99E52E4F5201CE8D742CECA7A1;3420.
-
-
-LaTeX Warning: There were undefined references.
-
-
-Package biblatex Warning: Please (re)run BibTeX on the file(s):
-(biblatex)                2019_7_Ozgumus_Semsi_Yigit
-(biblatex)                and rerun LaTeX afterwards.
-
+(rerunfilecheck)             Checksum: 9902B593FDD78865EAD5B28BFA26AC1F;3592.
 Package logreq Info: Writing requests to '2019_7_Ozgumus_Semsi_Yigit.run.xml'.
 \openout1 = `2019_7_Ozgumus_Semsi_Yigit.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 39642 strings out of 492649
- 710341 string characters out of 6129622
- 1320787 words of memory out of 5000000
- 42286 multiletter control sequences out of 15000+600000
+ 39671 strings out of 492649
+ 710830 string characters out of 6129622
+ 1313787 words of memory out of 5000000
+ 42305 multiletter control sequences out of 15000+600000
  190501 words of font info for 182 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,26n,89p,2023b,2882s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -3450,10 +3447,10 @@ blic/lm/lmsy9.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmv
 tt10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbol
 s/msam10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/sy
 mbols/msbm10.pfb>
-Output written on 2019_7_Ozgumus_Semsi_Yigit.pdf (94 pages, 9922955 bytes).
+Output written on 2019_7_Ozgumus_Semsi_Yigit.pdf (96 pages, 9961817 bytes).
 PDF statistics:
- 1723 PDF objects out of 1728 (max. 8388607)
- 1469 compressed objects within 15 object streams
- 402 named destinations out of 1000 (max. 500000)
- 640 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1771 PDF objects out of 2073 (max. 8388607)
+ 1512 compressed objects within 16 object streams
+ 409 named destinations out of 1000 (max. 500000)
+ 669 words of extra memory for PDF output out of 10000 (max. 10000000)
 
