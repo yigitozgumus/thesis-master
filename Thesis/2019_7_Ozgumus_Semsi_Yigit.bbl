@@ -257,6 +257,28 @@
     \field{year}{2017}
   \endentry
 
+  \entry{baldi2012autoencoders}{inproceedings}{}
+    \name{author}{1}{}{%
+      {{hash=BP}{%
+         family={Baldi},
+         familyi={B\bibinitperiod},
+         given={Pierre},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BP1}
+    \strng{fullhash}{BP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{booktitle}{Proceedings of ICML workshop on unsupervised and transfer
+  learning}
+    \field{pages}{37\bibrangedash 49}
+    \field{title}{Autoencoders, unsupervised learning, and deep architectures}
+    \field{year}{2012}
+  \endentry
+
   \entry{iot_anomaly}{article}{}
     \name{author}{3}{}{%
       {{hash=BM}{%
@@ -358,8 +380,8 @@
       {John Wiley}%
       {Sons}%
     }
-    \strng{namehash}{BP1}
-    \strng{fullhash}{BP1}
+    \strng{namehash}{BP2}
+    \strng{fullhash}{BP2}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{sortinit}{B}

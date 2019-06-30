@@ -2,9 +2,33 @@
 
 \begingroup
 
-This chapter will explain the purpose of the thesis once more and give information about the general
-process and the result interpretation (1 page)
+In this work, we tackled a problem of building an anomaly detection framework that utilizes a 
+generative adversarial network and encoder networks. In particular, we investigated different 
+GAN based anomaly detection and feature learning approaches and analyzed their corresponding 
+performance with our SEM image dataset. Based on the analysis regarding the stabilization and 
+convergence problems experienced by the networks, a modified architecture is proposed. In order to support 
+our analyses, an ablation study is performed to mitigate the generator instabilities and the 
+effect of training networks in an adversarial setting concurrently or sequentially is tested through 
+an incremental model proposition.
 
-It will make suggestions based on the improved model experiments and leave an open door for the improvement.
+Experiments presented in chapter \ref{chap:expres} show that GAN based anomaly detection methods that 
+are tested on the SEM Image dataset gives a contradictory performance scores with respect to the visual 
+quality of the reconstructions. Even in model configurations which no convergence issue or mode collapse problem 
+occurs, visual reconstruction imperfections cause model's performance to not pass a $0.6$ threshold AUROC score.
+Models that inherit the adversarial training aspect of GANs but uses an autoencoder architecture in 
+their generator networks produced better reconstructions and achieved a higher performance in terms 
+of both AUROC score and the overall precision / recall capacity. These observations point out the importance 
+of adversarial feature learning process that take effect in these models and how it affects the overall success 
+of the anomaly detection quality.
+
+Proposed model which addresses the issues detected in the experiments produced a better performance 
+than the other GAN based models. Reconstructions obtained by the model showed that separating the networks 
+to stabilize the training procedure improved the visual resemblance while there is still a room to improve 
+for the quality of the reconstructions. In particular noisy reconstructions of some of the patches has a high 
+chance of being identified as an anomalous sample. Experiments also showed that computing the anomaly 
+representation using latent dimensional space instead of the image space can decrease the impact of this problem. 
+But the performance improvements are not significant and we speculate that main factor to improve this approach 
+is also lies in the quality of the reconstructions.
 
 \endgroup
+ 

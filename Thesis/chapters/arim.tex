@@ -19,7 +19,7 @@ Industry. It constitutes a foundation material for a lot of products including a
 filtration, sensors and manufacturing applications. \cite{carrera2016defect}. Despite the demand and
 continuous research development towards its production, manufacturing nanofibrous materials is still
 challenge for scaled of mass production. Several techniques for producing nanofibers have been
-presented in the literature. \cite{carrera2016defect}. Electrospinning method is the focus of this
+presented in the literature. \cite{carrera2016defect}. Electro spinning method is the focus of this
 anomaly detection task. It produces a structure which consists of filaments woven in with randomized
 geometric pattern. You can see one of the images of the material produced without any anomalies in
 figure \ref{fig:data_norm}.
@@ -58,7 +58,7 @@ layers (see chapter \ref{chap:imp_details} for model details) and GAN models des
 architecture experienced model collapse frequently in the preliminary experiments. Figure
 \ref{fig:data_sample_normal} shows the example patches used for the training phase. Training dataset
 consists of patches which contains no anomalies. Figure \ref{fig:data_sample_anomaly} shows the
-anomalous samples which are used in the inference stage. The Anomalous regions can reside in both
+anomalous samples which are used in the inference stage. Anomalous regions can reside in both
 the topmost layer or can be hidden in deep in the woven structure.
 
 \section{Analysis of Aforementioned Approaches}
@@ -72,7 +72,7 @@ be discussed. While discussing these issues, the proposed model will be introduc
 addressing the modifications and measures to mitigate the affect of these shortcomings to the
 performance.
 
-Proposed methods in chapter \ref{chap:sota} can be further divided into 2 seperate categories with
+Proposed methods in chapter \ref{chap:sota} can be further divided into 2 separate categories with
 respect to their generator structure. 
 \begin{itemize}
 	\item Pure GAN ( AnoGAN (\ref{sec:anogan}), BiGAN (\ref{sec:bigan}) and ALAD (\ref{sec:alad}))
@@ -100,7 +100,7 @@ higher gradient flow to generator early on in the training to help it learn to g
 better \cite{fm}.
 
 In the training phase of an generative adversarial network, loss values of generator does not
-portray a traditional convergence line in plots. Adversarial minimax game prevents the losses of the
+portray a traditional convergence line in plots. Adversarial mini max game prevents the losses of the
 player networks to converge to a certain limit. If the loss is reaching zero in any case, it
 indicates a problem in the learning capacity of one of the networks. If discriminator loss converges
 to zero too quickly, it means that it learned to discriminate between the real images and the ones
@@ -186,7 +186,7 @@ representation of the image must be extracted. From this point on this operation
 "inverse mapping". Generators are not able to provide this kind of inverse mapping so pure gan based
 models followed different approaches to obtain this information.
 
-AnoGAN model implements a backpropagation routine for a predetermined number of steps to approximate
+AnoGAN model implements a back propagation routine for a predetermined number of steps to approximate
 the latent representation of the query image. It randomly initializes a latent representation vector
 and updates it until the loss that is defined as the $\ell_{2}$ norm of the query image and
 generated sample converges. The main disadvantage of this approach is the time constraint. Method
@@ -207,7 +207,7 @@ pairs. Discriminator network therefore is modified to process this new represent
 implementation details in appendix \ref{app:bigan} and \ref{app:alad}). Integrating an encoder
 network solves the time constraint problem because the latent representation is acquired with
 feeding the query image to the encoder network at the inference stage and the computation time is
-negligible compared to AnoGAN's approximantion. Nonetheless addition of a new component to the
+negligible compared to AnoGAN's approximation. Nonetheless addition of a new component to the
 adversarial training brings new stabilization problems with regards to encoder network. Training of
 the generator discriminator, implicitly affects the quality of the representation encoded. ALAD
 implements additional discriminators to control the conditional probability distributions of the
@@ -215,7 +215,7 @@ learned joint distribution from both ends (For noise and for image) to improve t
 performance but experiments did not provide a considerable advance even with ablation study. Figure
 \ref{fig:arim_encoder} presents the training graphs of the models and their obtained
 reconstructions. AnoGAN model does not have a training graph for encoder since it uses a
-backpropagation and it would have a convergence graph for each patch in the dataset. Instead, the
+back propagation and it would have a convergence graph for each patch in the dataset. Instead, the
 training graph of the first iteration of the proposed model's encoder is presented. 
 \begin{figure}[h!]
 	\def\tabularxcolumn#1{m{#1}}
@@ -233,14 +233,14 @@ training graph of the first iteration of the proposed model's encoder is present
 \end{figure}
 
 By itself, these training graphs does not give us a reliable insight about encoder performance.
-Other than its quantative results, encoder networks performance can be quantified with models'
+Other than its quantitative results, encoder networks performance can be quantified with models'
 ability to reconstruct a given image after training. At this point in pipeline, impact of a good
 generator also comes into play. In both models, the training of the encoder network is computed by
 feeding the latent representation obtained from the encoder and feeding it to the generator to
 reconstruct the training data. So performance and proper training of the encoder network also
-depends on the adversarial training of generator. In the minimax game played by BiGAN and ALAD, both
+depends on the adversarial training of generator. In the mini max game played by BiGAN and ALAD, both
 encoder and generator tries to fool the discriminator. Therefore stabilization problem of generator
-inadvertantly affects the encoder convergence which also affects the quality of the reconstructions
+inadvertently affects the encoder convergence which also affects the quality of the reconstructions
 obtained from the model. Some distortions and the information loss is expected in the generator
 based reconstruction. In our dataset, these imperfections cause reconstructed samples to be
 interpreted as anomalous sample though the input is a normal sample. Figure
@@ -282,7 +282,7 @@ V(G,E, D) &= D(G(z)) + D(x)+[m-D(G(z))]^{+} + D(G(E(x))) \\[5pt]
 
 Like AnoGAN and ALAD, proposed model also trains encoder network with generator networks help to
 obtain the reconstruction. However, instead of training all the networks in the adversarial setting,
-proposed model separates the trainig of the generator discriminator pair and the encoder network.
+proposed model separates the training of the generator discriminator pair and the encoder network.
 Training strategy presented in F-AnoGAN framework (see section \ref{sec:fanogan}) proposes an
 initial adversarial training. In the second part of the training the encoder network is trained by
 creating a pipeline with the other network components with fixed weights (inference mode) (See
@@ -325,7 +325,7 @@ Training of the model is divided into two sections. In the first section generat
 trains adversarially to learn the mapping from image space to latent space. While generator learns
 the mapping, discriminator is concurrently learning to reconstruct the training dataset and learns
 to encode the training data on its own. This latent representation will be used later on as an
-auxilary information for anomaly score computation. After the adversarial training is completed,
+auxiliary information for anomaly score computation. After the adversarial training is completed,
 pipeline is created from the encoder generator networks to form a conceptual autoencoder and whole
 network is trained using the reconstruction error based objective function for the encoder network.
 In second stage, generator and discriminator don't learn any additional information about the
@@ -362,9 +362,9 @@ samples as a comparison to reconstructions in figure \ref{fig:arim_reconstruct}.
 
 With previously mentioned architectural improvements, ENCEBGAN performed better than BiGAN and ALAD
 and obtained the same performance as AnoGAN which will discussed in chapter \ref{chap:expres}.
-Seperating the training of encoder and changing the adversarial objective function mechanics
+Separating the training of encoder and changing the adversarial objective function mechanics
 consequently stabilized the convergence of both networks and the reconstruction quality has
-increased compared to the pure gan based models.
+increased compared to the pure GAN based models.
 
 Imperfections in the reconstructions are usually expected in reconstruction based anomaly detection
 methods since the network trained to learn the latent representation is regularized to prevent
@@ -374,19 +374,19 @@ imperfections in the reconstructions may be identified as anomalous regions even
 anomaly free. This issue inadvertently cripples the anomaly detection performance of ENCEBGAN (and
 other pure gan based models). 
 
-Next section will discuss the anomaly score computation methods featured in both pure gan based and
+Next section will discuss the anomaly score computation methods featured in both pure GAN based and
 autoencoder variant models, and explan the addition of a secondary encoder network to improve the
 overall performance of the proposed model.
 
 \subsection{Anomaly Score Computation}
 
 % Why we divided Their difference
-Previously we divided the state of the art gan based anomaly detection methods into two main
-categories. Pure gan based models and autoencoder variants. The main difference between these groups
+Previously we divided the state of the art GAB based anomaly detection methods into two main
+categories. Pure GAN based models and autoencoder variants. The main difference between these groups
 is that decoder (generator equivalent) network of these models is trained only with the latent
 representation of the image supplied from the encoder network. Since they learn to reconstruct using
 the encoded version of the training data, their reconstructions are superior compared to the pure
-gan based methods. Figure \ref{fig:arim_anoscore} shows an example reconstruction from both GANomaly
+GAN based methods. Figure \ref{fig:arim_anoscore} shows an example reconstruction from both GANomaly
 and Skip-GANomaly \ref{sec:ganomaly}. 
 
 \begin{figure}[!ht]	
@@ -410,7 +410,7 @@ Skip-GANomaly to retain more information about the data and help it to accumulat
 the layers during the decoding stage of the reconstruction. One interesting observation is that even
 though the general quality of the Skip-GANomaly model is better than GANomaly on the SEM image
 dataset, ablation study performed in chapter \ref{chap:expres}(see Table \ref{tab:ganomaly_ablation}
-and \ref{tab:sganomaly_ablation}) shows that overall GANomalyprediction performance is superior
+and \ref{tab:sganomaly_ablation}) shows that overall GANomaly prediction performance is superior
 compared to Skip-GANomaly. 
 
 Both anomaly score computation is based on the reconstruction based error, but GANomaly uses a
@@ -510,7 +510,7 @@ based on the $\ell_{2}$ norm of the difference between encodings obtained during
 Encoding capability of the discriminator network is also explored in these category.
 $\mathcal{A}_{L_{D}}(x)$ and $\mathcal{A}_{L_{D_{Z}}}(x)$ scores tests the anomaly score by
 comparing the latent representation obtained by the discriminator network. Finally, combined anomaly
-score for latent represenation is employed to measure the affect of each score to an ensemble
+score for latent representation is employed to measure the affect of each score to an ensemble
 methods. 
  
 In terms of the performance, proposed model performed better than all previously mentioned models

@@ -35,7 +35,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {2.3.3.1}Spectral Normalization}{27}{subsubsection.2.3.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.3.3.2}Conditional Entropy (ALICE Framework)}{28}{subsubsection.2.3.3.2}
+\contentsline {subsubsection}{\numberline {2.3.3.2}Conditional Entropy (ALICE Framework)}{29}{subsubsection.2.3.3.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {2.3.3.3}ALAD Architecture}{30}{subsubsection.2.3.3.3}
 \defcounter {refsection}{0}\relax 

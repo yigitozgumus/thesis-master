@@ -16,7 +16,7 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated field_info (elt_size=4) to 13479 items from 5000.
+Reallocated field_info (elt_size=4) to 13618 items from 5000.
 Database file #1: 2019_7_Ozgumus_Semsi_Yigit-blx.bib
 Database file #2: back_matter/references.bib
 Repeated entry---line 874 of file back_matter/references.bib
@@ -26,45 +26,45 @@ I'm skipping whatever remains of this entry
 Biblatex version: 3.8
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-You've used 61 entries,
+You've used 62 entries,
             6268 wiz_defined-function locations,
-            1597 strings with 22972 characters,
-and the built_in function-call counts, 407949 in all, are:
-= -- 29297
-> -- 7514
-< -- 2143
-+ -- 11070
-- -- 2878
-* -- 30865
-:= -- 42690
+            1602 strings with 23137 characters,
+and the built_in function-call counts, 411458 in all, are:
+= -- 29478
+> -- 7603
+< -- 2167
++ -- 11129
+- -- 2904
+* -- 31095
+:= -- 42978
 add.period$ -- 0
-call.type$ -- 61
-change.case$ -- 1104
+call.type$ -- 62
+change.case$ -- 1113
 chr.to.int$ -- 108
-cite$ -- 120
-duplicate$ -- 44742
-empty$ -- 36513
-format.name$ -- 4835
-if$ -- 82494
+cite$ -- 122
+duplicate$ -- 45158
+empty$ -- 36884
+format.name$ -- 4888
+if$ -- 83252
 int.to.chr$ -- 0
-int.to.str$ -- 155
+int.to.str$ -- 159
 missing$ -- 0
-newline$ -- 2438
-num.names$ -- 3039
-pop$ -- 21389
+newline$ -- 2459
+num.names$ -- 3086
+pop$ -- 21717
 preamble$ -- 1
-purify$ -- 1560
+purify$ -- 1571
 quote$ -- 0
-skip$ -- 11405
+skip$ -- 11560
 stack$ -- 0
-substring$ -- 49413
-swap$ -- 10468
-text.length$ -- 1765
-text.prefix$ -- 61
+substring$ -- 49612
+swap$ -- 10586
+text.length$ -- 1789
+text.prefix$ -- 62
 top$ -- 1
-type$ -- 2062
+type$ -- 2096
 warning$ -- 0
-while$ -- 5380
+while$ -- 5420
 width$ -- 0
-write$ -- 2378
+write$ -- 2398
 (There was 1 error message)
