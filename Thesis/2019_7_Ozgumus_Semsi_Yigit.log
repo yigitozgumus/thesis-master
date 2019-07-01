@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2019.1.28)  30 JUN 2019 14:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2019.1.28)  1 JUL 2019 11:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2548,7 +2548,7 @@ LaTeX Font Info:    Try loading font information for TS1+lmr on input line 38.
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) [4]
 Overfull \hbox (22.57108pt too wide) in paragraph at lines 78--88
-\T1/lmr/m/n/12 ma-te-ri-als [[][]40[][]] may eas-ily de-velop de-fects in the m
+\T1/lmr/m/n/12 ma-te-ri-als [[][]41[][]] may eas-ily de-velop de-fects in the m
 an-u-fac-tur-ing pipeline.Therefore
  []
 
@@ -3747,6 +3747,12 @@ R-10 (Cana-
  []
 
 
+Overfull \hbox (13.4516pt too wide) in paragraph at lines 174--174
+\T1/lmr/m/n/12 Un-su-per-vised Anomaly De-tec-tion with GAN^^Q. In: \T1/lmr/m/i
+t/12 CoRR \T1/lmr/m/n/12 abs/1808.07632
+ []
+
+
 Overfull \hbox (45.82083pt too wide) in paragraph at lines 174--174
 []\T1/lmr/m/n/12 Markos Markou and Sameer Singh. ^^P  Nov-elty De-tec-tion: A R
 e-view&Mdash;Part
@@ -3817,10 +3823,10 @@ Package logreq Info: Writing requests to '2019_7_Ozgumus_Semsi_Yigit.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 39810 strings out of 492649
- 714834 string characters out of 6129622
+ 39813 strings out of 492649
+ 715005 string characters out of 6129622
  1314793 words of memory out of 5000000
- 42391 multiletter control sequences out of 15000+600000
+ 42393 multiletter control sequences out of 15000+600000
  190501 words of font info for 182 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,26n,89p,2023b,2873s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -3867,10 +3873,10 @@ blic/lm/lmsy9.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmv
 tt10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbol
 s/msam10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/sy
 mbols/msbm10.pfb>
-Output written on 2019_7_Ozgumus_Semsi_Yigit.pdf (104 pages, 12016637 bytes).
+Output written on 2019_7_Ozgumus_Semsi_Yigit.pdf (104 pages, 12019770 bytes).
 PDF statistics:
- 1881 PDF objects out of 2073 (max. 8388607)
- 1575 compressed objects within 16 object streams
- 435 named destinations out of 1000 (max. 500000)
+ 1886 PDF objects out of 2073 (max. 8388607)
+ 1580 compressed objects within 16 object streams
+ 436 named destinations out of 1000 (max. 500000)
  734 words of extra memory for PDF output out of 10000 (max. 10000000)
 

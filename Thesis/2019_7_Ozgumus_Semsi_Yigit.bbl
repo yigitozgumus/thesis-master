@@ -1482,6 +1482,65 @@
     \field{year}{2017}
   \endentry
 
+  \entry{DBLP:journals/corr/abs-1808-07632}{article}{}
+    \name{author}{6}{}{%
+      {{hash=LSK}{%
+         family={Lim},
+         familyi={L\bibinitperiod},
+         given={Swee\bibnamedelima Kiat},
+         giveni={S\bibinitperiod\bibinitdelim K\bibinitperiod},
+      }}%
+      {{hash=LY}{%
+         family={Loo},
+         familyi={L\bibinitperiod},
+         given={Yi},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=TN}{%
+         family={Tran},
+         familyi={T\bibinitperiod},
+         given={Ngoc{-}Trung},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=CN}{%
+         family={Cheung},
+         familyi={C\bibinitperiod},
+         given={Ngai{-}Man},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=RG}{%
+         family={Roig},
+         familyi={R\bibinitperiod},
+         given={Gemma},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=EY}{%
+         family={Elovici},
+         familyi={E\bibinitperiod},
+         given={Yuval},
+         giveni={Y\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{LSK+1}
+    \strng{fullhash}{LSKLYTNCNRGEY1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \verb{eprint}
+    \verb 1808.07632
+    \endverb
+    \field{title}{{DOPING:} Generative Data Augmentation for Unsupervised
+  Anomaly Detection with {GAN}}
+    \verb{url}
+    \verb http://arxiv.org/abs/1808.07632
+    \endverb
+    \field{volume}{abs/1808.07632}
+    \field{journaltitle}{CoRR}
+    \field{eprinttype}{arXiv}
+    \field{year}{2018}
+  \endentry
+
   \entry{Markou:2003:NDR:959414.959416}{article}{}
     \name{author}{2}{}{%
       {{hash=MM}{%
