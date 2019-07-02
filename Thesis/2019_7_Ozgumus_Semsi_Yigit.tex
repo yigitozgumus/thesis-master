@@ -30,9 +30,9 @@
 % Algorithm package
 \usepackage{algpseudocode}
 \usepackage[section]{algorithm}
-\algdef{SE}[DOWHILE]{Do}{doWhile}{\algorithmicdo}[1]{\algorithmicwhile\ #1}%
+
 % Alias counters
-\usepackage{aliascnt}
+%\usepackage{aliascnt}
 % Bolding
 \usepackage{bm}
 % Environment package
@@ -96,7 +96,7 @@ anchorcolor = black]{hyperref}
 % Latin modern latin
 \usepackage[variablett]{lmodern}
 % Euro symbol
-\usepackage[gen]{eurosym}
+%\usepackage[gen]{eurosym}
 \usepackage{indentfirst}
 \makeglossaries
 \loadglsentries{back_matter/acronyms}
@@ -109,7 +109,19 @@ anchorcolor = black]{hyperref}
 \setsecnumdepth {paragraph}
 \maxtocdepth {paragraph}
 
-
+\renewcommand{\thefigure}{\thechapter.\arabic{figure}} % set caption label style to 1.A
+\renewcommand{\thetable}{\thechapter.\arabic{table}}
+\renewcommand{\thesubfigure}{\arabic{subfigure}}
+\makeatletter
+\def\counterwithin@x#1#2{%
+	\@ifbothcounters{#1}{#2}%
+	{\@addtoreset{#1}{#2}%
+		\expandafter
+		\gdef\csname the#1\expandafter\endcsname\expandafter
+		{\csname the#2\expandafter\endcsname\expandafter
+			.\expandafter% spot the dot :(
+			\@arabic\csname c@#1\endcsname}}}
+\makeatother
 \begin{document}
 \nonzeroparskip
 %-------------------------------------------------------------------------------
@@ -126,9 +138,12 @@ anchorcolor = black]{hyperref}
 \input{front_matter/acknowledgement.tex}
 %-------------------------------------------------------------------------------
 \cleardoublepage
+\addtocontents{toc}{~\hfill\textbf{Page}\par}
 \tableofcontents
-\clearpage
+\cleardoublepage
+\addtocontents{lof}{~\hfill\textbf{Page}\par}
 \listoffigures
+\addtocontents{lot}{~\hfill\textbf{Page}\par}
 \listoftables
 %-------------------------------------------------------------------------------
 \chapter{Abstract}
@@ -137,6 +152,7 @@ anchorcolor = black]{hyperref}
 \input{chapters/abstract_it.tex}
 \mainmatter
 \pagestyle {ruled}
+\counterwithin{figure}{chapter}
 %-------------------------------------------------------------------------------
 \chapter{Introduction}
 \label{chap:intro}

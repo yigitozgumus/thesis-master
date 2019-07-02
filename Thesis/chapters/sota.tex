@@ -2,70 +2,71 @@
 \begingroup
 
 This chapter is dedicated to the exploration of state of the art approaches in the fields relevant
-to the thesis. The organization of the chapter is the following: Section \ref{sec:ad} will define
-anomaly detection problem and explain different approaches towards its solution.  Section \ref{sec:arch_comp} will give
-necessary background information about generative adversarial networks (GAN) and autoencoder
-networks. First, the principles behind how GANs work will be presented then the Autoencoder Network
-architecture will be explained. This section is particularly significant to relate how different
-architectures that use these networks function. In section \ref{sec:gan_based_sota}, variety of architectures that is
-developed for anomaly detection will be studied as state of the art. How they are implemented and
-how they work in practise will be described.
+to the thesis. The organization of the chapter is the following: Section \ref{sec:ad} will formulate
+anomaly detection problem and illustrate mainstream approaches towards its solution.  Section \ref{sec:arch_comp} will give
+necessary background about generative adversarial networks (GAN) and autoencoder
+networks. First, the principles behind how GANs work will be presented then the Autoencoder Networks
+ will be explained. This section is particularly significant to understand how different
+architectures that use these networks actually work. In Section \ref{sec:gan_based_sota}, variety of 
+architectures that has been developed for anomaly detection will be studied as state of the art. 
+How they are implemented and their purpose will be described.
 
 \section{Anomaly Detection}
 \label{sec:ad}
-Anomaly detection can be defined as the task of classifying test data that differs in some respect 
-from the data for the model that is availabla during training. \cite{Pimentel:2014:RRN:2588908.2589196} 
-This definition correctly describes the task on the abstract level but does not clarify what anomaly 
+Anomaly detection can be defined as the task of identifying test data that differs in some respect 
+from the data for the model that is available during training \cite{Pimentel:2014:RRN:2588908.2589196}.
+This definition correctly describes the task on the abstract level but does not clarify what an anomaly 
 actually is. Depending on the the application domain, anomalies can be referred to as outliers, 
 novelties, discordant observations, exceptions, aberrations, surprises, peculiarities and
-contaminents.\cite{Chandola:2009:ADS:1541880.1541882} Sometimes these can be used interchangeably in
-the context. These distinctions in the definition are primarily relies not only on the features of
+contaminants \cite{Chandola:2009:ADS:1541880.1541882}. Sometimes these terms can be used interchangeably in
+the context. These distinctions in the definition primarily rely not only on the features of
 the data such as its dimensional complexity, its continuity and format, but also on what is
-considered an anomaly for that specific domain. This makes it harder to conceptualize the problem of
-anomaly detection with a general definition and a solution approach that can encompass all different
+considered an anomaly for that specific domain. This makes it hard to conceptualize the problem of
+anomaly detection with a general definition and a solution that can encompass all different
 domains.
 
 In the rest of this section, I will explain different use cases for anomaly detection to show its
-impact on a broad spectrum of problems then the primary approach types to solve anomaly detection
+impact on a broad spectrum of problems. Then the primary approach types to solve anomaly detection
 problem will be introduced.
 
-The categorization threshold to define different application domains is constantly changing 
+The categorization taxonomy to define different application domains is constantly changing 
 parallel to developments in the literature but the application areas of 
-anomaly detection can be categorized down to these five general fields.
-\cite{Pimentel:2014:RRN:2588908.2589196}
+anomaly detection can be categorized down to these five general fields
+\cite{Pimentel:2014:RRN:2588908.2589196}.
 These are:
 \begin{itemize}
     \item IT Sector 
     \item Healthcare informatics, medical diagnostics and monitoring
     \item Industrial Monitoring/ maintanence and damage detection
     \item Image processing/ Video Survailance
+    \item Survailance
     \item Sensor Networks
 \end{itemize}
 
 \textbf{ IT Sector}
 
 Anomaly detection methods have a huge impact on the IT security systems, in which the objectives
-include network intrusion detection and fraud detection. \cite{Pimentel:2014:RRN:2588908.2589196}
-With rising use of computerized systems and the inclusion of the internet based services to
+include network intrusion detection and fraud detection \cite{Pimentel:2014:RRN:2588908.2589196}.
+With rising use of computerized systems and the incorporation of the internet based services to
 our daily lives, maintainability and the availability of these systems became much more important.
 For systems like these, anomaly is considered as a priority because it indicates significant but
-rare events and can prompt to critical actions to be taken in a wide range of application domains.
+rare events and can prompt to critical actions to be taken in a domains such as finance or cyber security
 \cite{AHMED201619}. For example a malicious process in a server may show increased use of resource
 from time to time that may be spotted as a type of anomaly in the system resource use patterns or
-the unusual amount of traffic on the network may indicate an intruder attack. \cite{FERNANDES20161}
-\cite{JABEZ2015338} Another aspect of the increased use of internet is its impact on the e-commerce
+the unusual amount of traffic on the network may indicate an intruder attack \cite{FERNANDES20161}
+\cite{JABEZ2015338}. Another aspect of the increased use of internet is its impact on the e-commerce
 field and dramatically growing online payment systems. This also includes a migration to internet
 banking in favor of technological convenience. As a result, insurance and credit card frauds,
 scams towards phone and mobile data usage, and phishing attacks targeting financial transactions
-become more and more severe. \cite{finance_anomaly} In this context, behavior of the consumer
+become more and more severe \cite{finance_anomaly}. In this context, behavior of the consumer
 becomes the data. Transaction history, time spent between consecutive transactions and the
 geographic data can be used to construct a model to detect anomalies in the purchase patterns.
 
 \textbf{ Healthcare}
 
 Healthcare and medical diagnostics is another domain for anomaly detection. Detecting anomalies in
-the progression of the disease symptoms is a crucial factor for treatment monitoring.
-\cite{Schlegl2017UnsupervisedAD} To aid diagnostics, interpretation of the patient data is also an
+the progression of the disease symptoms is a crucial factor for treatment monitoring
+\cite{Schlegl2017UnsupervisedAD}. To aid diagnostics, interpretation of the patient data is also an
 important task for anomaly detection. Ability to differentiate between the instrumentation or
 recording errors and the actual clinically relevant change that may indicate a symptom should also
 be present in these anomaly detection systems. \cite{Pimentel:2014:RRN:2588908.2589196}. Patient
@@ -76,9 +77,9 @@ respiratory rate \cite{inproceedings_medical}\cite{Markou:2003:NDR:959414.959416
 \textbf{ Industrial Monitoring}
 
 Novelty detection became a huge part of the industrial automation systems from the quality control
-of the manufacturing progress to the performance maintenance of the equipment. Materials that have
+of the manufacturing progress to the performance maintenance of the equipment. Products that have
 a complicated and delicate manufacturing process like CPU wafers \cite{Kim:2012:MLN:2076800.2076903} and nanofibrous
-materials \cite{Napoletano2018anomaly} may easily develop defects in the manufacturing pipeline.Therefore using
+materials \cite{Napoletano2018anomaly} may easily develop defects in the manufacturing pipeline. Using
 anomaly detection is a viable option to reduce the wasted material and optimize the cost of
 producing the target product. Same principle also applies to the equipment used in these pipelines.
 Equipment and assets have the risk of deteriorating over time due to the usage
@@ -86,7 +87,7 @@ and wear \cite{Pimentel:2014:RRN:2588908.2589196}. For example heavy extraction 
 petroleum industry like turbo machines \cite{s150202774} needs constant supervision for damage
 prevention. 
 
-\textbf{ Image Processing}
+\textbf{ Image Processing/ Video Surveillance}
 
 Image processsing methods has been used with anomaly detection methods extensively to detect novelty
 subjects or anomalies in the image or in a video stream. Detection in video data stream data is an
@@ -98,11 +99,11 @@ security systems and search and rescue. \cite{image_anomaly}
 With the improvements of smart devices' involvement in our daily lives and the recent but promising developments
 in the field of internet of things, the definition of acquiring and processing data is evolved.
 Various types of sensors, especially wireless, are heavily used to collect huge amount of data to
-feed various systems such as surveillance, environmental monitoring, and disaster management.
-\cite{UlIslam2018} These sensors usually used to create a network distributed over a large area with
-one or depending on the scale multiple sink nodes responsible for gathering information from the
-other sensors. These distributed systems are mainly used to collect and compute the gathered sensory data and predict 
-target information. However the accuracy of these computations or predictions depends
+feed various systems such as surveillance, environmental monitoring, and disaster management
+\cite{UlIslam2018}. Anomaly detection methods are important for these systems because the performance and 
+maintenance of the these system requires constant monitoring of the acquired data. These distributed 
+systems are mainly used to collect and compute the gathered sensory data and predict target information. 
+However the accuracy of these computations or predictions depends
 primarily on the quality of the sensor measurements and with this scale the instrumentation error
 is unavoidable. That's why anomaly detection tasks usually deployed on these systems to observe
 sensory faults and also prevent errors caused by malicious attacks. \cite{Pimentel:2014:RRN:2588908.2589196} \cite{iot_anomaly}
@@ -111,9 +112,9 @@ sensory faults and also prevent errors caused by malicious attacks. \cite{Piment
 Variety of approaches that belong to different sub domains of the machine learning, statistics ,
 bayesian and information theory are used to solve anomaly detection problem for these aforementioned
 fields. All these different approaches in general tries to build a model or a representation of the
-training data which contains no anomalous samples (or very few) and assigns them an anomaly score or
-a label depending on the problem. At the inference stage, deviations from the constructed normality
-definition are detected using a predetermined anomaly threshold. These different approaches can be
+data that is provided which contains no anomalous samples (or very few) and assigns 
+them an anomaly score or a label depending on the problem. At the inference stage, deviations from the constructed normality
+definition are detected using a predetermined anomaly threshold. These different methods can be
 categorized into 5 main titles. These are:
 
 \begin{itemize}
@@ -124,30 +125,30 @@ categorized into 5 main titles. These are:
   \item Reconstruction Based Anomaly Detection Methods  
 \end{itemize}
 
-Probabilistic approaches aim to estimate the generative probability density function of the data
+\textbf{Probabilistic methods} aim to estimate the generative probability density function of the data
 with the assumption that the input data is generated from an unknown probability distribution $D$,
-and learning this distribution gives us an idea about the representation of normality for the input
-data, training set. Anomaly (or novelty in some approaches) threshold then can be determined which has
-certain probabilistic interpretation and can be used to detect the anomaly on the inference stage.
-\cite{Pimentel:2014:RRN:2588908.2589196} Distance based methods are another type of modeling
-technique used to model the training data with a probability density function equivalent process.
+and learning this distribution provides us a mathematical representation of normality for the input
+data, training set. Anomaly (or novelty in some approaches) score then can be determined which has
+certain probabilistic interpretation and can be used to detect the anomaly on the inference stage
+\cite{Pimentel:2014:RRN:2588908.2589196}. \textbf{Distance based methods} are another type of 
+anomaly detection technique used to model the training data.
 Including the K-Nearest neighbour based and clustering based methods, distance based methods rely on
 distance metrics between the data points to create a representation for normality. For example
 considering the K-NN approach, data points in the training dataset are identified to have close
-neighbour points using the distance metrics while if a sample has greater distance to the
-nearest normal point with a value above the determined anomaly threshold, that sample is identified
-as an anomaly. Domain based methods works by creating a boundry based on the structure of the
-training dataset. \cite{Pimentel:2014:RRN:2588908.2589196} These methods are usually insensitive to
+neighbour points using the distance metrics while a sample that has greater distance to the
+nearest normal point is identified as an anomaly. \textbf{Domain based methods} creates a 
+boundry based on the structure of the training dataset \cite{Pimentel:2014:RRN:2588908.2589196}.
+These methods are usually insensitive to
 different sampling or the density properties because instead of learning the density of
 the data, the learn the boundary information to seperate the target class (anomalies) from the
-normal data. Support Vector Machines (SVM) are the popular example for this approach. Information
-theoretic anomaly detection methods computes the total information content that resides in the
+normal data. Support Vector Machines (SVM) are the popular example for this approach. \textbf{Information
+theoretic anomaly detection methods} computes the total information content that resides in the
 training dataset. The main assumption is that anomalous samples present in the data significantly
 modifies the information content of the assumed normal dataset. Metrics for this approach are
 calculated using the entirety of the dataset and the subset that triggers the biggest discrapancy is
 identified as the anomaly. 
 
-Finally reconstruction based approaches which also is the focus of this thesis, model the underlying
+Reconstruction based approaches which also is the focus of this thesis, model the underlying
 representation of the data and reconstructs it. Using the original input and the reconstructed
 output, these models define a reconstruction error tailored to the nature of the problem and the
 type of data, and measures this error with respect to certain anomaly threshold. Since the modeled
@@ -233,7 +234,7 @@ deep learning and generative modelling in the recent years. It is a framework th
 seperate modules or network. One of them is labeled as generator and the other is the discriminator. You can
 observe the example architecture in the figure \ref{fig:gan_network}. 
 
-\begin{figure}[h!]
+\begin{figure}[h]
 	\centering
 	\includegraphics[width=.9\textwidth]{gan}
     \caption{GAN architecture overview}
