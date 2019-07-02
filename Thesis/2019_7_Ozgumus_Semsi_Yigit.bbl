@@ -1140,6 +1140,38 @@
     \field{year}{2015}
   \endentry
 
+  \entry{gdjabra}{article}{}
+    \name{author}{2}{}{%
+      {{hash=JT}{%
+         family={Jebara},
+         familyi={J\bibinitperiod},
+         given={Tony},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=MM}{%
+         family={Meila},
+         familyi={M\bibinitperiod},
+         given={Marina},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{JTMM1}
+    \strng{fullhash}{JTMM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{J}
+    \field{sortinithash}{J}
+    \verb{doi}
+    \verb 10.1007/BF02987011
+    \endverb
+    \field{pages}{67\bibrangedash 69}
+    \field{title}{Machine learning: Discriminative and generative}
+    \field{volume}{28}
+    \field{journaltitle}{The Mathematical Intelligencer}
+    \field{month}{03}
+    \field{year}{2006}
+  \endentry
+
   \entry{Kim:2012:MLN:2076800.2076903}{article}{}
     \name{author}{5}{}{%
       {{hash=KD}{%
@@ -1914,6 +1946,26 @@
     \field{year}{2016}
   \endentry
 
+  \entry{Reynolds2009GaussianMM}{inproceedings}{}
+    \name{author}{1}{}{%
+      {{hash=RDA}{%
+         family={Reynolds},
+         familyi={R\bibinitperiod},
+         given={Douglas\bibnamedelima A.},
+         giveni={D\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{RDA1}
+    \strng{fullhash}{RDA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{booktitle}{Encyclopedia of Biometrics}
+    \field{title}{Gaussian Mixture Models}
+    \field{year}{2009}
+  \endentry
+
   \entry{ringner2009law}{article}{}
     \name{author}{1}{}{%
       {{hash=RB}{%
@@ -2061,6 +2113,32 @@
     \endverb
     \field{year}{2009}
     \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{Salakhutdinov2009DeepBM}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=SRR}{%
+         family={Salakhutdinov},
+         familyi={S\bibinitperiod},
+         given={Ruslan\bibnamedelima R.},
+         giveni={R\bibinitperiod\bibinitdelim R\bibinitperiod},
+      }}%
+      {{hash=HGE}{%
+         family={Hinton},
+         familyi={H\bibinitperiod},
+         given={Geoffrey\bibnamedelima E.},
+         giveni={G\bibinitperiod\bibinitdelim E\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SRRHGE1}
+    \strng{fullhash}{SRRHGE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{booktitle}{AISTATS}
+    \field{title}{Deep Boltzmann Machines}
+    \field{year}{2009}
   \endentry
 
   \entry{fm}{article}{}

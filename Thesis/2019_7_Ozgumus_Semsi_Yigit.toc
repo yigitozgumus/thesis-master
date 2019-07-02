@@ -27,7 +27,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.2.2}Autoencoder Networks}{14}{subsection.2.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.3}GAN Based Anomaly Detection Methods}{17}{section.2.3}
+\contentsline {section}{\numberline {2.3}GAN Based Anomaly Detection Methods}{18}{section.2.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.3.1}AnoGAN}{18}{subsection.2.3.1}
 \defcounter {refsection}{0}\relax 
@@ -35,7 +35,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.3.3}ALAD}{27}{subsection.2.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.3.3.1}Spectral Normalization}{27}{subsubsection.2.3.3.1}
+\contentsline {subsubsection}{\numberline {2.3.3.1}Spectral Normalization}{28}{subsubsection.2.3.3.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {2.3.3.2}Conditional Entropy (ALICE Framework)}{29}{subsubsection.2.3.3.2}
 \defcounter {refsection}{0}\relax 

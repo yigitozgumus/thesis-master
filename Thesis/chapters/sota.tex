@@ -92,7 +92,7 @@ prevention.
 Image processsing methods has been used with anomaly detection methods extensively to detect novelty
 subjects or anomalies in the image or in a video stream. Detection in video data stream data is an
 important task for the surveilance systems that is used with the purpose of traffic control,
-security systems and search and rescue. \cite{image_anomaly} 
+security systems and search and rescue \cite{image_anomaly}.
 
 \textbf{ Sensor Networks}
 
@@ -106,7 +106,7 @@ systems are mainly used to collect and compute the gathered sensory data and pre
 However the accuracy of these computations or predictions depends
 primarily on the quality of the sensor measurements and with this scale the instrumentation error
 is unavoidable. That's why anomaly detection tasks usually deployed on these systems to observe
-sensory faults and also prevent errors caused by malicious attacks. \cite{Pimentel:2014:RRN:2588908.2589196} \cite{iot_anomaly}
+sensory faults and also prevent errors caused by malicious attacks \cite{Pimentel:2014:RRN:2588908.2589196} \cite{iot_anomaly}.
 
 
 Variety of approaches that belong to different sub domains of the machine learning, statistics ,
@@ -159,80 +159,80 @@ poorly hence giving a greater reconstruction error.
 \subsection{Related Works}
 \label{sec:relworks}
 
-In this subsection, previous works and state of the art related to anomaly detection in images and proceed with
-particular case of SEM images (see section \ref{sec:sem}) will be listed. Proposed methods for anomaly detection for images can be 
-grouped in reference-based and reference-free ones \cite{Chandola:2009:ADS:1541880.1541882}. Reference-based methods 
-compares the input image with a template image which is anomaly-free by definition and result of this 
-comparison decides in run-time whether input includes anomalous component or not \cite{zontak2010defect}.
+In this subsection, previous works and state of the art related to anomaly detection in images 
+and proceed with particular case of SEM images (see section \ref{sec:sem}) are presented. Proposed 
+methods for anomaly detection for images can be grouped in reference-based and reference-free ones 
+\cite{Chandola:2009:ADS:1541880.1541882}. Reference-based approaches compares the input image with a 
+template image which is anomaly-free by definition and result of this comparison decides in run-time 
+whether input includes anomalous component or not \cite{zontak2010defect}.
 However, they are not feasible for considered SEM images where filament structures follow
-randomized rather than geometric pattern \cite{carrera2016defect}. 
-
-On the other hand, reference-free methods are more applicable because they can detect anomalies by 
-using features that can consistently create varying responses for normal and anomaly regions
-\cite{carrera2016defect}. This concept is also well-known as novelty detection \cite{Pimentel:2014:RRN:2588908.2589196}. 
+randomized rather than geometric pattern \cite{carrera2016defect}. Considering this distinction, our proposed model 
+is a member of reference-free approach which learns to model the data with an unsupervised setting.
 
 This problem of particular dataset of SEM images previously studied in \cite{carrera2016defect},
 \cite{carrera-2016-scale} and \cite{boracchi2014novelty} and these methods are based on learning a 
 sparse dictionary that represents the normal regions and in run-time, if the input does not conform 
-with the learned dictionary, it is detected as anomaly. Another approach that introduces convolutional 
-neural networks is established by Napoletano et al. \cite{Napoletano2018anomaly}. To extract feature 
-for "normality" concept, they exploit pretrained network called ResNet  which consists of residual networks 
-and trained by large number of images \cite{he2016deep}. After feature extraction, for test phase, they 
-create a dictionary by using K-means clustering to have the representation of normal regions.
+with the learned dictionary, it is detected as anomalous. Another approach that introduces convolutional 
+neural networks to anomaly detection task in SEM images is established by Napoletano et al. \cite{Napoletano2018anomaly}. 
+To extract feature for "normality" concept, they exploit pretrained network called ResNet \cite{he2016deep} 
+which consists of residual networks and trained by large number of images. After feature extraction, 
+for test phase, they create a dictionary by using K-means clustering from normal subregions in the training data 
+and use this to compare with test samples to determine the degree of abnormality \cite{Napoletano2018anomaly}.
 
-Another powerful model for novelty detection problems is autoencoders (see section \ref{sec:ae}). Autoencoders are quite useful 
+Another powerful model for novelty detection is autoencoders (see Section \ref{sec:ae}). Autoencoders are quite useful 
 tools to learn the dynamics of a distribution defined over images and to generate examples that corresponds 
-to a sample on learned distribution. Therefore, they are easily deployed for the motivations of novelty 
-detection as done in \cite{an2015variational}, \cite{leveau2017adversarial} and
+to a sample on learned distribution. Therefore, they are easily deployed for novelty 
+detection as in \cite{an2015variational}, \cite{leveau2017adversarial} and
 \cite{Pidhorskyi:2018:GPN:3327757.3327787}. Particularly, in Sabokrou et al.\cite{sabokrou2018adversarially},
 leverages two staged network that is composed by auto-encoders and convolutional neural networks is explored for
 the novelty detection. 
 
-In the later sections, state of the art generative adversarial network based frameworks  will be 
-introduced. How training objective is formed and the criterion for anomaly score computation will 
-be explained in each framework.
+Next section will introduce generative adversarial networks and autoencoder networks to give background for the 
+GAN based anomaly detection frameworks introduced in Section \ref{sec:gan_based_sota}.In the GAN section, Underlying mechanics of 
+adversarial training and how generative adversarial networks learn to generate given data will be explained.Regarding 
+autoencoder networks, main principle behind their implementation and how they are trained to obtain a latent representation of a given 
+data will be described.
 
 \section{Architectural Components}
 \label{sec:arch_comp}
-This section introduces the two main network types used in the state of the art anomaly detection
-frameworks in the following sections. Generative adversarial networks section will describe how the
-framework is formed, the intuition behind its adversarial training scheme. Autoencoder networks
-section will give an introductory information to the subject and present different kinds of
+This section introduces the two main network types used in  anomaly detection
+frameworks.Section \ref{sec:gan} will describe how generative adversarial network
+framework is formed and the intuition behind its adversarial training scheme. Section \ref{sec:ae} will give an 
+introductory information to autoencoder networks and present different kinds of
 approaches that can be integrated into both the construction of the network and its training
 methodology. 
 
 \subsection{Generative Adversarial Networks}
 \label{sec:gan}
 
-One of the main objectives of the deep learning is to be able to create complex and high dimensional
-models that can capture the relations amongst the fundamental types of data that we perceive and be
-exposed to in our daily lives. This data can vary, it can be a visual information like an image,
-symbols in natural language or audio waveforms containing speech. Then we use these models to make
+One of the main objectives of the deep learning is to create complex and high dimensional
+models that can capture the relations amongst the fundamental types of data that we work with. 
+This data may differ, it can be a visual information like an image,
+symbols in natural language or audio waveforms containing speech. We then use these models to make
 machines make sense of the world we live in and exhibit what we call an intelligence
 \cite{Bengio:2009:LDA:1658423.1658424}.
 
-
-In the terms of statistical classification, also in machine learning ( that consequentially includes
-deep learning) the main two approaches are called discriminative and generative modelling.
-Discriminative models maps the rich, complex sensory data to a class label, target so to speak to
+In the terms of statistical classification, also in machine learning, two main approaches to build a 
+classifier are called discriminative and generative modelling. They differ in the degree of statistical 
+modelling\cite{gdjabra}. Discriminative models maps the rich, complex sensory data to a class label to
 perform the desired task. They try to learn the conditional probability distribution of the input
 data using the features of the data. Success behind this approach is the result of the
 improvements in the training, learning and generalization of these models. Backpropagation
 \cite{Widrow2008AppendixGT}, dropout \cite{Srivastava2014DropoutAS}, and rectified linear
 units\cite{Glorot2011DeepSR} are some of the example concepts that contribute to this success.
 
-Generative models in that regard did not show a considerable promise as opposed to discriminative
-models mainly because of the type of problem they try to solve and computational difficulties
-regards to that solution. The generative models try to estimate the joint probability distribution
-of the high dimensional sensory input data to be able to generate data similar to input and its
-label with some variations which can be thought as imaginative. The main difficulty resides in
-the probabilistic computations that are hard to control in the maximum likelihood estimation.
-\cite{Goodfellow:2014:GAN:2969033.2969125} \cite{pmlr-v5-salakhutdinov09a}
+Generative models try to estimate the joint probability distribution of the high dimensional sensory 
+input data to be able to generate data similar to input and its label with some variations which can be 
+thought as imaginative. Models such as Boltzmann machines \cite{Salakhutdinov2009DeepBM} and Gaussian Mixture Models 
+\cite{Reynolds2009GaussianMM} did not show a considerable promise as opposed to discriminative models mainly 
+because of the type of problem they try to solve and computational difficulties regards to that solution. 
+It is observed that main difficulty was the probabilistic computations that are hard to control in the maximum 
+likelihood estimation \cite{Goodfellow:2014:GAN:2969033.2969125,pmlr-v5-salakhutdinov09a}.
 
-Generative Adversarial Networks (GAN) are considered as one of the most significant breakthroughs in
-deep learning and generative modelling in the recent years. It is a framework that consists of two
-seperate modules or network. One of them is labeled as generator and the other is the discriminator. You can
-observe the example architecture in the figure \ref{fig:gan_network}. 
+Generative Adversarial Networks (GAN)\cite{Goodfellow:2014:GAN:2969033.2969125} are considered as one of 
+the most significant breakthroughs in deep learning and generative modelling in the recent years. Framework 
+consists of a generator and discriminator network. You can observe the example architecture in the figure 
+\ref{fig:gan_network}. 
 
 \begin{figure}[h]
 	\centering
@@ -247,11 +247,13 @@ be consistent when explaining the theorem and also the central focus of the thes
 data. 
 
 The power of this framework comes from the adversarial nature of the training process. Simply put,
-the goal of generator network is to create images similar to the input data by capturing the
-data distribution using a probabilistic model. On the other hand discriminator tries to detect fake
-(generated) images that is created by generator from the real input images. We can represent this
-intuition with the following two player minimax game with the value function $V(G,D)$ in equation \ref{eqn:gan_vgd}.
-\cite{Goodfellow:2014:GAN:2969033.2969125}
+the goal of generator network($G$) is to create images similar to the input data by capturing the
+data distribution using a probabilistic model. On the other hand discriminator ($D$) tries to detect fake
+(generated) images that is created by generator from the real input images. We can represent this intuition 
+with the following two player minimax game with the value function $V(G,D)$ in Equation \ref{eqn:gan_vgd}. 
+Here $P_{\text{data}}$ represents the probability distribution of the data that we have no information about. 
+$p_z(z)$ is the random noise that generator accepts to generate fake data 
+\cite{Goodfellow:2014:GAN:2969033.2969125}.
 \begin{align}
     p_{\text{data}} (x) & : x \in \Omega_{X} \quad (\text{Distribution of the data})\\[5pt]
     p_z (z) & : z \in \Omega_{Z} \quad (\text{Distribution of the noise}) \\[5pt]
@@ -259,10 +261,10 @@ intuition with the following two player minimax game with the value function $V(
     V(G, D) &= \mathbb{E}_{\boldsymbol{x} \sim p_{\text { data }}(\boldsymbol{x})}[\log D(\boldsymbol{x})]+\mathbb{E}_{\boldsymbol{z} \sim p_{\boldsymbol{z}}(\boldsymbol{z})}[\log (1-D(G(\boldsymbol{z})))]
 \end{align}
 
-The training objective criterion for the discriminator is to maximize the expected log-likelihood of
-classifying the input data as real. $p_{\text{data}}$ represents the distribution of the input.
+The training objective for the discriminator is to maximize the expected log-likelihood of
+classifying the input data as real.
 Since generated data should be classified as fake by the discriminator, the output of the second
-term is flipped. The Generator's purpose is to "fool the discriminator". Hence its objective criterion
+term is flipped. The Generator's purpose is to "fool the discriminator". Hence its objective
 is to minimize the expected log likelihood of discriminator classifying generated image sample as
 fake. We can interpret this equation as two seperate objective functions with different training
 criterions :
@@ -303,7 +305,9 @@ So the minimax game equation can be expressed like this:
 For generator to sample an image good enough to fool the discriminator, framework needs to learn the
 implicitly created sample distribution $p_g$ by the generator $G$. Framework defines a prior noise
 distribution $z \sim p_z$, isotropic Gaussian distribution with zero mean and unit variance to learn
-the distribution $p_g$ (Different distributions are also considered). Next we use the LOTUS theorem.
+the distribution $p_g$ (Different distributions are also considered). Conceptually $p_z$ represents the 
+latent features of the data artificially created. While training GAN, semantic meaning of this noise is not controlled.
+Next we use the LOTUS theorem.
 
 \begin{theorem}
 Law of the unconscious statistician (LOTUS) theorem is used to compute the expected value of a 
