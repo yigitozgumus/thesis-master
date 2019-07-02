@@ -33,66 +33,66 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.3.2}BiGAN and ALI}{20}{subsection.2.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3.3}ALAD}{27}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.3}ALAD}{28}{subsection.2.3.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {2.3.3.1}Spectral Normalization}{28}{subsubsection.2.3.3.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {2.3.3.2}Conditional Entropy (ALICE Framework)}{29}{subsubsection.2.3.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.3.3.3}ALAD Architecture}{30}{subsubsection.2.3.3.3}
+\contentsline {subsubsection}{\numberline {2.3.3.3}ALAD Architecture}{31}{subsubsection.2.3.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3.4}GANomaly \& Skip-GANomaly}{33}{subsection.2.3.4}
+\contentsline {subsection}{\numberline {2.3.4}GANomaly \& Skip-GANomaly}{34}{subsection.2.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {3}Latest Developments}{37}{chapter.3}
+\contentsline {chapter}{\chapternumberline {3}Latest Developments}{39}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}F-AnoGAN Framework}{37}{section.3.1}
+\contentsline {section}{\numberline {3.1}F-AnoGAN Framework}{39}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Energy Based Generative Adversarial Networks}{41}{section.3.2}
+\contentsline {section}{\numberline {3.2}Energy Based Generative Adversarial Networks}{43}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {4}Architectural Improvements}{45}{chapter.4}
+\contentsline {chapter}{\chapternumberline {4}Architectural Improvements}{47}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}SEM Image Dataset}{45}{section.4.1}
+\contentsline {section}{\numberline {4.1}SEM Image Dataset}{47}{section.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Analysis of Aforementioned Approaches}{47}{section.4.2}
+\contentsline {section}{\numberline {4.2}Analysis of Aforementioned Approaches}{49}{section.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.1}Stabilization of Adversarial Training}{47}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.1}Stabilization of Adversarial Training}{49}{subsection.4.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.2}Convergence of Encoder Training}{50}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.2}Convergence of Encoder Training}{52}{subsection.4.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}Encoded Energy Based Generative Adversarial Network}{53}{section.4.3}
+\contentsline {section}{\numberline {4.3}Encoded Energy Based Generative Adversarial Network}{55}{section.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.1}Anomaly Score Computation}{56}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.1}Anomaly Score Computation}{58}{subsection.4.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.4}Sequentially Encoded Energy Based Generative Adversarial Network}{57}{section.4.4}
+\contentsline {section}{\numberline {4.4}Sequentially Encoded Energy Based Generative Adversarial Network}{59}{section.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {5}Experimental Results }{61}{chapter.5}
+\contentsline {chapter}{\chapternumberline {5}Experimental Results }{63}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}Experiment Settings}{61}{section.5.1}
+\contentsline {section}{\numberline {5.1}Experiment Settings}{63}{section.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.2}Performance Metrics}{62}{section.5.2}
+\contentsline {section}{\numberline {5.2}Performance Metrics}{64}{section.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.3}State of the Art GAN Based Model Experiments}{64}{section.5.3}
+\contentsline {section}{\numberline {5.3}State of the Art GAN Based Model Experiments}{66}{section.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.4}Proposed Model Analysis}{72}{section.5.4}
+\contentsline {section}{\numberline {5.4}Proposed Model Analysis}{74}{section.5.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.5}Discussion of Experiment Results}{74}{section.5.5}
+\contentsline {section}{\numberline {5.5}Discussion of Experiment Results}{76}{section.5.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {6}Conclusion and Future Work}{77}{chapter.6}
+\contentsline {chapter}{\chapternumberline {6}Conclusion and Future Work}{79}{chapter.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {appendix}{\chapternumberline {A}Model Implementation Details}{79}{appendix.A}
+\contentsline {appendix}{\chapternumberline {A}Model Implementation Details}{81}{appendix.A}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.1}AnoGAN Implementation}{79}{section.A.1}
+\contentsline {section}{\numberline {A.1}AnoGAN Implementation}{81}{section.A.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.2}BiGAN Implementation}{80}{section.A.2}
+\contentsline {section}{\numberline {A.2}BiGAN Implementation}{82}{section.A.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.3}ALAD Implementation}{80}{section.A.3}
+\contentsline {section}{\numberline {A.3}ALAD Implementation}{82}{section.A.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.4}GANomaly Implementation}{82}{section.A.4}
+\contentsline {section}{\numberline {A.4}GANomaly Implementation}{84}{section.A.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.5}Skip-GANomaly Implementation}{83}{section.A.5}
+\contentsline {section}{\numberline {A.5}Skip-GANomaly Implementation}{85}{section.A.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.6}ENCEBGAN Implementation}{83}{section.A.6}
+\contentsline {section}{\numberline {A.6}ENCEBGAN Implementation}{85}{section.A.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.7}SENCEBGAN Implementation}{84}{section.A.7}
+\contentsline {section}{\numberline {A.7}SENCEBGAN Implementation}{86}{section.A.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{87}{section*.50}
+\contentsline {chapter}{Bibliography}{89}{section*.50}
