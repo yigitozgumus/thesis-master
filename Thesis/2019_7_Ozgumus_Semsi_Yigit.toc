@@ -41,7 +41,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {2.3.3.3}ALAD Architecture}{31}{subsubsection.2.3.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3.4}GANomaly \& Skip-GANomaly}{34}{subsection.2.3.4}
+\contentsline {subsection}{\numberline {2.3.4}GANomaly \& Skip-GANomaly}{33}{subsection.2.3.4}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {3}Latest Developments}{39}{chapter.3}
 \defcounter {refsection}{0}\relax 
