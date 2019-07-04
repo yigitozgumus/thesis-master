@@ -10,45 +10,45 @@ This chapter presents the developments in the field of anomaly detection and gen
 networks. Although the models introduced in Chapter \ref{chap:sota} deliver certain level of
 performance, potential improvements are still a possibility. These improvements are related to both
 adversarial training of the generator and discriminator networks and applying different training strategy to 
-stabilize the training of encoder network present in the overall framework. Section \ref{sec:fanogan} and 
-\ref{sec:ebgan} presents some of these improvements that are later adopted by our framework. Their contribution
+stabilize the training of encoder network presented in the overall model. Section \ref{sec:fanogan} and 
+\ref{sec:ebgan} presents some of these improvements that are later adopted by our model. Their contribution
 to solve the disadvantages we observed in the previous model will be discussed. 
 
-\section{F-AnoGAN Framework}
+\section{F-AnoGAN }
 \label{sec:fanogan}
 
-AnoGAN \cite{Schlegl2017UnsupervisedAD} is considered as the first framework that uses generative
-adversarial networks for an anomaly detection task. The main problems with this framework, are the
-stabilization issues of the adversarial training, and inference stage of the framework that
+AnoGAN \cite{Schlegl2017UnsupervisedAD} is considered as the first moel that uses generative
+adversarial networks for an anomaly detection task. The main problems with this model, are the
+stabilization issues of the adversarial training, and inference stage of the model that
 maps from the latent representation to the input data distribution
 as the inverse mapping of generator network. Model used back propagation to approximate the latent
 representation for every query image to compute the anomaly score which resulted a very poor
-performance in terms of the computation time. This was the main disadvantage of the framework
+performance in terms of the computation time. This was the main disadvantage of the model
 because it is very challenging to integrate into a real life application with an implausible
-inference time. F-AnoGAN (Fast AnoGAN ) framework \cite{pub.1111824956} aims to eliminate the inference computation time 
+inference time. F-AnoGAN (Fast AnoGAN ) model \cite{pub.1111824956} aims to eliminate the inference computation time 
 problem by implementing an encoder network with a new training strategy. It also uses a new objective function for the adversarial
 training to further stabilize the generator discriminator performance. In the rest of this section,
-F-AnoGAN framework, its training strategies and anomaly detection methods will be discussed.
+F-AnoGAN model, its training strategies and anomaly detection methods will be discussed.
 
-The framework architecture of F-AnoGAN is very similar to the BiGAN \cite{Donahue2017AdversarialFL}
+Architecture of F-AnoGAN is very similar to the BiGAN \cite{Donahue2017AdversarialFL}
 model. It consists of a generator discriminator for the adversarial learning and an encoder
 network to learn the inverse mapping from latent representation to the input image data.
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=.9\textwidth]{fanogan_framework}
-	\caption{F-AnoGAN Framework Overview \cite{pub.1111824956}}
+	\caption{F-AnoGAN Model Overview \cite{pub.1111824956}}
 	\label{fig:fanogan_network}
 \end{figure}
 
-The first improvement is the change of training style of the whole framework. In BiGAN approach,
+The first improvement is the change of training style of the whole model. In BiGAN approach,
 encoder and generator networks are trained simultaneously to fool the discriminator. Hence discriminator is
 modified to classify the pairs of noise (latent representation) and images instead of the single
-image approach used in the GAN framework.It tries to distinguish samples from a joint
+image approach used in the GAN. It tries to distinguish samples from a joint
 distribution which explained in Section \ref{sec:bigan}. Including encoder to the adversarial setup
-also introduces instability issues which ALAD Framework \cite{DBLP:journals/corr/abs-1812-02288}
+also introduces instability issues which ALAD model \cite{DBLP:journals/corr/abs-1812-02288}
 tried to mitigate with additional discriminators that approximate conditional entropy. (see Section
-\ref{sec:alad_alice}). F-AnoGAN framework addresses this issue by separating the training of
-encoder network $E$ from the generator discriminator networks. New framework can be seen in Figure
+\ref{sec:alad_alice}). F-AnoGAN model addresses this issue by separating the training of
+encoder network $E$ from the generator discriminator networks. New model can be seen in Figure
 \ref{fig:fanogan_training}. 
 \begin{figure}[h!]
 	\centering
@@ -56,15 +56,13 @@ encoder network $E$ from the generator discriminator networks. New framework can
 	\caption{F-AnoGAN Training Strategies \cite{pub.1111824956}}
 	\label{fig:fanogan_training}
 \end{figure}
-} %%%%%%%%% CONTROL POINT
-%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 This new training scheme comprises of two stages. In the first stage GAN model is trained.
 Objective function for the adversarial training is also replaced with the Wasserstein GAN's
 objective function \cite{Arjovsky2017WassersteinG} 
 % appendix explanation ?
-although training of the GAN can be performed with any other framework's approach (including the
-original GAN framework) according to the \cite{pub.1111824956}.
+although training of the GAN can be performed with other training methods (including the
+original GAN) according to the \cite{pub.1111824956}.
 
 In the second stage, encoder network is trained using generator and discriminator networks with fixed
 weights. Two separate pipelines are used to measure the performance of the encoder network. These are $IZI$
@@ -81,13 +79,13 @@ $G(E(x))$.
 \begin{equation}
 	\mathcal{L}_{i z i}(\mathbf{x})=\frac{1}{n}\|\mathbf{x}-G(E(\mathbf{x}))\|^{2}
 \end{equation}
-
+where $n$ is the total dimension size of the data.
 This approach has an important drawback regarding to latent representation. Since the distribution
 of the latent representation of the input image is not known, the encoder is trained only using a
 form of contextual loss which enforce the similarity only in the image space. Without the
 sufficient information about the latent space, encoder may map images to a representations such
 that the reconstructions are not convincing enough for the discriminator to evaluate as real
-\cite{pub.1111824956}. Therefore the framework suggests also including a latent space based loss
+\cite{pub.1111824956}. Therefore model suggests including a latent space based loss
 function derived from the feature layer of the discriminator network to guide the encoder network 
 training. Improved $IZI_{f}$ training objective is defined below.
 \begin{equation}
@@ -100,12 +98,13 @@ factor for the inclusion of the discriminator guidance.
 
 \textbf{ZIZ Encoder Training}
 
-Different from the $IZI$ method, this approach reverses the auto encoder setup and forms a decoder
+This method reverses pipeline created on $IZI$ training and forms a decoder
 encoder architecture. A random sampled noise from the latent $z$ space is mapped to the image space using the
 fixed generator and then generated sample is encoded using the trainable encoder network. Loss
-for the training objective is defined as the MSE based reconstruction of the noise which depicted in equation
-below. 
+for the training objective is defined as the MSE based reconstruction of the noise which depicted in Equation
+\ref{eqn:ziz} where $d$ is the total dimension of the latent representation.
 \begin{equation}
+\label{eqn:ziz}
 	\mathcal{L}_{z i z}(\mathbf{z})=\frac{1}{d}\|\mathbf{z}-E(G(\mathbf{z}))\|^{2}
 \end{equation}
 
@@ -142,28 +141,32 @@ computations for both training methods.
 	\mathcal{A}_{D}(\mathbf{x})&=\frac{1}{n_{d}} \cdot\|f(\mathbf{x})-f(G(E(\mathbf{x})))\|^{2}
 \end{align}
 
+where $\mathcal{A}_R (x)$ represents the reconstruction based loss and $\mathcal{A}_{D} (x)$ represents the 
+latent loss that uses feature layer of discriminator network.
 For $IZI$ and $ZIZ$ method, the computation of the anomaly score reduces down to
 $\mathcal{A}_{R}(\mathbf{x})$ function only. Both training methods yields a similar anomaly score
 computation for the anomalous samples. Since the models are trained with a dataset that doesn't
-contain any anomalies, the query images that have anomalous regions results in poorer reconstruction
+contain any anomalies, query images that have anomalous regions results in poorer reconstruction
 hence a higher anomaly score while the normal images produce a more similar reconstructions to the
-original sample. 
-
-The Significance of this framework is that it separates the training of the encoder from the
+original sample.
+ 
+Significance of this model is that it separates the training of encoder network from the
 adversarial setting of the GAN's while preserving the inverse mapping functionality for the
-inference while keeping the inference time of the model relatively short. Chapter 
-\ref{chap:arim} will explain its contribution to the proposed improved framework.
+inference and keeping the inference time of the model relatively short. Chapter 
+\ref{chap:arim} will explain its contribution to the proposed model.
 
+} %%%%%%%%% CONTROL POINT
+%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Energy Based Generative Adversarial Networks}
 \label{sec:ebgan}
 
-Training a GAN framework perhaps the most sensitive part of working with them. There has been an
+Training a GAN perhaps the most sensitive part of working with them. There has been an
 extensive amount of research to improve the stabilization of the adversarial training or perhaps
 offer a new methodology. \cite{fm} and \cite{methods} offer number modifications to the original
 adversarial training setup to improve the generation performance ,increase the stabilization and
 prevent issues such as mode collapse\footnotemark. \cite{Arjovsky2017WassersteinG} and
 \cite{Gulrajani2017ImprovedTO} offers a new method to compute the loss and ways to stabilize it.
-Mainly because of its adversarial setting, training of GAN frameworks will always be a topic of
+Mainly because of its adversarial setting, training of GANs will always be a topic of
 interest. Energy based generative adversarial networks \cite{Zhao2016EnergybasedGA} offers a new
 training method by redefining the loss functions and the functionality of the discriminator network.
 This section will introduce the architecture and how it works.
@@ -219,14 +222,14 @@ supervision or negative examples when they are trained using a proper regulariza
 This means that in this setting generated samples and input data are both used to model the
 underlying energy manifold of the data. 
 
-EBGAN framework argues that, the discriminator network is regularized by exposing generated samples
+EBGAN argues that, the discriminator network is regularized by exposing generated samples
 from the generator  which it should output higher reconstruction energies
 \cite{Zhao2016EnergybasedGA}. The benefit of this regularization is that instead of a hand crafted
 predefined one, the regularization term can also be trained along with the discriminator.
 Adversarial training allows a direct connection between learning the energy function and producing
 contradictive samples in that regard. 
 
-EBGAN framework also adds additional penalty called pulling away term (PT) that run at a
+EBGAN also adds additional penalty called pulling away term (PT) that run at a
 representation level to prevent mode collapse depicted in equation \ref{eqn:ebgan_pt}.
 \begin{equation}
 \label{eqn:ebgan_pt}
@@ -239,8 +242,8 @@ representation level to prevent mode collapse depicted in equation \ref{eqn:ebga
  will max-out. Therefore, it will add a high penalty if there are too similar.
  \cite{Zhao2016EnergybasedGA}
  
- EBGAN framework offers a more flexible approach to train the discriminator and generator network. 
+ EBGAN offers a more flexible approach to train the discriminator and generator network. 
  Transition from convolutional based discriminator to autoencoder network also provides a potential inclusion 
- for the computation of the anomaly score. Its impact on the proposed framework will be discussed in the next chapter. 
+ for the computation of the anomaly score. Its impact on the proposed model will be discussed in the next chapter. 
 
 \endgroup

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2019.1.28)  4 JUL 2019 10:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2019.1.28)  4 JUL 2019 11:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2681,36 +2681,33 @@ Package pdftex.def Info: images/fanogan_training.png  used on input line 55.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[40 <./images/fanogan_framework.png>]
-Underfull \vbox (badness 7030) has occurred while \output is active []
-
- [41 <./images/fanogan_training.png>]
-<images/fanogan_anomaly_1.png, id=1096, 590.205pt x 246.9225pt>
+[40 <./images/fanogan_framework.png>] [41 <./images/fanogan_training.png>]
+<images/fanogan_anomaly_1.png, id=1097, 590.205pt x 246.9225pt>
 File: images/fanogan_anomaly_1.png Graphic file (type png)
 <use images/fanogan_anomaly_1.png>
-Package pdftex.def Info: images/fanogan_anomaly_1.png  used on input line 122.
+Package pdftex.def Info: images/fanogan_anomaly_1.png  used on input line 121.
 (pdftex.def)             Requested size: 191.5pt x 80.11697pt.
-<images/fanogan_anomaly_2.png, id=1097, 373.395pt x 246.9225pt>
+<images/fanogan_anomaly_2.png, id=1098, 373.395pt x 246.9225pt>
 File: images/fanogan_anomaly_2.png Graphic file (type png)
 <use images/fanogan_anomaly_2.png>
-Package pdftex.def Info: images/fanogan_anomaly_2.png  used on input line 128.
+Package pdftex.def Info: images/fanogan_anomaly_2.png  used on input line 127.
 (pdftex.def)             Requested size: 114.90117pt x 75.98001pt.
 
-Overfull \hbox (7.83322pt too wide) in paragraph at lines 122--129
+Overfull \hbox (7.83322pt too wide) in paragraph at lines 121--128
 [][]| [][] 
  []
 
 [42 <./images/fanogan_anomaly_1.png> <./images/fanogan_anomaly_2.png>] [43]
-<images/ebgan_model.png, id=1130, 982.67125pt x 308.15125pt>
+<images/ebgan_model.png, id=1132, 982.67125pt x 308.15125pt>
 File: images/ebgan_model.png Graphic file (type png)
 <use images/ebgan_model.png>
-Package pdftex.def Info: images/ebgan_model.png  used on input line 185.
+Package pdftex.def Info: images/ebgan_model.png  used on input line 188.
 (pdftex.def)             Requested size: 383.0pt x 120.10326pt.
 
 [44 <./images/ebgan_model.png>]) [45] [46
 
 ] (./chapters/arim.tex
-<images/dataset.png, id=1165, 1027.84pt x 702.625pt>
+<images/dataset.png, id=1166, 1027.84pt x 702.625pt>
 File: images/dataset.png Graphic file (type png)
 <use images/dataset.png>
 Package pdftex.def Info: images/dataset.png  used on input line 29.
@@ -2719,7 +2716,7 @@ Package pdftex.def Info: images/dataset.png  used on input line 29.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<images/sample_normal.png, id=1168, 1094.0875pt x 672.5125pt>
+<images/sample_normal.png, id=1169, 1094.0875pt x 672.5125pt>
 File: images/sample_normal.png Graphic file (type png)
 <use images/sample_normal.png>
 Package pdftex.def Info: images/sample_normal.png  used on input line 42.
@@ -2729,7 +2726,7 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 42--42
  [][] 
  []
 
-<images/sample_anomaly.png, id=1169, 1094.0875pt x 672.5125pt>
+<images/sample_anomaly.png, id=1170, 1094.0875pt x 672.5125pt>
 File: images/sample_anomaly.png Graphic file (type png)
 <use images/sample_anomaly.png>
 Package pdftex.def Info: images/sample_anomaly.png  used on input line 48.
@@ -2909,7 +2906,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 /bigan_sample.png> <./images/arim/encoder_conv/alad_sample.png> <./images/arim/
 encoder_conv/anogan_reconstruct.png> <./images/arim/encoder_conv/bigan_reconstr
 uct.png> <./images/arim/encoder_conv/alad_reconstruct.png>]
-<images/arim/encebgan/encebgan.pdf, id=1293, 1944.79369pt x 908.76715pt>
+<images/arim/encebgan/encebgan.pdf, id=1294, 1944.79369pt x 908.76715pt>
 File: images/arim/encebgan/encebgan.pdf Graphic file (type pdf)
 <use images/arim/encebgan/encebgan.pdf>
 Package pdftex.def Info: images/arim/encebgan/encebgan.pdf  used on input line 
@@ -3006,7 +3003,7 @@ Overfull \hbox (3.7035pt too wide) in paragraph at lines 403--403
 
 [58 <./images/arim/anomaly_score/anoscore_input.png> <./images/arim/anomaly_sco
 re/anoscore_ganomaly.png> <./images/arim/anomaly_score/anoscore_sganomaly.png>]
-<images/arim/sencebgan/sencebgan.pdf, id=1376, 1944.79369pt x 908.76715pt>
+<images/arim/sencebgan/sencebgan.pdf, id=1377, 1944.79369pt x 908.76715pt>
 File: images/arim/sencebgan/sencebgan.pdf Graphic file (type pdf)
 <use images/arim/sencebgan/sencebgan.pdf>
 Package pdftex.def Info: images/arim/sencebgan/sencebgan.pdf  used on input lin
@@ -3029,7 +3026,7 @@ Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 [61] [62
 
 ] (./chapters/exp_results.tex [63] [64]
-<images/expres/roc_curve.png, id=1446, 462.528pt x 346.896pt>
+<images/expres/roc_curve.png, id=1447, 462.528pt x 346.896pt>
 File: images/expres/roc_curve.png Graphic file (type png)
 <use images/expres/roc_curve.png>
 Package pdftex.def Info: images/expres/roc_curve.png  used on input line 85.
@@ -4163,7 +4160,7 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 191.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 191.
 Package rerunfilecheck Info: File `2019_7_Ozgumus_Semsi_Yigit.out' has not chan
 ged.
-(rerunfilecheck)             Checksum: F60447C5758D0C1E25F638918ADAE4C6;3293.
+(rerunfilecheck)             Checksum: 1204F357D1A27A9179ACAD21B7E9B57F;3284.
 Package logreq Info: Writing requests to '2019_7_Ozgumus_Semsi_Yigit.run.xml'.
 \openout1 = `2019_7_Ozgumus_Semsi_Yigit.run.xml'.
 
@@ -4173,10 +4170,10 @@ Package logreq Info: Writing requests to '2019_7_Ozgumus_Semsi_Yigit.run.xml'.
 ### semi simple group (level 1) entered at line 3 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 40080 strings out of 492649
- 725010 string characters out of 6129622
+ 40081 strings out of 492649
+ 725019 string characters out of 6129622
  1317921 words of memory out of 5000000
- 42596 multiletter control sequences out of 15000+600000
+ 42597 multiletter control sequences out of 15000+600000
  190501 words of font info for 182 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,26n,89p,2023b,2921s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -4223,10 +4220,10 @@ fonts/type1/public/lm/lmsy9.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1
 /public/lm/lmvtt10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/a
 msfonts/symbols/msam10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/publ
 ic/amsfonts/symbols/msbm10.pfb>
-Output written on 2019_7_Ozgumus_Semsi_Yigit.pdf (110 pages, 18784351 bytes).
+Output written on 2019_7_Ozgumus_Semsi_Yigit.pdf (110 pages, 18784601 bytes).
 PDF statistics:
- 2082 PDF objects out of 2487 (max. 8388607)
- 1671 compressed objects within 17 object streams
+ 2083 PDF objects out of 2487 (max. 8388607)
+ 1672 compressed objects within 17 object streams
  468 named destinations out of 1000 (max. 500000)
  989 words of extra memory for PDF output out of 10000 (max. 10000000)
 
