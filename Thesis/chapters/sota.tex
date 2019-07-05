@@ -1,7 +1,6 @@
 %!TEX root = ../2019_7_Ozgumus_Semsi_Yigit.tex
 \begingroup
-{
-	\color{Green}
+
 
 This chapter is dedicated to the exploration of state of the art approaches in the fields relevant
 to the thesis. The organization of the chapter is the following: Section \ref{sec:ad} will formulate
@@ -1100,7 +1099,7 @@ a part of the discriminator network training. Their objective functions are defi
 \begin{split} V\left(D_{z z}, E, G\right) ={}&\mathbb{E}_{z \sim p_{\mathcal{Z}}}\left[\log D_{z z}(z, z)\right] \\ &+\mathbb{E}_{z \sim p_{\mathcal{Z}}}\left[1-\log D_{z z}(z, E(G(z)))\right] \end{split}    
 \end{align}
 
-Putting it all together, ALAD framework solves the following combination of value function during the adversarial
+Putting it all together, ALAD framework solves the following combination of value functions during the adversarial
 training:
 \begin{equation}
 \begin{array}{l}{\min _{G, E} \max _{D_{x z}, D_{x x}, D_{z z}} V\left(D_{x z}, D_{x x}, D_{z z}, E, G\right)=} \\ {V\left(D_{x z}, E, G\right)+V\left(D_{x x}, E, G\right)+V\left(D_{z z}, E, G\right)}\end{array} 
@@ -1270,6 +1269,5 @@ detection framework, insights gained from these 2 networks are significantly imp
 contribution to the improved framework and their performance analysis regards to other models will
 be explored in Chapters \ref{chap:arim} and \ref{chap:expres} respectively. 
 
-} %%%%%%%%% CONTROL POINT
-%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \endgroup

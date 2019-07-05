@@ -16,55 +16,55 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated field_info (elt_size=4) to 14174 items from 5000.
+Reallocated field_info (elt_size=4) to 15008 items from 5000.
 Database file #1: 2019_7_Ozgumus_Semsi_Yigit-blx.bib
 Database file #2: back_matter/references.bib
-Repeated entry---line 874 of file back_matter/references.bib
+Repeated entry---line 891 of file back_matter/references.bib
  : @article{zontak2010defect
  :                          ,
 I'm skipping whatever remains of this entry
 Biblatex version: 3.8
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-You've used 66 entries,
+You've used 72 entries,
             6268 wiz_defined-function locations,
-            1624 strings with 23786 characters,
-and the built_in function-call counts, 434601 in all, are:
-= -- 31053
-> -- 8028
-< -- 2271
-+ -- 11694
-- -- 3071
-* -- 32892
-:= -- 45363
+            1672 strings with 25132 characters,
+and the built_in function-call counts, 474087 in all, are:
+= -- 33878
+> -- 8765
+< -- 2490
++ -- 12718
+- -- 3342
+* -- 35852
+:= -- 49376
 add.period$ -- 0
-call.type$ -- 66
-change.case$ -- 1151
-chr.to.int$ -- 114
-cite$ -- 130
-duplicate$ -- 47658
-empty$ -- 39070
-format.name$ -- 5171
-if$ -- 87957
+call.type$ -- 72
+change.case$ -- 1273
+chr.to.int$ -- 120
+cite$ -- 142
+duplicate$ -- 51950
+empty$ -- 42654
+format.name$ -- 5637
+if$ -- 96014
 int.to.chr$ -- 0
-int.to.str$ -- 167
+int.to.str$ -- 185
 missing$ -- 0
-newline$ -- 2595
-num.names$ -- 3250
-pop$ -- 23099
+newline$ -- 2834
+num.names$ -- 3576
+pop$ -- 25204
 preamble$ -- 1
-purify$ -- 1633
+purify$ -- 1796
 quote$ -- 0
-skip$ -- 12208
+skip$ -- 13368
 stack$ -- 0
-substring$ -- 52334
-swap$ -- 11184
-text.length$ -- 1898
-text.prefix$ -- 66
+substring$ -- 57067
+swap$ -- 12224
+text.length$ -- 2066
+text.prefix$ -- 72
 top$ -- 1
-type$ -- 2232
+type$ -- 2436
 warning$ -- 0
-while$ -- 5714
+while$ -- 6211
 width$ -- 0
-write$ -- 2530
+write$ -- 2763
 (There was 1 error message)

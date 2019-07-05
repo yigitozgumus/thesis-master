@@ -367,6 +367,57 @@
     \field{year}{2009}
   \endentry
 
+  \entry{Beyer:1999:NNM:645503.656271}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=BKS}{%
+         family={Beyer},
+         familyi={B\bibinitperiod},
+         given={Kevin\bibnamedelima S.},
+         giveni={K\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+      {{hash=GJ}{%
+         family={Goldstein},
+         familyi={G\bibinitperiod},
+         given={Jonathan},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=RR}{%
+         family={Ramakrishnan},
+         familyi={R\bibinitperiod},
+         given={Raghu},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=SU}{%
+         family={Shaft},
+         familyi={S\bibinitperiod},
+         given={Uri},
+         giveni={U\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer-Verlag}%
+    }
+    \strng{namehash}{BKS+1}
+    \strng{fullhash}{BKSGJRRSU1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{booktitle}{Proceedings of the 7th International Conference on
+  Database Theory}
+    \field{isbn}{3-540-65452-6}
+    \field{pages}{217\bibrangedash 235}
+    \field{series}{ICDT '99}
+    \field{title}{When Is ''Nearest Neighbor'' Meaningful?}
+    \verb{url}
+    \verb http://dl.acm.org/citation.cfm?id=645503.656271
+    \endverb
+    \list{location}{1}{%
+      {London, UK, UK}%
+    }
+    \field{year}{1999}
+  \endentry
+
   \entry{Bill86}{book}{}
     \name{author}{1}{}{%
       {{hash=BP}{%
@@ -520,6 +571,37 @@
     \field{year}{2016}
   \endentry
 
+  \entry{Chandola07anomalydetection:}{misc}{}
+    \name{author}{3}{}{%
+      {{hash=CV}{%
+         family={Chandola},
+         familyi={C\bibinitperiod},
+         given={Varun},
+         giveni={V\bibinitperiod},
+      }}%
+      {{hash=BA}{%
+         family={Banerjee},
+         familyi={B\bibinitperiod},
+         given={Arindam},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=KV}{%
+         family={Kumar},
+         familyi={K\bibinitperiod},
+         given={Vipin},
+         giveni={V\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CVBAKV1}
+    \strng{fullhash}{CVBAKV1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{title}{Anomaly Detection: A Survey}
+    \field{year}{2007}
+  \endentry
+
   \entry{Chandola:2009:ADS:1541880.1541882}{article}{}
     \name{author}{3}{}{%
       {{hash=CV}{%
@@ -644,6 +726,58 @@
     \field{year}{2006}
   \endentry
 
+  \entry{DBLP:journals/corr/DaiABHC17}{article}{}
+    \name{author}{5}{}{%
+      {{hash=DZ}{%
+         family={Dai},
+         familyi={D\bibinitperiod},
+         given={Zihang},
+         giveni={Z\bibinitperiod},
+      }}%
+      {{hash=AA}{%
+         family={Almahairi},
+         familyi={A\bibinitperiod},
+         given={Amjad},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=BP}{%
+         family={Bachman},
+         familyi={B\bibinitperiod},
+         given={Philip},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=HEH}{%
+         family={Hovy},
+         familyi={H\bibinitperiod},
+         given={Eduard\bibnamedelima H.},
+         giveni={E\bibinitperiod\bibinitdelim H\bibinitperiod},
+      }}%
+      {{hash=CAC}{%
+         family={Courville},
+         familyi={C\bibinitperiod},
+         given={Aaron\bibnamedelima C.},
+         giveni={A\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{DZ+1}
+    \strng{fullhash}{DZAABPHEHCAC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \verb{eprint}
+    \verb 1702.01691
+    \endverb
+    \field{title}{Calibrating Energy-based Generative Adversarial Networks}
+    \verb{url}
+    \verb http://arxiv.org/abs/1702.01691
+    \endverb
+    \field{volume}{abs/1702.01691}
+    \field{journaltitle}{CoRR}
+    \field{eprinttype}{arXiv}
+    \field{year}{2017}
+  \endentry
+
   \entry{Donahue2017AdversarialFL}{article}{}
     \name{author}{3}{}{%
       {{hash=DJ}{%
@@ -732,6 +866,44 @@
     \field{volume}{abs/1606.00704}
     \field{journaltitle}{CoRR}
     \field{year}{2017}
+  \endentry
+
+  \entry{Fawcett:2006:IRA:1159473.1159475}{article}{}
+    \name{author}{1}{}{%
+      {{hash=FT}{%
+         family={Fawcett},
+         familyi={F\bibinitperiod},
+         given={Tom},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier Science Inc.}%
+    }
+    \keyw{Classifier evaluation, Evaluation metrics, ROC analysis}
+    \strng{namehash}{FT1}
+    \strng{fullhash}{FT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \verb{doi}
+    \verb 10.1016/j.patrec.2005.10.010
+    \endverb
+    \field{issn}{0167-8655}
+    \field{number}{8}
+    \field{pages}{861\bibrangedash 874}
+    \field{title}{An Introduction to ROC Analysis}
+    \verb{url}
+    \verb http://dx.doi.org/10.1016/j.patrec.2005.10.010
+    \endverb
+    \field{volume}{27}
+    \list{location}{1}{%
+      {New York, NY, USA}%
+    }
+    \field{journaltitle}{Pattern Recogn. Lett.}
+    \field{month}{06}
+    \field{year}{2006}
   \endentry
 
   \entry{FERNANDES20161}{article}{}
@@ -1281,6 +1453,36 @@
     \field{year}{2017}
   \endentry
 
+  \entry{kingma2013autoencoding}{misc}{}
+    \name{author}{2}{}{%
+      {{hash=KDP}{%
+         family={Kingma},
+         familyi={K\bibinitperiod},
+         given={Diederik\bibnamedelima P},
+         giveni={D\bibinitperiod\bibinitdelim P\bibinitperiod},
+      }}%
+      {{hash=WM}{%
+         family={Welling},
+         familyi={W\bibinitperiod},
+         given={Max},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \keyw{VAE}
+    \strng{namehash}{KDPWM1}
+    \strng{fullhash}{KDPWM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{note}{cite arxiv:1312.6114}
+    \field{title}{Auto-Encoding Variational Bayes}
+    \verb{url}
+    \verb http://arxiv.org/abs/1312.6114
+    \endverb
+    \field{year}{2013}
+  \endentry
+
   \entry{RePEc:eee:csdana:v:20:y:1995:i:6:p:703-702}{article}{}
     \name{author}{1}{}{%
       {{hash=KW}{%
@@ -1667,6 +1869,45 @@
     \field{volume}{15}
     \field{journaltitle}{Sensors}
     \field{year}{2015}
+  \endentry
+
+  \entry{Masci2011StackedCA}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=MJ}{%
+         family={Masci},
+         familyi={M\bibinitperiod},
+         given={Jonathan},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=MU}{%
+         family={Meier},
+         familyi={M\bibinitperiod},
+         given={Ueli},
+         giveni={U\bibinitperiod},
+      }}%
+      {{hash=CDC}{%
+         family={Ciresan},
+         familyi={C\bibinitperiod},
+         given={Dan\bibnamedelima C.},
+         giveni={D\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+      {{hash=SJ}{%
+         family={Schmidhuber},
+         familyi={S\bibinitperiod},
+         given={J{\"u}rgen},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{MJ+1}
+    \strng{fullhash}{MJMUCDCSJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{booktitle}{ICANN}
+    \field{title}{Stacked Convolutional Auto-Encoders for Hierarchical Feature
+  Extraction}
+    \field{year}{2011}
   \endentry
 
   \entry{inproceedings_sn}{inproceedings}{}

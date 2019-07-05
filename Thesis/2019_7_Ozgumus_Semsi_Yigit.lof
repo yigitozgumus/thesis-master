@@ -143,99 +143,99 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subfigure}{\numberline {(9)}{\ignorespaces {ALAD generated image sample}}}{51}{subfigure.3.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Training graphs of pure GAN models that implement encoder network and the first iteration of the proposed network\relax }}{53}{figure.caption.24}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Training graphs of pure GAN models that implement encoder network and the first iteration of the proposed network\relax }}{54}{figure.caption.24}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(1)}{\ignorespaces {BiGAN Encoder Training}}}{53}{subfigure.4.1}
+\contentsline {subfigure}{\numberline {(1)}{\ignorespaces {BiGAN Encoder Training}}}{54}{subfigure.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(2)}{\ignorespaces {ALAD Encoder Training}}}{53}{subfigure.4.2}
+\contentsline {subfigure}{\numberline {(2)}{\ignorespaces {ALAD Encoder Training}}}{54}{subfigure.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(3)}{\ignorespaces {ENCEBGAN Encoder Training}}}{53}{subfigure.4.3}
+\contentsline {subfigure}{\numberline {(3)}{\ignorespaces {ENCEBGAN Encoder Training}}}{54}{subfigure.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(1)}{\ignorespaces {BiGAN Encoder Training}}}{53}{subfigure.4.1}
+\contentsline {subfigure}{\numberline {(1)}{\ignorespaces {BiGAN Encoder Training}}}{54}{subfigure.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(2)}{\ignorespaces {ALAD Encoder Training}}}{53}{subfigure.4.2}
+\contentsline {subfigure}{\numberline {(2)}{\ignorespaces {ALAD Encoder Training}}}{54}{subfigure.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(3)}{\ignorespaces {ENCEBGAN Encoder Training}}}{53}{subfigure.4.3}
+\contentsline {subfigure}{\numberline {(3)}{\ignorespaces {ENCEBGAN Encoder Training}}}{54}{subfigure.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(1)}{\ignorespaces {BiGAN Encoder Training}}}{53}{subfigure.4.1}
+\contentsline {subfigure}{\numberline {(1)}{\ignorespaces {BiGAN Encoder Training}}}{54}{subfigure.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(2)}{\ignorespaces {ALAD Encoder Training}}}{53}{subfigure.4.2}
+\contentsline {subfigure}{\numberline {(2)}{\ignorespaces {ALAD Encoder Training}}}{54}{subfigure.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(3)}{\ignorespaces {ENCEBGAN Encoder Training}}}{53}{subfigure.4.3}
+\contentsline {subfigure}{\numberline {(3)}{\ignorespaces {ENCEBGAN Encoder Training}}}{54}{subfigure.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(1)}{\ignorespaces {BiGAN Encoder Training}}}{53}{subfigure.4.1}
+\contentsline {subfigure}{\numberline {(1)}{\ignorespaces {BiGAN Encoder Training}}}{54}{subfigure.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(2)}{\ignorespaces {ALAD Encoder Training}}}{53}{subfigure.4.2}
+\contentsline {subfigure}{\numberline {(2)}{\ignorespaces {ALAD Encoder Training}}}{54}{subfigure.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(3)}{\ignorespaces {ENCEBGAN Encoder Training}}}{53}{subfigure.4.3}
+\contentsline {subfigure}{\numberline {(3)}{\ignorespaces {ENCEBGAN Encoder Training}}}{54}{subfigure.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(1)}{\ignorespaces {BiGAN Encoder Training}}}{53}{subfigure.4.1}
+\contentsline {subfigure}{\numberline {(1)}{\ignorespaces {BiGAN Encoder Training}}}{54}{subfigure.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(2)}{\ignorespaces {ALAD Encoder Training}}}{53}{subfigure.4.2}
+\contentsline {subfigure}{\numberline {(2)}{\ignorespaces {ALAD Encoder Training}}}{54}{subfigure.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(3)}{\ignorespaces {ENCEBGAN Encoder Training}}}{53}{subfigure.4.3}
+\contentsline {subfigure}{\numberline {(3)}{\ignorespaces {ENCEBGAN Encoder Training}}}{54}{subfigure.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Reconstructed samples from the pure GAN models. Upper row is the given query image and the bottom row is their reconstructions\relax }}{54}{figure.caption.25}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Reconstructed samples from the pure GAN models. Upper row is the given query image and the bottom row is their reconstructions\relax }}{55}{figure.caption.25}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(1)}{\ignorespaces {AnoGAN Query Image}}}{54}{subfigure.5.1}
+\contentsline {subfigure}{\numberline {(1)}{\ignorespaces {AnoGAN Query Image}}}{55}{subfigure.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(2)}{\ignorespaces {BiGAN Query Image}}}{54}{subfigure.5.2}
+\contentsline {subfigure}{\numberline {(2)}{\ignorespaces {BiGAN Query Image}}}{55}{subfigure.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(3)}{\ignorespaces {ALAD Query Image}}}{54}{subfigure.5.3}
+\contentsline {subfigure}{\numberline {(3)}{\ignorespaces {ALAD Query Image}}}{55}{subfigure.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(4)}{\ignorespaces {AnoGAN Reconstruction}}}{54}{subfigure.5.4}
+\contentsline {subfigure}{\numberline {(4)}{\ignorespaces {AnoGAN Reconstruction}}}{55}{subfigure.5.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(5)}{\ignorespaces {BiGAN Reconstruction}}}{54}{subfigure.5.5}
+\contentsline {subfigure}{\numberline {(5)}{\ignorespaces {BiGAN Reconstruction}}}{55}{subfigure.5.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(6)}{\ignorespaces {ALAD Reconstruction}}}{54}{subfigure.5.6}
+\contentsline {subfigure}{\numberline {(6)}{\ignorespaces {ALAD Reconstruction}}}{55}{subfigure.5.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(1)}{\ignorespaces {AnoGAN Query Image}}}{54}{subfigure.5.1}
+\contentsline {subfigure}{\numberline {(1)}{\ignorespaces {AnoGAN Query Image}}}{55}{subfigure.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(2)}{\ignorespaces {BiGAN Query Image}}}{54}{subfigure.5.2}
+\contentsline {subfigure}{\numberline {(2)}{\ignorespaces {BiGAN Query Image}}}{55}{subfigure.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(3)}{\ignorespaces {ALAD Query Image}}}{54}{subfigure.5.3}
+\contentsline {subfigure}{\numberline {(3)}{\ignorespaces {ALAD Query Image}}}{55}{subfigure.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(4)}{\ignorespaces {AnoGAN Reconstruction}}}{54}{subfigure.5.4}
+\contentsline {subfigure}{\numberline {(4)}{\ignorespaces {AnoGAN Reconstruction}}}{55}{subfigure.5.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(5)}{\ignorespaces {BiGAN Reconstruction}}}{54}{subfigure.5.5}
+\contentsline {subfigure}{\numberline {(5)}{\ignorespaces {BiGAN Reconstruction}}}{55}{subfigure.5.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(6)}{\ignorespaces {ALAD Reconstruction}}}{54}{subfigure.5.6}
+\contentsline {subfigure}{\numberline {(6)}{\ignorespaces {ALAD Reconstruction}}}{55}{subfigure.5.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(1)}{\ignorespaces {AnoGAN Query Image}}}{54}{subfigure.5.1}
+\contentsline {subfigure}{\numberline {(1)}{\ignorespaces {AnoGAN Query Image}}}{55}{subfigure.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(2)}{\ignorespaces {BiGAN Query Image}}}{54}{subfigure.5.2}
+\contentsline {subfigure}{\numberline {(2)}{\ignorespaces {BiGAN Query Image}}}{55}{subfigure.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(3)}{\ignorespaces {ALAD Query Image}}}{54}{subfigure.5.3}
+\contentsline {subfigure}{\numberline {(3)}{\ignorespaces {ALAD Query Image}}}{55}{subfigure.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(4)}{\ignorespaces {AnoGAN Reconstruction}}}{54}{subfigure.5.4}
+\contentsline {subfigure}{\numberline {(4)}{\ignorespaces {AnoGAN Reconstruction}}}{55}{subfigure.5.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(5)}{\ignorespaces {BiGAN Reconstruction}}}{54}{subfigure.5.5}
+\contentsline {subfigure}{\numberline {(5)}{\ignorespaces {BiGAN Reconstruction}}}{55}{subfigure.5.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(6)}{\ignorespaces {ALAD Reconstruction}}}{54}{subfigure.5.6}
+\contentsline {subfigure}{\numberline {(6)}{\ignorespaces {ALAD Reconstruction}}}{55}{subfigure.5.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(1)}{\ignorespaces {AnoGAN Query Image}}}{54}{subfigure.5.1}
+\contentsline {subfigure}{\numberline {(1)}{\ignorespaces {AnoGAN Query Image}}}{55}{subfigure.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(2)}{\ignorespaces {BiGAN Query Image}}}{54}{subfigure.5.2}
+\contentsline {subfigure}{\numberline {(2)}{\ignorespaces {BiGAN Query Image}}}{55}{subfigure.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(3)}{\ignorespaces {ALAD Query Image}}}{54}{subfigure.5.3}
+\contentsline {subfigure}{\numberline {(3)}{\ignorespaces {ALAD Query Image}}}{55}{subfigure.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(4)}{\ignorespaces {AnoGAN Reconstruction}}}{54}{subfigure.5.4}
+\contentsline {subfigure}{\numberline {(4)}{\ignorespaces {AnoGAN Reconstruction}}}{55}{subfigure.5.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(5)}{\ignorespaces {BiGAN Reconstruction}}}{54}{subfigure.5.5}
+\contentsline {subfigure}{\numberline {(5)}{\ignorespaces {BiGAN Reconstruction}}}{55}{subfigure.5.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(6)}{\ignorespaces {ALAD Reconstruction}}}{54}{subfigure.5.6}
+\contentsline {subfigure}{\numberline {(6)}{\ignorespaces {ALAD Reconstruction}}}{55}{subfigure.5.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(1)}{\ignorespaces {AnoGAN Query Image}}}{54}{subfigure.5.1}
+\contentsline {subfigure}{\numberline {(1)}{\ignorespaces {AnoGAN Query Image}}}{55}{subfigure.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(2)}{\ignorespaces {BiGAN Query Image}}}{54}{subfigure.5.2}
+\contentsline {subfigure}{\numberline {(2)}{\ignorespaces {BiGAN Query Image}}}{55}{subfigure.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(3)}{\ignorespaces {ALAD Query Image}}}{54}{subfigure.5.3}
+\contentsline {subfigure}{\numberline {(3)}{\ignorespaces {ALAD Query Image}}}{55}{subfigure.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(4)}{\ignorespaces {AnoGAN Reconstruction}}}{54}{subfigure.5.4}
+\contentsline {subfigure}{\numberline {(4)}{\ignorespaces {AnoGAN Reconstruction}}}{55}{subfigure.5.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(5)}{\ignorespaces {BiGAN Reconstruction}}}{54}{subfigure.5.5}
+\contentsline {subfigure}{\numberline {(5)}{\ignorespaces {BiGAN Reconstruction}}}{55}{subfigure.5.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(6)}{\ignorespaces {ALAD Reconstruction}}}{54}{subfigure.5.6}
+\contentsline {subfigure}{\numberline {(6)}{\ignorespaces {ALAD Reconstruction}}}{55}{subfigure.5.6}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {4.6}{\ignorespaces ENCEBGAN Model Overview \relax }}{56}{figure.caption.26}
 \defcounter {refsection}{0}\relax 
@@ -333,7 +333,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subfigure}{\numberline {(3)}{\ignorespaces {Skip-GANomaly Reconstruction}}}{58}{subfigure.8.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.9}{\ignorespaces SENCEBGAN Model Overview \relax }}{59}{figure.caption.29}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces SENCEBGAN Model Overview \relax }}{60}{figure.caption.29}
 \defcounter {refsection}{0}\relax 
 \addvspace {10pt}
 \defcounter {refsection}{0}\relax 
@@ -503,7 +503,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subfigure}{\numberline {(3)}{\ignorespaces {ROC Curve}}}{73}{subfigure.8.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Reconstruction samples from the EBGAN training\relax }}{74}{figure.caption.43}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Generation samples from the EBGAN training\relax }}{74}{figure.caption.43}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {5.10}{\ignorespaces Training progression of ENCEBGAN model\relax }}{75}{figure.caption.44}
 \defcounter {refsection}{0}\relax 
@@ -539,55 +539,55 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {5.11}{\ignorespaces Reconstruction examples of ENCEBGAN model obtained from both training and testing stage\relax }}{75}{figure.caption.45}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Training progression of SENCEBGAN model\relax }}{75}{figure.caption.46}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Training progression of SENCEBGAN model\relax }}{76}{figure.caption.46}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(1)}{\ignorespaces {Generator Training Progression}}}{75}{subfigure.12.1}
+\contentsline {subfigure}{\numberline {(1)}{\ignorespaces {Generator Training Progression}}}{76}{subfigure.12.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(2)}{\ignorespaces {Discriminator Training Progression}}}{75}{subfigure.12.2}
+\contentsline {subfigure}{\numberline {(2)}{\ignorespaces {Discriminator Training Progression}}}{76}{subfigure.12.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(3)}{\ignorespaces {Generator Encoder Training Progression}}}{75}{subfigure.12.3}
+\contentsline {subfigure}{\numberline {(3)}{\ignorespaces {Generator Encoder Training Progression}}}{76}{subfigure.12.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(4)}{\ignorespaces {Reconstruction Encoder Training Progression}}}{75}{subfigure.12.4}
+\contentsline {subfigure}{\numberline {(4)}{\ignorespaces {Reconstruction Encoder Training Progression}}}{76}{subfigure.12.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(1)}{\ignorespaces {Generator Training Progression}}}{75}{subfigure.12.1}
+\contentsline {subfigure}{\numberline {(1)}{\ignorespaces {Generator Training Progression}}}{76}{subfigure.12.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(2)}{\ignorespaces {Discriminator Training Progression}}}{75}{subfigure.12.2}
+\contentsline {subfigure}{\numberline {(2)}{\ignorespaces {Discriminator Training Progression}}}{76}{subfigure.12.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(3)}{\ignorespaces {Generator Encoder Training Progression}}}{75}{subfigure.12.3}
+\contentsline {subfigure}{\numberline {(3)}{\ignorespaces {Generator Encoder Training Progression}}}{76}{subfigure.12.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(4)}{\ignorespaces {Reconstruction Encoder Training Progression}}}{75}{subfigure.12.4}
+\contentsline {subfigure}{\numberline {(4)}{\ignorespaces {Reconstruction Encoder Training Progression}}}{76}{subfigure.12.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(1)}{\ignorespaces {Generator Training Progression}}}{75}{subfigure.12.1}
+\contentsline {subfigure}{\numberline {(1)}{\ignorespaces {Generator Training Progression}}}{76}{subfigure.12.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(2)}{\ignorespaces {Discriminator Training Progression}}}{75}{subfigure.12.2}
+\contentsline {subfigure}{\numberline {(2)}{\ignorespaces {Discriminator Training Progression}}}{76}{subfigure.12.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(3)}{\ignorespaces {Generator Encoder Training Progression}}}{75}{subfigure.12.3}
+\contentsline {subfigure}{\numberline {(3)}{\ignorespaces {Generator Encoder Training Progression}}}{76}{subfigure.12.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(4)}{\ignorespaces {Reconstruction Encoder Training Progression}}}{75}{subfigure.12.4}
+\contentsline {subfigure}{\numberline {(4)}{\ignorespaces {Reconstruction Encoder Training Progression}}}{76}{subfigure.12.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(1)}{\ignorespaces {Generator Training Progression}}}{75}{subfigure.12.1}
+\contentsline {subfigure}{\numberline {(1)}{\ignorespaces {Generator Training Progression}}}{76}{subfigure.12.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(2)}{\ignorespaces {Discriminator Training Progression}}}{75}{subfigure.12.2}
+\contentsline {subfigure}{\numberline {(2)}{\ignorespaces {Discriminator Training Progression}}}{76}{subfigure.12.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(3)}{\ignorespaces {Generator Encoder Training Progression}}}{75}{subfigure.12.3}
+\contentsline {subfigure}{\numberline {(3)}{\ignorespaces {Generator Encoder Training Progression}}}{76}{subfigure.12.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(4)}{\ignorespaces {Reconstruction Encoder Training Progression}}}{75}{subfigure.12.4}
+\contentsline {subfigure}{\numberline {(4)}{\ignorespaces {Reconstruction Encoder Training Progression}}}{76}{subfigure.12.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(1)}{\ignorespaces {Generator Training Progression}}}{75}{subfigure.12.1}
+\contentsline {subfigure}{\numberline {(1)}{\ignorespaces {Generator Training Progression}}}{76}{subfigure.12.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(2)}{\ignorespaces {Discriminator Training Progression}}}{75}{subfigure.12.2}
+\contentsline {subfigure}{\numberline {(2)}{\ignorespaces {Discriminator Training Progression}}}{76}{subfigure.12.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(3)}{\ignorespaces {Generator Encoder Training Progression}}}{75}{subfigure.12.3}
+\contentsline {subfigure}{\numberline {(3)}{\ignorespaces {Generator Encoder Training Progression}}}{76}{subfigure.12.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(4)}{\ignorespaces {Reconstruction Encoder Training Progression}}}{75}{subfigure.12.4}
+\contentsline {subfigure}{\numberline {(4)}{\ignorespaces {Reconstruction Encoder Training Progression}}}{76}{subfigure.12.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(1)}{\ignorespaces {Generator Training Progression}}}{75}{subfigure.12.1}
+\contentsline {subfigure}{\numberline {(1)}{\ignorespaces {Generator Training Progression}}}{76}{subfigure.12.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(2)}{\ignorespaces {Discriminator Training Progression}}}{75}{subfigure.12.2}
+\contentsline {subfigure}{\numberline {(2)}{\ignorespaces {Discriminator Training Progression}}}{76}{subfigure.12.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(3)}{\ignorespaces {Generator Encoder Training Progression}}}{75}{subfigure.12.3}
+\contentsline {subfigure}{\numberline {(3)}{\ignorespaces {Generator Encoder Training Progression}}}{76}{subfigure.12.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(4)}{\ignorespaces {Reconstruction Encoder Training Progression}}}{75}{subfigure.12.4}
+\contentsline {subfigure}{\numberline {(4)}{\ignorespaces {Reconstruction Encoder Training Progression}}}{76}{subfigure.12.4}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {5.13}{\ignorespaces Reconstruction examples of SENCEBGAN model obtained from both training and testing stage\relax }}{76}{figure.caption.47}
 \defcounter {refsection}{0}\relax 
