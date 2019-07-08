@@ -32,7 +32,7 @@ Figure \ref{fig:data_norm}.
 	\label{fig:data_norm}
 \end{figure}
 
-Dataset consists of 5 images with no anomalies and 40 sample images that have various types of
+Scanning Electron Microscopes (SEM) Image Dataset consists of 5 images with no anomalies and 40 sample images that have various types of
 anomalous regions. To preserve computational efficiency without sacrificing from performance,
 training dataset and testing dataset is sampled from SEM image dataset.
 \begin{figure}[h!] \subfloat[Normal regions]{
@@ -119,9 +119,9 @@ This essentially eliminates the purpose of having a generator network. This issu
 tracked by observing the reconstructions from a batch of latent noise samples after each epoch of the 
 training. 
 
-To mitigate stabilization problems of generator and discriminator network, ablation study is 
+To mitigate stabilization problems of generator and discriminator networks, ablation study is 
 performed on all Pure GAN models which consists of previously mentioned training improvements with 
-same model capacity and training hyperparameters to create an equal environment for the models. 
+same model capacity and training hyper parameters to create an equal environment for the models. 
 Despite models proving a certain performance standard on the benchmark datasets \cite{cifar10,Netzer2011ReadingDI}, 
 they performed poorly on the SEM image dataset \cite{sem}. More importantly, the training of 
 the networks were too unstable to obtain a consistent performance benchmark. Obtaining a stable 
@@ -278,8 +278,8 @@ interpreted as anomalous sample though the input is a normal sample. Figure
 	\caption{Reconstructed samples from the pure GAN models. Upper row is the given query image and the bottom row is their reconstructions}\label{fig:arim_reconstruct}
 \end{figure}
 
-Proposed model in this work also uses additional encoder network to get the inverse mapping
-information. Several modifications are applied to the training in order to improve the stabilization
+Proposed model in this thesis also uses additional encoder network to get the inverse mapping
+of image and latent representation space. Several modifications are applied to the training in order to improve the stabilization
 and ensure the convergence of the encoder network. Equation \ref{eqn:ebgan_used} propose the modified generator
 discriminator network approach. Addition of the encoder network and its training is also based on the reconstruction 
 energy defined in Section \ref{sec:ebgan}.

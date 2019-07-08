@@ -36,8 +36,9 @@ network to learn the inverse mapping from latent representation to the input ima
 	\label{fig:fanogan_network}
 \end{figure}
 
-The first improvement is the change of training style of the whole model. In BiGAN approach,
-encoder and generator networks are trained simultaneously to fool the discriminator. Hence discriminator is
+First improvement is the change of training style of the whole model. In BiGAN approach,
+encoder and generator networks are trained simultaneously to fool the discriminator. 
+Hence discriminator network is
 modified to classify the pairs of noise (latent representation) and images instead of the single
 image approach used in the GAN. It tries to distinguish samples from a joint
 distribution which explained in Section \ref{sec:bigan}. Including encoder to the adversarial setup
@@ -197,7 +198,7 @@ $\mathcal{L}_{G}$ are formally defined in Equation \ref{eqn:ebgan_formal}.
 \begin{aligned}D(x)&=\|\operatorname{Dec}(E n c(x))-x\|\\ \mathcal{L}_{D}(x, z) &=D(x)+[m-D(G(z))]^{+} \\ \mathcal{L}_{G}(z) &=D(G(z)) \end{aligned}
 \end{equation}
 
-where $D(x)$ is the reconstuction loss and  $[\cdot]^{+}=\max (0, \cdot)$. Minimizing
+where $D(x)$ is the reconstuction loss implemented by the discriminator network and  $[\cdot]^{+}=\max (0, \cdot)$. Minimizing
 $\mathcal{L}_{G}$ with respect to the generator network is similar to maximizing the second term of the
 $\mathcal{L}_{D}$. Instead of calculating the probability of input being real or fake,
 discriminator is responsible for attaining the correct amount of energy to the input images. Generator network

@@ -5,59 +5,79 @@
 %% Anomaly Detectioni anlat abstracten acip
 Anomaly detection is an increasingly popular field in computer vision and is a challenging 
 problem concerning wide variety of application domains such as cyber security, healthcare, 
-finance and Internet of Things (IoT) \cite{Chandola:2009:ADS:1541880.1541882}. As the methods of obtaining and 
-utilizing potential use cases for data grows, quality, maintenance and the performance of 
-the systems we benefit become more dependent on the provided data. Considering these systems 
-rely on the quality and the accuracy of data, anomaly detection plays a crucial role to preserve the 
-significance of data itself. Anomalies can be defined as the samples that don't follow the 
-characteristic behaviors of the defined notion of normality for that data \cite{Chandola07anomalydetection:}. 
-Main importance of anomaly detection comes from the fact that abnormalities in the data 
-may often be translated to critical and  actionable information. 
+finance and Internet of Things (IoT) \cite{Chandola:2009:ADS:1541880.1541882}. As the methods 
+of obtaining and utilizing potential use cases for data grows, quality, maintenance and 
+the performance of the systems we benefit become more dependent on the provided data. 
+Anomaly detection plays a crucial role to preserve the utilization of these systems considering 
+these systems rely on the quality and the accuracy of data. Anomalies can be defined as the 
+samples that don't follow the characteristic behaviors of the defined notion of normality 
+for that data \cite{Chandola07anomalydetection:}. Main importance of anomaly detection comes 
+from the fact that abnormalities in the data may often be translated to critical and 
+actionable information. 
 %% Rec based methodu acikla ve bir iki ornek ver
 
 One of the main problems of solving anomaly detection tasks is to obtain data. 
 Depending on the domain, anomaly might be a very rare occurrence or it might be costly for the 
 system to replicate the conditions of the anomalous case. Reconstruction based methods for anomaly 
 detection focus on computing the representation for normal portion data, and uses this representation 
-to differentiate the normal and anomalous samples. This method is used when there is an imbalance between normal 
-and anomalous data sample size in the dataset. Main premise is that classifying data sample with higher dimensional 
-feature space such as images, as anomalous or normal, becomes easier if the underlying data of interest 
-lies in a subspace of lower dimensionality than its original form \cite{Beyer:1999:NNM:645503.656271}. 
+to differentiate the normal and anomalous samples. This method is used when there is an imbalance 
+between normal and anomalous data sample size in the dataset. Main premise is that classifying 
+data sample with higher dimensional feature space such as images, as anomalous or normal, 
+becomes easier if the underlying data of interest lies in a subspace of lower dimensionality 
+than its original form \cite{Beyer:1999:NNM:645503.656271}. 
 Hence we can model the data in a lower dimensional complexity and find an appropriate way to reconstruct 
 to its original higher-dimensional representation. Obtaining an approximation of the normal data using 
 this reconstruction does not give the same type of result when computed with an anomalous sample. 
 Autoencoder networks (see Section \ref{sec:ae}) are heavily used for reconstruction based anomaly 
-detection tasks. They consist of an encoder and decoder network. Encoder 
+detection tasks in recent years. They consist of an encoder and decoder network. Encoder 
 network is trained to learn the latent representation and decoder network is trained to obtain 
 the reconstruction to model the normality of data with no anomalies. Over the years, different 
-variants of autoencoder networks are employed for anomaly detection 
+variants of autoencoder networks are employed for anomaly detection task
 \cite{kingma2013autoencoding, Masci2011StackedCA, an2015variational, leveau2017adversarial, Pidhorskyi:2018:GPN:3327757.3327787}.
 
 %% Modeli acikla cozmeye calistigin seyleri anlat
-This thesis investigates the performance of anomaly detection methods that utilizes generative adversarial 
-networks (GAN) (see Section \ref{sec:gan}) to solve defect detection problem of SEM image dataset \cite{sem} 
-(see Section \ref{sec:sem}). Later on a model is proposed which consist of an energy based generative adversarial 
-network and two encoder networks. Primary encoder network is trained adversarially with generator network to 
-learn bidirectional mapping between the image space and latent dimension space. Secondary encoder network 
-is trained to learn the latent representation of the reconstructed image samples obtained from the generator 
-network. Comparative analysis between anomaly detection methods that uses generative adversarial networks and 
-the proposed model regarding reconstruction quality of the generator network and overall performance is carried 
-out via an ablation study and a series of incremental experiments.
+This thesis investigates the defect detection problem \cite{carrera2016defect} of 
+SEM image dataset \cite{sem} (see Section \ref{sec:sem}). SEM images are images from the nanofibrous material manufacturing process called electro spinning method \cite{carrera2016defect}.
+ Due to the environmental factors and failures related to the instruments, this method may produce 
+samples which has defective/ anomalous regions (see Figure \ref{fig:data_samples}). 
+While these anomalous regions have  
+distinguishable features that can easily be spotted by human eye, it is difficult to 
+catalogue these anomaly examples 
+for detection with automated systems. Main contributing factors are that defective regions can have 
+variety of appearence and shape and the formation of fibers also creates to difficulties for detection
+since they can overlap and follow different orientations \cite{carrera2016defect}. Main approach to 
+this problem is to build a model to learn the manifold of normal regions by using image patches 
+which randomly extracted from the SEM images that has no defective regions. This model is then used 
+to detect the defective regions of a new SEM image sample. Inference stage is performed by 
+disecting the image into overlapping patches. This thesis provides a model that is trained with 
+patches obtained from normal SEM images. Model performs a reconstruction based anomaly detection task 
+by taking advantage of generative adversarial networks and encoder networks.
 
-Results of the experiments showed that training methodology obtained for the proposed model improved 
-both the performance of generator network and encoder networks. It is also observed that anomaly detection 
-performance of the model can be improved by utilizing an anomaly detection score based on the latent representations 
-of the query image and its reconstructions rather than the images itself.
+First part of thesis investigates the performance of anomaly detection methods that utilizes
+generative adversarial networks (GAN) (see Section \ref{sec:gan}). Later on a modified model is proposed 
+which consist of an energy based generative adversarial network and two encoder networks. 
+Primary encoder network is trained adversarially with generator network to learn bidirectional 
+mapping between the image space and latent dimension space. Secondary encoder network 
+is trained to learn the latent representation of the reconstructed image samples obtained from 
+the generator network. Comparative analysis between anomaly detection methods that uses 
+generative adversarial networks and the proposed model regarding reconstruction quality 
+of the generator network and overall performance is carried 
+out via an ablation study and a series of incremental experiments (see Chapter \ref{chap:expres}).
 
+Results of the experiments showed that training methodology obtained for the proposed model 
+improved both the performance of generator network and encoder networks. It is also observed 
+that anomaly detection performance of the model can be improved by utilizing an anomaly detection 
+score based on the latent representations of the query images and their reconstructions rather 
+than the images itself.
 
 This document is organized as follows: Chapter \ref{chap:sota} presents the anomaly detection 
-problem throughly, introduces the network models that are used for constructing anomaly 
-detection methods such as generative adversarial networks and autoencoder networks and 
-explains the state of the art anomaly detection methods that utilizes generative adversarial networks. 
-Chapter \ref{chap:latdel} introduces some of the latest developments concerning 
-generative adversarial networks and anomaly detection task. Chapter \ref{chap:arim} analyzes the problems 
-other GAN based anomaly detection models face with SEM image dataset and presents our proposed model. 
-Experimental results are described in Chapter \ref{chap:expres} and the conclusion and 
-the future work is stated in chapter \ref{chap:conc}.
+problem thoroughly, introduces the networks that are used for constructing anomaly 
+detection methods such as generative adversarial networks and autoencoder networks and finally 
+illustrates mainstream anomaly detection methods that utilizes generative adversarial 
+networks. Chapter \ref{chap:latdel} introduces some of the latest developments concerning 
+generative adversarial networks and anomaly detection task. Chapter \ref{chap:arim} 
+analyzes the problems other GAN based anomaly detection models experience with SEM image dataset 
+and presents our proposed model. Experimental results are described in Chapter \ref{chap:expres} 
+and the conclusion and the future work are  stated in Chapter \ref{chap:conc}.
 
 \endgroup

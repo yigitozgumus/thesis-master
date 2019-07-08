@@ -3,14 +3,14 @@
 
 
 This chapter is dedicated to the exploration of state of the art approaches in the fields relevant
-to the thesis. The organization of the chapter is the following: Section \ref{sec:ad} will formulate
-anomaly detection problem and illustrate mainstream approaches towards its solution.  Section \ref{sec:arch_comp} will give
-necessary background about generative adversarial networks (GAN) and autoencoder
-networks. First, the principles behind how GANs work will be presented then the Autoencoder Networks
- will be explained. This section is particularly significant to understand how different
-architectures that use these networks actually work. In Section \ref{sec:gan_based_sota}, variety of 
-architectures that has been developed for anomaly detection will be studied as state of the art. 
-How they are implemented and their purpose will be described.
+to the thesis. The organization of the chapter is the following: Section \ref{sec:ad} 
+will formulate anomaly detection problem and illustrate mainstream approaches towards its solution. 
+Section \ref{sec:arch_comp} will give necessary background about generative adversarial networks 
+(GAN) and autoencoder networks. First, principles behind how GANs work will be presented then 
+autoencoder networks will be explained. This section is particularly significant to understand 
+how different architectures that use these networks actually work. In Section \ref{sec:gan_based_sota}, 
+variety of architectures that has been developed for anomaly detection will be studied as state 
+of the art.
 
 \section{Anomaly Detection}
 \label{sec:ad}
@@ -26,9 +26,8 @@ considered an anomaly for that specific domain. This makes it hard to conceptual
 anomaly detection with a general definition and a solution that can encompass all different
 domains.
 
-In the rest of this section, I will explain different use cases for anomaly detection to show its
-impact on a broad spectrum of problems. Then the primary approach types to solve anomaly detection
-problem will be introduced.
+In the rest of this section, different use cases for anomaly detection to show its
+impact on a broad spectrum of problems will be explained. Then the primary approach types to solve anomaly detection problem will be introduced.
 
 The categorization taxonomy to define different application domains is constantly changing 
 parallel to developments in the literature but the application areas of 
@@ -37,10 +36,9 @@ anomaly detection can be categorized down to these five general fields
 These are:
 \begin{itemize}
     \item IT Sector 
-    \item Healthcare informatics, medical diagnostics and monitoring
+    \item Healthcare, medical diagnostics and monitoring
     \item Industrial Monitoring/ maintanence and damage detection
     \item Image processing/ Video Survailance
-    \item Survailance
     \item Sensor Networks
 \end{itemize}
 
@@ -51,9 +49,9 @@ include network intrusion detection and fraud detection \cite{Pimentel:2014:RRN:
 With rising use of computerized systems and the incorporation of the internet based services to
 our daily lives, maintainability and the availability of these systems became much more important.
 For systems like these, anomaly is considered as a priority because it indicates significant but
-rare events and can prompt to critical actions to be taken in a domains such as finance or cyber security
+rare events and can prompt to critical actions to be taken in domains such as finance or cyber security
 \cite{AHMED201619}. For example a malicious process in a server may show increased use of resource
-from time to time that may be spotted as a type of anomaly in the system resource use patterns or
+from time to time that may be spotted as a type of anomaly in the system resource use patterns or,
 the unusual amount of traffic on the network may indicate an intruder attack \cite{FERNANDES20161}
 \cite{JABEZ2015338}. Another aspect of the increased use of internet is its impact on the e-commerce
 field and dramatically growing online payment systems. This also includes a migration to internet
@@ -77,7 +75,7 @@ respiratory rate \cite{inproceedings_medical}\cite{Markou:2003:NDR:959414.959416
 
 \textbf{ Industrial Monitoring}
 
-Novelty detection became a huge part of the industrial automation systems from the quality control
+Anomaly detection became a huge part of the industrial automation systems from the quality control
 of the manufacturing progress to the performance maintenance of the equipment. Products that have
 a complicated and delicate manufacturing process like CPU wafers \cite{Kim:2012:MLN:2076800.2076903} and nanofibrous
 materials \cite{Napoletano2018anomaly} may easily develop defects in the manufacturing pipeline. Using
@@ -91,7 +89,7 @@ prevention.
 \textbf{ Image Processing/ Video Surveillance}
 
 Image processsing methods has been used with anomaly detection methods extensively to detect novelty
-subjects or anomalies in the image or in a video stream. Detection in video data stream data is an
+subjects or anomalies in the image or in a video stream. Anomaly Detection in video data stream data is an
 important task for the surveilance systems that is used with the purpose of traffic control,
 security systems and search and rescue \cite{image_anomaly}.
 
@@ -102,7 +100,7 @@ in the field of internet of things, the definition of acquiring and processing d
 Various types of sensors, especially wireless, are heavily used to collect huge amount of data to
 feed various systems such as surveillance, environmental monitoring, and disaster management
 \cite{UlIslam2018}. Anomaly detection methods are important for these systems because the performance and 
-maintenance of the these system requires constant monitoring of the acquired data. These distributed 
+maintenance of the these systems require constant monitoring of the acquired data. These distributed 
 systems are mainly used to collect and compute the gathered sensory data and predict target information. 
 However the accuracy of these computations or predictions depends
 primarily on the quality of the sensor measurements and with this scale the instrumentation error
@@ -111,8 +109,8 @@ sensory faults and also prevent errors caused by malicious attacks \cite{Pimente
 
 Variety of approaches that belong to different sub domains of the machine learning, statistics ,
 bayesian and information theory are used to solve anomaly detection problem for these aforementioned
-fields. All these different approaches in general tries to build a model or a representation of the
-data that is provided which contains no anomalous samples (or very few) and assigns 
+fields. All these different approaches in general try to build a model or a representation of the
+data which contains no anomalous samples (or very few) and assigns 
 them an anomaly score or a label depending on the problem. At the inference stage, deviations from the constructed normality
 definition are detected using a predetermined anomaly threshold. These different methods can be
 categorized into 5 main titles. These are:
@@ -144,7 +142,7 @@ the data, the learn the boundary information to seperate the target class (anoma
 normal data. Support Vector Machines (SVM) are the popular example for this approach. \textbf{Information
 theoretic anomaly detection methods} computes the total information content that resides in the
 training dataset. The main assumption is that anomalous samples present in the data significantly
-modifies the information content of the assumed normal dataset. Metrics for this approach are
+modify the information content of the assumed normal dataset. Metrics for this approach are
 calculated using the entirety of the dataset and the subset that triggers the biggest discrapancy is
 identified as the anomaly. 
 
@@ -154,12 +152,12 @@ output, these models define a reconstruction error tailored to the nature of the
 type of data, and measures this error with respect to certain anomaly threshold. Since the modeled
 underlying data has the features specific to the training dataset, when the anomalous sample is
 fed through this pipeline, its representation and consequently its reconstruction will be made
-poorly hence giving a greater reconstruction error. 
+poorly hence giving a greater reconstruction error which then be interpreted as anomaly. 
 
 \subsection{Related Works}
 \label{sec:relworks}
 
-In this subsection, previous works and state of the art related to anomaly detection in images 
+In this section, previous works and state of the art related to anomaly detection in images 
 and proceed with particular case of SEM images (see section \ref{sec:sem}) are presented. Proposed 
 methods for anomaly detection for images can be grouped in reference-based and reference-free ones 
 \cite{Chandola:2009:ADS:1541880.1541882}. Reference-based approaches compares the input image with a 
@@ -184,20 +182,21 @@ tools to learn the dynamics of a distribution defined over images and to generat
 to a sample on learned distribution. Therefore, they are easily deployed for novelty 
 detection as in \cite{an2015variational}, \cite{leveau2017adversarial} and
 \cite{Pidhorskyi:2018:GPN:3327757.3327787}. Particularly, in Sabokrou et al.\cite{sabokrou2018adversarially},
-leverages two staged network that is composed by auto-encoders and convolutional neural networks is explored for
-the novelty detection. 
+leverages two staged network that is composed by auto-encoders and convolutional neural networks to apply to
+anomaly detection task. 
 
-Next section will introduce generative adversarial networks and autoencoder networks to give background for the 
-GAN based anomaly detection frameworks introduced in Section \ref{sec:gan_based_sota}. In Section \ref{sec:gan}, Underlying mechanics of 
-adversarial training and how generative adversarial networks learn to generate given data will be explained. Regarding 
-autoencoder networks, main principle behind their implementation and how they are trained to obtain a latent representation of a given 
+Next section will introduce generative adversarial networks and autoencoder networks to give background 
+for the GAN based anomaly detection frameworks introduced in Section \ref{sec:gan_based_sota}. In Section 
+\ref{sec:gan}, Underlying mechanics of adversarial training and how generative adversarial networks learn 
+to generate given data will be explained. Regarding autoencoder networks, main principle behind their 
+implementation and how they are trained to obtain a latent representation of a given 
 data will be described.
 
 
 \section{Architectural Components}
 \label{sec:arch_comp}
 This section introduces the two main network types used in  anomaly detection
-frameworks. Section \ref{sec:gan} will describe how generative adversarial network
+frameworks presented in Section \ref{sec:gan_based_sota}. Section \ref{sec:gan} will describe how generative adversarial network
 framework is formed and the intuition behind its adversarial training scheme. Section 
 \ref{sec:ae} will give an introductory information to autoencoder networks and present different kinds of
 approaches that can be integrated into both the construction of the network and its training
@@ -242,15 +241,17 @@ consists of a generator and discriminator network. You can observe the example a
     \label{fig:gan_network}
 \end{figure}
 
-From this point on, "image" will be used to specify the type of the input and the target data because
+As can be seen from the Figure \ref{fig:gan_network}, framework consists of two networks. Generator network(left) and discriminator network (right). It uses a an image ($x \sim p_{\text{data}}$) and a latent noise ($z \sim p_z$) for its training and outputs a probability $P(Y)$ from the discriminator network depending on what is fed to it.
+
+From this point on, \textbf{image} will be used to specify the type of the input and the target data because
 GAN frameworks are mainly designed to work with high dimensional spatial data like images so it will
 be consistent when explaining the theorem and also the central focus of the thesis is on the spatial
-data. 
+data. Also \textbf{latent representation} and \textbf{noise} will be used interchangeably unless specified otherwise.
 
 Power of this framework comes from the adversarial nature of the training process. Simply put,
-the goal of generator network($G$) is to create images similar to the input data by capturing the
-data distribution using a probabilistic model. On the other hand discriminator ($D$) tries to detect fake
-(generated) images that is created by generator from the real input images. We can represent this intuition 
+the goal of generator network ($G$) is to create images similar to the input data by capturing the
+data distribution using a probabilistic model. On the other hand discriminator network ($D$) tries to detect fake
+(generated) images created by generator network from the input images. We can represent this intuition 
 with the following two player mini-max game with the value function $V(G,D)$ in Equation \ref{eqn:gan_vgd}. 
 Here $P_{\text{data}}$ represents the probability distribution of the data that we have no information about. 
 $p_z(z)$ is the random noise that generator accepts to generate fake data 
@@ -278,7 +279,7 @@ While this equation describes the relation between two adversaries, it does not 
 definite explanation how this training objective finds equilibrium and whether that equilibrium also
 provides us with the optimal generator or not. For this analysis we will use bottom up approach and
 prove the theorem depicted in the original GAN method \cite{Goodfellow:2014:GAN:2969033.2969125}. Here,
-$C$ is defined as the function of training criterion for discriminator $D$ that accepts any generator $G$.
+$C$ is defined as the virtual function of training criterion for discriminator $D$ that accepts any generator $G$.
 
 \begin{theorem}
 \label{thr:gan}
@@ -330,7 +331,7 @@ Using this law we can write the equation for $V(G, D)$.
     V( G, D) &= \int_x p_{\text{data}}(\boldsymbol{x}) log(D(\boldsymbol{x})) + p_g(\boldsymbol{x}) log(1 - D(\boldsymbol{x})) dx
 \end{align}
 
-For the Discriminator $D$, the value of the training criterion should be maximized. That basically means the
+For the Discriminator $D$, the value of the training criterion should be maximized. That means the
 function derivative of this expected value expression should be equal to zero. We write the
 function by reversing the process of Equation \ref{eqn:ev}.
 \begin{align}
@@ -424,7 +425,7 @@ Intuition behind the adversarial training of this framework is important because
 approaches that will be discussed in the thesis that use GAN's fundamentally benefit from this
 framework to train their networks. As we will see in the BiGAN (Section \ref{sec:bigan}) and subsequent models, addition of
 encoder network changes the overall minimax game played by the adversarial networks but underlying
-logic still depends on the value function of the GANs.
+reasoning still depends on the value function of the GANs.
 
 \subsection{Autoencoder Networks}
 \label{sec:ae}
@@ -440,9 +441,9 @@ non-recurrent network similar to multilayer perceptrons like in Figure \ref{fig:
 \end{figure}
 
 Internally, it consists of a hidden layer that describes the code (latent representation) 
-learned from the input data. Connections from the hidden layer to the output layer transforms 
+learned from the input data. Connections from the hidden layer to the output layer transform
 the latent representation into the output data with the same dimensional complexity as the input 
-data. It is the composition of two operations. Mapping from input to hidden layer is called encoding. 
+data. Autoencoder networks are the composition of two operations. Mapping from input to hidden layer is called encoding. 
 Reconstructing data from the code using the mapping from hidden layer to output layer is called 
 decoding. However rather than trying to reconstruct the given data, autoencoders are mainly used 
 to learn the representation about the data to extract meaningful features and to reduce the 
@@ -466,15 +467,17 @@ autoencoders because of the increased level of hidden layers present in the mode
 
 Learning rationale of the autoencoders can be visualized with a pair of weighted layer computation
 functions like in the multilayer perceptrons. Assume that we have two transition functions that
-defines the relationship between the real data $X$ and the latent representation $F$ as the result of
-the encoder and decoder networks:
+defines the relationship between the real data $X$ and the latent representation $F$. Encoder network maps the 
+real data to a latent representation and decoder network learns the opposite mapping.
 \begin{align*}
     \phi : X \mapsto F \\
     \psi : F \mapsto X     
 \end{align*}
 
 We can define the intermediate representation computation and the reconstruction of input data
-with the following equations:
+with the following equations where $W$ is weight matrix and $b$ is the bias of the layer of multilayer 
+perceptron, $d$ is the dimension size of the real data, $p$ is the dimension size of the latent representation 
+and $\sigma$ is the activation function belonging to the layer:
 \begin{align}  
     z  &= \sigma( W x + b) ,\quad x \sim X \in \mathbb{R}^d ,\quad z \sim F \in \mathbb{R}^p \\
     x'  &= \sigma' (W' z + b') 
@@ -486,12 +489,12 @@ function can change. Autoencoder learns the representation of data by minimizing
 defined as the reconstruction loss. 
 \begin{align}
     \label{eqn:ae_rec}
-  \phi, \psi & = \underset{\phi, \psi}{\text{argmin}} \norm{X - (\psi \circ \phi) X} \\  
+  \phi, \psi & = \underset{\phi, \psi}{\text{argmin}} \norm{x - (\psi \circ \phi) x} \\  
   L(x, x') & = \norm{x - x'}^2 = \norm{x - \sigma' (W' \sigma (W x + b) + b')}^2
 \end{align}
 
 With enough model capacity and training time, autoencoder may learn to copy the input perfectly.
-This reduces the functionality of encoder-decoder networks to a identity function:
+This reduces the functionality of encoder-decoder networks to an identity function:
 $$
  x \sim X \in \mathbb{R}^d, \quad \psi(\phi(x)) = x
 $$
@@ -525,11 +528,12 @@ with the potential properties of the data distribution such as robustness to the
 sparsity of the representation. Prioritizing which aspects of the data will be used as a regularizer 
 term for the objective function is a task dependent problem \cite{Goodfellow-et-al-2016}. 
 \textbf{Denoising autoencoders} tries to solve a different problem to achieve a good representation. 
-$$
-\hat{x} = x + \epsilon : x \sim X \in \mathbb{R}^d ,\quad \epsilon \sim \mathcal{N}(\mu, \sigma^2)
-$$
+\begin{equation}
+	\label{eqn:dae}
+	\hat{x} = x + \epsilon : x \sim X \in \mathbb{R}^d ,\quad \epsilon \sim \mathcal{N}(\mu, \sigma^2)
+\end{equation}
 
-The input data is corrupted with a Gaussian noise. Denoising autoencoders tries to
+The input data is corrupted with a Gaussian noise as shown in Equation \ref{eqn:dae}. Denoising autoencoders tries to
 reconstruct the data and undo this corruption by minimizing this updated loss with the difference of
 $\hat{x}$.
 $$
@@ -548,7 +552,7 @@ to compose our solution.
 In the field of reconstruction based anomaly detection, autoencoder networks 
 are fairly popular with spatial data \cite{baldi2012autoencoders,leveau2017adversarial,an2015variational}.
 GAN based approaches in this field are relatively new compared to their other variants.
-In the following subsections, we will explain the approaches that can be considered as the state of
+In the following sections, we will explain the approaches that can be considered as the state of
 the art for this problem in the order of their complexity and incremental improvements. Each
 model will be evaluated by their problem description, the type of data they use, model
 architecture and anomaly score computation. 
@@ -568,44 +572,43 @@ extensive training with annotated examples such as labeled lesions which may dec
 exploiting imaging data for treatment decisions \cite{Schlegl2017UnsupervisedAD}.
 
 
-The framework consists of 2 parts. First part is the GAN module, generator and discriminator
+The framework consists of 2 parts. First part is the GAN model, generator and discriminator
 networks (see Figure \ref{fig:gan_network}). Their architecture is inspired by the original DCGAN
 \cite{Radford2016UnsupervisedRL} which contains convolutional layers instead of multi layer perceptron 
-layers. The objective function of the GAN is the same of the Equation \ref{eqn:gan_vgd}. 
-During the training generator enhances its ability to generate more realistic
-retinal images while the discriminator learns to diagnose the real and the generated samples more
+layers. Objective function of the GAN is the same of the Equation \ref{eqn:gan_vgd}. 
+During the training, generator network enhances its ability to generate more realistic
+retinal images while the discriminator network learns to diagnose the real and the generated samples more
 efficiently. 
 
-The second part of the framework is about the inverse mapping from the latent space to the image space. 
+Second part of the framework is for the inverse mapping from the latent representation space to the image space. 
 We know from the GANs training procedure that when the adversarial training is completed, the generator
-network has learned the distribution $p_g$ that is theoretically very similar to the input data
-distribution $p_{\text{data}}$. ( we state "theoretically" explicitly because depending on the
-configuration of GAN and the data that is used, this may differ significantly in practice.) 
+network has learned the distribution $p_g$ that is comprised of the 
+distribution of $p_{\text{data}}$ itself. 
 Even though with the trained generator $G$, 
 $$
 G(z) = z \mapsto x,x \sim p_{\text{data}}
 $$
 
-the GAN framework does not learn the inverse mapping from the image to noise. AnoGAN framework
-aims to find the noise sample $z\prime$ from the query image (normal or anomalous) such that the
-generated image $G(z\prime)$ is visually the most similar one to the query image. This is essential
-for the anomaly detection task. $z\prime$ is sampled randomly as initialization. Then the
-$G(z\prime)$ is computed and based on the defined loss function gradients the coefficients of
-$z\prime$ is updated using back propagation. This procedure is repeated for a number of epochs to
-obtain the final value of the $z\prime$. 
+GAN framework does not learn the inverse mapping from the image to latent representation. AnoGAN framework
+aims to find the noise sample $z'$ from the query image (normal or anomalous) such that the
+generated image $G(z')$ is visually the most similar one to the query image. This is essential
+for the anomaly detection task. $z'$ is sampled randomly as initialization. Then the
+$G(z')$ is computed and based on the defined loss function gradients the coefficients of
+$z'$ is updated using back propagation. This procedure is repeated for a number of epochs to
+obtain the final value of the $z'$. 
 
 The loss function for the inverse mapping is defined as the combination of two separate losses.
 \textbf{Residual loss} $L_R$ is responsible for enforcing visual similarity between the generated image
-$G(z\prime)$ and the query image $x$.
+$G(z')$ and the query image $x$.
 \begin{equation}
     \label{eqn:anogan_rl}
-    L_R (z_{\gamma}) = \sum \norm{ x - G(z_{\gamma})}
+    L_R (z') = \sum \norm{ x - G(z')}
 \end{equation} 
 \textbf{Discrimination loss} $L_D$ on the other hand enforces the
-generated image $G(z\prime)$ to lie on the manifold $X$ of image $x$.
+generated image $G(z')$ to lie on the manifold $X$ of image $x$.
 \begin{equation}
     \label{eqn:anogan_dl}
-    L_D (z_{\gamma}) = \sum  \norm{f(x) - f(G(z_{\gamma})}
+    L_D (z') = \sum  \norm{f(x) - f(G(z')}
 \end{equation}
 
 There are two different implementation for the discrimination loss. One with sigmoid cross entropy
@@ -614,8 +617,8 @@ with feature matching \cite{fm} which uses the last layer of the discriminator r
 output to compute the loss. Using this loss allows them to use discriminator not as a classifier but
 as a feature extractor. Using both residual and discrimination loss, the total loss function is
 defined as :
-$$L(z_{\gamma}) = (1 - \lambda ) \times L_{R}(\boldsymbol{z_{\theta}}) + \lambda \times
-L_{D}(\boldsymbol{z_{\gamma}})$$
+$$L(z') = (1 - \lambda ) \times L_{R}(\boldsymbol{z'}) + \lambda \times
+L_{D}(\boldsymbol{z'})$$
 
 Only the coefficients of $z$ is adapted via back propagation. The trained weights of the generator
 and discriminator are fixed in this stage \cite{Schlegl2017UnsupervisedAD}.
@@ -973,7 +976,7 @@ each epoch of training becomes:
     \overline{W}_{\mathrm{SN}}(W) :=W / \sigma(W) 
 \end{equation}
 
-Overall implementation of the spectral normalization addition to batch normalization proved useful for the performance of 
+Where $\sigma$ is the applied operation that finds the largest eigenvalue of the weight matrix $W$ that normalizes the weight matrix. Overall implementation of the spectral normalization addition to batch normalization proved useful for the performance of 
 ALAD, particularly in the stabilization of the discriminator training. Model also employed this reparameterization in their 
 architecture as well. 
 
