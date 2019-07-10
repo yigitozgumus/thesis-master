@@ -2,13 +2,38 @@
 
 \begingroup
 
-L'individuazione di anomalie è un campo sempre più popolare nella visione artificiale ed è una sfidaproblema riguardante un'ampia varietà di domini applicativi. Come i metodi di raccolta e utilizzoi dati crescono, la qualità e le prestazioni dei sistemi che ne traggono beneficiopiù dipendente dai dati che usano. Considerando questi sistemi si basano sulla qualità dei dati,la rilevazione delle anomalie gioca un ruolo cruciale per rilevare anomalie che possono danneggiare il sistema selasciato sconosciuto. Negli scenari in cui i dati anormali sono un evento raro o semplicemente costosoda osservare, gli approcci basati sulla ricostruzione sono usati per modellare i dati normali da impararedifferenziare le anomalie quando incontrate. Le reti del contraddittorio generativo sono un metodo relativamente nuovoche viene utilizzato per generare dati nuovi e inosservati in modo non controllato eil suo adattamento al quadro di rilevamento delle anomalie basato sulla ricostruzione è promettente.
+La rivelazione di anomalie \'e un argomento sempre pi\'u popolare nel campo della visione artificiale e 
+frattanto costituisce una sfida riguardo a un'ampia variet\'a di dominio dell'appliazione. 
+Aree come la sicurezza informatica, la finanza, l'industria e altri hanno adattato i loro metodi di 
+soluzione utilizzando i modelli basati sui dati. 
+Considerando questi metodi che si basano sulla qualit\'a dei dati, la rilevazione delle anomalie gioca 
+un ruolo cruciale per rilevare anomalie nei dati che potrebbero danneggiare il sistema se lasciato indefinito. 
+Ad esempio vengono analizzati i dati finanziari relativi alle spese dei clienti e i loro modelli 
+di acquisto per svelare dei frodi potenziali \cite{finance_anomaly}. 
+I sistemi industriali utilizzano il rilevamento delle anomalie sui dati sensoriali provenienti dall'apparato 
+per monitorare la qualit\'a ed esigenze di manutenzione \cite{inproceedings_industry}.
 
-Questa tesi fornisce un modello per prevedere le regioni anomale sulle immagini del microscopio elettronico a scansione (SEM)
-di materiali nanofibrati utilizzando un framework basato su reti generative adversarial (GAN) e reti di encoder.
-La soluzione proposta apprende la mappatura bidirezionale tra l'immagine e la sua dimensione latente usando il contraddittorio
-formazione del generatore della rete generativa avversaria e della rete di encoder.
+Negli scenari in cui i dati anormali ci mettono un caso raro o semplicemente costosi da osservare, 
+gli approcci basati sulla ricostruzione vengono usati per modellare i dati normali per imparare a 
+differenziare le anomalie quando incontrate. 
+Gli autoencoder sono stati ampiamente utilizzati per la ricostruzione del rilevamento degli anomalie 
+in ultimi anni. Generative adversarial network (GAN) \'e un modelli relativamente nuovo che viene utilizzato 
+per generare dati nuovi e non osservati in modo non supervisionato e il suo adattamento alle 
+impostazioni di rilevamento delle anomalie basate sulla ricostruzione \'e promettente.
 
-Dimostriamo che il nostro approccio produce risultati migliori rispetto ad altri framework di rilevamento delle anomalie basati su GAN formati con il nostro
-set di dati. Mentre l'aumento delle prestazioni è un piccolo margine, il nostro metodo mostra una migliore ricostruzione visiva dei dati.
+
+Questa tesi propone un modello per prevedere le regioni anormale sulle immagini del microscopio 
+elettronico a scansione (SEM) di materiali nanofibrosi che combinano GAN e un encoder. 
+La soluzione proposta si istruisce sulla mappatura bidirezionale tra l’immagine e il 
+suo spazio di dimensione latente utilizzando l’allenamento contraddittorio della rete 
+del generatore e della rete di encoder.
+
+Dimostriamo che il nostro approccio produce risultati migliori rispetto ad altri 
+framework di rilevamento delle anomalie basati su GAN formati con il set di dati dell'immagine SEM. 
+Mentre l'aumento delle prestazioni \'e un piccolo margine, il nostro metodo ottiene una 
+migliore ricostruzione visiva dei dati.
+Il nostro lavoro suggerisce che i metodi basati sulla ricostruzione giocano un ruolo fondamentale 
+nel rilevamento delle anomalie con i dati delle immagini.
+
+
 \endgroup

@@ -8,7 +8,7 @@
 \BOOKMARK [1][-]{section.2.1}{Anomaly Detection}{chapter.2}% 8
 \BOOKMARK [2][-]{subsection.2.1.1}{Related Works}{section.2.1}% 9
 \BOOKMARK [1][-]{section.2.2}{Architectural Components}{chapter.2}% 10
-\BOOKMARK [2][-]{subsection.2.2.1}{Generative Adversarial Networks}{section.2.2}% 11
+\BOOKMARK [2][-]{subsection.2.2.1}{GANs}{section.2.2}% 11
 \BOOKMARK [2][-]{subsection.2.2.2}{Autoencoder Networks}{section.2.2}% 12
 \BOOKMARK [1][-]{section.2.3}{GAN Based Anomaly Detection Methods}{chapter.2}% 13
 \BOOKMARK [2][-]{subsection.2.3.1}{AnoGAN}{section.2.3}% 14
@@ -26,9 +26,9 @@
 \BOOKMARK [1][-]{section.4.2}{Analysis of Aforementioned Approaches}{chapter.4}% 26
 \BOOKMARK [2][-]{subsection.4.2.1}{Stabilization of Adversarial Training}{section.4.2}% 27
 \BOOKMARK [2][-]{subsection.4.2.2}{Convergence of Encoder Training}{section.4.2}% 28
-\BOOKMARK [1][-]{section.4.3}{Encoded Energy Based Generative Adversarial Network}{chapter.4}% 29
+\BOOKMARK [1][-]{section.4.3}{Encoded Energy Based GAN}{chapter.4}% 29
 \BOOKMARK [2][-]{subsection.4.3.1}{Anomaly Score Computation}{section.4.3}% 30
-\BOOKMARK [1][-]{section.4.4}{Sequentially Encoded Energy Based Generative Adversarial Network}{chapter.4}% 31
+\BOOKMARK [1][-]{section.4.4}{Sequentially Encoded Energy Based GAN}{chapter.4}% 31
 \BOOKMARK [0][-]{chapter.5}{Experimental Results }{}% 32
 \BOOKMARK [1][-]{section.5.1}{Experiment Settings}{chapter.5}% 33
 \BOOKMARK [1][-]{section.5.2}{Performance Metrics}{chapter.5}% 34
@@ -44,4 +44,4 @@
 \BOOKMARK [1][-]{section.A.5}{Skip-GANomaly Implementation}{appendix.A}% 44
 \BOOKMARK [1][-]{section.A.6}{ENCEBGAN Implementation}{appendix.A}% 45
 \BOOKMARK [1][-]{section.A.7}{SENCEBGAN Implementation}{appendix.A}% 46
-\BOOKMARK [0][-]{section*.50}{Bibliography}{}% 47
+\BOOKMARK [0][-]{section*.52}{Bibliography}{}% 47

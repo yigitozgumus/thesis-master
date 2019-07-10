@@ -103,7 +103,7 @@ flipping labels of the true and generated images to fool the discriminator even 
 higher gradient flow to generator network early on in the training to help it learn to generate images
 better \cite{fm}. 
 
-In the training phase of a generative adversarial network, loss values of generator does not
+In the training phase of a GAN, loss values of generator does not
 portray a traditional convergence line in plots. Adversarial mini max game prevents the losses of the
 player networks to converge to a certain limit. If the loss is reaching zero in any case, it
 indicates a problem in the learning capacity of one of the networks. If discriminator network loss converges
@@ -315,14 +315,14 @@ Net section will discuss our proposed model with the mentioned changes and conti
 existent shortcomings despite these applied improvements.
 
 
-\section{Encoded Energy Based Generative Adversarial Network}
+\section{Encoded Energy Based GAN}
 \label{sec:encebgan}
 
 First iteration of the proposed model is called encoded energy based generative adversarial
 network,or ENCEBGAN. This section presents how its built, its training scheme and the issues it
 solved.
 
-ENCEBGAN consists of an energy based generative adversarial network framework with an additional
+ENCEBGAN consists of an energy based GAN framework with an additional
 encoder network. Roles of the corresponding networks are identical to BiGAN (see Section \ref{sec:bigan}). Two main
 differences are the change in the rationale in adversarial training component and separation of the
 encoder network training. Figure \ref{fig:encebgan_model} presents the model components with an
@@ -441,26 +441,26 @@ of the proposed model for anomaly detection. General architecture of the model, 
 procedure and its inference stage for anomaly detection will be discussed.
 
 
-\section{Sequentially Encoded Energy Based Generative Adversarial Network}
+\section{Sequentially Encoded Energy Based GAN}
 \label{sec:sencebgan}
 
-Sequentially encoded energy based generative adversarial network is the main proposed model that
+Sequentially encoded energy based GAN is the main proposed model that
 aims to mitigate the disadvantageous outcomes of stabilization and convergence problems experienced
 by the previously mentioned methods (see Chapter \ref{chap:sota}). Even though it is presented
 incrementally throughout the chapter, its general architecture, training strategy and its approach
 to anomaly detection problem will be discussed.
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=1.0\textwidth]{arim/sencebgan/sencebgan}
+	\includegraphics[width=1.0\textwidth]{arim/sencebgan/sencebgan_model}
 	\caption{SENCEBGAN Model Overview }
 	\label{fig:sencebgan_model}
 \end{figure}
 
-SENCEBGAN model consists of an energy based generative adversarial network and 2 additional encoder
+SENCEBGAN model consists of an energy based GAN and 2 additional encoder
 networks. First encoder network learns the representation of training data and its called
-generator encoder or $E_{G}$. Second encoder network learns the latent representation of the reconstructions
+\textbf{generator encoder} or $E_{G}$. Second encoder network learns the latent representation of the reconstructions
 of the training data provided by the generator network. This encoder network will be mentioned as
-reconstruction encoder or $E_{R}$. Training objective of the model is given in Equation
+\textbf{reconstruction encoder} or $E_{R}$. Training objective of the model is given in Equation
 \ref{eqn:sencebgan_formula}.
 \begin{equation}
 	\begin{aligned}

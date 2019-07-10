@@ -5,7 +5,7 @@
 This chapter is dedicated to the exploration of state of the art approaches in the fields relevant
 to the thesis. The organization of the chapter is the following: Section \ref{sec:ad} 
 will formulate anomaly detection problem and illustrate mainstream approaches towards its solution. 
-Section \ref{sec:arch_comp} will give necessary background about generative adversarial networks 
+Section \ref{sec:arch_comp} will give necessary background about GANs 
 (GAN) and autoencoder networks. First, principles behind how GANs work will be presented then 
 autoencoder networks will be explained. This section is particularly significant to understand 
 how different architectures that use these networks actually work. In Section \ref{sec:gan_based_sota}, 
@@ -185,9 +185,9 @@ detection as in \cite{an2015variational}, \cite{leveau2017adversarial} and
 leverages two staged network that is composed by auto-encoders and convolutional neural networks to apply to
 anomaly detection task. 
 
-Next section will introduce generative adversarial networks and autoencoder networks to give background 
+Next section will introduce GANs and autoencoder networks to give background 
 for the GAN based anomaly detection frameworks introduced in Section \ref{sec:gan_based_sota}. In Section 
-\ref{sec:gan}, Underlying mechanics of adversarial training and how generative adversarial networks learn 
+\ref{sec:gan}, Underlying mechanics of adversarial training and how GANs learn 
 to generate given data will be explained. Regarding autoencoder networks, main principle behind their 
 implementation and how they are trained to obtain a latent representation of a given 
 data will be described.
@@ -196,13 +196,13 @@ data will be described.
 \section{Architectural Components}
 \label{sec:arch_comp}
 This section introduces the two main network types used in  anomaly detection
-frameworks presented in Section \ref{sec:gan_based_sota}. Section \ref{sec:gan} will describe how generative adversarial network
+frameworks presented in Section \ref{sec:gan_based_sota}. Section \ref{sec:gan} will describe how GAN
 framework is formed and the intuition behind its adversarial training scheme. Section 
 \ref{sec:ae} will give an introductory information to autoencoder networks and present different kinds of
 approaches that can be integrated into both the construction of the network and its training
 methodology. 
 
-\subsection{Generative Adversarial Networks}
+\subsection{GANs}
 \label{sec:gan}
 
 One of the main objectives of the deep learning is to create complex and high dimensional
@@ -229,7 +229,7 @@ because of the type of problem they try to solve and computational difficulties 
 It is observed that main difficulty was the probabilistic computations that are hard to control in the maximum 
 likelihood estimation \cite{Goodfellow:2014:GAN:2969033.2969125,pmlr-v5-salakhutdinov09a}.
 
-Generative Adversarial Networks (GAN)\cite{Goodfellow:2014:GAN:2969033.2969125} are considered as one of 
+GANs (GAN)\cite{Goodfellow:2014:GAN:2969033.2969125} are considered as one of 
 the most significant breakthroughs in deep learning and generative modelling in the recent years. Framework 
 consists of a generator and discriminator network. You can observe the example architecture in the Figure 
 \ref{fig:gan_network}. 
@@ -542,7 +542,7 @@ $$
 Adding noise to the input data forces autoencoder to learn more salient features of the input data and because 
 the input is constantly noisy, autoencoder gains a factor of robustness.
 
-In the remaining part of this thesis, generative adversarial networks and autoencoder networks will be referenced 
+In the remaining part of this thesis, GANs and autoencoder networks will be referenced 
 several times. They constitute the building blocks of all the models presented in the next section. Our proposed 
 model's architecture also structured using these networks so their underlying logic is fundamental to understand 
 to compose our solution.
@@ -631,7 +631,7 @@ update iteration of the inverse mapping procedure, respectively. The model outpu
 score $A(x)$ for anomalous samples though smaller score means that very similar image is seen during
 the training of GAN. 
 
-This model is the first model that integrates generative adversarial networks to an anomaly
+This model is the first model that integrates GANs to an anomaly
 detection framework. The mapping from latent representation to image data is completely dependent on
 the architecture of GAN and its training parameters. The disadvantageous aspect of this approach
 is the inference. For each query image framework approximates the latent representation vector using
@@ -643,7 +643,7 @@ Chapter \ref{chap:expres}.
 \subsection{BiGAN and ALI}
 \label{sec:bigan}
 
- BiGAN ( Bidirectional Generative adversarial Networks) \cite{Donahue2017AdversarialFL} and ALI
+ BiGAN ( Bidirectional GANs) \cite{Donahue2017AdversarialFL} and ALI
  (Adversarially Learned Inference) \cite{Dumoulin2017AdversariallyLI} are two models that
  independent from each other but focuses on the same problem. They investigate to acquire efficient
  inference method from data to latent space by using encoders in the adversarial training framework
@@ -1174,7 +1174,7 @@ shares the same functionality as in GAN framework \cite{Goodfellow:2014:GAN:2969
 
  With the use of autoencoder network, framework obtains a superior reconstruction ability
 compared to the previous models. But in doing so, its generative sub-network decoder is not a true
-generative component from the perspective of the generative adversarial networks. Decoding capacity of the 
+generative component from the perspective of the GANs. Decoding capacity of the 
 generator network of the GANomaly solely depends on the latent representations obtained from the generator's encoder
 network. But in GAN, generator's decoding capabilities are more robust because it learns to generate samples from the 
 distribution of the training data by training with an unsupervised fashion.

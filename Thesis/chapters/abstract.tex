@@ -2,24 +2,31 @@
 
 \begingroup
 
-Anomaly detection is an increasingly popular field in computer vision and is a challenging 
-problem concerning wide variety of application domains. As the methods of gathering and utilizing 
-data grows, quality and the performance of the systems we benefit become
-more dependent on the data they use. Considering these systems rely on the quality of data, 
-anomaly detection plays a crucial role to detect abnormalities that may harm the system if 
-left undiscovered. In scenarios where the abnormal data is a rare occurrence or simply costly 
+Anomaly detection is an increasingly popular field in computer vision and also is a challenging 
+problem concerning a wide variety of application domains.
+Areas like cyber security, finance, industry and others have tailored their solution methods to 
+utilize data driven models. Considering these methods rely on the quality of data, 
+anomaly detection plays a crucial role to detect abnormalities in the data that may harm the system if 
+left undiscovered. For example in finance, expenditure history of the customers and their shopping 
+patterns are analyzed to detect possible frauds \cite{finance_anomaly}. Industrial systems 
+use anomaly detection on the sensory data coming from the equipment to monitor the quality and 
+maintenance needs \cite{inproceedings_industry}.
+
+In scenarios where the abnormal data is a rare occurrence or simply costly 
 to be observed, reconstruction based approaches are used to model the normal data to learn to 
-differentiate anomalies when encountered. Generative adversarial networks is relatively new method 
-that is used to generate new and unobserved data in an unsupervised way and 
-its adaptation to reconstruction based anomaly detection framework is promising.
+differentiate anomalies when encountered. Autoencoders have been heavily used for reconstruction based 
+anomaly detection in recent years. Generative adversarial network (GAN) is a relatively new model 
+that allows to generate new and unobserved data in an unsupervised way and 
+its adaptation to reconstruction based anomaly detection setting is promising.
 
 This thesis provides a model to predict the anomalous regions on the Scanning Electron Microscope 
-(SEM) images of nanofibrous materials using a framework based on generative adversarial networks 
-(GAN) and encoder networks. Proposed solution learns the bidirectional mapping between the image 
+(SEM) images of nanofibrous materials combining a GAN and encoder networks. 
+Proposed solution learns the bidirectional mapping between the image 
 and its latent dimension space using the adversarial training of the generator network and the 
 encoder network. 
 
 We show that our approach produces better results than other GAN based anomaly detection frameworks 
-trained with our dataset. While the performance increase is a small margin, our method shows better 
-visual reconstructions of the data.
+trained with the SEM image dataset. While the performance increase is a small margin, our method shows better 
+visual reconstructions of the data. Our work suggests that reconstruction based methods plays a fundamental
+role in anomaly detection with image data.
 \endgroup
