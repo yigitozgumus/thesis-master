@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2019.1.28)  10 JUL 2019 14:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2019.1.28)  11 JUL 2019 17:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3942,7 +3942,10 @@ Overfull \hbox (17.66731pt too wide) in alignment at lines 112--134
  [] [] [] [] [] [] 
  []
 
-[88]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [88]
 Overfull \hbox (17.66731pt too wide) in alignment at lines 134--154
  [] [] [] [] [] [] 
  []
@@ -4037,12 +4040,12 @@ Overfull \hbox (3.47217pt too wide) in alignment at lines 277--297
  [] [] [] [] [] [] 
  []
 
-
+[91]
 Overfull \hbox (3.47217pt too wide) in alignment at lines 297--315
  [] [] [] [] [] [] 
  []
 
-[91]
+
 Overfull \hbox (3.47217pt too wide) in alignment at lines 319--324
  [] [] [] [] [] [] 
  []
@@ -4067,6 +4070,7 @@ Overfull \hbox (3.47217pt too wide) in alignment at lines 330--350
  [] [] [] [] [] [] 
  []
 
+[92]
 
 Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
 d on input line 357.
@@ -4076,14 +4080,12 @@ Overfull \hbox (3.47217pt too wide) in alignment at lines 350--371
  [] [] [] [] [] [] 
  []
 
-[92]
+
 Overfull \hbox (3.47217pt too wide) in alignment at lines 371--377
  [] [] [] [] [] [] 
  []
 
-) [93] [94
-
-]
+[93]) [94]
 LaTeX Font Info:    Try loading font information for T1+lmvtt on input line 190
 .
  (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/t1lmvtt.fd
@@ -4125,6 +4127,7 @@ Overfull \hbox (71.94705pt too wide) in paragraph at lines 191--191
  []
 
 [95
+
 
 
 ] [96]
@@ -4223,13 +4226,13 @@ Package logreq Info: Writing requests to '2019_7_Ozgumus_Semsi_Yigit.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 40103 strings out of 492649
- 726228 string characters out of 6129622
- 1322917 words of memory out of 5000000
+ 40104 strings out of 492649
+ 726239 string characters out of 6129622
+ 1320921 words of memory out of 5000000
  42608 multiletter control sequences out of 15000+600000
  185776 words of font info for 167 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,26n,89p,2023b,2889s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,26n,89p,2023b,2885s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/
 texlive/2018/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2018/t
 exmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2018/texmf-dist/
@@ -4275,10 +4278,10 @@ m/lmsy7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmsy9.pfb
 cal/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></us
 r/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
 
-Output written on 2019_7_Ozgumus_Semsi_Yigit.pdf (117 pages, 18927177 bytes).
+Output written on 2019_7_Ozgumus_Semsi_Yigit.pdf (117 pages, 18927345 bytes).
 PDF statistics:
- 2197 PDF objects out of 2487 (max. 8388607)
- 1775 compressed objects within 18 object streams
- 486 named destinations out of 1000 (max. 500000)
+ 2200 PDF objects out of 2487 (max. 8388607)
+ 1778 compressed objects within 18 object streams
+ 487 named destinations out of 1000 (max. 500000)
  989 words of extra memory for PDF output out of 10000 (max. 10000000)
 
