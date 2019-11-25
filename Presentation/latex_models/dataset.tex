@@ -1,0 +1,54 @@
+\documentclass[border=15pt, multi, tikz]{standalone}
+%\usepackage{blocks}
+\usepackage{import}
+\subimport{../layers/}{init}
+\usetikzlibrary{positioning}
+\usetikzlibrary{3d} %for including external image
+\usepackage[utf8]{inputenc}
+\def\ConvColor{rgb:yellow,5;red,7.5;white,5}
+\def\ConvTColor{rgb:yellow,4;red,3;white,1}
+\def\gConvTColor{rgb:yellow,8;red,3;white,1;green,4}
+\def\eConvTColor{rgb:blue,8;red,3;white,4;green,6}
+\def\eeConvTColor{rgb:red,10;blue,1;black,4;yellow,2}
+\def\ConvReluColor{rgb:yellow,5;red,5;white,5}
+\def\PoolColor{rgb:red,1;black,0.3}
+\def\imageColor{rgb:white,10}
+\def\bnColor{rgb:blue,5;white,3;green,2}
+\def\lrColor{rgb:red,1;blue,1;white,3;black,2}
+\def\FcColor{rgb:blue,8;red,2.5;white,5}
+\def\FcReluColor{rgb:blue,5;red,5;white,4}
+\def\SoftmaxColor{rgb:magenta,5;black,7}
+\def\strideColor{rgb:black,5;white,3}
+\newcommand{\up}{0.25}
+\newcommand{\down}{0.25}
+\newcommand{\arrowlength}{4}
+\newcommand{\copymidarrow}{\tikz \draw[-Stealth,line width =0.8mm,draw={rgb:blue,4;red,1;green,1;black,3}] (-0.3,0) -- ++(0.3,0);}
+\begin{document}
+\begin{tikzpicture}
+\tikzstyle{connection}=[ultra thick,every node/.style={sloped,allow upside
+down},draw=\edgecolor,opacity=0.7]
+\tikzstyle{copyconnection}=[ultra thick,every node/.style={sloped,allow upside down},draw={rgb:blue,1;red,10;green,1;black,3},opacity=0.7]
+
+\pic[shift={(0,0,0)}] at (0,0,0){Box={name=canvas_1,fill=\FcColor,height=5,width=0.1,depth=5}};
+\node[canvas is zy plane at x=0,shift={(0,0,0)}] (temp) at (canvas_1-east)
+{\includegraphics[width=5cm,height=5cm]{./../images/0}};
+
+\pic[shift={(1,0,0)}] at (canvas_1-east){Box={name=canvas_2,fill=\FcColor,height=5,width=0.1,depth=5}};
+\node[canvas is zy plane at x=0,shift={(0,0,0)}] (temp) at (canvas_2-east)
+{\includegraphics[width=5cm,height=5cm]{./../images/1}};
+
+\pic[shift={(1,0,0)}] at (canvas_2-east){Box={name=canvas_3,fill=\FcColor,height=5,width=0.1,depth=5}};
+\node[canvas is zy plane at x=0,shift={(0,0,0)}] (temp) at (canvas_3-east)
+{\includegraphics[width=5cm,height=5cm]{./../images/2}};
+
+\pic[shift={(1,0,0)}] at (canvas_3-east){Box={name=canvas_4,fill=\FcColor,height=5,width=0.1,depth=5}};
+\node[canvas is zy plane at x=0,shift={(0,0,0)}] (temp) at (canvas_4-east)
+{\includegraphics[width=5cm,height=5cm]{./../images/3}};
+
+\pic[shift={(1,0,0)}] at (canvas_4-east){Box={name=canvas_5,fill=\FcColor,height=5,width=0.1,depth=5}};
+\node[canvas is zy plane at x=0,shift={(0,0,0)}] (temp) at (canvas_5-east)
+{\includegraphics[width=5cm,height=5cm]{./../images/4}};
+
+
+\end{tikzpicture}
+\end{document}
